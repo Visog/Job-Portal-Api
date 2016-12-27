@@ -2,6 +2,7 @@ package com.visog.jobportal.rest;
 
 import java.util.HashSet;
 import java.util.Set;
+import com.visog.jobportal.rest.controller.transaction.*;
 
 import javax.ws.rs.core.Application;
 
@@ -56,6 +57,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(EmployerTypeController.class);
 		classes.add(FileTypeController.class);
 		classes.add(EmploymentTypeController.class);
+		classes.add(JobSeekerController.class);
 	}
 
 	public Set<Object> getSingletons() {
