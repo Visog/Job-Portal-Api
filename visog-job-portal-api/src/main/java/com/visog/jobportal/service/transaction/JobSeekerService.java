@@ -11,13 +11,13 @@ public interface JobSeekerService {
 	
 	public Boolean saveJObSeeker(JobSeekerReq req);
 
-	public Boolean updateJobSeeker(JobSeekerReq req, String cityId);
+	public Boolean updateJobSeeker(JobSeekerReq req, String jobseekerId);
 
 	public List<JobSeekerRes> getJobSeekers();
 
 	public JobSeekerRes getJobSeeker(String id);
 
-	public Boolean deleteJobSeeker(String cityId);
+	public Boolean deleteJobSeeker(String jobseekerId);
 	
 
 }
