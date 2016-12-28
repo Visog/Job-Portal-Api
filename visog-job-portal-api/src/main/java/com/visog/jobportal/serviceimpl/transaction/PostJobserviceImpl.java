@@ -22,20 +22,30 @@ public class PostJobserviceImpl implements PostJobService {
 	PostJobDao dao;
 	
 	public void savePostJob(PostJobReq req) {
-
 		
+		Currency currency =new Currency();
+		PostJob postJob =new PostJob();
 		Users users =new Users();
 		users.setId(req.getUser());
 		
-		PostJob postJob =new PostJob();
+		
 		
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
 		postJob.setAnnualPackageTo(req.getAnnualPackageTo());
-		
-		Currency currency =new Currency();
 		currency.setId(req.getCurrency());
+		postJob.setCompany(req.getCompany());
+		postJob.setEffectedDateFrom(req.getEffectedDateFrom());
+		
+		
+		
+	
+		
+	
+		
+		
+		
 		
 		
 	}

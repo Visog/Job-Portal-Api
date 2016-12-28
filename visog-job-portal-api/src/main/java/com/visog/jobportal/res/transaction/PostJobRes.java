@@ -18,6 +18,8 @@ public class PostJobRes {
 
 	private String currency;
 
+	private String company;
+
 	private Date effectedDateFrom;
 
 	private Date effectedDateTo;
@@ -84,6 +86,14 @@ public class PostJobRes {
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
 	}
 
 	public Date getEffectedDateFrom() {

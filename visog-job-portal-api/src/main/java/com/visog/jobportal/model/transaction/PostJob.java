@@ -42,6 +42,17 @@ public class PostJob extends AbstractModel {
 	@Column(name = "CURRENCY_ID")
 	private Currency currency;
 
+	@Column(name = "COMPANY")
+	private String company;
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
 	@Column(name = "EFFECTED_DATE_FROM")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date effectedDateFrom;

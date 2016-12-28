@@ -22,8 +22,6 @@ public class Currency extends AbstractModel {
 	@Column(name = "NAME")
 	private String name;
 
-	
-	
 	@Column(name = "CREATED_SID")
 	private String createdSid;
 

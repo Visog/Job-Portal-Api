@@ -16,6 +16,8 @@ public class PostJobReq {
 
 	private String currency;
 
+	private String company;
+
 	private Date effectedDateFrom;
 
 	private Date effectedDateTo;
@@ -76,6 +78,14 @@ public class PostJobReq {
 		this.currency = currency;
 	}
 
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
 	public Date getEffectedDateFrom() {
 		return effectedDateFrom;
 	}
@@ -123,5 +133,7 @@ public class PostJobReq {
 	public void setWalkIn(Boolean walkIn) {
 		this.walkIn = walkIn;
 	}
+
+	
 
 }
