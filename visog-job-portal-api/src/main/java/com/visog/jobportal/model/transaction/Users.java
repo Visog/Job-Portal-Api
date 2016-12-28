@@ -39,7 +39,7 @@ public class Users extends AbstractModel{
 	@Column(name = "ALTERNATIVE_EMAIL")
 	private String alternativeEmail;
 	
-	
+
 	@Column(name = "DOB")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dob;

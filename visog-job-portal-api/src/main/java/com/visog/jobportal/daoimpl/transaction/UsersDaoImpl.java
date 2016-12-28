@@ -3,9 +3,7 @@ package com.visog.jobportal.daoimpl.transaction;
 import java.util.List;
 
 import javax.inject.Singleton;
-import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;

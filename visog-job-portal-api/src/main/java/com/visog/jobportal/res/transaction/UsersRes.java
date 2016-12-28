@@ -2,10 +2,6 @@ package com.visog.jobportal.res.transaction;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 public class UsersRes {
 
 	private String id;

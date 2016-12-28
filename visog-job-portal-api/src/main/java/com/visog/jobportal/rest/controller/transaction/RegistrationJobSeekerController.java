@@ -21,9 +21,9 @@ import com.visog.jobportal.service.transaction.UserService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-public class JobSeekerController {
+public class RegistrationJobSeekerController {
 
-	private static final Logger logger = Logger.getLogger(JobSeekerController.class);
+	private static final Logger logger = Logger.getLogger(RegistrationJobSeekerController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
