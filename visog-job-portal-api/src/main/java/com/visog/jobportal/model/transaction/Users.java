@@ -39,7 +39,6 @@ public class Users extends AbstractModel{
 	@Column(name = "ALTERNATIVE_EMAIL")
 	private String alternativeEmail;
 	
-	
 	@Column(name = "DOB")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dob;
@@ -57,21 +56,9 @@ public class Users extends AbstractModel{
 	@JoinColumn(name = "ROLE_ID")
 	private Roles role;
 	
-	public Roles getRole() {
-		return role;
-	}
-
-	public void setRole(Roles role) {
-		this.role = role;
-	}
-
-
-	
-
 	@ManyToOne
 	@JoinColumn(name = "GENDER_ID")
 	private Gender gender;
-
 	
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -93,6 +80,13 @@ public class Users extends AbstractModel{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
 	
+	public Roles getRole() {
+		return role;
+	}
+
+	public void setRole(Roles role) {
+		this.role = role;
+	}
 
 	public String getCreatedSid() {
 		return createdSid;
@@ -141,8 +135,6 @@ public class Users extends AbstractModel{
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-
-
 
 	public String getId() {
 		return id;
