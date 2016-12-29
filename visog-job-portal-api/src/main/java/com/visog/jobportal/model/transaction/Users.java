@@ -1,3 +1,4 @@
+
 package com.visog.jobportal.model.transaction;
 
 import java.util.Date;
@@ -226,3 +227,4 @@ public class Users extends AbstractModel{
 
 	
 }
+
