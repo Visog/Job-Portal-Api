@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.transaction.PostJobDao;
 import com.visog.jobportal.model.master.Currency;
+import com.visog.jobportal.model.master.Status;
 import com.visog.jobportal.model.transaction.PostJob;
 import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.PostJobReq;
@@ -20,16 +21,15 @@ public class PostJobserviceImpl implements PostJobService {
 
 	@Inject
 	PostJobDao dao;
-	
+
 	public void savePostJob(PostJobReq req) {
-		
-		Currency currency =new Currency();
-		PostJob postJob =new PostJob();
-		Users users =new Users();
+
+		Currency currency = new Currency();
+		Status status = new Status();
+		PostJob postJob = new PostJob();
+		Users users = new Users();
 		users.setId(req.getUser());
-		
-		
-		
+
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
@@ -37,36 +37,32 @@ public class PostJobserviceImpl implements PostJobService {
 		currency.setId(req.getCurrency());
 		postJob.setCompany(req.getCompany());
 		postJob.setEffectedDateFrom(req.getEffectedDateFrom());
-		
-		
-		
-	
-		
-	
-		
-		
-		
-		
-		
+		postJob.setEffectedDateTo(req.getEffectedDateTo());
+		status.setId(req.getStatus());
+		postJob.setMinExperience(req.getMinExperience());
+		postJob.setPhoneNo(req.getPhoneNo());
+		postJob.setWalkIn(req.getWalkIn());
+
 	}
 
 	public void updatePostJob(PostJobReq req, String postJobId) {
-		// TODO Auto-generated method stub
+		
+		
 
 	}
 
 	public List<PostJobRes> getpostjobs() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	public PostJobRes getPostJob(String id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	public Boolean deletePostJob(String cityId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
