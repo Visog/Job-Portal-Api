@@ -157,9 +157,9 @@ public class PostJobserviceImpl implements PostJobService {
 		return postJobRes;
 	}
 
-	public Boolean deletePostJob(String cityId) {
+	public Boolean deletePostJob(String postJobId) {
 
-		return (dao.delete(PostJob.class, cityId) != 0);
+		return (dao.delete(PostJob.class, postJobId) != 0);
 	}
 
 }
