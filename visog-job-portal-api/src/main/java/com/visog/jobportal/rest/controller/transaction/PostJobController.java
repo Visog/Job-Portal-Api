@@ -108,7 +108,6 @@ public class PostJobController {
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
-
 		return jobPortalResponse;
 	
 	

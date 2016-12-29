@@ -39,19 +39,12 @@ public class PostJob extends AbstractModel {
 	@Column(name = "ANNUAL_PACKAGE_TO")
 	private Double annualPackageTo;
 
-	@Column(name = "CURRENCY_ID")
+	@ManyToOne
+	@JoinColumn(name = "CURRENCY_ID")
 	private Currency currency;
 
 	@Column(name = "COMPANY")
 	private String company;
-
-	public String getCompany() {
-		return company;
-	}
-
-	public void setCompany(String company) {
-		this.company = company;
-	}
 
 	@Column(name = "EFFECTED_DATE_FROM")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -148,6 +141,14 @@ public class PostJob extends AbstractModel {
 
 	public void setCurrency(Currency currency) {
 		this.currency = currency;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
 	}
 
 	public Date getEffectedDateFrom() {
