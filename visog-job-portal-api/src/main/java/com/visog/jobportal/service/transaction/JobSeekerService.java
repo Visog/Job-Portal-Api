@@ -9,9 +9,9 @@ import com.visog.jobportal.res.transaction.JobSeekerRes;
 
 public interface JobSeekerService {
 	
-	public Boolean saveJObSeeker(JobSeekerReq req);
+	public void saveJObSeeker(JobSeekerReq req);
 
-	public Boolean updateJobSeeker(JobSeekerReq req, String jobseekerId);
+	public void updateJobSeeker(JobSeekerReq req, String jobseekerId);
 
 	public List<JobSeekerRes> getJobSeekers();
 
