@@ -88,6 +88,7 @@ public class PostJobserviceImpl implements PostJobService {
 		List<PostJobRes> postJobList =new ArrayList<>();
 		
 		
+		
 		return null;
 	}
 
