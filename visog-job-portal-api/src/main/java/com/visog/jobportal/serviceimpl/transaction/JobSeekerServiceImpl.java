@@ -134,20 +134,33 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 			
 	             jobSeekerRes = new JobSeekerRes();
 	             
+	            jobSeekerRes.setId(jobSeekers.getId());
 	            
+	            jobSeekerRes.setUser(jobSeekers.getUser().getId());
+	            jobSeekerRes.setDomain(jobSeekers.getDomain().getId());
+	            jobSeekerRes.setJobRole(jobSeekers.getJobRole().getId());
+	            jobSeekerRes.setIndustry(jobSeekers.getIndustry().getId());
+	            jobSeekerRes.setEmploymentType(jobSeekers.getEmploymentType().getId());
 	            
-	             
-			
-			
+	            jobSeekerRes.setCompanyName(jobSeekers.getCompanyName());
+	            jobSeekerRes.setHobbiesAndInterest(jobSeekers.getHobbiesAndInterest());
+	            jobSeekerRes.setKeySkills(jobSeekers.getKeySkills());
+	            jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
+	            jobSeekerRes.setProfileSummary(jobSeekers.getProfileSummary());
+	            jobSeekerRes.setWorkExperienceMonths(jobSeekers.getWorkExperienceMonths());
+	            jobSeekerRes.setWorkExperienceYears(jobSeekers.getWorkExperienceYears());
+	            jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
+	            jobSeekerRes.setResumeHeadline(jobSeekers.getResumeHeadline());
+	                     
 		}
-		
-		
 		
 		return null;
 	}
 
 	public JobSeekerRes getJobSeeker(String id) {
-		// TODO Auto-generated method stub
+
+		
+		
 		return null;
 	}
 
