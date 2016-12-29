@@ -26,15 +26,8 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 	 */
 	
 	public Boolean saveJObSeeker(JobSeekerReq req) {
-		Currency currencies= new Currency();
-		currencies.setName(req.getName());
-		currencies.setCode(req.getCode());
-        currencies.setSymbol(req.getSymbol());
-		DaoUtils.setEntityCreateAuditColumns(currencies);
+		return null;
 		
-		dao.save(currencies);
-
-		logger.info("Currency created successfully : " + currencies.getId());
 	}
 
 	public Boolean updateJobSeeker(JobSeekerReq req, String jobseekerId) {

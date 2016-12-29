@@ -132,4 +132,5 @@ public class JobSeekerReq {
 		this.employmentType = employmentType;
 	}
 
+	
 }

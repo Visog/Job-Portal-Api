@@ -94,7 +94,7 @@ public class PostJobController {
 	
 	@DELETE
 	@Path("/postJob/{postJobId}")
-	public JobPortalResponse deleteState(@PathParam("postJobId") String postJobId) {
+	public JobPortalResponse deletePostJob(@PathParam("postJobId") String postJobId) {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
