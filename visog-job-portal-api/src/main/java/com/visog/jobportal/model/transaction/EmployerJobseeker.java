@@ -1,5 +1,6 @@
 package com.visog.jobportal.model.transaction;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -71,5 +72,8 @@ public class EmployerJobseeker extends AbstractModel{
 	public void setActiondone(String actiondone) {
 		this.actiondone = actiondone;
 	}
+
+	
+
 	
 }

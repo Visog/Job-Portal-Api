@@ -44,22 +44,23 @@ public class PostJobserviceImpl implements PostJobService {
 		postJob.setMinExperience(req.getMinExperience());
 		postJob.setPhoneNo(req.getPhoneNo());
 		postJob.setWalkIn(req.getWalkIn());
-		
+
 		DaoUtils.setEntityCreateAuditColumns(postJob);
-		
+
 		dao.save(postJob);
-		
-		logger.info(" postjob Successfully"+postJob.getId());
+
+		logger.info(" postjob Successfully" + postJob.getId());
 
 	}
 
 	public void updatePostJob(PostJobReq req, String postJobId) {
-		
-		PostJob postJob =(PostJob) dao.getByKey(PostJob.class, postJobId);
+
+		PostJob postJob = (PostJob) dao.getByKey(PostJob.class, postJobId);
 		Currency currency = new Currency();
 		Status status = new Status();
 		Users users = new Users();
-		
+
+		users.setId(req.getUser());
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
@@ -72,34 +73,93 @@ public class PostJobserviceImpl implements PostJobService {
 		postJob.setMinExperience(req.getMinExperience());
 		postJob.setPhoneNo(req.getPhoneNo());
 		postJob.setWalkIn(req.getWalkIn());
-		
-		
+
 		dao.update(postJob);
-		logger.info("PostJob updated Successfully"+postJob.getId());
-		
-		
+		logger.info("PostJob updated Successfully" + postJob.getId());
 
 	}
 
 	public List<PostJobRes> getpostjobs() {
-		
-		List<PostJob> postJobs =dao.getPostJobs();
-		
-		List<PostJobRes> postJobList =new ArrayList<>();
-		
-		
-		
-		return null;
+
+		List<PostJob> postJobs = dao.getPostJobs();
+
+		List<PostJobRes> postJobList = new ArrayList<>();
+
+		PostJobRes postJobRes = null;
+
+		Users users = new Users();
+
+		Currency currency = new Currency();
+
+		Status status = new Status();
+
+		for (PostJob postJob : postJobs) {
+
+			postJobRes = new PostJobRes();
+
+			postJobRes.setId(postJob.getId());
+			postJobRes.setUser(postJob.getUser().getId());
+
+			postJobRes.setJobTitle(postJob.getJobTitle());
+			postJobRes.setJobDescription(postJob.getJobDescription());
+
+			postJobRes.setAnnualPackageFrom(postJob.getAnnualPackageFrom());
+			postJobRes.setAnnualPackageTo(postJob.getAnnualPackageTo());
+
+			postJobRes.setCurrency(postJob.getCurrency().getId());
+
+			postJobRes.setCompany(postJob.getCompany());
+
+			postJobRes.setEffectedDateFrom(postJob.getEffectedDateFrom());
+			postJobRes.setEffectedDateTo(postJob.getEffectedDateTo());
+			postJobRes.setStatus(postJob.getStatus().getId());
+
+			postJobRes.setMinExperience(postJob.getMinExperience());
+
+			postJobRes.setPhoneNo(postJob.getPhoneNo());
+
+			postJobRes.setWalkIn(postJob.getWalkIn());
+
+			postJobList.add(postJobRes);
+
+		}
+
+		return postJobList;
 	}
 
 	public PostJobRes getPostJob(String id) {
-		
-		return null;
+		PostJob postJob = (PostJob) dao.getByKey(PostJob.class, id);
+		PostJobRes postJobRes = new PostJobRes();
+
+		postJobRes.setId(postJob.getId());
+		postJobRes.setUser(postJob.getUser().getId());
+
+		postJobRes.setJobTitle(postJob.getJobTitle());
+		postJobRes.setJobDescription(postJob.getJobDescription());
+
+		postJobRes.setAnnualPackageFrom(postJob.getAnnualPackageFrom());
+		postJobRes.setAnnualPackageTo(postJob.getAnnualPackageTo());
+
+		postJobRes.setCurrency(postJob.getCurrency().getId());
+
+		postJobRes.setCompany(postJob.getCompany());
+
+		postJobRes.setEffectedDateFrom(postJob.getEffectedDateFrom());
+		postJobRes.setEffectedDateTo(postJob.getEffectedDateTo());
+		postJobRes.setStatus(postJob.getStatus().getId());
+
+		postJobRes.setMinExperience(postJob.getMinExperience());
+
+		postJobRes.setPhoneNo(postJob.getPhoneNo());
+
+		postJobRes.setWalkIn(postJob.getWalkIn());
+
+		return postJobRes;
 	}
 
 	public Boolean deletePostJob(String cityId) {
-		
-		return null;
+
+		return (dao.delete(PostJob.class, cityId) != 0);
 	}
 
 }
