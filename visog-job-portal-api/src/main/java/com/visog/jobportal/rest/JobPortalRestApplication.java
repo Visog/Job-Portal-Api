@@ -2,12 +2,10 @@ package com.visog.jobportal.rest;
 
 import java.util.HashSet;
 import java.util.Set;
-import com.visog.jobportal.rest.controller.transaction.*;
 
 import javax.ws.rs.core.Application;
 
 import com.visog.jobportal.rest.controller.AdminController;
-import com.visog.jobportal.rest.controller.SuperAdminController;
 import com.visog.jobportal.rest.controller.master.AddressTypeController;
 import com.visog.jobportal.rest.controller.master.CityController;
 import com.visog.jobportal.rest.controller.master.CountryController;
@@ -27,6 +25,11 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
+import com.visog.jobportal.rest.controller.transaction.PostJobController;
+import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
+import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
+
+
 
 
 public class JobPortalRestApplication extends Application {
@@ -36,7 +39,7 @@ public class JobPortalRestApplication extends Application {
 
 	public JobPortalRestApplication() {
 		classes.add(AdminController.class);
-		classes.add(SuperAdminController.class);
+	/*	classes.add(SuperAdminController.class);*/
 		classes.add(RolesController.class);
 		classes.add(CountryController.class);
 		classes.add(StateController.class);

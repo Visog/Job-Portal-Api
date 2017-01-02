@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
 import com.visog.jobportal.req.transaction.PostJobDomainsReq;
-import com.visog.jobportal.req.transaction.PostJobReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.PostJobDomainsService;
 
@@ -46,11 +45,12 @@ public class PostJobDomainsController {
 		return jobPortalResponse;
 
 	}
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/postJobDomains/{postJobDomainId}")
-	public JobPortalResponse updatePostJobDomain(@PathParam("postJobDomainId") String postJobDomainId, PostJobDomainsReq req) {
+	public JobPortalResponse updatePostJobDomain(@PathParam("postJobDomainId") String postJobDomainId,
+			PostJobDomainsReq req) {
 
 		service.updatePostJob(req, postJobDomainId);
 
@@ -62,7 +62,7 @@ public class PostJobDomainsController {
 		return jobPortalResponse;
 
 	}
-	
+
 	@GET
 	@Path("/postJobDomains")
 	public JobPortalResponse getPostJobDomains() {
@@ -76,7 +76,7 @@ public class PostJobDomainsController {
 		return jobPortalResponse;
 
 	}
-	
+
 	@GET
 	@Path("/postJobDomains/{postJobDomainId}")
 	public JobPortalResponse getPostJobDomain(@PathParam("postJobDomainId") String postJobDomainId) {
@@ -90,15 +90,14 @@ public class PostJobDomainsController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@DELETE
 	@Path("/postJobDomains/{postJobDomainId}")
 	public JobPortalResponse deletePostJobDomain(@PathParam("postJobDomainId") String postJobDomainId) {
-		
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deletePostJobDomain(postJobDomainId)) {
+		if (service.deletePostJobDomain(postJobDomainId)) {
 			jobPortalResponse.setMessage("postJobDomain deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -109,8 +108,7 @@ public class PostJobDomainsController {
 		}
 
 		return jobPortalResponse;
-	
-	
+
 	}
 
 }
