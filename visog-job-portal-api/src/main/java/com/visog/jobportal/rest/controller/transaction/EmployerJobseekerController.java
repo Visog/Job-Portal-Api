@@ -31,7 +31,7 @@ public class EmployerJobseekerController {
 	
 	/**
 	 * This method creates the employerjobseeker
-	 * 
+	 
 	 * @param req
 	 * @return
 	 */
