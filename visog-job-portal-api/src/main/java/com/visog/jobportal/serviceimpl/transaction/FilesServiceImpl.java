@@ -20,12 +20,12 @@ public class FilesServiceImpl implements FilesService {
 	
 	@Inject
 	FilesDao dao;
-	
+
 	/**
 	 * This method saves the Files
 	 */
 	public void saveFiles(FilesReq req) {
-		
+
 		Files files=new Files();
 		
 		files.setFilepath(req.getFilepath());
@@ -38,15 +38,13 @@ public class FilesServiceImpl implements FilesService {
 		DaoUtils.setEntityCreateAuditColumns(files);
 		dao.save(files);
 		logger.info(" files saved Successfully"+files.getId());
-		
-		
 	}
 
 	/**
 	 * This method updates the Files
 	 */
 	public void updateFiles(FilesReq req, String filesId) {
-
+		
 		Files files=(Files) dao.getByKey(Files.class, filesId);
 		files.setFilepath(req.getFilepath());
 		files.setAssociated(req.getAssociated());
@@ -63,7 +61,7 @@ public class FilesServiceImpl implements FilesService {
 	/**
 	 * This method returns all the Files
 	 */
-	public List<FilesRes> getFiles(String Id) {
+	public List<FilesRes> getFiles() {
 
 		List<Files> files=dao.getfiles();
 		List<FilesRes> fiList=new ArrayList<>();
@@ -82,25 +80,22 @@ public class FilesServiceImpl implements FilesService {
 		}
 		
 		return fiList;
+		
 	}
-	
+
 	/**
 	 * This method returns Files Details for the given File id  
 	 */
-	public FilesRes getfiles(String Id){
-		Files files=(Files) dao.getByKey(Files.class, Id);
+	public FilesRes getFiles(String id) {
+		Files files=(Files) dao.getByKey(Files.class, id);
 		FilesRes filesRes=new FilesRes();
 		filesRes.setId(files.getId());
-		filesRes.setFilepath(files.getFilepath());
 		filesRes.setAssociated(files.getAssociated());
 		filesRes.setAssociatedtype(files.getAssociatedtype());
+		filesRes.setFilepath(files.getFilepath());
 		filesRes.setFiletype(files.getFiletype().getId());
-		
-		
-		return filesRes;
-		
+		return null;
 	}
-	
 
 	/**
 	 * This method deletes the given Files  
@@ -108,6 +103,7 @@ public class FilesServiceImpl implements FilesService {
 	public Boolean deleteFiles(String filesId) {
 		return (dao.delete(Files.class, filesId)!=0);
 	}
+	
 	
 
 }
