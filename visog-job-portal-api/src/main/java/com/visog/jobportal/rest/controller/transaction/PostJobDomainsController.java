@@ -91,6 +91,7 @@ public class PostJobDomainsController {
 
 	}
 	
+	
 	@DELETE
 	@Path("/postJobDomains/{postJobDomainId}")
 	public JobPortalResponse deletePostJobDomain(@PathParam("postJobDomainId") String postJobDomainId) {
