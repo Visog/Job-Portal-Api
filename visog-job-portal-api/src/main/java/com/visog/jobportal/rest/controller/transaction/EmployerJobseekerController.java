@@ -83,7 +83,7 @@ JobPortalResponse jobPortalResponse = new JobPortalResponse();
 	public JobPortalResponse getemployerjobseeker() {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEmployerJobseeker(userIdentifier));
+		jobPortalResponse.setData(service.getEmployerJobseeker());
 		jobPortalResponse.setMessage("employerjobseeker fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
