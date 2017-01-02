@@ -128,6 +128,7 @@ public class PostJobserviceImpl implements PostJobService {
 	}
 
 	public PostJobRes getPostJob(String id) {
+		
 		PostJob postJob = (PostJob) dao.getByKey(PostJob.class, id);
 		PostJobRes postJobRes = new PostJobRes();
 

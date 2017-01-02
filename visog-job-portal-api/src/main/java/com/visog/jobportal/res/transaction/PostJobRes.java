@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class PostJobRes {
 
+	
 	private String id;
 
 	private String user;

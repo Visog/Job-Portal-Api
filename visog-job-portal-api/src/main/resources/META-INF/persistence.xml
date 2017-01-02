@@ -30,6 +30,7 @@
 		<class>com.visog.jobportal.model.transaction.Users</class>
 		<class>com.visog.jobportal.model.transaction.PostJob</class>
 		<class>com.visog.jobportal.model.transaction.EmployerJobseeker</class>
+		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
 		
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 

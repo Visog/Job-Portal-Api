@@ -18,5 +18,3 @@ public interface PostJobService {
 	public Boolean deletePostJob(String postJobId);
 
 }
-
-
