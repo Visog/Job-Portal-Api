@@ -25,6 +25,8 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
+import com.visog.jobportal.rest.controller.transaction.EmployerJobseekerController;
+import com.visog.jobportal.rest.controller.transaction.FilesController;
 import com.visog.jobportal.rest.controller.transaction.PostJobController;
 import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
@@ -63,6 +65,8 @@ public class JobPortalRestApplication extends Application {
 		classes.add(RegistrationJobSeekerController.class);
 		classes.add(PostJobController.class);
 		classes.add(PostJobDomainsController.class);
+		classes.add(EmployerJobseekerController.class);
+		classes.add(FilesController.class);
 	}
 
 	public Set<Object> getSingletons() {
