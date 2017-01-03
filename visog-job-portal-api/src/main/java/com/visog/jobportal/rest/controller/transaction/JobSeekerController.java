@@ -31,6 +31,9 @@ public class JobSeekerController {
 	@Inject
 	private JobSeekerService service;
 
+	/*
+	 * raghava
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/jobSeeker")
