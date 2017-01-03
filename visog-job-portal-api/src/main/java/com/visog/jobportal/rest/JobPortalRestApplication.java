@@ -2,12 +2,12 @@ package com.visog.jobportal.rest;
 
 import java.util.HashSet;
 import java.util.Set;
-import com.visog.jobportal.rest.controller.transaction.*;
 
 import javax.ws.rs.core.Application;
 
+import com.visog.jobportal.model.transaction.ExperienceDetails;
+import com.visog.jobportal.model.transaction.ProjectDetails;
 import com.visog.jobportal.rest.controller.AdminController;
-import com.visog.jobportal.rest.controller.SuperAdminController;
 import com.visog.jobportal.rest.controller.master.AddressTypeController;
 import com.visog.jobportal.rest.controller.master.CityController;
 import com.visog.jobportal.rest.controller.master.CountryController;
@@ -27,6 +27,14 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
+import com.visog.jobportal.rest.controller.transaction.EmployerJobseekerController;
+import com.visog.jobportal.rest.controller.transaction.FilesController;
+import com.visog.jobportal.rest.controller.transaction.LanguageKnownController;
+import com.visog.jobportal.rest.controller.transaction.PostJobController;
+import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
+import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
+
+
 
 
 public class JobPortalRestApplication extends Application {
@@ -36,7 +44,7 @@ public class JobPortalRestApplication extends Application {
 
 	public JobPortalRestApplication() {
 		classes.add(AdminController.class);
-		classes.add(SuperAdminController.class);
+	/*	classes.add(SuperAdminController.class);*/
 		classes.add(RolesController.class);
 		classes.add(CountryController.class);
 		classes.add(StateController.class);
@@ -59,6 +67,12 @@ public class JobPortalRestApplication extends Application {
 		classes.add(EmploymentTypeController.class);
 		classes.add(RegistrationJobSeekerController.class);
 		classes.add(PostJobController.class);
+		classes.add(PostJobDomainsController.class);
+		classes.add(EmployerJobseekerController.class);
+		classes.add(FilesController.class);
+		classes.add(ProjectDetails.class);
+		classes.add(ExperienceDetails.class);
+		classes.add(LanguageKnownController.class);
 	}
 
 	public Set<Object> getSingletons() {

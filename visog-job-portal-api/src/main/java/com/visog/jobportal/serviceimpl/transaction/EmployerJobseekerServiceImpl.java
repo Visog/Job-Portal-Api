@@ -26,16 +26,19 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 
 	@Inject
 	EmployerJobseekerDao dao;
-	
+
+
 	/**
 	 * This method saves the Specialization
+	 * author Ravi 
 	 */
 	public void saveEmployerJobseeker(EmployerJobseekerReq req) {
-		
+
+
 		EmployerJobseeker employerJobseekers=new EmployerJobseeker();
 		employerJobseekers.setActiondone(req.getActiondone());
 		 
-		Users users=new Users();
+		 Users users=new Users();
 		 users.setId(req.getEmployer());
 		 users.setId(req.getJobseeker());
 		 employerJobseekers.setEmployer(users);
@@ -50,12 +53,13 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 		 logger.info("EmployerJobseeker created successfully : " + employerJobseekers.getId());
 		
 	}
+	
 
 	/**
 	 * This method updates the EmployerJobseeker
 	 */
 	public void updateEmployerJobseeker(EmployerJobseekerReq req, String employerjobseekerId) {
-		
+
 		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, employerjobseekerId);
 		employerJobseekers.setActiondone(req.getActiondone());
 		 
@@ -70,37 +74,57 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 		 employerJobseekers.setStatus(users);
 		 dao.update(employerJobseekers);
 		logger.info("EmployerJobseeker updated successfully : " + employerJobseekers.getId());
-		
 	}
+
 
 	/**
 	 * This method returns all the EmployerJobseekers
 	 */
-	public List<EmployerJobseekerRes> getEmployerJobseeker(String Id) {
+	public List<EmployerJobseekerRes> getEmployerJobseeker() {
 		
 		List<EmployerJobseeker> employerJobseekers=dao.getEmployerjobseekers();
 		List<EmployerJobseekerRes> employerJobseekerList=new ArrayList<>();
 		EmployerJobseekerRes employerJobseekerRes=null;
 		for(EmployerJobseeker employerJobseeker:employerJobseekers){
-			employerJobseekerRes=new EmployerJobseekerRes();
-			employerJobseekerRes.setActiondone(employerJobseeker.getActiondone());
-			employerJobseeker.setEmployer(employerJobseeker.getEmployer());
-			employerJobseeker.setJobseeker(employerJobseeker.getJobseeker());
-			employerJobseeker.setStatus(employerJobseeker.getStatus());
-			employerJobseekerList.add(employerJobseekerRes);			
 			
+			employerJobseekerRes=new EmployerJobseekerRes();
+			employerJobseekerRes.setId(employerJobseeker.getId());
+			employerJobseekerRes.setActiondone(employerJobseeker.getActiondone());
+			employerJobseekerRes.setStatus(employerJobseeker.getStatus().getId());
+			employerJobseekerRes.setJobseeker(employerJobseeker.getJobseeker().getId());
+			employerJobseekerRes.setEmployer(employerJobseeker.getEmployer().getId());
+			
+			employerJobseekerList.add(employerJobseekerRes);
 		}
 		return employerJobseekerList;
+	
 	}
+
+
+	/**
+	 * This method returns  EmployerJobseeker by given id
+	 */
+	public EmployerJobseekerRes getEmployerJobseeker(String id) {
+		
+		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, id);
+		EmployerJobseekerRes employerJobseekerRes=new EmployerJobseekerRes();
+		employerJobseekerRes.setId(employerJobseekers.getId());
+		employerJobseekerRes.setActiondone(employerJobseekers.getActiondone());
+		employerJobseekerRes.setStatus(employerJobseekers.getStatus().getId());
+		employerJobseekerRes.setEmployer(employerJobseekers.getEmployer().getId());
+		employerJobseekerRes.setJobseeker(employerJobseekers.getJobseeker().getId());
+		
+		return employerJobseekerRes;
+	}
+
 
 	/**
 	 * This method deletes the given EmployerJobseeker  
 	 */
 	public Boolean deleteEmployerJobseeker(String employerjobseekerId) {
-		
-		
 		return (dao.delete(EmployerJobseeker.class, employerjobseekerId)!=0);
-	}
 
+	}
+	
 
 }

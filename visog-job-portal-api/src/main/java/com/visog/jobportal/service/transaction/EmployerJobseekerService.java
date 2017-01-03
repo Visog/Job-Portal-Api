@@ -1,6 +1,8 @@
 package com.visog.jobportal.service.transaction;
 
 import java.util.List;
+
+import com.visog.jobportal.model.transaction.EmployerJobseeker;
 import com.visog.jobportal.req.transaction.EmployerJobseekerReq;
 import com.visog.jobportal.res.transaction.EmployerJobseekerRes;
 
@@ -10,9 +12,12 @@ public interface EmployerJobseekerService {
 	
 	public void updateEmployerJobseeker(EmployerJobseekerReq req ,String employerjobseekerId );
 	
-	public List<EmployerJobseekerRes> getEmployerJobseeker(String Id);
+	public List<EmployerJobseekerRes> getEmployerJobseeker();
+	
+	public EmployerJobseekerRes getEmployerJobseeker(String id);
 	
 	public Boolean deleteEmployerJobseeker(String employerjobseekerId);
+
 	
 	
 
