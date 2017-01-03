@@ -32,6 +32,7 @@ public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDa
 		Root<LanguageKnown> c=q.from(LanguageKnown.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
+		
 	}
 	
 	/**
