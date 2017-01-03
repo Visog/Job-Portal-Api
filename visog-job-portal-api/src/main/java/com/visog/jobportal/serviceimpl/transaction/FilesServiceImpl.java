@@ -64,7 +64,7 @@ public class FilesServiceImpl implements FilesService {
 	public List<FilesRes> getFiles() {
 
 		List<Files> files=dao.getfiles();
-		List<FilesRes> fiList=new ArrayList<>();
+		List<FilesRes> fileList=new ArrayList<>();
 		FilesRes filesRes=null;
 		FileType fileType=new FileType();
 		for(Files file:files){
@@ -75,11 +75,11 @@ public class FilesServiceImpl implements FilesService {
 			filesRes.setAssociatedtype(file.getAssociatedtype());
 			filesRes.setFiletype(file.getFiletype().getId());
 			
-			fiList.add(filesRes);
+			fileList.add(filesRes);
 			
 		}
 		
-		return fiList;
+		return fileList;
 		
 	}
 
@@ -94,7 +94,7 @@ public class FilesServiceImpl implements FilesService {
 		filesRes.setAssociatedtype(files.getAssociatedtype());
 		filesRes.setFilepath(files.getFilepath());
 		filesRes.setFiletype(files.getFiletype().getId());
-		return null;
+		return filesRes;
 	}
 
 	/**
