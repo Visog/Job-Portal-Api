@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.transaction.JobSeekerDao;
-import com.visog.jobportal.model.master.Currency;
 import com.visog.jobportal.req.transaction.JobSeekerReq;
 import com.visog.jobportal.res.transaction.JobSeekerRes;
 import com.visog.jobportal.service.transaction.JobSeekerService;
