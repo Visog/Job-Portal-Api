@@ -108,7 +108,6 @@ public class PostJobDomainsController {
 		}
 
 		return jobPortalResponse;
-
 	}
 
 }
