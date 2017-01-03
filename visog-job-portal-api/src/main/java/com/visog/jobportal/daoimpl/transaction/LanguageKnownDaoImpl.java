@@ -30,7 +30,7 @@ public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDa
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<LanguageKnown> q=cb.createQuery(LanguageKnown.class);
 		Root<LanguageKnown> c=q.from(LanguageKnown.class);
-		
+		q.select(c);
 		return em.createQuery(q).getResultList();
 	}
 	
