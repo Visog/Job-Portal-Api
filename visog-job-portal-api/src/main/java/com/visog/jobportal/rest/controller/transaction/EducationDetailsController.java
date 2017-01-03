@@ -15,120 +15,108 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.transaction.UsersReq;
+import com.visog.jobportal.req.transaction.EducationDetailsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.transaction.UserService;
+import com.visog.jobportal.service.transaction.EducationDetailsService;
 
-@Path("/transaction")
+@Path("/educationdetails")
 @Produces(MediaType.APPLICATION_JSON)
-public class UsersController {
-	private static Logger logger=Logger.getLogger(UsersController.class);
-	
+public class EducationDetailsController {
+
+	private static final Logger logger = Logger.getLogger(EducationDetailsController.class);
+
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private UserService service;
-	
-	/**
-	 * This method creates the Users
-	 
-	 * @param req
-	 * @return
+	private EducationDetailsService service;
+
+	/*
+	 * Bala
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/users")
-	public JobPortalResponse createUsers(UsersReq req){
-		service.saveUsers(req);
+	@Path("/educationdetails")
+	
+	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
+
+		service.saveEducationDetails(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("Users saved succcessfully");
+		jobPortalResponse.setMessage("EducationDetails saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
+
 	}
 	
-	/**
-	 * This method updates the users
-	 * 
-	 * @param req
-	 * @return
-	 */
+	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/users/{userId}")
-	public JobPortalResponse updateUsers(@PathParam("userId") String userId, UsersReq req){
-		
-		service.updateUsers(req, userId);
-		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("Users updated succcessfully");
-		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-		
-		return jobPortalResponse;
-		
-	}
-	
+	@Path("/educationDetails/{educationDetailsId}")
+	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, educationDetailsReq req) {
 
-	/**
-	 * This method retrieves all users
-	 * 
-	 * @return
-	 */
-	@GET
-	@Path("/users")
-	public JobPortalResponse getusers(){
-		
+		service.updateEducationDetails(req, educationDetailsId);
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers());
-		jobPortalResponse.setMessage("Users fetched succcessfully");
+		jobPortalResponse.setMessage("EducationDetails updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
 		return jobPortalResponse;
+
 	}
 	
-	/**
-	 * This method retrieves a single user
-	 * 
-	 * @return
-	 */
+	
 	@GET
-	@Path("/users/{userId}")
-	public JobPortalResponse getEmployerJobseeker(@PathParam("userId") String userId) {
-		
-	JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		
-		jobPortalResponse.setData(service.getUsers(userId));
-		jobPortalResponse.setMessage("Users fetched succcessfully");
+	@Path("/educationDetails")
+	public JobPortalResponse getJobSeekers() {
+
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
+		jobPortalResponse.setData(service.getEducationDetails());
+		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
 		return jobPortalResponse;
+
+	}
+	
+	
+	@GET
+	@Path("/educationDetails/{educationDetailsId}")
+	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
+		jobPortalResponse.setData(service.getEducationDetails(educationDetailsId));
+		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
+		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return jobPortalResponse;
+
 	}
 
-	
-	/**
-	 * This method delete the user
-	 * 
-	 * @return
-	 */
 	
 	@DELETE
-	@Path("/users/{userId}")
-	public JobPortalResponse deleteUsers(@PathParam("userId") String userId) {
+	@Path("/educationDetails/{educationDetailsId}")
+	public JobPortalResponse deletePostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.deleteUsers(userId)) {
-			jobPortalResponse.setMessage("Users deleted succcessfully");
+
+		if(service.deleteEducationDetails(educationDetailsId)) {
+			jobPortalResponse.setMessage("EducationDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-			
 		} else {
-			jobPortalResponse.setMessage("Failed to delete he Users");
+			jobPortalResponse.setMessage("Failed to delete the EducationDetails");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
-
 		}
+
 		return jobPortalResponse;
-		
+	
+	
 	}
+	
 }
