@@ -50,7 +50,7 @@ public class UsersController {
 	}
 	
 	/**
-	 * This method updates the employerjobseeker
+	 * This method updates the users
 	 * 
 	 * @param req
 	 * @return
@@ -72,7 +72,7 @@ public class UsersController {
 	
 
 	/**
-	 * This method retrieves all employerjobseekers
+	 * This method retrieves all users
 	 * 
 	 * @return
 	 */
@@ -89,7 +89,7 @@ public class UsersController {
 	}
 	
 	/**
-	 * This method retrieves a single specialization
+	 * This method retrieves a single user
 	 * 
 	 * @return
 	 */
@@ -108,7 +108,7 @@ public class UsersController {
 
 	
 	/**
-	 * This method delete the specialization
+	 * This method delete the user
 	 * 
 	 * @return
 	 */
