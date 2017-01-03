@@ -37,7 +37,7 @@ public class UsersController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/employer")
+	@Path("/users")
 	public JobPortalResponse createUsers(UsersReq req){
 		service.saveUsers(req);
 
@@ -57,7 +57,7 @@ public class UsersController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/employer/{userId}")
+	@Path("/users/{userId}")
 	public JobPortalResponse updateUsers(@PathParam("userId") String userId, UsersReq req){
 		
 		service.updateUsers(req, userId);
@@ -77,7 +77,7 @@ public class UsersController {
 	 * @return
 	 */
 	@GET
-	@Path("/employer")
+	@Path("/users")
 	public JobPortalResponse getusers(){
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -94,7 +94,7 @@ public class UsersController {
 	 * @return
 	 */
 	@GET
-	@Path("/employer/{userId}")
+	@Path("/users/{userId}")
 	public JobPortalResponse getEmployerJobseeker(@PathParam("userId") String userId) {
 		
 	JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -114,7 +114,7 @@ public class UsersController {
 	 */
 	
 	@DELETE
-	@Path("/employer/{userId}")
+	@Path("/users/{userId}")
 	public JobPortalResponse deleteUsers(@PathParam("userId") String userId) {
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		if (service.deleteUsers(userId)) {
