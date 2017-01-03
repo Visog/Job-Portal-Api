@@ -94,7 +94,7 @@ public class FilesServiceImpl implements FilesService {
 		filesRes.setAssociatedtype(files.getAssociatedtype());
 		filesRes.setFilepath(files.getFilepath());
 		filesRes.setFiletype(files.getFiletype().getId());
-		return null;
+		return filesRes;
 	}
 
 	/**
