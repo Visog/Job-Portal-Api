@@ -25,7 +25,6 @@
 		<class>com.visog.jobportal.model.master.Languages</class>
 		<class>com.visog.jobportal.model.master.EmploymentType</class>
 		<class>com.visog.jobportal.model.master.FileType</class>
-		
 		<class>com.visog.jobportal.model.master.EmployerType</class>
 		<class>com.visog.jobportal.model.transaction.Users</class>
 		<class>com.visog.jobportal.model.transaction.PostJob</class>
@@ -35,6 +34,9 @@
 		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
 		<class>com.visog.jobportal.model.transaction.ProjectDetails</class>
 		<class>com.visog.jobportal.model.transaction.ExperienceDetails</class>
+
+		<class>com.visog.jobportal.model.transaction.EducationDetails</class>
+		<class>com.visog.jobportal.model.transaction.PostJobSeeker</class>
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 
 		<exclude-unlisted-classes />
