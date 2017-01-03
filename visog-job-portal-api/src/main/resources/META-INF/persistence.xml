@@ -31,7 +31,8 @@
 		<class>com.visog.jobportal.model.transaction.PostJob</class>
 		<class>com.visog.jobportal.model.transaction.EmployerJobseeker</class>
 		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
-		
+		<class>com.visog.jobportal.model.transaction.ProjectDetails</class>
+		<class>com.visog.jobportal.model.transaction.ExperienceDetails</class>
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 
 		<exclude-unlisted-classes />

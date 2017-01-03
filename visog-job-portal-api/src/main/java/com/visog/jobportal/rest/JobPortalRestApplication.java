@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
+import com.visog.jobportal.model.transaction.ExperienceDetails;
+import com.visog.jobportal.model.transaction.ProjectDetails;
 import com.visog.jobportal.rest.controller.AdminController;
 import com.visog.jobportal.rest.controller.master.AddressTypeController;
 import com.visog.jobportal.rest.controller.master.CityController;
@@ -67,6 +69,8 @@ public class JobPortalRestApplication extends Application {
 		classes.add(PostJobDomainsController.class);
 		classes.add(EmployerJobseekerController.class);
 		classes.add(FilesController.class);
+		classes.add(ProjectDetails.class);
+		classes.add(ExperienceDetails.class);
 	}
 
 	public Set<Object> getSingletons() {
