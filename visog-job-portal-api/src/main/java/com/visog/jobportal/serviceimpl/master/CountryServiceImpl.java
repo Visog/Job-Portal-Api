@@ -19,7 +19,7 @@ public class CountryServiceImpl implements CountryService {
 	private static final Logger logger = Logger.getLogger(CountryServiceImpl.class);
 
 	@Inject
-	CountryDao dao;
+	CountryDao dao;	
 
 	/**
 	 * This method saves the Country

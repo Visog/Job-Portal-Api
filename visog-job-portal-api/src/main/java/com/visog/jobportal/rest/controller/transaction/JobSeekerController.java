@@ -15,34 +15,35 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.transaction.EducationDetailsReq;
+import com.visog.jobportal.req.transaction.JobSeekerReq;
+import com.visog.jobportal.req.transaction.PostJobReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.transaction.EducationDetailsService;
+import com.visog.jobportal.service.transaction.JobSeekerService;
 
-@Path("/educationdetails")
+@Path("/jobseeker")
 @Produces(MediaType.APPLICATION_JSON)
-public class EducationDetailsController {
+public class JobSeekerController {
 
-	private static final Logger logger = Logger.getLogger(EducationDetailsController.class);
+	private static final Logger logger = Logger.getLogger(JobSeekerController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private EducationDetailsService service;
+	private JobSeekerService service;
 
 	/*
-	 * Bala
+	 * raghava
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationdetails")
+	@Path("/jobSeeker")
 	
-	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
+	public JobPortalResponse createJobSeeker(JobSeekerReq req) {
 
-		service.saveEducationDetails(req);
+		service.saveJObSeeker(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("EducationDetails saved succcessfully");
+		jobPortalResponse.setMessage("Job Seeker saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -53,13 +54,13 @@ public class EducationDetailsController {
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, educationDetailsReq req) {
+	@Path("/jobSeeker/{jobSeekerId}")
+	public JobPortalResponse updatePostJob(@PathParam("jobSeekerId") String jobSeekerId, JobSeekerReq req) {
 
-		service.updateEducationDetails(req, educationDetailsId);
+		service.updateJobSeeker(req, jobSeekerId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("EducationDetails updated succcessfully");
+		jobPortalResponse.setMessage("JobSeeker updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -69,12 +70,12 @@ public class EducationDetailsController {
 	
 	
 	@GET
-	@Path("/educationDetails")
+	@Path("/jobSeeker")
 	public JobPortalResponse getJobSeekers() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetails());
-		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
+		jobPortalResponse.setData(service.getJobSeekers());
+		jobPortalResponse.setMessage("Job Seekers fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -84,12 +85,12 @@ public class EducationDetailsController {
 	
 	
 	@GET
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+	@Path("/jobSeeker/{jobSeekerId}")
+	public JobPortalResponse getPostJob(@PathParam("jobSeekerId") String jobSeekerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetails(educationDetailsId));
-		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
+		jobPortalResponse.setData(service.getJobSeeker(jobSeekerId));
+		jobPortalResponse.setMessage("job seeker fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -99,17 +100,17 @@ public class EducationDetailsController {
 
 	
 	@DELETE
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse deletePostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+	@Path("/jobSeeker/{jobSeekerId}")
+	public JobPortalResponse deletePostJob(@PathParam("jobSeekerId") String jobseekerId) {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deleteEducationDetails(educationDetailsId)) {
-			jobPortalResponse.setMessage("EducationDetails deleted succcessfully");
+		if(service.deleteJobSeeker(jobseekerId)) {
+			jobPortalResponse.setMessage("Job Seeker deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete the EducationDetails");
+			jobPortalResponse.setMessage("Failed to delete the jobseeker");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -118,5 +119,15 @@ public class EducationDetailsController {
 	
 	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

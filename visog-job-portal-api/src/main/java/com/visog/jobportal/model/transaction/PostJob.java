@@ -55,7 +55,7 @@ public class PostJob extends AbstractModel {
 	private Date effectedDateTo;
 
 	@ManyToOne
-	@JoinColumn(name = "	STATUS_ID")
+	@JoinColumn(name = "STATUS_ID")
 	private Status status;
 
 	@Column(name = "MIN_EXPERIENCE")
