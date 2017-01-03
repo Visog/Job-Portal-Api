@@ -15,6 +15,6 @@ public interface PostJobService {
 
 	public PostJobRes getPostJob(String id);
 
-	public Boolean deletePostJob(String cityId);
+	public Boolean deletePostJob(String postJobId);
 
 }

@@ -58,6 +58,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(FileTypeController.class);
 		classes.add(EmploymentTypeController.class);
 		classes.add(RegistrationJobSeekerController.class);
+		classes.add(PostJobController.class);
 	}
 
 	public Set<Object> getSingletons() {

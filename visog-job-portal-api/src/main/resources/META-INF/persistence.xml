@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<!-- <persistence-unit name="VsoftUserManagement" transaction-type="RESOURCE_LOCAL"> -->
+	<!-- <persistence-unit name="" transaction-type="RESOURCE_LOCAL"> -->
 	<persistence-unit name="VisogJobPortal"
 		transaction-type="JTA">
 		<jta-data-source>jobportalDB</jta-data-source>
@@ -25,9 +25,10 @@
 		<class>com.visog.jobportal.model.master.Languages</class>
 		<class>com.visog.jobportal.model.master.EmploymentType</class>
 		<class>com.visog.jobportal.model.master.FileType</class>
-		<class>com.visog.jobportal.model.master.EmployerType</class>
 		
+		<class>com.visog.jobportal.model.master.EmployerType</class>
 		<class>com.visog.jobportal.model.transaction.Users</class>
+		<class>com.visog.jobportal.model.transaction.PostJob</class>
 		
 		
 		
