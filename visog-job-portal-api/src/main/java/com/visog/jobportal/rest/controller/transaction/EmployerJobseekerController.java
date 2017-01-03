@@ -38,7 +38,7 @@ public class EmployerJobseekerController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/employerjobseeker")
-	public JobPortalResponse createemployerjobseeker(EmployerJobseekerReq req){
+	public JobPortalResponse createEmployerJobseeker(EmployerJobseekerReq req){
 	
 		service.saveEmployerJobseeker(req);
 JobPortalResponse jobPortalResponse = new JobPortalResponse();
