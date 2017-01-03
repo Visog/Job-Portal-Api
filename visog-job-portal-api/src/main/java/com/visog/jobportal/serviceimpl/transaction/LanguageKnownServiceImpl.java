@@ -89,8 +89,6 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		languageKnownRes.setUser(languageKnown.getUser().getId());
 		
 		languageKnownList.add(languageKnownRes);
-		
-		
 			
 		}
 		return languageKnownList;
@@ -100,15 +98,25 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 	 * This method returns LanguageKnown Details for the given LanguageKnown id  
 	 */
 	public LanguageKnownRes getLanguageKnown(String id) {
-		return null;
+		LanguageKnown languageKnown=(LanguageKnown) dao.getByKey(LanguageKnown.class, id);
+		LanguageKnownRes languageKnownRes=new LanguageKnownRes();
+		languageKnownRes.setId(languageKnown.getId());
+		languageKnownRes.setRead(languageKnown.getRead());
+		languageKnownRes.setWrite(languageKnown.getWrite());
+		languageKnownRes.setProficencylevel(languageKnown.getProficencylevel());
+		languageKnownRes.setLanguage(languageKnown.getLanguage().getId());
+		languageKnownRes.setSpeak(languageKnownRes.getSpeak());
+		languageKnownRes.setUser(languageKnown.getUser().getId());
+		
+		return languageKnownRes;
 	}
 
-	@Override
+	/**
+	 * This method deletes the given languageKnown  
+	 */
 	public Boolean deleteLanguageKnown(String lanhguageKnownId) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return (dao.delete(LanguageKnown.class, lanhguageKnownId)!=0);
 	}
 	
-	
-
 }
