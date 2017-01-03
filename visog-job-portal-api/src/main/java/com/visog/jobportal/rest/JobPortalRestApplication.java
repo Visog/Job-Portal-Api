@@ -27,6 +27,7 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
+import com.visog.jobportal.rest.controller.transaction.AddressController;
 import com.visog.jobportal.rest.controller.transaction.EmployerJobseekerController;
 import com.visog.jobportal.rest.controller.transaction.FilesController;
 import com.visog.jobportal.rest.controller.transaction.LanguageKnownController;
@@ -75,6 +76,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(ExperienceDetails.class);
 		classes.add(LanguageKnownController.class);
 		classes.add(PostJobSeekerController.class);
+		classes.add(AddressController.class);
 	}
 
 	public Set<Object> getSingletons() {
