@@ -92,7 +92,7 @@ JobPortalResponse jobPortalResponse = new JobPortalResponse();
 	}
 	
 	/**
-	 * This method retrieves a single specialization
+	 * This method retrieves a single employerjobseeker
 	 * 
 	 * @return
 	 */
@@ -110,11 +110,10 @@ JobPortalResponse jobPortalResponse = new JobPortalResponse();
 	}
 	
 	/**
-	 * This method delete the specialization
+	 * This method delete the employerjobseeker
 	 * 
 	 * @return
 	 */
-	
 	@DELETE
 	@Path("/employerjobseeker/{employerjobseekerId}")
 	public JobPortalResponse deleteEmployerJobseeker(@PathParam("employerjobseekerId") String employerjobseekerId) {
