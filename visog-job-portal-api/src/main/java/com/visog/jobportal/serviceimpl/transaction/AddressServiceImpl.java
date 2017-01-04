@@ -143,6 +143,7 @@ public class AddressServiceImpl implements AddressService{
 	public AddressRes getAddress(String id) {
 		
 		Address address = (Address) dao.getByKey(Address.class, id);
+		
 		AddressRes addressRes=new AddressRes();
 		addressRes.setId(address.getId());
 		addressRes.setAddrtessLine1(address.getAddressLine1());

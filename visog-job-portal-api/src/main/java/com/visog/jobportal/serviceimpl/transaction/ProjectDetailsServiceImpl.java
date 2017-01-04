@@ -125,8 +125,6 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 /***
  * this gives details of given ID
  */
-
-	
 	public ProjectDetailsRes getprojectDetails(String Id) {
 		ProjectDetails projectDetails=(ProjectDetails) dao.getByKey(ProjectDetails.class, Id);
 		
