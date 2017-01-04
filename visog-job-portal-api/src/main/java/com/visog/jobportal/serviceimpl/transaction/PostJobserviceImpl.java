@@ -37,6 +37,7 @@ public class PostJobserviceImpl implements PostJobService {
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
 		postJob.setAnnualPackageTo(req.getAnnualPackageTo());
 		currency.setId(req.getCurrency());
+		postJob.setCurrency(currency);
 		postJob.setCompany(req.getCompany());
 		postJob.setEffectedDateFrom(req.getEffectedDateFrom());
 		postJob.setEffectedDateTo(req.getEffectedDateTo());

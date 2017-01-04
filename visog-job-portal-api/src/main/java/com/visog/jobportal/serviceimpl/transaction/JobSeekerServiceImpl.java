@@ -34,7 +34,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		Users users = new Users();
 		users.setId(req.getUser());
-
+		
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
 
@@ -51,18 +51,21 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
-		jobseeker.setId(req.getDomain());
-		jobseeker.setId(req.getEmploymentType());
-		jobseeker.setId(req.getIndustry());
+		
 		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
 		jobseeker.setProfileSummary(req.getProfileSummary());
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
 		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
 		jobseeker.setKeySkills(req.getKeySkills());
-		jobseeker.setId(req.getJobRole());
+		
 		jobseeker.setOtherJobRole(req.getJobRole());
-		jobseeker.setId(req.getUser());
+		jobseeker.setUser(users);
+		jobseeker.setDomain(domain);
+		jobseeker.setEmploymentType(employment);
+		jobseeker.setIndustry(industry);
+		jobseeker.setJobRole(jobrole);
 
+		
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
 		dao.save(jobseeker);
 

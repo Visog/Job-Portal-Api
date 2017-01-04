@@ -8,6 +8,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.visog.jobportal.model.AbstractModel;
+import com.visog.jobportal.model.master.Courses;
+import com.visog.jobportal.model.master.EducationType;
+import com.visog.jobportal.model.master.Specilization;
+import com.visog.jobportal.model.master.University;
 
 @Table(name = "EDUCATION_DETAILS")
 @Entity
@@ -23,19 +27,19 @@ public class EducationDetails extends AbstractModel{
 	
 	@ManyToOne
 	@JoinColumn(name = "COURSES_ID")
-	private Users courses;
+	private Courses courses;
 	
 	@ManyToOne
 	@JoinColumn(name = "EDUCATION_TYPE_ID")
-	private Users educationType;
+	private EducationType educationType;
 	
 	@ManyToOne
 	@JoinColumn(name = "SPECIALIZATION_ID")
-	private Users specialization;
+	private Specilization specialization;
 	
 	@ManyToOne
 	@JoinColumn(name = "UNIVERSITY_ID")
-	private Users university;
+	private University university;
 	
 	@Column(name = "DURATION_FROM_DATE")
 	private String durationFrom;
@@ -59,35 +63,35 @@ public class EducationDetails extends AbstractModel{
 		this.user = user;
 	}
 
-	public Users getCourses() {
+	public Courses getCourses() {
 		return courses;
 	}
 
-	public void setCourses(Users courses) {
+	public void setCourses(Courses courses) {
 		this.courses = courses;
 	}
 
-	public Users getEducationType() {
+	public EducationType getEducationType() {
 		return educationType;
 	}
 
-	public void setEducationType(Users educationType) {
+	public void setEducationType(EducationType educationType) {
 		this.educationType = educationType;
 	}
 
-	public Users getSpecialization() {
+	public Specilization getSpecialization() {
 		return specialization;
 	}
 
-	public void setSpecialization(Users specialization) {
+	public void setSpecialization(Specilization specialization) {
 		this.specialization = specialization;
 	}
 
-	public Users getUniversity() {
+	public University getUniversity() {
 		return university;
 	}
 
-	public void setUniversity(Users university) {
+	public void setUniversity(University university) {
 		this.university = university;
 	}
 
@@ -106,7 +110,7 @@ public class EducationDetails extends AbstractModel{
 	public void setDurationTo(String durationTo) {
 		this.durationTo = durationTo;
 	}
-	
+
 	
 
 }

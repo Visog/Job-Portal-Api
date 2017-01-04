@@ -25,7 +25,7 @@ public class EducationDetailsDaoImpl extends AbstractDao implements EducationDet
 
 	/**
 	 * This method returns the EducationDetailsDao data
-	 *@Author=Bala
+	 *@Author Bala
 	 */
 	
 	public List<EducationDetails> getEducationDetails() {
@@ -36,26 +36,6 @@ public class EducationDetailsDaoImpl extends AbstractDao implements EducationDet
 		q.select(c);
 		
 		return em.createQuery(q).getResultList();
-	}
-	
-	/**
-	 * This method delete the EmployerJobseeker data
-	 
-	 */
-	public void delete(String id){
-		
-		CriteriaBuilder criteriaBuilder=em.getCriteriaBuilder();
-		CriteriaDelete<EducationDetails> query=criteriaBuilder.createCriteriaDelete(EducationDetails.class);
-		Root<EducationDetails> root=query.from(EducationDetails.class);
-		query.where(root.get("id").in(id));
-		em.createQuery(query).executeUpdate();
-		
-	}
-
-	@Override
-	public List<EducationDetailsDao> getEducationDetailsDao() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
