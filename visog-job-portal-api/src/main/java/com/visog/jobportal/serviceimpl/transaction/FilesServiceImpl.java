@@ -36,7 +36,6 @@ public class FilesServiceImpl implements FilesService {
 		Users users=new Users();
 		users.setId(req.getFiletype());
 		files.setFiletype(users);
-		
 		DaoUtils.setEntityCreateAuditColumns(files);
 		dao.save(files);
 		logger.info(" files saved Successfully:"+ files.getId());

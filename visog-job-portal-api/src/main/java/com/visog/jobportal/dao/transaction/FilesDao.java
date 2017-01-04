@@ -9,6 +9,5 @@ public interface FilesDao extends AbstractDaoI{
 	
 	public List<Files> getFiles();
 	
-	
 
 }

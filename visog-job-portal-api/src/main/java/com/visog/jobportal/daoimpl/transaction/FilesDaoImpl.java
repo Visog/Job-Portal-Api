@@ -35,7 +35,6 @@ public class FilesDaoImpl extends AbstractDao implements FilesDao{
 	
 	/**
 	 * This method delete the Files data
-	 
 	 */
 	public void delete(String id){
 		
