@@ -19,7 +19,7 @@ import com.visog.jobportal.req.transaction.EducationDetailsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.EducationDetailsService;
 
-@Path("/educationdetails")
+@Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
 public class EducationDetailsController {
 
