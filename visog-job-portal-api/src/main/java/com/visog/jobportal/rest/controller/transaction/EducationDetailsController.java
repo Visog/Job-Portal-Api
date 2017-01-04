@@ -15,11 +15,12 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
+import com.visog.jobportal.model.transaction.EducationDetails;
 import com.visog.jobportal.req.transaction.EducationDetailsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.EducationDetailsService;
 
-@Path("/educationdetails")
+@Path("/educationDetails")
 @Produces(MediaType.APPLICATION_JSON)
 public class EducationDetailsController {
 
@@ -35,7 +36,7 @@ public class EducationDetailsController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationdetails")
+	@Path("/educationDetails")
 	
 	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
 
@@ -54,7 +55,7 @@ public class EducationDetailsController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, educationDetailsReq req) {
+	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, EducationDetails req) {
 
 		service.updateEducationDetails(req, educationDetailsId);
 
