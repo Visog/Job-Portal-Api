@@ -13,6 +13,7 @@ import com.visog.jobportal.model.master.EducationType;
 import com.visog.jobportal.model.master.Specilization;
 import com.visog.jobportal.model.master.University;
 import com.visog.jobportal.model.transaction.EducationDetails;
+import com.visog.jobportal.model.transaction.PostJob;
 import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.EducationDetailsReq;
 import com.visog.jobportal.res.transaction.EducationDetailsRes;
@@ -37,11 +38,11 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		Specilization specialization = new Specilization();
 		EducationType educationType = new EducationType();
 		University university = new University();
-		
+
 		users.setId(req.getUser());
-	
+
 		courses.setId(req.getCourses());
-		
+
 		specialization.setId(req.getSpecialization());
 		educationType.setId(req.getEducationtype());
 		university.setId(req.getUniversity());
@@ -55,15 +56,14 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		educationDetails.setUniversity(university);
 
 		DaoUtils.setEntityCreateAuditColumns(educationDetails);
-		
+
 		dao.save(educationDetails);
-		
+
 		logger.info("educationDetails created successfully : " + educationDetails.getId());
 
 	}
 
 	public void updateEducationDetails(EducationDetailsReq req, String educationdetailsId) {
-
 		EducationDetails educationDetails = (EducationDetails) dao.getByKey(EducationDetails.class, educationdetailsId);
 
 		Users users = new Users();
@@ -71,11 +71,11 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		Specilization specialization = new Specilization();
 		EducationType educationType = new EducationType();
 		University university = new University();
-		
+
 		users.setId(req.getUser());
-	
+
 		courses.setId(req.getCourses());
-		
+
 		specialization.setId(req.getSpecialization());
 		educationType.setId(req.getEducationtype());
 		university.setId(req.getUniversity());
@@ -91,56 +91,68 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 	public List<EducationDetailsRes> getEducationDetails() {
 
-		List<EducationDetails> educationDetails=dao.getEducationDetails();
-		List<EducationDetailsRes> educationDetailsList =new ArrayList<>();
-		
-		EducationDetailsRes educationDetailsRes=null;
-		
-	
-		return null;
+		List<EducationDetails> educationDetails = dao.getEducationDetails();
+		List<EducationDetailsRes> educationDetailsList = new ArrayList<>();
+
+		EducationDetailsRes educationDetailsRes = null;
+
+		Users users = new Users();
+		Courses courses = new Courses();
+		Specilization specialization = new Specilization();
+		EducationType educationType = new EducationType();
+		University university = new University();
+
+		for (EducationDetails educationDetail : educationDetails) {
+
+			educationDetailsRes = new EducationDetailsRes();
+
+			educationDetailsRes.setId(educationDetail.getId());
+
+			educationDetailsRes.setCourses(educationDetail.getCourses().getId());
+
+			educationDetailsRes.setSpecialization(educationDetail.getSpecialization().getId());
+
+			educationDetailsRes.setUser(educationDetail.getUser().getId());
+
+			educationDetailsRes.setEducationtype(educationDetail.getEducationType().getId());
+
+			educationDetailsRes.setUniversity(educationDetail.getUniversity().getId());
+
+			educationDetailsRes.setDurationfrom(educationDetail.getDurationFrom());
+			educationDetailsRes.setDurationto(educationDetail.getDurationTo());
+
+			educationDetailsList.add(educationDetailsRes);
+		}
+
+		return educationDetailsList;
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public EducationDetailsRes getEducationDetail(String id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		EducationDetails educationDetail = (EducationDetails) dao.getByKey(EducationDetails.class, id);
+
+		EducationDetailsRes educationDetailsRes = new EducationDetailsRes();
+
+		educationDetailsRes.setId(educationDetail.getId());
+		educationDetailsRes.setCourses(educationDetail.getCourses().getId());
+
+		educationDetailsRes.setSpecialization(educationDetail.getSpecialization().getId());
+
+		educationDetailsRes.setUser(educationDetail.getUser().getId());
+
+		educationDetailsRes.setEducationtype(educationDetail.getEducationType().getId());
+
+		educationDetailsRes.setUniversity(educationDetail.getUniversity().getId());
+
+		educationDetailsRes.setDurationfrom(educationDetail.getDurationFrom());
+		educationDetailsRes.setDurationto(educationDetail.getDurationTo());
+
+		return educationDetailsRes;
 	}
 
-	@Override
-	public Boolean deleteEducationDetails(String educationdetailsId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean deleteEducationDetails(String educationDetailsId) {
+
+		return (dao.delete(PostJob.class, educationDetailsId) != 0);
 	}
 
 }
