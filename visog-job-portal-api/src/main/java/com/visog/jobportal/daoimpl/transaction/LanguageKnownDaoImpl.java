@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-package com.visog.jobportal.daoimpl.transaction;
-=======
+
 package com.visog.jobportal.daoimpl.transaction;
 
 import java.util.List;
@@ -52,4 +50,4 @@ public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDa
 	}
 
 }
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
+
