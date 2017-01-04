@@ -104,7 +104,6 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 	 * This method returns LanguageKnown Details for the given LanguageKnown id  
 	 */
 	public LanguageKnownRes getLanguageKnown(String id) {
-		
 		LanguageKnown languageKnown=(LanguageKnown) dao.getByKey(LanguageKnown.class, id);
 		LanguageKnownRes languageKnownRes=new LanguageKnownRes();
 		languageKnownRes.setId(languageKnown.getId());

@@ -15,7 +15,6 @@ public interface LanguageKnownService {
 	public List<LanguageKnownRes> getLanguageKnown();
 	
 	public LanguageKnownRes getLanguageKnown(String Id);
-
 	public Boolean deleteLanguageKnown(String lanhguageKnownId);
 
 }
