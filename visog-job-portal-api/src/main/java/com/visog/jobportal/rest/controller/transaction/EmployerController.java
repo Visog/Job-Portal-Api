@@ -15,82 +15,80 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.model.transaction.EducationDetails;
-import com.visog.jobportal.req.transaction.EducationDetailsReq;
+import com.visog.jobportal.req.transaction.EmployerReq;
+import com.visog.jobportal.req.transaction.JobSeekerReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.transaction.EducationDetailsService;
+import com.visog.jobportal.service.transaction.EmployerService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-public class EducationDetailsController {
 
-	private static final Logger logger = Logger.getLogger(EducationDetailsController.class);
+public class EmployerController {
+
+	private static final Logger logger = Logger.getLogger(EmployerController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private EducationDetailsService service;
+	private EmployerService service;
 
 	/*
-	 * Bala
+	 * raghava
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationDetails")
-	
-	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
+	@Path("/employer")
 
-		service.saveEducationDetails(req);
+	public JobPortalResponse createEmployer(EmployerReq req) {
+
+		service.saveEmployer(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("EducationDetails saved succcessfully");
+		jobPortalResponse.setMessage("Employer saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, EducationDetails req) {
+	@Path("/employer/{employerId}")
+	public JobPortalResponse updatePostJob(@PathParam("employerId") String employerId, EmployerReq req) {
 
-		service.updateEducationDetails(req, educationDetailsId);
+		service.updateEmployer(req, employerId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("EducationDetails updated succcessfully");
+		jobPortalResponse.setMessage("Employer updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
-	@Path("/educationDetails")
-	public JobPortalResponse getJobSeekers() {
+	@Path("/employer")
+	public JobPortalResponse getEmployers() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetails());
-		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
+		jobPortalResponse.setData(service.getEmployers());
+		jobPortalResponse.setMessage("Employers fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+	@Path("/employer/{employerId}")
+	public JobPortalResponse getEmployer(@PathParam("employerId") String employerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetails(educationDetailsId));
-		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
+		jobPortalResponse.setData(service.getEmployer(employerId));
+		jobPortalResponse.setMessage("Employer fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -98,26 +96,24 @@ public class EducationDetailsController {
 
 	}
 
-	
 	@DELETE
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse deletePostJob(@PathParam("educationDetailsId") String educationDetailsId) {
-		
+	@Path("/employer/{employerId}")
+	public JobPortalResponse deleteEmployer(@PathParam("employerId") String employerId) {
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deleteEducationDetails(educationDetailsId)) {
-			jobPortalResponse.setMessage("EducationDetails deleted succcessfully");
+		if (service.deleteEmployer(employerId)) {
+			jobPortalResponse.setMessage("Employer deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete the EducationDetails");
+			jobPortalResponse.setMessage("Failed to delete the Employer");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
 		return jobPortalResponse;
-	
-	
+
 	}
-	
+
 }

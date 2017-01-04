@@ -2,9 +2,9 @@ package com.visog.jobportal.req.transaction;
 
 public class LanguageKnownReq {
 	
-	private String USER;
+	private String user;
 	
-	private String LANGUAGE;
+	private String language;
 	
 	private String read;
 	
@@ -14,20 +14,22 @@ public class LanguageKnownReq {
 	
 	private String proficencylevel;
 
-	public String getUSER() {
-		return USER;
+	
+
+	public String getUser() {
+		return user;
 	}
 
-	public void setUSER(String uSER) {
-		USER = uSER;
+	public void setUser(String user) {
+		this.user = user;
 	}
 
-	public String getLANGUAGE() {
-		return LANGUAGE;
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setLANGUAGE(String lANGUAGE) {
-		LANGUAGE = lANGUAGE;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	public String getRead() {
