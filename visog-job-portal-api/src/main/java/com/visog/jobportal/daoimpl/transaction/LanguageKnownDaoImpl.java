@@ -9,7 +9,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
-import org.hibernate.jpa.criteria.compile.CriteriaQueryTypeQueryAdapter;
 import org.jboss.resteasy.logging.Logger;
 
 import com.visog.jobportal.dao.AbstractDao;

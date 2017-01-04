@@ -35,10 +35,10 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		languageknown.setProficencylevel(req.getProficencylevel());
 		
 		Languages languages=new Languages();
-		languages.setId(req.getLANGUAGE());
+		languages.setId(req.getLanguage());
 		
 		Users users=new Users();
-		users.setId(req.getUSER());
+		users.setId(req.getUser());
 		
 		DaoUtils.setEntityCreateAuditColumns(languageknown);
 		dao.save(languageknown);
@@ -58,10 +58,10 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		languageKnown.setProficencylevel(req.getProficencylevel());
 		
 		Languages languages=new Languages();
-		languages.setId(req.getLANGUAGE());
+		languages.setId(req.getLanguage());
 		
 		Users users=new Users();
-		users.setId(req.getUSER());
+		users.setId(req.getUser());
 		
 		dao.update(languageKnown);
 		logger.info(" languageKnown updated Successfully"+languageKnown.getId());
