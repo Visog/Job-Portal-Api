@@ -44,9 +44,9 @@ public class EmployerServiceImpl implements EmployerService {
 
 		Employer employer = new Employer();
 
-		employer.setId(req.getUser());
-		employer.setId(req.getIndustry());
-		employer.setId(req.getEmployerType());
+		employer.setUser(users);
+		employer.setIndustry(industry);
+		employer.setEmployerType(employerType);
 		employer.setPremiumEmployer(req.getPremiumEmployer());
 		employer.setCompanyName(req.getCompanyName());
 		employer.setRegisteredDate(req.getRegisteredDate());
@@ -61,20 +61,22 @@ public class EmployerServiceImpl implements EmployerService {
 	}
 
 	public void updateEmployer(EmployerReq req, String EmployerId) {
+		
 
+		Employer employer=(Employer) dao.getByKey(Employer.class, EmployerId);
+		
 		Users users = new Users();
-
+		users.setId(req.getUser());
+		
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
 
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
 
-		Employer employer = new Employer();
-
-		employer.setId(req.getUser());
-		employer.setId(req.getIndustry());
-		employer.setId(req.getEmployerType());
+		employer.setUser(users);
+		employer.setIndustry(industry);
+		employer.setEmployerType(employerType);
 		employer.setPremiumEmployer(req.getPremiumEmployer());
 		employer.setCompanyName(req.getCompanyName());
 		employer.setRegisteredDate(req.getRegisteredDate());
