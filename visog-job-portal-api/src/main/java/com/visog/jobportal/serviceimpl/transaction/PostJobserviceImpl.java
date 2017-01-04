@@ -31,16 +31,19 @@ public class PostJobserviceImpl implements PostJobService {
 		PostJob postJob = new PostJob();
 		Users users = new Users();
 		users.setId(req.getUser());
+		postJob.setUser(users);
 
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
 		postJob.setAnnualPackageTo(req.getAnnualPackageTo());
 		currency.setId(req.getCurrency());
+		postJob.setCurrency(currency);
 		postJob.setCompany(req.getCompany());
 		postJob.setEffectedDateFrom(req.getEffectedDateFrom());
 		postJob.setEffectedDateTo(req.getEffectedDateTo());
 		status.setId(req.getStatus());
+		postJob.setStatus(status);
 		postJob.setMinExperience(req.getMinExperience());
 		postJob.setPhoneNo(req.getPhoneNo());
 		postJob.setWalkIn(req.getWalkIn());
@@ -61,15 +64,18 @@ public class PostJobserviceImpl implements PostJobService {
 		Users users = new Users();
 
 		users.setId(req.getUser());
+		postJob.setUser(users);
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
 		postJob.setAnnualPackageFrom(req.getAnnualPackageFrom());
 		postJob.setAnnualPackageTo(req.getAnnualPackageTo());
 		currency.setId(req.getCurrency());
+		postJob.setCurrency(currency);
 		postJob.setCompany(req.getCompany());
 		postJob.setEffectedDateFrom(req.getEffectedDateFrom());
 		postJob.setEffectedDateTo(req.getEffectedDateTo());
 		status.setId(req.getStatus());
+		postJob.setStatus(status);
 		postJob.setMinExperience(req.getMinExperience());
 		postJob.setPhoneNo(req.getPhoneNo());
 		postJob.setWalkIn(req.getWalkIn());
@@ -87,7 +93,7 @@ public class PostJobserviceImpl implements PostJobService {
 
 		PostJobRes postJobRes = null;
 
-		Users users = new Users(); 
+		Users users = new Users();
 
 		Currency currency = new Currency();
 
@@ -128,7 +134,7 @@ public class PostJobserviceImpl implements PostJobService {
 	}
 
 	public PostJobRes getPostJob(String id) {
-		
+
 		PostJob postJob = (PostJob) dao.getByKey(PostJob.class, id);
 		PostJobRes postJobRes = new PostJobRes();
 
