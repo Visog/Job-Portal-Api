@@ -51,7 +51,13 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
+<<<<<<< HEAD
 		
+=======
+		jobseeker.setUser(users);
+		jobseeker.setEmploymentType(employment);
+		jobseeker.setIndustry(industry);
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
 		jobseeker.setProfileSummary(req.getProfileSummary());
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
@@ -59,6 +65,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setKeySkills(req.getKeySkills());
 		
 		jobseeker.setOtherJobRole(req.getJobRole());
+<<<<<<< HEAD
 		jobseeker.setUser(users);
 		jobseeker.setDomain(domain);
 		jobseeker.setEmploymentType(employment);
@@ -66,6 +73,10 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setJobRole(jobrole);
 
 		
+=======
+		jobseeker.setJobRole(jobrole);
+
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
 		dao.save(jobseeker);
 
@@ -74,9 +85,11 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 	}
 
 	public void updateJobSeeker(JobSeekerReq req, String jobseekerId) {
+		JobSeeker jobSeeker=(JobSeeker) dao.getByKey(JobSeeker.class, jobseekerId);
 
 		Users users = new Users();
-
+		users.setId(req.getUser());
+		
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
 
@@ -89,21 +102,20 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		EmploymentType employment = new EmploymentType();
 		employment.setId(req.getEmploymentType());
 
-		JobSeeker jobseeker = new JobSeeker();
-
-		jobseeker.setResumeHeadline(req.getResumeHeadline());
-		jobseeker.setCompanyName(req.getCompanyName());
-		jobseeker.setId(req.getDomain());
-		jobseeker.setId(req.getEmploymentType());
-		jobseeker.setId(req.getIndustry());
-		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
-		jobseeker.setProfileSummary(req.getProfileSummary());
-		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
-		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
-		jobseeker.setKeySkills(req.getKeySkills());
-		jobseeker.setId(req.getJobRole());
-		jobseeker.setOtherJobRole(req.getJobRole());
-		jobseeker.setId(req.getUser());
+		
+		jobSeeker.setResumeHeadline(req.getResumeHeadline());
+		jobSeeker.setCompanyName(req.getCompanyName());
+		jobSeeker.setUser(users);
+		jobSeeker.setEmploymentType(employment);
+		jobSeeker.setJobRole(jobrole);
+		jobSeeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
+		jobSeeker.setProfileSummary(req.getProfileSummary());
+		jobSeeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
+		jobSeeker.setWorkExperienceYears(req.getWorkExperienceYears());
+		jobSeeker.setKeySkills(req.getKeySkills());
+		jobSeeker.setIndustry(industry);
+		jobSeeker.setOtherJobRole(req.getJobRole());
+		jobSeeker.setDomain(domain);
 
 	}
 
@@ -149,7 +161,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		}
 
-		return null;
+		return jobSeekerList;
 	}
 
 	public JobSeekerRes getJobSeeker(String id) {
@@ -173,7 +185,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
 		jobSeekerRes.setResumeHeadline(jobSeekers.getResumeHeadline());
 
-		return null;
+		return jobSeekerRes;
 	}
 
 	public Boolean deleteJobSeeker(String jobseekerId) {

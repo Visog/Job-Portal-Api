@@ -41,7 +41,7 @@ public class EmployerJobseekerController {
 	public JobPortalResponse createEmployerJobseeker(EmployerJobseekerReq req){
 	
 		service.saveEmployerJobseeker(req);
-JobPortalResponse jobPortalResponse = new JobPortalResponse();
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		
 		jobPortalResponse.setMessage("employerjobseeker saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);

@@ -3,6 +3,7 @@ package com.visog.jobportal.model.transaction;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,15 +27,15 @@ public class Address extends AbstractModel {
 	private String addressline2;
 	
 	@ManyToOne
-	@Column(name="STATE_ID")
+	@JoinColumn(name="STATE_ID")
 	private States state;
 	
 	@ManyToOne
-	@Column(name="COUNTRY_ID")
+	@JoinColumn(name="COUNTRY_ID")
 	private Country country;
 	
 	@ManyToOne
-	@Column(name="CITY_ID")
+	@JoinColumn(name="CITY_ID")
 	private City city;
 	
 	@Column(name="ZIPCODE")
@@ -47,7 +48,7 @@ public class Address extends AbstractModel {
 	private String associated;
 	
 	@ManyToOne
-	@Column(name="ADDRESS_TYPE_ID")
+	@JoinColumn(name="ADDRESS_TYPE_ID")
 	private AddrerssType addressType;
 
 	public String getId() {

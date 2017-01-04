@@ -7,8 +7,7 @@ import com.visog.jobportal.model.transaction.Files;
 
 public interface FilesDao extends AbstractDaoI{
 	
-	public List<Files> getfiles();
-	
+	public List<Files> getFiles();
 	
 
 }

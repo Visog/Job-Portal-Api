@@ -61,17 +61,24 @@ public class EmployerServiceImpl implements EmployerService {
 	}
 
 	public void updateEmployer(EmployerReq req, String EmployerId) {
+		
 
+		Employer employer=(Employer) dao.getByKey(Employer.class, EmployerId);
+		
 		Users users = new Users();
-
+		users.setId(req.getUser());
+		
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
 
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
 
+<<<<<<< HEAD
 		Employer employer = new Employer();
 
+=======
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		employer.setUser(users);
 		employer.setIndustry(industry);
 		employer.setEmployerType(employerType);
