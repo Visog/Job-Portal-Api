@@ -36,13 +36,15 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		
 		Languages languages=new Languages();
 		languages.setId(req.getLanguage());
+		languageknown.setLanguage(languages);
 		
 		Users users=new Users();
 		users.setId(req.getUser());
+		languageknown.setUser(users);
 		
 		DaoUtils.setEntityCreateAuditColumns(languageknown);
 		dao.save(languageknown);
-		logger.info(" languageknown saved Successfully"+languageknown.getId());
+		logger.info(" languageknown saved Successfully"+ languageknown.getId());
 		
 	}
 
@@ -59,9 +61,11 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		
 		Languages languages=new Languages();
 		languages.setId(req.getLanguage());
+		languageKnown.setLanguage(languages);
 		
 		Users users=new Users();
 		users.setId(req.getUser());
+		languageKnown.setUser(users);
 		
 		dao.update(languageKnown);
 		logger.info(" languageKnown updated Successfully"+languageKnown.getId());
@@ -78,7 +82,9 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		List<LanguageKnownRes> languageKnownList=new ArrayList<>();
 		LanguageKnownRes languageKnownRes=null;
 		Languages languages=new Languages();
+		
 		for(LanguageKnown languageKnown:languageKnowns){
+			
 		languageKnownRes =new LanguageKnownRes();
 		languageKnownRes.setId(languageKnown.getId());
 		languageKnownRes.setRead(languageKnown.getRead());

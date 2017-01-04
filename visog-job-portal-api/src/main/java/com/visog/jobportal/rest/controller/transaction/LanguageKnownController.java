@@ -93,7 +93,6 @@ public class LanguageKnownController {
 	
 	/**
 	 * This method retrieves a single lanhguageknown
-	 * 
 	 * @return
 	 */
 	@GET
