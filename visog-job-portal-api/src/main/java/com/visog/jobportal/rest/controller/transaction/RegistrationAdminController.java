@@ -21,38 +21,40 @@ import com.visog.jobportal.service.transaction.UserService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-public class RegistrationEmployerController {
-	private static final Logger logger=Logger.getLogger(RegistrationEmployerController.class);
+public class RegistrationAdminController {
+
+	private static final Logger logger=Logger.getLogger(RegistrationAdminController.class);
+	
 	private @CookieParam("User-Identifier") String userIdentifier;
 	
 	@Inject
 	private UserService service;
 	
 	/**
-	 * This method creates the Users
+	 * This method creates the specialization
 	 * 
 	 * @param req
 	 * @return
-	 * @author ravi
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/regemployer")
+	@Path("/regadmin")
 	public JobPortalResponse createUsers(UsersReq req) {
-		// service.saveUsers(req);
-		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.saveUsers(req)) {
-			jobPortalResponse.setMessage("Your data saved succcessfully");
-			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-			
-		} else {
-			jobPortalResponse.setMessage("Mail Address/Mobile Number  already exists");
-			jobPortalResponse.setStatus(Status.STATUS_FAIL);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+		
+			// service.saveUsers(req);
+			JobPortalResponse jobPortalResponse = new JobPortalResponse();
+			if (service.saveUsers(req)) {
+					jobPortalResponse.setMessage("Your data saved succcessfully");
+					jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+					jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+					
+			} else {
+					jobPortalResponse.setMessage("Mail Address/Mobile Number  already exists");
+					jobPortalResponse.setStatus(Status.STATUS_FAIL);
+					jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 
-		}
-		return jobPortalResponse;
+			}
+				return jobPortalResponse;
 		
 	}
 	
@@ -64,39 +66,39 @@ public class RegistrationEmployerController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/regemployer/{regemployerId}")
-	public JobPortalResponse updateusers(@PathParam("regemployerId") String regemployerId, UsersReq req) {
+	@Path("/regadmin/{regadminId}")
+	public JobPortalResponse updateusers(@PathParam("regadminId") String regadminId, UsersReq req) {
 		
 		// service.updateUsers(req, job_seekerId);
 
-		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.updateUsers(req, regemployerId)) {
-			jobPortalResponse.setMessage("employer updated succcessfully");
-			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-			
-		} else {
-			jobPortalResponse.setMessage("data not updated already exists");
-			jobPortalResponse.setStatus(Status.STATUS_FAIL);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+				JobPortalResponse jobPortalResponse = new JobPortalResponse();
+				if (service.updateUsers(req, regadminId)) {
+					jobPortalResponse.setMessage("Admin updated succcessfully");
+					jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+					jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+					
+				} else {
+					jobPortalResponse.setMessage("data not updated already exists");
+					jobPortalResponse.setStatus(Status.STATUS_FAIL);
+					jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 
-		}
-		return jobPortalResponse;
+				}
+				return jobPortalResponse;	
 		
 	}
 	
-	
+
 	/**
 	 * This method retrieves all Users 
 	 * 
 	 * @return
 	 */
 	@GET
-	@Path("/regemployer")
+	@Path("/regadmin")
 	public JobPortalResponse getUsers(){
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getUsers());
-		jobPortalResponse.setMessage("employer  fetched succcessfully");
+		jobPortalResponse.setMessage("Admin  fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -104,18 +106,18 @@ public class RegistrationEmployerController {
 		
 	}
 	
+
 	/**
 	 * This method retrieves a single Users
 	 * 
 	 * @return
 	 */
-
 	@GET
-	@Path("/regemployer/{regemployerId}")
-	public JobPortalResponse getUsers(@PathParam("regemployerId") String regemployerId) {
+	@Path("/regadmin/{regadminId}")
+	public JobPortalResponse getUsers(@PathParam("regadminId") String regadminId) {
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers(regemployerId));
-		jobPortalResponse.setMessage("employer data fetched succcessfully");
+		jobPortalResponse.setData(service.getUsers(regadminId));
+		jobPortalResponse.setMessage("Admin data fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -129,22 +131,23 @@ public class RegistrationEmployerController {
 	 * @return
 	 */
 	@DELETE
-	@Path("/regemployer/{regemployerId}")
-	public JobPortalResponse deleteUsers(@PathParam("regemployerId") String regemployerId) {
+	@Path("/regadmin/{regadminId}")
+	public JobPortalResponse deleteUsers(@PathParam("regadminId") String regadminId) {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.deleteUsers(regemployerId)) {
+		if (service.deleteUsers(regadminId)) {
 			
-			jobPortalResponse.setMessage("employer deleted succcessfully");
+			jobPortalResponse.setMessage("Admin deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
 
-			jobPortalResponse.setMessage("Failed to delete the employer ");
+			jobPortalResponse.setMessage("Failed to delete the Admin ");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 		return jobPortalResponse;
 	}
-
+	
+	
 }
