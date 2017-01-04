@@ -28,7 +28,9 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 		PostJob postJob = new PostJob();
 		Domains domains = new Domains();
 		postJob.setId(req.getPostJob());
+		postJobDomains.setPostJob(postJob);
 		domains.setId(req.getDomain());
+		postJobDomains.setDomain(domains);
 
 		DaoUtils.setEntityCreateAuditColumns(postJobDomains);
 		dao.save(postJobDomains);
@@ -41,10 +43,12 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 		PostJobDomains postJobDomains = (PostJobDomains) dao.getByKey(PostJobDomains.class, postJobDomainId);
 
 		PostJob postJob = new PostJob();
+		postJobDomains.setPostJob(postJob);
 		Domains domains = new Domains();
 
 		postJob.setId(req.getPostJob());
 		domains.setId(req.getDomain());
+		postJobDomains.setDomain(domains);
 
 		dao.update(postJobDomains);
 		logger.info("PostJobDomains updated Successfully" + postJobDomains.getId());

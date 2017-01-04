@@ -55,7 +55,11 @@ public class EducationDetailsController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails/{educationDetailsId}")
+<<<<<<< HEAD
+	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId,EducationDetailsReq req) {
+=======
 	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, EducationDetails req) {
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 
 		service.updateEducationDetails(req, educationDetailsId);
 
@@ -89,7 +93,7 @@ public class EducationDetailsController {
 	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetails(educationDetailsId));
+		jobPortalResponse.setData(service.getEducationDetail(educationDetailsId));
 		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

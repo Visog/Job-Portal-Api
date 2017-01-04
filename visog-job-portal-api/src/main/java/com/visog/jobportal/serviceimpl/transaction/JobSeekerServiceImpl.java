@@ -34,7 +34,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		Users users = new Users();
 		users.setId(req.getUser());
-
+		
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
 
@@ -51,18 +51,32 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
+<<<<<<< HEAD
+		
+=======
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
 		jobseeker.setIndustry(industry);
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
 		jobseeker.setProfileSummary(req.getProfileSummary());
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
 		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
 		jobseeker.setKeySkills(req.getKeySkills());
-		jobseeker.setId(req.getJobRole());
+		
 		jobseeker.setOtherJobRole(req.getJobRole());
+<<<<<<< HEAD
+		jobseeker.setUser(users);
+		jobseeker.setDomain(domain);
+		jobseeker.setEmploymentType(employment);
+		jobseeker.setIndustry(industry);
 		jobseeker.setJobRole(jobrole);
 
+		
+=======
+		jobseeker.setJobRole(jobrole);
+
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
 		dao.save(jobseeker);
 

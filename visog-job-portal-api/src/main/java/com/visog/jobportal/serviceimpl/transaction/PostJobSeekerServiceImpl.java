@@ -32,14 +32,18 @@ public class PostJobSeekerServiceImpl implements PostJobSeekerService {
 		Status status = new Status();
 
 		users.setId(req.getJobSeeker());
+		postJobSeeker.setJobSeeker(users);
 		users.setId(req.getEmployer());
+		postJobSeeker.setEmployer(users);
 
 		postJob.setId(req.getPostJob());
+		postJobSeeker.setPostJob(postJob);
 
 		status.setId(req.getStatus());
+		postJobSeeker.setStatus(status);
 
 		DaoUtils.setEntityCreateAuditColumns(postJobSeeker);
-		dao.save(postJobSeeker);
+		dao.save(postJobSeeker);//save Method
 		logger.info("PostJobseeker is created Successfully" + postJobSeeker.getId());
 
 	}
@@ -53,12 +57,16 @@ public class PostJobSeekerServiceImpl implements PostJobSeekerService {
 		Status status = new Status();
 
 		users.setId(req.getJobSeeker());
+		postJobSeeker.setJobSeeker(users);
 		users.setId(req.getEmployer());
+		postJobSeeker.setEmployer(users);
 
 		postJob.setId(req.getPostJob());
+		postJobSeeker.setPostJob(postJob);
 
 		status.setId(req.getStatus());
-
+		postJobSeeker.setStatus(status);
+		
 		dao.update(postJobSeeker);
 		logger.info("JobSeeker Updated Successfully" + postJobSeeker.getId());
 	}
