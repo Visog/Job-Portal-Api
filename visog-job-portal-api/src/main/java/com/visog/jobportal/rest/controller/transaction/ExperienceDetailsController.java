@@ -63,7 +63,7 @@ public class ExperienceDetailsController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/experiencedetails/<EXPERIENCE_ID>")
+	@Path("/experiencedetails/{experiencedetailsId}")
 
 	public JobPortalResponse updateExperienceDetails(@PathParam("experiencedetailsId") String experiencedetailsId, ExperienceDetailsReq req) {
 

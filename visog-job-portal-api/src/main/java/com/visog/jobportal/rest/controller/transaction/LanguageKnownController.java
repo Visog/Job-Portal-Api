@@ -39,7 +39,7 @@ public class LanguageKnownController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/lanhguageknown")
+	@Path("/languageknown")
 	public JobPortalResponse createLanguageKnown(LanguageKnownReq req){
 		
 		service.saveLanguageKnown(req);
@@ -60,12 +60,12 @@ public class LanguageKnownController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/lanhguageknown/{lanhguageKnownId}")
-	public JobPortalResponse updateLanguageKnown(@PathParam("lanhguageKnownId") String lanhguageKnownId, LanguageKnownReq req){
+	@Path("/languageknown/{languageKnownId}")
+	public JobPortalResponse updateLanguageKnown(@PathParam("languageKnownId") String languageKnownId, LanguageKnownReq req){
 		
-		service.updateLanguageKnown(req, lanhguageKnownId);
+		service.updateLanguageKnown(req, languageKnownId);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("lanhguageknown updated succcessfully");
+		jobPortalResponse.setMessage("languageKnownId updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		
@@ -74,17 +74,17 @@ public class LanguageKnownController {
 	}
 	
 	/**
-	 * This method retrieves all lanhguageknown
+	 * This method retrieves all languageknown
 	 * 
 	 * @return
 	 */
 	@GET
-	@Path("/lanhguageknown")
+	@Path("/languageknown")
 	public JobPortalResponse getLanguageKnown(){
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getLanguageKnown());
-		jobPortalResponse.setMessage("lanhguageknown fetched succcessfully");
+		jobPortalResponse.setMessage("languageKnown fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		
@@ -96,12 +96,12 @@ public class LanguageKnownController {
 	 * @return
 	 */
 	@GET
-	@Path("/lanhguageknown/{lanhguageKnownId}")
-	public JobPortalResponse getLanguageKnown(@PathParam("lanhguageKnownId") String lanhguageKnownId){
+	@Path("/languageknown/{languageKnownId}")
+	public JobPortalResponse getLanguageKnown(@PathParam("languageKnownId") String languageKnownId){
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getLanguageKnown(lanhguageKnownId));
-		jobPortalResponse.setMessage("lanhguageknown fetched succcessfully");
+		jobPortalResponse.setData(service.getLanguageKnown(languageKnownId));
+		jobPortalResponse.setMessage("languageknown fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -115,17 +115,17 @@ public class LanguageKnownController {
 	 * @return
 	 */
 	@DELETE
-	@Path("/lanhguageknown/{lanhguageKnownId}")
-	public JobPortalResponse deleteLanguageKnown(@PathParam("lanhguageKnownId") String lanhguageKnownId){
+	@Path("/languageknown/{languageKnownId}")
+	public JobPortalResponse deleteLanguageKnown(@PathParam("languageKnownId") String lanhguageKnownId){
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		
 		if (service.deleteLanguageKnown(lanhguageKnownId)) {
-			jobPortalResponse.setMessage("lanhguageKnown deleted succcessfully");
+			jobPortalResponse.setMessage("languageKnown deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 			
 		}else {
-			jobPortalResponse.setMessage("Failed to delete the lanhguageKnown");
+			jobPortalResponse.setMessage("Failed to delete the languageKnown");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
