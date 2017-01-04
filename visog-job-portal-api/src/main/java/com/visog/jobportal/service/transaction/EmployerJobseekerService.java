@@ -14,7 +14,7 @@ public interface EmployerJobseekerService {
 	
 	public List<EmployerJobseekerRes> getEmployerJobseeker();
 	
-	public EmployerJobseekerRes getEmployerJobseeker(String id);
+	public EmployerJobseekerRes getEmployerJobseeker(String Id);
 	
 	public Boolean deleteEmployerJobseeker(String employerjobseekerId);
 
