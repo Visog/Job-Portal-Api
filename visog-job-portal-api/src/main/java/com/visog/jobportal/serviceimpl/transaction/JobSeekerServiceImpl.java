@@ -51,13 +51,12 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
-<<<<<<< HEAD
+
 		
-=======
+
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
 		jobseeker.setIndustry(industry);
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
 		jobseeker.setProfileSummary(req.getProfileSummary());
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
@@ -65,7 +64,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setKeySkills(req.getKeySkills());
 		
 		jobseeker.setOtherJobRole(req.getJobRole());
-<<<<<<< HEAD
 		jobseeker.setUser(users);
 		jobseeker.setDomain(domain);
 		jobseeker.setEmploymentType(employment);
@@ -73,10 +71,8 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setJobRole(jobrole);
 
 		
-=======
 		jobseeker.setJobRole(jobrole);
 
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
 		dao.save(jobseeker);
 

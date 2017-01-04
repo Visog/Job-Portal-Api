@@ -74,11 +74,6 @@ public class EmployerServiceImpl implements EmployerService {
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
 
-<<<<<<< HEAD
-		Employer employer = new Employer();
-
-=======
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		employer.setUser(users);
 		employer.setIndustry(industry);
 		employer.setEmployerType(employerType);
