@@ -10,6 +10,7 @@ import org.jboss.resteasy.logging.Logger;
 import com.visog.jobportal.dao.transaction.FilesDao;
 import com.visog.jobportal.model.master.FileType;
 import com.visog.jobportal.model.transaction.Files;
+import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.FilesReq;
 import com.visog.jobportal.res.transaction.FilesRes;
 import com.visog.jobportal.service.transaction.FilesService;
@@ -32,12 +33,13 @@ public class FilesServiceImpl implements FilesService {
 		files.setAssociated(req.getAssociated());
 		files.setAssociatedtype(req.getAssociatedtype());
 		
-		FileType fileType=new FileType();
-		fileType.setId(req.getFiletype());
+		Users users=new Users();
+		users.setId(req.getFiletype());
+		files.setFiletype(users);
 		
 		DaoUtils.setEntityCreateAuditColumns(files);
 		dao.save(files);
-		logger.info(" files saved Successfully"+files.getId());
+		logger.info(" files saved Successfully:"+ files.getId());
 	}
 
 	/**
@@ -50,8 +52,9 @@ public class FilesServiceImpl implements FilesService {
 		files.setAssociated(req.getAssociated());
 		files.setAssociatedtype(req.getAssociatedtype());
 		
-		FileType fileType=new FileType();
-		fileType.setId(req.getFiletype());
+		Users users=new Users();
+		users.setId(req.getFiletype());
+		files.setFiletype(users);
 		
 		dao.update(files);
 		logger.info(" files updated Successfully"+files.getId());
@@ -63,10 +66,10 @@ public class FilesServiceImpl implements FilesService {
 	 */
 	public List<FilesRes> getFiles() {
 
-		List<Files> files=dao.getfiles();
+		List<Files> files=dao.getFiles();
 		List<FilesRes> fileList=new ArrayList<>();
 		FilesRes filesRes=null;
-		FileType fileType=new FileType();
+		//FileType fileType=new FileType();
 		for(Files file:files){
 			filesRes =new FilesRes();
 			filesRes.setId(file.getId());
@@ -86,8 +89,8 @@ public class FilesServiceImpl implements FilesService {
 	/**
 	 * This method returns Files Details for the given File id  
 	 */
-	public FilesRes getFiles(String id) {
-		Files files=(Files) dao.getByKey(Files.class, id);
+	public FilesRes getFiles(String Id) {
+		Files files=(Files) dao.getByKey(Files.class, Id);
 		FilesRes filesRes=new FilesRes();
 		filesRes.setId(files.getId());
 		filesRes.setAssociated(files.getAssociated());

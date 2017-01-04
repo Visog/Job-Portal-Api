@@ -25,11 +25,11 @@ public class FilesDaoImpl extends AbstractDao implements FilesDao{
 	 * This method returns the Files data
 	 *@Author=ravi
 	 */
-	public List<Files> getfiles() {
+	public List<Files> getFiles() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Files> q=cb.createQuery(Files.class);
 		Root<Files> c=q.from(Files.class);
-		
+		q.select(c);
 		return em.createQuery(q).getResultList();
 	}
 	
