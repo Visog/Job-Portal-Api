@@ -35,19 +35,7 @@ public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDa
 		
 	}
 	
-	/**
-	 * This method delete the Files data
-	 
-	 */
-	public void delete(String id){
-		
-		CriteriaBuilder criteriaBuilder=em.getCriteriaBuilder();
-		CriteriaDelete<LanguageKnown> query=criteriaBuilder.createCriteriaDelete(LanguageKnown.class);
-		Root<LanguageKnown> root=query.from(LanguageKnown.class);
-		query.where(root.get("id").in(id));
-		em.createQuery(query).executeUpdate();
-		
-	}
+	
 
 }
 
