@@ -5,7 +5,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,8 +32,6 @@ public class EducationDetailsController {
 	/*
 	 * Bala
 	 */
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails")
 
 	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
@@ -52,12 +49,12 @@ public class EducationDetailsController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationDetails/{educationDetailsId}")
+	@Path("/educationdetails/{educationdetailsId}")
 
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId,
+	public JobPortalResponse updatePostJob(@PathParam("educationdetailsId") String educationdetailsId,
 			EducationDetailsReq req) {
 
-		service.updateEducationDetails(req, educationDetailsId);
+		service.updateEducationDetails(req, educationdetailsId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("EducationDetails updated succcessfully");
@@ -69,7 +66,7 @@ public class EducationDetailsController {
 	}
 
 	@GET
-	@Path("/educationDetails")
+	@Path("/educationdetails")
 	public JobPortalResponse getJobSeekers() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -83,11 +80,11 @@ public class EducationDetailsController {
 	}
 
 	@GET
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+	@Path("/educationdetails/{educationdetailsId}")
+	public JobPortalResponse getPostJob(@PathParam("educationdetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEducationDetail(educationDetailsId));
+		jobPortalResponse.setData(service.getEducationDetail(educationdetailsId));
 		jobPortalResponse.setMessage("EducationDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -97,12 +94,11 @@ public class EducationDetailsController {
 	}
 
 	@DELETE
-	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse deletePostJob(@PathParam("educationDetailsId") String educationDetailsId) {
+	@Path("/educationdetails/{educationdetailsId}")
+	public JobPortalResponse deletePostJob(@PathParam("educationdetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-
-		if (service.deleteEducationDetails(educationDetailsId)) {
+		if (service.deleteEducationDetails(educationdetailsId)) {
 			jobPortalResponse.setMessage("EducationDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

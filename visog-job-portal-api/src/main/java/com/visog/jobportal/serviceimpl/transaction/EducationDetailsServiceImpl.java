@@ -32,7 +32,7 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 	 */
 
 	public void saveEducationDetails(EducationDetailsReq req) {
-		EducationDetails educationDetails = new EducationDetails();
+		EducationDetails educationdetails = new EducationDetails();
 		Users users = new Users();
 		Courses courses = new Courses();
 		Specilization specialization = new Specilization();
@@ -47,24 +47,24 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		educationType.setId(req.getEducationtype());
 		university.setId(req.getUniversity());
 
-		educationDetails.setDurationFrom(req.getDurationfrom());
-		educationDetails.setDurationTo(req.getDurationto());
-		educationDetails.setUser(users);
-		educationDetails.setCourses(courses);
-		educationDetails.setSpecialization(specialization);
-		educationDetails.setEducationType(educationType);
-		educationDetails.setUniversity(university);
+		educationdetails.setDurationFrom(req.getDurationfrom());
+		educationdetails.setDurationTo(req.getDurationto());
+		educationdetails.setUser(users);
+		educationdetails.setCourses(courses);
+		educationdetails.setSpecialization(specialization);
+		educationdetails.setEducationType(educationType);
+		educationdetails.setUniversity(university);
 
-		DaoUtils.setEntityCreateAuditColumns(educationDetails);
+		DaoUtils.setEntityCreateAuditColumns(educationdetails);
 
-		dao.save(educationDetails);
+		dao.save(educationdetails);
 
-		logger.info("educationDetails created successfully : " + educationDetails.getId());
+		logger.info("educationDetails created successfully : " + educationdetails.getId());
 
 	}
 
 	public void updateEducationDetails(EducationDetailsReq req, String educationdetailsId) {
-		EducationDetails educationDetails = (EducationDetails) dao.getByKey(EducationDetails.class, educationdetailsId);
+		EducationDetails educationdetails = (EducationDetails) dao.getByKey(EducationDetails.class, educationdetailsId);
 
 		Users users = new Users();
 		Courses courses = new Courses();
@@ -80,18 +80,20 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		educationType.setId(req.getEducationtype());
 		university.setId(req.getUniversity());
 
-		educationDetails.setDurationFrom(req.getDurationfrom());
-		educationDetails.setDurationTo(req.getDurationto());
-		educationDetails.setUser(users);
-		educationDetails.setCourses(courses);
-		educationDetails.setSpecialization(specialization);
-		educationDetails.setEducationType(educationType);
-		educationDetails.setUniversity(university);
+		educationdetails.setDurationFrom(req.getDurationfrom());
+		educationdetails.setDurationTo(req.getDurationto());
+		educationdetails.setUser(users);
+		educationdetails.setCourses(courses);
+		educationdetails.setSpecialization(specialization);
+		educationdetails.setEducationType(educationType);
+		educationdetails.setUniversity(university);
+		
+		dao.update(educationdetails);
 	}
 
 	public List<EducationDetailsRes> getEducationDetails() {
 
-		List<EducationDetails> educationDetails = dao.getEducationDetails();
+		List<EducationDetails> educationdetails = dao.getEducationDetails();
 		List<EducationDetailsRes> educationDetailsList = new ArrayList<>();
 
 		EducationDetailsRes educationDetailsRes = null;
@@ -102,24 +104,24 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		EducationType educationType = new EducationType();
 		University university = new University();
 
-		for (EducationDetails educationDetail : educationDetails) {
+		for (EducationDetails educationdetail : educationdetails) {
 
 			educationDetailsRes = new EducationDetailsRes();
 
-			educationDetailsRes.setId(educationDetail.getId());
+			educationDetailsRes.setId(educationdetail.getId());
 
-			educationDetailsRes.setCourses(educationDetail.getCourses().getId());
+			educationDetailsRes.setCourses(educationdetail.getCourses().getId());
 
-			educationDetailsRes.setSpecialization(educationDetail.getSpecialization().getId());
+			educationDetailsRes.setSpecialization(educationdetail.getSpecialization().getId());
 
-			educationDetailsRes.setUser(educationDetail.getUser().getId());
+			educationDetailsRes.setUser(educationdetail.getUser().getId());
 
-			educationDetailsRes.setEducationtype(educationDetail.getEducationType().getId());
+			educationDetailsRes.setEducationtype(educationdetail.getEducationType().getId());
 
-			educationDetailsRes.setUniversity(educationDetail.getUniversity().getId());
+			educationDetailsRes.setUniversity(educationdetail.getUniversity().getId());
 
-			educationDetailsRes.setDurationfrom(educationDetail.getDurationFrom());
-			educationDetailsRes.setDurationto(educationDetail.getDurationTo());
+			educationDetailsRes.setDurationfrom(educationdetail.getDurationFrom());
+			educationDetailsRes.setDurationto(educationdetail.getDurationTo());
 
 			educationDetailsList.add(educationDetailsRes);
 		}
@@ -129,23 +131,23 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 	public EducationDetailsRes getEducationDetail(String id) {
 
-		EducationDetails educationDetail = (EducationDetails) dao.getByKey(EducationDetails.class, id);
+		EducationDetails educationdetail = (EducationDetails) dao.getByKey(EducationDetails.class, id);
 
 		EducationDetailsRes educationDetailsRes = new EducationDetailsRes();
 
-		educationDetailsRes.setId(educationDetail.getId());
-		educationDetailsRes.setCourses(educationDetail.getCourses().getId());
+		educationDetailsRes.setId(educationdetail.getId());
+		educationDetailsRes.setCourses(educationdetail.getCourses().getId());
 
-		educationDetailsRes.setSpecialization(educationDetail.getSpecialization().getId());
+		educationDetailsRes.setSpecialization(educationdetail.getSpecialization().getId());
 
-		educationDetailsRes.setUser(educationDetail.getUser().getId());
+		educationDetailsRes.setUser(educationdetail.getUser().getId());
 
-		educationDetailsRes.setEducationtype(educationDetail.getEducationType().getId());
+		educationDetailsRes.setEducationtype(educationdetail.getEducationType().getId());
 
-		educationDetailsRes.setUniversity(educationDetail.getUniversity().getId());
+		educationDetailsRes.setUniversity(educationdetail.getUniversity().getId());
 
-		educationDetailsRes.setDurationfrom(educationDetail.getDurationFrom());
-		educationDetailsRes.setDurationto(educationDetail.getDurationTo());
+		educationDetailsRes.setDurationfrom(educationdetail.getDurationFrom());
+		educationDetailsRes.setDurationto(educationdetail.getDurationTo());
 
 		return educationDetailsRes;  
 	}
