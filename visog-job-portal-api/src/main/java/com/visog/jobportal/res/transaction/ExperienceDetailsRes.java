@@ -6,7 +6,7 @@ public class ExperienceDetailsRes {
 	
 	private String id;
 	
-	private String User;
+	private String user;
 	
 	private String companyName;
 	
@@ -29,11 +29,11 @@ public class ExperienceDetailsRes {
 	}
 
 	public String getUser() {
-		return User;
+		return user;
 	}
 
 	public void setUser(String user) {
-		User = user;
+		this.user = user;
 	}
 
 	public String getCompanyName() {

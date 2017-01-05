@@ -7,14 +7,9 @@ import com.visog.jobportal.model.transaction.ExperienceDetails;
 import com.visog.jobportal.model.transaction.Users;
 
 public interface ExperienceDetailsDao extends AbstractDaoI{
-public List<ExperienceDetails> getExperienceDetails();
 	
-	public Boolean isUsersExists(String email);
+	public List<ExperienceDetails> getExperienceDetails();
 	
-	public Boolean isUsersPhoneExists(String email);
 
-	public Boolean isUsersLoginExists(String password,String email);
-	
-	public List<Users> getIds(String password,String email);
 }
 	

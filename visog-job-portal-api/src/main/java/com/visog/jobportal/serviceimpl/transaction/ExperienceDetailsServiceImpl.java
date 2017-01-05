@@ -37,9 +37,8 @@ public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
 		experiencedetails.setDesignation(req.getDesignation());
 		experiencedetails.setJobProfile(req.getJobProfile());
 		
-
-		 dao.save(experiencedetails);
 		// DaoUtils.setEntityCreateAuditColumns(experiencedetails);
+		 dao.save(experiencedetails);
 		 logger.info("experiencedetails created successfully : " + experiencedetails.getId());
 		
 		
