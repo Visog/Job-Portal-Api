@@ -19,6 +19,8 @@ import com.visog.jobportal.res.transaction.JobSeekerRes;
 import com.visog.jobportal.service.transaction.JobSeekerService;
 import com.visog.jobportal.utils.DaoUtils;
 
+
+
 public class JobSeekerServiceImpl implements JobSeekerService {
 
 	private static final Logger logger = Logger.getLogger(JobSeekerServiceImpl.class);
@@ -51,7 +53,9 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
+
 		
+
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
 		jobseeker.setIndustry(industry);

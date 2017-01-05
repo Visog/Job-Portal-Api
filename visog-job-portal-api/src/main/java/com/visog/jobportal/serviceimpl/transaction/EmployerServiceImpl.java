@@ -73,8 +73,6 @@ public class EmployerServiceImpl implements EmployerService {
 
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
-
-
 		employer.setUser(users);
 		employer.setIndustry(industry);
 		employer.setEmployerType(employerType);

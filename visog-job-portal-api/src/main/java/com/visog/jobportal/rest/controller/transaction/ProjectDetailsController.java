@@ -66,7 +66,7 @@ public class ProjectDetailsController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/projectdetails/<PROJECT_ID>")
+	@Path("/projectdetails/{projectdetailsId}")
 
 	public JobPortalResponse updateProjectDetails(@PathParam("projectdetailsId") String projectdetailsId, ProjectDetailsReq req) {
 

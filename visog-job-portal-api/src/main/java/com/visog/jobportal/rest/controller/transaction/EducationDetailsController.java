@@ -15,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.model.transaction.EducationDetails;
 import com.visog.jobportal.req.transaction.EducationDetailsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.EducationDetailsService;
@@ -55,7 +54,9 @@ public class EducationDetailsController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails/{educationDetailsId}")
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId, EducationDetailsReq req) {
+
+
+	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId,EducationDetailsReq req) {
 
 		service.updateEducationDetails(req, educationDetailsId);
 
