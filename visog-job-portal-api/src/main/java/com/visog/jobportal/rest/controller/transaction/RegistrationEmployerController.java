@@ -33,7 +33,7 @@ public class RegistrationEmployerController {
 	 * 
 	 * @param req
 	 * @return
-	 * @author ravi
+	 * @author Mubarak
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
