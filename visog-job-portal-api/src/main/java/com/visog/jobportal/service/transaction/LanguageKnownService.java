@@ -10,11 +10,12 @@ public interface LanguageKnownService {
 	
 	public void saveLanguageKnown(LanguageKnownReq req);
 	
-	public void updateLanguageKnown(LanguageKnownReq req,String lanhguageKnownId);
+	public void updateLanguageKnown(LanguageKnownReq req,String languageKnownId);
 	
 	public List<LanguageKnownRes> getLanguageKnown();
 	
 	public LanguageKnownRes getLanguageKnown(String Id);
-	public Boolean deleteLanguageKnown(String lanhguageKnownId);
+	
+	public Boolean deleteLanguageKnown(String languageKnownId);
 
 }

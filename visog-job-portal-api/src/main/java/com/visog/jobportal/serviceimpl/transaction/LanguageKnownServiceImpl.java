@@ -51,9 +51,9 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 	/**
 	 * This method updates the LanguageKnown
 	 */
-	public void updateLanguageKnown(LanguageKnownReq req, String lanhguageKnownId) {
+	public void updateLanguageKnown(LanguageKnownReq req, String languageKnownId) {
 
-		LanguageKnown languageKnown=(LanguageKnown) dao.getByKey(LanguageKnown.class, lanhguageKnownId);
+		LanguageKnown languageKnown=(LanguageKnown) dao.getByKey(LanguageKnown.class, languageKnownId);
 		languageKnown.setRead(req.getRead());
 		languageKnown.setWrite(req.getWrite());
 		languageKnown.setSpeak(req.getSpeak());
@@ -68,7 +68,7 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 		languageKnown.setUser(users);
 		
 		dao.update(languageKnown);
-		logger.info(" languageKnown updated Successfully"+languageKnown.getId());
+		logger.info(" languageKnown updated Successfully"+ languageKnown.getId());
 		
 	}
 
@@ -120,9 +120,9 @@ public class LanguageKnownServiceImpl implements LanguageKnownService{
 	/**
 	 * This method deletes the given languageKnown  
 	 */
-	public Boolean deleteLanguageKnown(String lanhguageKnownId) {
+	public Boolean deleteLanguageKnown(String languageKnownId) {
 
-		return (dao.delete(LanguageKnown.class, lanhguageKnownId)!=0);
+		return (dao.delete(LanguageKnown.class, languageKnownId)!=0);
 	}
 	
 }
