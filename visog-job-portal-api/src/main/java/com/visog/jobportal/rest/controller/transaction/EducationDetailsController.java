@@ -36,7 +36,7 @@ public class EducationDetailsController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails")
-	
+
 	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
 
 		service.saveEducationDetails(req);
@@ -49,14 +49,13 @@ public class EducationDetailsController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails/{educationDetailsId}")
 
-
-	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId,EducationDetailsReq req) {
+	public JobPortalResponse updatePostJob(@PathParam("educationDetailsId") String educationDetailsId,
+			EducationDetailsReq req) {
 
 		service.updateEducationDetails(req, educationDetailsId);
 
@@ -68,8 +67,7 @@ public class EducationDetailsController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
 	@Path("/educationDetails")
 	public JobPortalResponse getJobSeekers() {
@@ -83,8 +81,7 @@ public class EducationDetailsController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
 	@Path("/educationDetails/{educationDetailsId}")
 	public JobPortalResponse getPostJob(@PathParam("educationDetailsId") String educationDetailsId) {
@@ -99,14 +96,13 @@ public class EducationDetailsController {
 
 	}
 
-	
 	@DELETE
 	@Path("/educationDetails/{educationDetailsId}")
 	public JobPortalResponse deletePostJob(@PathParam("educationDetailsId") String educationDetailsId) {
-		
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deleteEducationDetails(educationDetailsId)) {
+		if (service.deleteEducationDetails(educationDetailsId)) {
 			jobPortalResponse.setMessage("EducationDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -115,10 +111,9 @@ public class EducationDetailsController {
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
-  
+
 		return jobPortalResponse;
-	
-	
+
 	}
-	
+
 }

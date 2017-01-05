@@ -19,8 +19,6 @@ import com.visog.jobportal.res.transaction.JobSeekerRes;
 import com.visog.jobportal.service.transaction.JobSeekerService;
 import com.visog.jobportal.utils.DaoUtils;
 
-
-
 public class JobSeekerServiceImpl implements JobSeekerService {
 
 	private static final Logger logger = Logger.getLogger(JobSeekerServiceImpl.class);
@@ -36,7 +34,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		Users users = new Users();
 		users.setId(req.getUser());
-		
+
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
 
@@ -54,8 +52,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
 
-		
-
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
 		jobseeker.setIndustry(industry);
@@ -64,7 +60,7 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
 		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
 		jobseeker.setKeySkills(req.getKeySkills());
-		
+
 		jobseeker.setOtherJobRole(req.getJobRole());
 		jobseeker.setUser(users);
 		jobseeker.setDomain(domain);
@@ -72,7 +68,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setIndustry(industry);
 		jobseeker.setJobRole(jobrole);
 
-		
 		jobseeker.setJobRole(jobrole);
 
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
@@ -83,11 +78,11 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 	}
 
 	public void updateJobSeeker(JobSeekerReq req, String jobseekerId) {
-		JobSeeker jobSeeker=(JobSeeker) dao.getByKey(JobSeeker.class, jobseekerId);
+		JobSeeker jobSeeker = (JobSeeker) dao.getByKey(JobSeeker.class, jobseekerId);
 
 		Users users = new Users();
 		users.setId(req.getUser());
-		
+
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
 
@@ -100,7 +95,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		EmploymentType employment = new EmploymentType();
 		employment.setId(req.getEmploymentType());
 
-		
 		jobSeeker.setResumeHeadline(req.getResumeHeadline());
 		jobSeeker.setCompanyName(req.getCompanyName());
 		jobSeeker.setUser(users);

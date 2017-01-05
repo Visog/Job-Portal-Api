@@ -1,25 +1,25 @@
 package com.visog.jobportal.res.transaction;
 
 public class AddressRes {
-	
+
 	private String id;
-	
+
 	private String addrtessLine1;
-	
+
 	private String addressLine2;
-	
+
 	private String country;
-	
+
 	private String state;
-	
+
 	private String city;
-	
+
 	private String zipcode;
-	
+
 	private String associatedtype;
-	
+
 	private String associated;
-	
+
 	private String addressType;
 
 	public String getId() {

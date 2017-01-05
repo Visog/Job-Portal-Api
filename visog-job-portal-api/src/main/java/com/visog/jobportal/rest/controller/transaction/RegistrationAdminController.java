@@ -23,13 +23,13 @@ import com.visog.jobportal.service.transaction.UserService;
 @Produces(MediaType.APPLICATION_JSON)
 public class RegistrationAdminController {
 
-	private static final Logger logger=Logger.getLogger(RegistrationAdminController.class);
-	
+	private static final Logger logger = Logger.getLogger(RegistrationAdminController.class);
+
 	private @CookieParam("User-Identifier") String userIdentifier;
-	
+
 	@Inject
 	private UserService service;
-	
+
 	/**
 	 * This method creates the specialization
 	 * 
@@ -40,24 +40,24 @@ public class RegistrationAdminController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/regadmin")
 	public JobPortalResponse createUsers(UsersReq req) {
-		
-			// service.saveUsers(req);
-			JobPortalResponse jobPortalResponse = new JobPortalResponse();
-			if (service.saveUsers(req)) {
-					jobPortalResponse.setMessage("Your data saved succcessfully");
-					jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-					jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-					
-			} else {
-					jobPortalResponse.setMessage("Mail Address/Mobile Number  already exists");
-					jobPortalResponse.setStatus(Status.STATUS_FAIL);
-					jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 
-			}
-				return jobPortalResponse;
-		
+		// service.saveUsers(req);
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
+		if (service.saveUsers(req)) {
+			jobPortalResponse.setMessage("Your data saved succcessfully");
+			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		} else {
+			jobPortalResponse.setMessage("Mail Address/Mobile Number  already exists");
+			jobPortalResponse.setStatus(Status.STATUS_FAIL);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+
+		}
+		return jobPortalResponse;
+
 	}
-	
+
 	/**
 	 * This method updates the Users
 	 * 
@@ -68,34 +68,33 @@ public class RegistrationAdminController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/regadmin/{regadminId}")
 	public JobPortalResponse updateusers(@PathParam("regadminId") String regadminId, UsersReq req) {
-		
+
 		// service.updateUsers(req, job_seekerId);
 
-				JobPortalResponse jobPortalResponse = new JobPortalResponse();
-				if (service.updateUsers(req, regadminId)) {
-					jobPortalResponse.setMessage("Admin updated succcessfully");
-					jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-					jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-					
-				} else {
-					jobPortalResponse.setMessage("data not updated already exists");
-					jobPortalResponse.setStatus(Status.STATUS_FAIL);
-					jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
+		if (service.updateUsers(req, regadminId)) {
+			jobPortalResponse.setMessage("Admin updated succcessfully");
+			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
-				}
-				return jobPortalResponse;	
-		
+		} else {
+			jobPortalResponse.setMessage("data not updated already exists");
+			jobPortalResponse.setStatus(Status.STATUS_FAIL);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+
+		}
+		return jobPortalResponse;
+
 	}
-	
 
 	/**
-	 * This method retrieves all Users 
+	 * This method retrieves all Users
 	 * 
 	 * @return
 	 */
 	@GET
 	@Path("/regadmin")
-	public JobPortalResponse getUsers(){
+	public JobPortalResponse getUsers() {
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getUsers());
 		jobPortalResponse.setMessage("Admin  fetched succcessfully");
@@ -103,9 +102,8 @@ public class RegistrationAdminController {
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
-		
+
 	}
-	
 
 	/**
 	 * This method retrieves a single Users
@@ -122,9 +120,9 @@ public class RegistrationAdminController {
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
-		
+
 	}
-	
+
 	/**
 	 * This method delete the user
 	 * 
@@ -133,10 +131,10 @@ public class RegistrationAdminController {
 	@DELETE
 	@Path("/regadmin/{regadminId}")
 	public JobPortalResponse deleteUsers(@PathParam("regadminId") String regadminId) {
-		
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		if (service.deleteUsers(regadminId)) {
-			
+
 			jobPortalResponse.setMessage("Admin deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -148,6 +146,5 @@ public class RegistrationAdminController {
 		}
 		return jobPortalResponse;
 	}
-	
-	
+
 }

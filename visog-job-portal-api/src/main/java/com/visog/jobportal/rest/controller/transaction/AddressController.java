@@ -23,11 +23,12 @@ import com.visog.jobportal.service.transaction.AddressService;
 @Produces(MediaType.APPLICATION_JSON)
 public class AddressController {
 	private static final Logger logger = Logger.getLogger(AddressController.class);
-	
+
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
 	private AddressService service;
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/address")
@@ -47,7 +48,7 @@ public class AddressController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/address/<USER_ADDRESS_ID>")
-	public JobPortalResponse updateAddress(@PathParam("addressId") String addressId,AddressReq req) {
+	public JobPortalResponse updateAddress(@PathParam("addressId") String addressId, AddressReq req) {
 
 		service.updateAddress(req, addressId);
 
@@ -107,7 +108,5 @@ public class AddressController {
 		return jobPortalResponse;
 
 	}
-
-
 
 }
