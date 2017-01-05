@@ -24,6 +24,7 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 	private PostJobDomainsDao dao;
 
 	public void savePostJobDomain(PostJobDomainsReq req) {
+		
 		PostJobDomains postJobDomains = new PostJobDomains();
 		PostJob postJob = new PostJob();
 		Domains domains = new Domains();
