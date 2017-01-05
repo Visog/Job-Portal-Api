@@ -147,7 +147,7 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		educationDetailsRes.setDurationfrom(educationDetail.getDurationFrom());
 		educationDetailsRes.setDurationto(educationDetail.getDurationTo());
 
-		return educationDetailsRes;
+		return educationDetailsRes;  
 	}
 
 	public Boolean deleteEducationDetails(String educationDetailsId) {

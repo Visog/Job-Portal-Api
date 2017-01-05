@@ -115,7 +115,7 @@ public class EducationDetailsController {
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
-
+  
 		return jobPortalResponse;
 	
 	
