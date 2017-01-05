@@ -105,7 +105,7 @@ public class JobSeekerController {
 			jobPortalResponse.setMessage("Job Seeker deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-		} else {
+		} else {  
 			jobPortalResponse.setMessage("Failed to delete the jobseeker");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
