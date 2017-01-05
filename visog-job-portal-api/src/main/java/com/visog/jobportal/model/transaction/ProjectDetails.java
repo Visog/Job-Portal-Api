@@ -52,11 +52,29 @@ public class ProjectDetails extends AbstractModel {
 
 	@Column(name = "TEAM_SIZE ")
 	private String teamsize;
-	
-	@Column(name="TECHNOLOGIES_USED")
+
+	@Column(name = "TECHNOLOGIES_USED")
 	private String technologiesused;
 
-	
+	@Column(name = "CREATED_SID")
+	private String createdSid;
+
+	@Column(name = "CREATED_BY")
+	private String createdBy;
+
+	@Column(name = "CREATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdOn;
+
+	@Column(name = "UPDATED_SID")
+	private String updatedSid;
+
+	@Column(name = "UPDATED_BY")
+	private String updatedBy;
+
+	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedOn;
 
 	public String getId() {
 		return id;
@@ -137,6 +155,7 @@ public class ProjectDetails extends AbstractModel {
 	public void setTeamsize(String teamsize) {
 		this.teamsize = teamsize;
 	}
+
 	public String getTechnologiesused() {
 		return technologiesused;
 	}
@@ -145,4 +164,53 @@ public class ProjectDetails extends AbstractModel {
 		this.technologiesused = technologiesused;
 	}
 
-}
+	public String getCreatedSid() {
+		return createdSid;
+	}
+
+	public void setCreatedSid(String createdSid) {
+		this.createdSid = createdSid;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getUpdatedSid() {
+		return updatedSid;
+	}
+
+	public void setUpdatedSid(String updatedSid) {
+		this.updatedSid = updatedSid;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
+	
+	}

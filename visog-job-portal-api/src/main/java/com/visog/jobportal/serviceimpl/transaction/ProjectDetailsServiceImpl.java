@@ -10,13 +10,11 @@ import org.apache.log4j.Logger;
 import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.dao.transaction.ProjectDetailsDao;
 import com.visog.jobportal.model.master.EmploymentType;
-import com.visog.jobportal.model.transaction.EmployerJobseeker;
 import com.visog.jobportal.model.transaction.ProjectDetails;
 import com.visog.jobportal.req.transaction.ProjectDetailsReq;
 import com.visog.jobportal.res.transaction.ProjectDetailsRes;
 import com.visog.jobportal.service.transaction.ProjectDetailsService;
 import com.visog.jobportal.utils.DaoUtils;
-
 
 /**
  * 
@@ -25,23 +23,24 @@ import com.visog.jobportal.utils.DaoUtils;
  */
 
 public class ProjectDetailsServiceImpl implements ProjectDetailsService {
-	private static final Logger logger = Logger.getLogger(ProjectDetails.class);
-	
+
+	private static final Logger logger = Logger.getLogger(ProjectDetailsServiceImpl.class);
+
 	@Inject
 	ProjectDetailsDao dao;
 
-	
 	public void saveProjectDetails(ProjectDetailsReq req) {
-		
-		ProjectDetails projectDetails =new ProjectDetails();
-		Users users =new Users();
+
+		ProjectDetails projectDetails = new ProjectDetails();
+		Users users = new Users();
+		EmploymentType employmentType = new EmploymentType();
+
 		users.setId(req.getUser());
 		projectDetails.setUser(users);
-		
-		EmploymentType employmenttype=new EmploymentType();
-		employmenttype.setId(req.getEmploymentType());
-		projectDetails.setEmploymenttype(employmenttype);
-		
+
+		employmentType.setId(req.getEmploymentType());
+		projectDetails.setEmploymenttype(employmentType);
+
 		projectDetails.setJobresponsibilities(req.getJobResponsibilities());
 		projectDetails.setProjectdetails(req.getProjectDetails());
 		projectDetails.setProjecttitle(req.getProjecttitle());
@@ -49,108 +48,98 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 		projectDetails.setDurationfrom(req.getDurationfrom());
 		projectDetails.setDurationto(req.getDurationTo());
 		projectDetails.setTeamsize(req.getTeamSize());
-		projectDetails.setTechnologiesused(req.getTechnologiesUsed());	
+		projectDetails.setTechnologiesused(req.getTechnologiesUsed());
 
 		DaoUtils.setEntityCreateAuditColumns(projectDetails);
 		dao.save(projectDetails);
 		logger.info("projectDetails created successfully : " + projectDetails.getId());
-		
+
 	}
-
-
 
 	public List<ProjectDetailsRes> getProjectDetails() {
-		
-		List<ProjectDetails> projectdetails = dao.getProjectDetails();
 
-		List<ProjectDetailsRes> projectdetailsList = new ArrayList<>();
-		ProjectDetailsRes  projectdetailsRes =null;
-		
-		for(ProjectDetails projectdetail :  projectdetails)
-		{
-			Users users =new Users();
-			EmploymentType employmenttype=new EmploymentType();
-			
-			ProjectDetailsRes projectDetailsRes = new ProjectDetailsRes();
-			
-			projectdetailsRes.setId(projectdetail.getId());
-			projectdetailsRes.setUser(projectdetail.getUser().getId());
-			projectdetailsRes.setJobResponsibilities(projectdetail.getJobresponsibilities());
-			projectdetailsRes.setProjectDetails(projectdetail.getProjectdetails());
-			projectdetailsRes.setProjecttitle(projectdetail.getProjecttitle());
-			projectdetailsRes.setClientName(projectdetail.getClientname());
-			projectdetailsRes.setEmploymentType(projectdetail.getEmploymenttype().getId());
-			projectdetailsRes.setDurationfrom(projectdetail.getDurationfrom());
-			projectdetailsRes.setDurationTo(projectdetail.getDurationto());
-			projectdetailsRes.setTeamSize(projectdetail.getTeamsize());
-			projectdetailsRes.setTechnologiesUsed(projectdetail.getTechnologiesused());	
+		List<ProjectDetails> projectDetails = dao.getProjectDetails();
+
+		List<ProjectDetailsRes>  projectDetailsList = new ArrayList<>();
+		ProjectDetailsRes projectDetailsRes = null;
+
+		EmploymentType employmentType = new EmploymentType();
+		Users users = new Users();
+		for (ProjectDetails projectDetail :  projectDetails) {
+
+			projectDetailsRes = new ProjectDetailsRes();
+
+			projectDetailsRes.setId(projectDetail.getId());
+			projectDetailsRes.setUser(projectDetail.getUser().getId());
+			projectDetailsRes.setJobResponsibilities(projectDetail.getJobresponsibilities());
+			projectDetailsRes.setProjectDetails(projectDetail.getProjectdetails());
+			projectDetailsRes.setProjecttitle(projectDetail.getProjecttitle());
+			projectDetailsRes.setClientName(projectDetail.getClientname());
+			projectDetailsRes.setEmploymentType(projectDetail.getEmploymenttype().getId());
+			projectDetailsRes.setDurationfrom(projectDetail.getDurationfrom());
+			projectDetailsRes.setDurationTo(projectDetail.getDurationto());
+			projectDetailsRes.setTeamSize(projectDetail.getTeamsize());
+			projectDetailsRes.setTechnologiesUsed(projectDetail.getTechnologiesused());
 		}
-		
-		return projectdetailsList;
+
+		return projectDetailsList;
 	}
 
-
-	public Boolean deleteProjectDetails(String projectdetailsId) {
-		return (dao.delete(ProjectDetails.class, projectdetailsId) != 0);
+	public Boolean deleteProjectDetails(String id) {
+		return (dao.delete(ProjectDetails.class, id) != 0);
 	}
 
+	public void updateProjectDetails(ProjectDetailsReq req, String projectDetailsId) {
 
+		ProjectDetails projectDetails  = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectDetailsId);
 
-	
-	public void updateProjectDetails(ProjectDetailsReq req, String projectdetailsId) {
-
-		ProjectDetails projectdetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectdetailsId);
-
-		EmploymentType employmenttype=new EmploymentType();
+		EmploymentType employmenttype = new EmploymentType();
 		employmenttype.setId(req.getEmploymentType());
 
-		Users users =new Users();
+		Users users = new Users();
 		users.setId(req.getUser());
-		
-		projectdetails.setUser(users);
-		projectdetails.setEmploymenttype(employmenttype);
-		projectdetails.setJobresponsibilities(req.getJobResponsibilities());
-		projectdetails.setProjectdetails(req.getProjectDetails());
-		projectdetails.setProjecttitle(req.getProjecttitle());
-		projectdetails.setClientname(req.getClientName());
-		projectdetails.setDurationfrom(req.getDurationfrom());
-		projectdetails.setDurationto(req.getDurationTo());
-		projectdetails.setTeamsize(req.getTeamSize());
-		projectdetails.setTechnologiesused(req.getTechnologiesUsed());	
 
-			dao.update(projectdetails);
-			logger.info("projectdetails updated successfully : " + projectdetails.getId());
+		projectDetails.setUser(users);
+		projectDetails.setEmploymenttype(employmenttype);
+		projectDetails.setJobresponsibilities(req.getJobResponsibilities());
+		projectDetails.setProjectdetails(req.getProjectDetails());
+		projectDetails.setProjecttitle(req.getProjecttitle());
+		projectDetails.setClientname(req.getClientName());
+		projectDetails.setDurationfrom(req.getDurationfrom());
+		projectDetails.setDurationto(req.getDurationTo());projectDetails.setTeamsize(req.getTeamSize());
+		projectDetails.setTechnologiesused(req.getTechnologiesUsed());
+
+		dao.update(projectDetails);
+		logger.info("projectdetails updated successfully : " + projectDetails.getId());
 	}
 
-/***
- * this gives details of given ID
- */
-	public ProjectDetailsRes getprojectDetails(String Id) {
-		ProjectDetails projectDetails=(ProjectDetails) dao.getByKey(ProjectDetails.class, Id);
-		
+	/***
+	 * this gives details of given ID
+	 */
+	public ProjectDetailsRes getprojectDetails(String projectDetailsId) {
+		ProjectDetails projectDetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectDetailsId);
+
 		ProjectDetailsRes projectDetailRes = new ProjectDetailsRes();
-		
+
 		projectDetailRes.setId(projectDetails.getId());
 		projectDetailRes.setUser(projectDetails.getUser().getId());
 		projectDetailRes.setJobResponsibilities(projectDetails.getJobresponsibilities());
 		projectDetailRes.setClientName(projectDetails.getClientname());
 		projectDetailRes.setProjectDetails(projectDetails.getProjectdetails());
-		
+
 		projectDetailRes.setProjecttitle(projectDetails.getProjecttitle());
-		
+
 		projectDetailRes.setEmploymentType(projectDetails.getEmploymenttype().getId());
-		
+
 		projectDetailRes.setDurationfrom(projectDetails.getDurationfrom());
-		
+
 		projectDetailRes.setDurationTo(projectDetails.getDurationto());
-		
+
 		projectDetailRes.setTeamSize(projectDetails.getTeamsize());
-		
+
 		projectDetailRes.setTechnologiesUsed(projectDetails.getTechnologiesused());
-		
+
 		return projectDetailRes;
 	}
-		
-		
+
 }
-	

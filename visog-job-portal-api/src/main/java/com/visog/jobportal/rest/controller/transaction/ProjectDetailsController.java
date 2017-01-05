@@ -27,7 +27,7 @@ import com.visog.jobportal.service.transaction.UserService;
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
 public class ProjectDetailsController {
-	private static final Logger logger = Logger.getLogger(ProjectDetailsController .class);
+	private static final Logger logger = Logger.getLogger(ProjectDetailsController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
@@ -40,17 +40,16 @@ public class ProjectDetailsController {
 	 * @param req
 	 * @return
 	 */
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/projectdetails")
-
+	@Path("/projectDetails")
 	public JobPortalResponse createProjectDetails(ProjectDetailsReq req) {
 
 		service.saveProjectDetails(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("Project Details saved succcessfully");
+		jobPortalResponse.setMessage("ProjectDetails saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -66,11 +65,11 @@ public class ProjectDetailsController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/projectdetails/{projectdetailsId}")
+	@Path("/projectDetails/{projectDetailsId}")
+	public JobPortalResponse updateProjectDetails(@PathParam("projectDetailsId") String projectDetailsId,
+			ProjectDetailsReq req) {
 
-	public JobPortalResponse updateProjectDetails(@PathParam("projectdetailsId") String projectdetailsId, ProjectDetailsReq req) {
-
-		service.updateProjectDetails(req, projectdetailsId);
+		service.updateProjectDetails(req, projectDetailsId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("ProjectDetails updated succcessfully");
@@ -87,12 +86,12 @@ public class ProjectDetailsController {
 	 * @return
 	 */
 	@GET
-	@Path("/projectdetails")
+	@Path("/projectDetails")
 	public JobPortalResponse getProjectDetails() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getProjectDetails());
-		jobPortalResponse.setMessage("Roles fetched succcessfully");
+		jobPortalResponse.setMessage("ProjectDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -107,12 +106,12 @@ public class ProjectDetailsController {
 	 */
 
 	@GET
-	@Path("/projectdetails/{projectdetailsId}")
-	public JobPortalResponse getProjectDetails(@PathParam("projectdetailsId") String projectdetailsId) {
+	@Path("/projectDetails/{projectDetailsId}")
+	public JobPortalResponse getProjectDetails(@PathParam("projectDetailsId") String projectDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getprojectDetails(projectdetailsId));
-		jobPortalResponse.setMessage("Project Details fetched succcessfully");
+		jobPortalResponse.setData(service.getprojectDetails(projectDetailsId));
+		jobPortalResponse.setMessage("ProjectDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -127,17 +126,17 @@ public class ProjectDetailsController {
 	 */
 
 	@DELETE
-	@Path("/projectdetails/{projectdetailsId}")
-	public JobPortalResponse deleteProjectDetails(@PathParam("projectdetailsId") String projectdetailsId) {
+	@Path("/projectDetails/{projectDetailsId}")
+	public JobPortalResponse deleteProjectDetails(@PathParam("projectDetailsId") String projectDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if (service.deleteProjectDetails(projectdetailsId)) {
-			jobPortalResponse.setMessage("projectdetails deleted succcessfully");
+		if (service.deleteProjectDetails(projectDetailsId)) {
+			jobPortalResponse.setMessage("ProjectDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete the projectdetailsId");
+			jobPortalResponse.setMessage("Failed to delete the ProjectDetails");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -146,79 +145,3 @@ public class ProjectDetailsController {
 
 	}
 }
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-	

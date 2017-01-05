@@ -40,7 +40,7 @@ public class ExperienceDetailsController {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/experiencedetails")
+	@Path("/experienceDetails")
 
 	public JobPortalResponse createExperienceDetails(ExperienceDetailsReq req) {
 
@@ -63,11 +63,10 @@ public class ExperienceDetailsController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/experiencedetails/{experiencedetailsId}")
+	@Path("/experienceDetails/{experienceDetailsId}")
+	public JobPortalResponse updateExperienceDetails(@PathParam("experienceDetailsId") String experienceDetailsId, ExperienceDetailsReq req) {
 
-	public JobPortalResponse updateExperienceDetails(@PathParam("experiencedetailsId") String experiencedetailsId, ExperienceDetailsReq req) {
-
-		service.updateExperienceDetails(req, experiencedetailsId);
+		service.updateExperienceDetails(req, experienceDetailsId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("ExperienceDetails updated succcessfully");
@@ -84,12 +83,12 @@ public class ExperienceDetailsController {
 	 * @return
 	 */
 	@GET
-	@Path("/experiencedetails")
+	@Path("/experienceDetails")
 	public JobPortalResponse getExperienceDetails() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getExperienceDetails());
-		jobPortalResponse.setMessage("Roles fetched succcessfully");
+		jobPortalResponse.setMessage("ExperienceDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -104,11 +103,11 @@ public class ExperienceDetailsController {
 	 */
 
 	@GET
-	@Path("/experiencedetails/{experiencedetailsId}")
-	public JobPortalResponse getExperienceDetails(@PathParam("experiencedetailsId") String experiencedetailsId) {
+	@Path("/experienceDetails/{experienceDetailsId}")
+	public JobPortalResponse getExperienceDetails(@PathParam("experienceDetailsId") String experienceDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getexperienceDetails(experiencedetailsId));
+		jobPortalResponse.setData(service.getexperienceDetails(experienceDetailsId));
 		jobPortalResponse.setMessage("ExperienceDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -124,17 +123,17 @@ public class ExperienceDetailsController {
 	 */
 
 	@DELETE
-	@Path("/experiencedetails/{experiencedetailsId}")
-	public JobPortalResponse deleteExperienceDetails(@PathParam("experiencedetailsId") String experiencedetailsId) {
+	@Path("/experienceDetails/{experienceDetailsId}")
+	public JobPortalResponse deleteExperienceDetails(@PathParam("experienceDetailsId") String experienceDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if (service.deleteExperienceDetails(experiencedetailsId)) {
-			jobPortalResponse.setMessage("experiencedetails deleted succcessfully");
+		if (service.deleteExperienceDetails(experienceDetailsId)) {
+			jobPortalResponse.setMessage("ExperienceDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete the experiencedetailsId");
+			jobPortalResponse.setMessage("Failed to delete the ExperienceDetailsId");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}

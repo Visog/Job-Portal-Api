@@ -8,6 +8,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.apache.log4j.Logger;
+
 import com.visog.jobportal.dao.AbstractDao;
 import com.visog.jobportal.dao.transaction.ExperienceDetailsDao;
 import com.visog.jobportal.model.transaction.ExperienceDetails;
@@ -17,6 +19,7 @@ import com.visog.jobportal.model.transaction.ExperienceDetails;
 @Transactional
 public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao {
 
+	private static final Logger logger = Logger.getLogger(ExperienceDetailsDaoImpl.class);
 	
 	public List<ExperienceDetails> getExperienceDetails() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();

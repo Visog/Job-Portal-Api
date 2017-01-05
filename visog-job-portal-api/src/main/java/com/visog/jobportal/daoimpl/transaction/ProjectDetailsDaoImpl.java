@@ -17,7 +17,6 @@ import com.visog.jobportal.model.transaction.Users;
 
 @Singleton
 @Transactional
-
 public class ProjectDetailsDaoImpl extends AbstractDao implements ProjectDetailsDao {
 	private static final Logger logger = Logger.getLogger(ProjectDetailsDaoImpl.class);
 

@@ -3,20 +3,20 @@ package com.visog.jobportal.req.transaction;
 import java.util.Date;
 
 public class ExperienceDetailsReq {
-	private String user;
-	
-	private String companyName;
-	
-	private String employmentType;
-	
-	private Date durationFrom;
-	 
-	private Date durationTo;
-	
-	private String designation;
-	
-	private String jobProfile;
 
+	private String user;
+
+	private String companyName;
+
+	private String employmentType;
+
+	private Date durationFrom;
+
+	private Date durationTo;
+
+	private String designation;
+
+	private String jobProfile;
 
 	public String getUser() {
 		return user;
@@ -41,8 +41,6 @@ public class ExperienceDetailsReq {
 	public void setEmploymentType(String employmentType) {
 		this.employmentType = employmentType;
 	}
-
-	
 
 	public Date getDurationFrom() {
 		return durationFrom;
