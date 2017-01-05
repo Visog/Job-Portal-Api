@@ -25,22 +25,21 @@ public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
 	
 	public void saveExperienceDetails(ExperienceDetailsReq req) {
 		
-		ExperienceDetails experiencedetails=new ExperienceDetails();
+		ExperienceDetails experienceDetails=new ExperienceDetails();
 		Users users =new Users();
 		users.setId(req.getUser());
 		
-		experiencedetails.setUser(users);
-		experiencedetails.setCompanyName(req.getCompanyName());
-		experiencedetails.setEmploymentType(req.getEmploymentType());
-		experiencedetails.setDurationFrom(req.getDurationFrom());
-		experiencedetails.setDurationTo(req.getDurationTo());
-		experiencedetails.setDesignation(req.getDesignation());
-		experiencedetails.setJobProfile(req.getJobProfile());
+		experienceDetails.setUser(users);
+		experienceDetails.setCompanyName(req.getCompanyName());
+		experienceDetails.setEmploymentType(req.getEmploymentType());
+		experienceDetails.setDurationFrom(req.getDurationFrom());
+		experienceDetails.setDurationTo(req.getDurationTo());
+		experienceDetails.setDesignation(req.getDesignation());
+		experienceDetails.setJobProfile(req.getJobProfile());
 		
-
-		 dao.save(experiencedetails);
-		// DaoUtils.setEntityCreateAuditColumns(experiencedetails);
-		 logger.info("experiencedetails created successfully : " + experiencedetails.getId());
+		//DaoUtils.setEntityCreateAuditColumns(experienceDetails);
+		 dao.save(experienceDetails);
+		 logger.info("experiencedetails created successfully : " + experienceDetails.getId());
 		
 		
 		
