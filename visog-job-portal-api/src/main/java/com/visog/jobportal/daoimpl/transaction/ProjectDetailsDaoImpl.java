@@ -18,58 +18,20 @@ import com.visog.jobportal.model.transaction.Users;
 @Singleton
 @Transactional
 
-public class ProjectDetailsDaoImpl extends AbstractDao implements ProjectDetailsDao{
-private static final Logger logger = Logger.getLogger(ProjectDetailsDaoImpl.class);
-	
-	
+public class ProjectDetailsDaoImpl extends AbstractDao implements ProjectDetailsDao {
+	private static final Logger logger = Logger.getLogger(ProjectDetailsDaoImpl.class);
+
 	/**
 	 * @author ShivaPrasad
 	 */
-	
-	public List<ProjectDetails> getProjectDetailss() {
+
+	public List<ProjectDetails> getProjectDetails() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<ProjectDetails> q = cb.createQuery(ProjectDetails.class);
 		Root<ProjectDetails> c = q.from(ProjectDetails.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
+
+	}
 
 }
-
-
-	
-	public List<ProjectDetails> getProjectDetails() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-	public Boolean isUsersExists(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-	public Boolean isUsersPhoneExists(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-	public Boolean isUsersLoginExists(String password, String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-	public List<Users> getIds(String password, String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	}
-
