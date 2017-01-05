@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.Languages;
 
-@Table(name = "FILES")
+@Table(name = "LANGUAGE_KNOWN")
 @Entity
 public class LanguageKnown  extends AbstractModel{
 	
