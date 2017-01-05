@@ -36,8 +36,8 @@ public class JobSeekerController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/jobSeeker")
-	
+	@Path("/jobseeker")
+
 	public JobPortalResponse createJobSeeker(JobSeekerReq req) {
 
 		service.saveJObSeeker(req);
@@ -50,14 +50,13 @@ public class JobSeekerController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/jobSeeker/{jobSeekerId}")
-	public JobPortalResponse updatePostJob(@PathParam("jobSeekerId") String jobSeekerId, JobSeekerReq req) {
+	@Path("/jobseeker/{jobseekerId}")
+	public JobPortalResponse updatePostJob(@PathParam("jobseekerId") String jobseekerId, JobSeekerReq req) {
 
-		service.updateJobSeeker(req, jobSeekerId);
+		service.updateJobSeeker(req, jobseekerId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("JobSeeker updated succcessfully");
@@ -67,10 +66,9 @@ public class JobSeekerController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
-	@Path("/jobSeeker")
+	@Path("/jobseeker")
 	public JobPortalResponse getJobSeekers() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -82,14 +80,13 @@ public class JobSeekerController {
 		return jobPortalResponse;
 
 	}
-	
-	
+
 	@GET
-	@Path("/jobSeeker/{jobSeekerId}")
-	public JobPortalResponse getPostJob(@PathParam("jobSeekerId") String jobSeekerId) {
+	@Path("/jobseeker/{jobseekerId}")
+	public JobPortalResponse getPostJob(@PathParam("jobseekerId") String jobseekerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getJobSeeker(jobSeekerId));
+		jobPortalResponse.setData(service.getJobSeeker(jobseekerId));
 		jobPortalResponse.setMessage("job seeker fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -98,14 +95,13 @@ public class JobSeekerController {
 
 	}
 
-	
 	@DELETE
-	@Path("/jobSeeker/{jobSeekerId}")
-	public JobPortalResponse deletePostJob(@PathParam("jobSeekerId") String jobseekerId) {
-		
+	@Path("/jobseeker/{jobseekerId}")
+	public JobPortalResponse deletePostJob(@PathParam("jobseekerId") String jobseekerId) {
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deleteJobSeeker(jobseekerId)) {
+		if (service.deleteJobSeeker(jobseekerId)) {
 			jobPortalResponse.setMessage("Job Seeker deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -116,18 +112,7 @@ public class JobSeekerController {
 		}
 
 		return jobPortalResponse;
-	
-	
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

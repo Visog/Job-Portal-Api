@@ -54,8 +54,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
 
-		
-
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
 		jobseeker.setIndustry(industry);
@@ -78,12 +76,12 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		DaoUtils.setEntityCreateAuditColumns(jobseeker);
 		dao.save(jobseeker);
 
-		logger.info(" postjob Successfully" + jobseeker.getId());
+		logger.info(" jobseeker Successfully" + jobseeker.getId());
 
 	}
 
 	public void updateJobSeeker(JobSeekerReq req, String jobseekerId) {
-		JobSeeker jobSeeker=(JobSeeker) dao.getByKey(JobSeeker.class, jobseekerId);
+		JobSeeker jobseeker=(JobSeeker) dao.getByKey(JobSeeker.class, jobseekerId);
 
 		Users users = new Users();
 		users.setId(req.getUser());
@@ -101,25 +99,28 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		employment.setId(req.getEmploymentType());
 
 		
-		jobSeeker.setResumeHeadline(req.getResumeHeadline());
-		jobSeeker.setCompanyName(req.getCompanyName());
-		jobSeeker.setUser(users);
-		jobSeeker.setEmploymentType(employment);
-		jobSeeker.setJobRole(jobrole);
-		jobSeeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
-		jobSeeker.setProfileSummary(req.getProfileSummary());
-		jobSeeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
-		jobSeeker.setWorkExperienceYears(req.getWorkExperienceYears());
-		jobSeeker.setKeySkills(req.getKeySkills());
-		jobSeeker.setIndustry(industry);
-		jobSeeker.setOtherJobRole(req.getJobRole());
-		jobSeeker.setDomain(domain);
+		jobseeker.setResumeHeadline(req.getResumeHeadline());
+		jobseeker.setCompanyName(req.getCompanyName());
+		jobseeker.setUser(users);
+		jobseeker.setEmploymentType(employment);
+		jobseeker.setJobRole(jobrole);
+		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
+		jobseeker.setProfileSummary(req.getProfileSummary());
+		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
+		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
+		jobseeker.setKeySkills(req.getKeySkills());
+		jobseeker.setIndustry(industry);
+		jobseeker.setOtherJobRole(req.getJobRole());
+		jobseeker.setDomain(domain);
+		
+		dao.update(jobseeker);
+		logger.info(" jobseeker Successfully" + jobseeker.getId());
 
 	}
 
 	public List<JobSeekerRes> getJobSeekers() {
 
-		List<JobSeeker> jobSeeker = dao.getJobSeekers();
+		List<JobSeeker> jobseeker = dao.getJobSeekers();
 		List<JobSeekerRes> jobSeekerList = new ArrayList<>();
 
 		JobSeekerRes jobSeekerRes = null;
@@ -134,26 +135,26 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		EmploymentType employment = new EmploymentType();
 
-		for (JobSeeker jobSeekers : jobSeeker) {
+		for (JobSeeker jobseekers : jobseeker) {
 			jobSeekerRes = new JobSeekerRes();
 
-			jobSeekerRes.setId(jobSeekers.getId());
+			jobSeekerRes.setId(jobseekers.getId());
 
-			jobSeekerRes.setUser(jobSeekers.getUser().getId());
-			jobSeekerRes.setDomain(jobSeekers.getDomain().getId());
-			jobSeekerRes.setJobRole(jobSeekers.getJobRole().getId());
-			jobSeekerRes.setIndustry(jobSeekers.getIndustry().getId());
-			jobSeekerRes.setEmploymentType(jobSeekers.getEmploymentType().getId());
+			jobSeekerRes.setUser(jobseekers.getUser().getId());
+			jobSeekerRes.setDomain(jobseekers.getDomain().getId());
+			jobSeekerRes.setJobRole(jobseekers.getJobRole().getId());
+			jobSeekerRes.setIndustry(jobseekers.getIndustry().getId());
+			jobSeekerRes.setEmploymentType(jobseekers.getEmploymentType().getId());
 
-			jobSeekerRes.setCompanyName(jobSeekers.getCompanyName());
-			jobSeekerRes.setHobbiesAndInterest(jobSeekers.getHobbiesAndInterest());
-			jobSeekerRes.setKeySkills(jobSeekers.getKeySkills());
-			jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
-			jobSeekerRes.setProfileSummary(jobSeekers.getProfileSummary());
-			jobSeekerRes.setWorkExperienceMonths(jobSeekers.getWorkExperienceMonths());
-			jobSeekerRes.setWorkExperienceYears(jobSeekers.getWorkExperienceYears());
-			jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
-			jobSeekerRes.setResumeHeadline(jobSeekers.getResumeHeadline());
+			jobSeekerRes.setCompanyName(jobseekers.getCompanyName());
+			jobSeekerRes.setHobbiesAndInterest(jobseekers.getHobbiesAndInterest());
+			jobSeekerRes.setKeySkills(jobseekers.getKeySkills());
+			jobSeekerRes.setOtherJobRole(jobseekers.getOtherJobRole());
+			jobSeekerRes.setProfileSummary(jobseekers.getProfileSummary());
+			jobSeekerRes.setWorkExperienceMonths(jobseekers.getWorkExperienceMonths());
+			jobSeekerRes.setWorkExperienceYears(jobseekers.getWorkExperienceYears());
+			jobSeekerRes.setOtherJobRole(jobseekers.getOtherJobRole());
+			jobSeekerRes.setResumeHeadline(jobseekers.getResumeHeadline());
 
 			jobSeekerList.add(jobSeekerRes);
 
@@ -164,24 +165,24 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 	public JobSeekerRes getJobSeeker(String id) {
 
-		JobSeeker jobSeekers = (JobSeeker) dao.getByKey(JobSeeker.class, id);
+		JobSeeker jobseekers = (JobSeeker) dao.getByKey(JobSeeker.class, id);
 		JobSeekerRes jobSeekerRes = new JobSeekerRes();
 
-		jobSeekerRes.setUser(jobSeekers.getUser().getId());
-		jobSeekerRes.setDomain(jobSeekers.getDomain().getId());
-		jobSeekerRes.setJobRole(jobSeekers.getJobRole().getId());
-		jobSeekerRes.setIndustry(jobSeekers.getIndustry().getId());
-		jobSeekerRes.setEmploymentType(jobSeekers.getEmploymentType().getId());
+		jobSeekerRes.setUser(jobseekers.getUser().getId());
+		jobSeekerRes.setDomain(jobseekers.getDomain().getId());
+		jobSeekerRes.setJobRole(jobseekers.getJobRole().getId());
+		jobSeekerRes.setIndustry(jobseekers.getIndustry().getId());
+		jobSeekerRes.setEmploymentType(jobseekers.getEmploymentType().getId());
 
-		jobSeekerRes.setCompanyName(jobSeekers.getCompanyName());
-		jobSeekerRes.setHobbiesAndInterest(jobSeekers.getHobbiesAndInterest());
-		jobSeekerRes.setKeySkills(jobSeekers.getKeySkills());
-		jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
-		jobSeekerRes.setProfileSummary(jobSeekers.getProfileSummary());
-		jobSeekerRes.setWorkExperienceMonths(jobSeekers.getWorkExperienceMonths());
-		jobSeekerRes.setWorkExperienceYears(jobSeekers.getWorkExperienceYears());
-		jobSeekerRes.setOtherJobRole(jobSeekers.getOtherJobRole());
-		jobSeekerRes.setResumeHeadline(jobSeekers.getResumeHeadline());
+		jobSeekerRes.setCompanyName(jobseekers.getCompanyName());
+		jobSeekerRes.setHobbiesAndInterest(jobseekers.getHobbiesAndInterest());
+		jobSeekerRes.setKeySkills(jobseekers.getKeySkills());
+		jobSeekerRes.setOtherJobRole(jobseekers.getOtherJobRole());
+		jobSeekerRes.setProfileSummary(jobseekers.getProfileSummary());
+		jobSeekerRes.setWorkExperienceMonths(jobseekers.getWorkExperienceMonths());
+		jobSeekerRes.setWorkExperienceYears(jobseekers.getWorkExperienceYears());
+		jobSeekerRes.setOtherJobRole(jobseekers.getOtherJobRole());
+		jobSeekerRes.setResumeHeadline(jobseekers.getResumeHeadline());
 
 		return jobSeekerRes;
 	}
