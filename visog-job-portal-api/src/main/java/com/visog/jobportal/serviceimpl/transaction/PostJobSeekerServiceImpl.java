@@ -43,7 +43,7 @@ public class PostJobSeekerServiceImpl implements PostJobSeekerService {
 		postJobSeeker.setStatus(status);
 
 		DaoUtils.setEntityCreateAuditColumns(postJobSeeker);
-		dao.save(postJobSeeker);//save Method
+		dao.save(postJobSeeker);
 		logger.info("PostJobseeker is created Successfully" + postJobSeeker.getId());
 
 	}
