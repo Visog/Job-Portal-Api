@@ -17,33 +17,21 @@ import com.visog.jobportal.model.transaction.Files;
 
 @Singleton
 @Transactional
-public class FilesDaoImpl extends AbstractDao implements FilesDao{
+public class FilesDaoImpl extends AbstractDao implements FilesDao {
 
-	 private static final Logger logger=Logger.getLogger(FilesDaoImpl.class);
-	
+	private static final Logger logger = Logger.getLogger(FilesDaoImpl.class);
+
 	/**
 	 * This method returns the Files data
-	 *@Author=ravi
+	 * 
+	 * @Author=ravi
 	 */
 	public List<Files> getFiles() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Files> q=cb.createQuery(Files.class);
-		Root<Files> c=q.from(Files.class);
+		CriteriaQuery<Files> q = cb.createQuery(Files.class);
+		Root<Files> c = q.from(Files.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-	}
-	
-	/**
-	 * This method delete the Files data
-	 */
-	public void delete(String id){
-		
-		CriteriaBuilder criteriaBuilder=em.getCriteriaBuilder();
-		CriteriaDelete<Files> query=criteriaBuilder.createCriteriaDelete(Files.class);
-		Root<Files> root=query.from(Files.class);
-		query.where(root.get("id").in(id));
-		em.createQuery(query).executeUpdate();
-		
 	}
 
 }

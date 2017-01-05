@@ -6,16 +6,8 @@ import com.visog.jobportal.model.transaction.ProjectDetails;
 import com.visog.jobportal.model.transaction.Users;
 
 public interface ProjectDetailsDao extends AbstractDaoI{
-public List<ProjectDetails> getProjectDetails();
-	
-	public Boolean isUsersExists(String email);
-	
-	public Boolean isUsersPhoneExists(String email);
 
-	public Boolean isUsersLoginExists(String password,String email);
-	
-	public List<Users> getIds(String password,String email);
-	
+	public List<ProjectDetails> getProjectDetails();
 	
 
 }

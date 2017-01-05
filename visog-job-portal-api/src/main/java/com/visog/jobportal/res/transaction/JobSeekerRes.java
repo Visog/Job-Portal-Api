@@ -2,32 +2,32 @@ package com.visog.jobportal.res.transaction;
 
 public class JobSeekerRes {
 
-private String resumeHeadline;
-	
-    private String id;
+	private String resumeHeadline;
+
+	private String id;
 
 	private String domain;
-	
+
 	private String companyName;
-	
+
 	private String user;
-	
+
 	private String keySkills;
-	
+
 	private Integer workExperienceYears;
-	
+
 	private Integer workExperienceMonths;
-	
+
 	private String hobbiesAndInterest;
-	
+
 	private String jobRole;
-	
+
 	private String otherJobRole;
 
 	private String industry;
-	
+
 	private String profileSummary;
-	
+
 	private String employmentType;
 
 	public String getResumeHeadline() {
@@ -141,6 +141,5 @@ private String resumeHeadline;
 	public void setEmploymentType(String employmentType) {
 		this.employmentType = employmentType;
 	}
-	
-	
+
 }

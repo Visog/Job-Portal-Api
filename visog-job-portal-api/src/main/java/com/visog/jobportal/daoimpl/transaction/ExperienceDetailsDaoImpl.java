@@ -11,12 +11,11 @@ import javax.transaction.Transactional;
 import com.visog.jobportal.dao.AbstractDao;
 import com.visog.jobportal.dao.transaction.ExperienceDetailsDao;
 import com.visog.jobportal.model.transaction.ExperienceDetails;
-import com.visog.jobportal.model.transaction.Users;
 
 
 @Singleton
 @Transactional
-public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao{
+public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao {
 
 	
 	public List<ExperienceDetails> getExperienceDetails() {
@@ -28,5 +27,4 @@ public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceD
 		
 	}
 
-	
 }

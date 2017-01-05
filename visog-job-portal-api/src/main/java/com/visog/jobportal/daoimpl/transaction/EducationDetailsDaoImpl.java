@@ -25,7 +25,7 @@ public class EducationDetailsDaoImpl extends AbstractDao implements EducationDet
 
 	/**
 	 * This method returns the EducationDetailsDao data
-	 *@Author Bala
+	 *@Author Raghava
 	 */
 	
 	public List<EducationDetails> getEducationDetails() {
