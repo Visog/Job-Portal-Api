@@ -1686,7 +1686,7 @@ response :
 */
 
 
-CREATE TABLE EDUCATION_DETAILS(
+CREATE TABLE EDUCATION_DETAILS (
 	ID  VARCHAR(37) NOT NULL,
 	USER_ID VARCHAR(37) NOT NULL,
 	COURSES_ID VARCHAR(37) NOT NULL,
@@ -1846,7 +1846,7 @@ response :
 
 
 
-CREATE TABLE LANGUAGE_KNOWN(
+CREATE TABLE LANGUAGE_KNOWN (
 	ID  VARCHAR(37) NOT NULL,
 	USER_ID VARCHAR(37) NOT NULL,
 	LANGUAGE_ID VARCHAR(37) NOT NULL,
@@ -2185,14 +2185,14 @@ CREATE TABLE EXPERIENCE_DETAILS
 	UPDATED_BY    VARCHAR(37),
 	UPDATED_ON    TIMESTAMP,
 	PRIMARY KEY (ID),
-	FOREIGN KEY (USER_ID) REFERENCES USERS(ID))
+	FOREIGN KEY (USER_ID) REFERENCES USERS(ID),
 	FOREIGN KEY (EMPLOYMENT_TYPE_ID) REFERENCES EMPLOYMENT_TYPE(ID));
 	/*
 
 1. Create EXPERIENCE_DETAILS
 =====================================
-url : /experience/details
-ex url : /experience/details
+url : transaction/experienceDetails
+ex url : transaction/experienceDetails
 method : POST
 data : 
 
@@ -2217,8 +2217,8 @@ response :
 
 2 Edit  JS_EXPERIENCE_DETAILS
 =====================================
-url : /experience/details/<EXPERIENCE_ID>
-ex url : /experience/details/2
+url : transaction/experienceDetails/<EXPERIENCE_ID>
+ex url : transaction/experienceDetails/2
 
 method : PUT
 data : 
@@ -2244,8 +2244,8 @@ response :
 
 3. Get All JS_EXPERIENCE_DETAILS
 =====================================
-url : /experience/details
-ex url : /experience/details
+url : transaction/experienceDetails/
+ex url : transaction/experienceDetails/
 
 method : GET
 data : 
@@ -2273,7 +2273,7 @@ response :
 
 4. Get JS_EXPERIENCE_DETAILS
 =====================================
-url : /experience/details/<EXPERIENCE_ID>
+url : transaction/experienceDetails/<EXPERIENCE_ID>
 ex url : /experience/details/2
 
 method : GET
@@ -2301,8 +2301,8 @@ response :
 
 5. Delete JS_EXPERIENCE_DETAILS
 =====================================
-url : /experience/details/<EXPERIENCE_ID>
-ex url : /experience/details/2
+url : transaction/experienceDetails/<EXPERIENCE_ID>
+ex url : transaction/experienceDetails/2
 
 method : DELETE
 data : 
