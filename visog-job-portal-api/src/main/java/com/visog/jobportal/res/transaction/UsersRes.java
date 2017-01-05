@@ -5,19 +5,29 @@ import java.util.Date;
 public class UsersRes {
 
 	private String id;
-	
+
 	private String firstName;
-	
+
 	private String middleName;
-	
+
 	private String lastName;
-	
+
 	private String email;
-	
+
 	private String alternativeEmail;
 	
+	private Date dob;
+
+	private String password;
+
+	private String phone;
+
+	private String landline;
+
+	private String role;
+
 	private String gender;
-	
+
 	public String getGender() {
 		return gender;
 	}
@@ -34,15 +44,6 @@ public class UsersRes {
 		this.role = role;
 	}
 
-	private Date dob;
-	
-	private String password;
-	
-	private String phone;
-	
-	private String landline;
-	
-	private String role;
 	public String getId() {
 		return id;
 	}
@@ -91,7 +92,6 @@ public class UsersRes {
 		this.alternativeEmail = alternativeEmail;
 	}
 
-
 	public Date getDob() {
 		return dob;
 	}
@@ -124,5 +124,4 @@ public class UsersRes {
 		this.landline = landline;
 	}
 
-	
 }
