@@ -17,7 +17,7 @@ public interface EducationDetailsService {
 
 	public EducationDetailsRes getEducationDetail(String id);
 
-	public Boolean deleteEducationDetails(String educationDetailsId);
+	public Boolean deleteEducationDetails(String educationdetailsId);
 
 
 }

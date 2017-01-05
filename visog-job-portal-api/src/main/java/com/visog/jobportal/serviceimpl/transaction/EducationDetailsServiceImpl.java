@@ -152,9 +152,9 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		return educationDetailsRes;  
 	}
 
-	public Boolean deleteEducationDetails(String educationDetailsId) {
+	public Boolean deleteEducationDetails(String educationdetailsId) {
 
-		return (dao.delete(PostJob.class, educationDetailsId) != 0);
+		return (dao.delete(PostJob.class, educationdetailsId) != 0);
 	}
 
 }
