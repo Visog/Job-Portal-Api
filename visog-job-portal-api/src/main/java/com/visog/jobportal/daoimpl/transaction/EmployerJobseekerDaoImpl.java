@@ -1,4 +1,4 @@
-	package com.visog.jobportal.daoimpl.transaction;
+package com.visog.jobportal.daoimpl.transaction;
 
 import java.util.List;
 
@@ -18,38 +18,23 @@ import com.visog.jobportal.model.transaction.EmployerJobseeker;
 
 @Singleton
 @Transactional
-public class EmployerJobseekerDaoImpl extends AbstractDao implements EmployerJobseekerDao{
-	
-	private static final Logger logger = Logger.getLogger(EmployerJobseekerDaoImpl.class);
+public class EmployerJobseekerDaoImpl extends AbstractDao implements EmployerJobseekerDao {
 
+	private static final Logger logger = Logger.getLogger(EmployerJobseekerDaoImpl.class);
 
 	/**
 	 * This method returns the EmployerJobseeker data
-	 *@Author=ravi
+	 * 
+	 * @Author=ravi
 	 */
-	
+
 	public List<EmployerJobseeker> getEmployerjobseekers() {
-		
+
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<EmployerJobseeker> q=cb.createQuery(EmployerJobseeker.class);
-		Root<EmployerJobseeker> c=q.from(EmployerJobseeker.class);
+		CriteriaQuery<EmployerJobseeker> q = cb.createQuery(EmployerJobseeker.class);
+		Root<EmployerJobseeker> c = q.from(EmployerJobseeker.class);
 		q.select(c);
-		
+
 		return em.createQuery(q).getResultList();
 	}
-	
-	/**
-	 * This method delete the EmployerJobseeker data
-	 
-	 */
-	public void delete(String id){
-		
-		CriteriaBuilder criteriaBuilder=em.getCriteriaBuilder();
-		CriteriaDelete<EmployerJobseeker> query=criteriaBuilder.createCriteriaDelete(EmployerJobseeker.class);
-		Root<EmployerJobseeker> root=query.from(EmployerJobseeker.class);
-		query.where(root.get("id").in(id));
-		em.createQuery(query).executeUpdate();
-		
-	}
-
 }

@@ -11,7 +11,7 @@ import com.visog.jobportal.dao.transaction.ExperienceDetailsDao;
 import com.visog.jobportal.model.transaction.ExperienceDetails;
 import com.visog.jobportal.model.transaction.Users;
 
-public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao{
+public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao {
 
 	@Override
 	public List<ExperienceDetails> getExperienceDetails() {
@@ -20,31 +20,7 @@ public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceD
 		Root<ExperienceDetails> c = q.from(ExperienceDetails.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
+
 	}
 
-	public Boolean isUsersExists(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public Boolean isUsersPhoneExists(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public Boolean isUsersLoginExists(String password, String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public List<Users> getIds(String password, String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
 }
