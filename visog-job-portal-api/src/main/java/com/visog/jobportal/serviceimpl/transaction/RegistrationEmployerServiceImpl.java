@@ -43,7 +43,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 
 		users.setDob(req.getDob());
 
-		roles.setId(req.getRole());
+		roles.setId("2556718a-37cc-40b4-9465-81ece73a6031");
 		users.setRole(roles);
 
 		users.setPassword(req.getPassword());
