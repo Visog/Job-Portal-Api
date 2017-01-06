@@ -21,7 +21,7 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 	private PostJobDomainsDao dao;
 
 	public void savePostJobDomain(PostJobDomainsReq req) {
-		
+
 		PostJobDomains postJobDomains = new PostJobDomains();
 		PostJob postJob = new PostJob();
 		Domains domains = new Domains();
@@ -61,19 +61,12 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 
 		PostJobDomainsRes postJobDomainsRes = null;
 
-		PostJob postJob = new PostJob();
-		Domains domains = new Domains();
-
 		for (PostJobDomains postJobDomain : postJobDomains) {
 
 			postJobDomainsRes = new PostJobDomainsRes();
-
 			postJobDomainsRes.setId(postJobDomain.getId());
-
 			postJobDomainsRes.setPostJob(postJobDomain.getPostJob().getId());
-
 			postJobDomainsRes.setDomain(postJobDomain.getDomain().getId());
-
 			postJobDomainsList.add(postJobDomainsRes);
 
 		}
