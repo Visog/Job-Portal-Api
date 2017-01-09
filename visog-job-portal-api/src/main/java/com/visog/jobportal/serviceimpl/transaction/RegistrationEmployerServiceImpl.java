@@ -24,7 +24,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 	@Inject
 	private RegistrationEmployerDao dao;
 
-	public void saveRegistrationEmployerDetails(UsersReq req) {
+	public boolean saveRegistrationEmployerDetails(UsersReq req) {
 
 		Users users = new Users();
 
@@ -43,7 +43,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 
 		users.setDob(req.getDob());
 
-		roles.setId(req.getRole());
+		roles.setId("2556718a-37cc-40b4-9465-81ece73a6031");
 		users.setRole(roles);
 
 		users.setPassword(req.getPassword());
@@ -53,11 +53,12 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		dao.save(users);
 		DaoUtils.setEntityCreateAuditColumns(users);
 		logger.info("Employer Registration Successfully" + users.getId());
+		return true;
 	}
 
-	public void updateEmployerDetails(UsersReq req, String employerDetailsId) {
+	public boolean updateEmployerDetails(UsersReq req, String regemployerId) {
 
-		Users users = (Users) dao.getByKey(Users.class, employerDetailsId);
+		Users users = (Users) dao.getByKey(Users.class, regemployerId);
 
 		Gender gender = new Gender();
 
@@ -84,6 +85,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		dao.update(users);
 
 		logger.info("Employer Updated Successfully" + users.getId());
+		return true;
 
 	}
 
@@ -142,7 +144,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		return usersRes;
 	}
 
-	public Boolean deleteAddress(String id) {
+	public Boolean deleteEmployerDetails(String id) {
 		return (dao.delete(Users.class,id) !=0);
 	}
 

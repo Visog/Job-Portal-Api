@@ -8,14 +8,14 @@ import com.visog.jobportal.res.transaction.UsersRes;
 public interface RegistrationEmployerService {
 
 	
-	public void saveRegistrationEmployerDetails(UsersReq req);
+	public boolean saveRegistrationEmployerDetails(UsersReq req);
 
-	public void updateEmployerDetails(UsersReq req, String employerDetailsId);
+	public boolean updateEmployerDetails(UsersReq req, String regemployerId);
 
 	public List<UsersRes> getEmployerDetails();
 
 	public UsersRes getEmployerDetails(String employerDetailsId);
 
-	public Boolean deleteAddress(String id);
+	public Boolean deleteEmployerDetails(String id);
 
 }

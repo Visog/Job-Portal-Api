@@ -2,11 +2,8 @@ package com.visog.jobportal.serviceimpl.transaction;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import org.apache.log4j.Logger;
-
 import com.visog.jobportal.dao.transaction.PostJobDomainsDao;
 import com.visog.jobportal.model.master.Domains;
 import com.visog.jobportal.model.transaction.PostJob;
@@ -24,7 +21,7 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 	private PostJobDomainsDao dao;
 
 	public void savePostJobDomain(PostJobDomainsReq req) {
-		
+
 		PostJobDomains postJobDomains = new PostJobDomains();
 		PostJob postJob = new PostJob();
 		Domains domains = new Domains();
@@ -64,19 +61,12 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 
 		PostJobDomainsRes postJobDomainsRes = null;
 
-		PostJob postJob = new PostJob();
-		Domains domains = new Domains();
-
 		for (PostJobDomains postJobDomain : postJobDomains) {
 
 			postJobDomainsRes = new PostJobDomainsRes();
-
 			postJobDomainsRes.setId(postJobDomain.getId());
-
 			postJobDomainsRes.setPostJob(postJobDomain.getPostJob().getId());
-
 			postJobDomainsRes.setDomain(postJobDomain.getDomain().getId());
-
 			postJobDomainsList.add(postJobDomainsRes);
 
 		}
@@ -87,13 +77,9 @@ public class PostJobDomainsServiceImpl implements PostJobDomainsService {
 	public PostJobDomainsRes getPostJobDomain(String id) {
 
 		PostJobDomains postJobDomains = (PostJobDomains) dao.getByKey(PostJobDomains.class, id);
-
 		PostJobDomainsRes postJobDomainsRes = new PostJobDomainsRes();
-
 		postJobDomainsRes.setId(postJobDomains.getId());
-
 		postJobDomainsRes.setPostJob(postJobDomains.getPostJob().getId());
-
 		postJobDomainsRes.setDomain(postJobDomains.getDomain().getId());
 
 		return postJobDomainsRes;
