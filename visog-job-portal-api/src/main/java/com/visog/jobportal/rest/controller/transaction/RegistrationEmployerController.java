@@ -19,6 +19,8 @@ import com.visog.jobportal.req.transaction.UsersReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.UserService;
 
+import RegistrationEmployerDaoImpl.RegistrationEmployerService;
+
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
 public class RegistrationEmployerController {
@@ -26,7 +28,7 @@ public class RegistrationEmployerController {
 	private @CookieParam("User-Identifier") String userIdentifier;
 	
 	@Inject
-	private UserService service;
+	private RegistrationEmployerService service;
 	
 	/**
 	 * This method creates the Users
@@ -41,7 +43,7 @@ public class RegistrationEmployerController {
 	public JobPortalResponse createUsers(UsersReq req) {
 		// service.saveUsers(req);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.saveUsers(req)) {
+		if (service.saveRegistrationEmployerDetails(req)) {
 			jobPortalResponse.setMessage("Your data saved succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -70,7 +72,7 @@ public class RegistrationEmployerController {
 		// service.updateUsers(req, job_seekerId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.updateUsers(req, regemployerId)) {
+		if (service.updateEmployerDetails(req, regemployerId)) {
 			jobPortalResponse.setMessage("employer updated succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -95,7 +97,7 @@ public class RegistrationEmployerController {
 	@Path("/regemployer")
 	public JobPortalResponse getUsers(){
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers());
+		jobPortalResponse.setData(service.getEmployerDetails());
 		jobPortalResponse.setMessage("employer  fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -114,7 +116,7 @@ public class RegistrationEmployerController {
 	@Path("/regemployer/{regemployerId}")
 	public JobPortalResponse getUsers(@PathParam("regemployerId") String regemployerId) {
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers(regemployerId));
+		jobPortalResponse.setData(service.getEmployerDetails(regemployerId));
 		jobPortalResponse.setMessage("employer data fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -133,7 +135,7 @@ public class RegistrationEmployerController {
 	public JobPortalResponse deleteUsers(@PathParam("regemployerId") String regemployerId) {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.deleteUsers(regemployerId)) {
+		if (service.deleteEmployerDetails(regemployerId)) {
 			
 			jobPortalResponse.setMessage("employer deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
