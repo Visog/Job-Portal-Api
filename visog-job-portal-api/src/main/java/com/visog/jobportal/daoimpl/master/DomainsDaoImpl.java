@@ -23,8 +23,7 @@ public class DomainsDaoImpl extends AbstractDao implements DomainsDao {
 	private static final Logger logger = Logger.getLogger(DomainsDaoImpl.class);
 
 	/**
-	 * @author Raghava
-	 *  This method returns the Roles data
+	 * @author Raghava This method returns the Roles data
 	 */
 
 	public List<Domains> getDomains() {
@@ -38,8 +37,7 @@ public class DomainsDaoImpl extends AbstractDao implements DomainsDao {
 	}
 
 	/**
-	 * @author Raghava 
-	 * This method deletes the Domains data
+	 * @author Raghava This method deletes the Domains data
 	 */
 
 	public void delete(String id) {

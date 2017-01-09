@@ -7,5 +7,5 @@ import com.visog.jobportal.model.master.Domains;
 
 public interface DomainsDao extends AbstractDaoI {
 	public List<Domains> getDomains();
-	
+
 }

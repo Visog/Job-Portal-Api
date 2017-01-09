@@ -15,6 +15,6 @@ public interface DomainsService {
 
 	public DomainsRes getDomain(String id);
 
-	public Boolean deleteDomain(String domainId);
+	public Boolean deleteDomain(String domainId);	
 
 }

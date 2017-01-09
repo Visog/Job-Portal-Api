@@ -31,13 +31,12 @@ public class DomainsController {
 	private DomainsService service;
 
 	/**
-	 * @author Raghava
-	 * This method creates the Domain
+	 * @author Raghava This method creates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domain")
@@ -54,13 +53,12 @@ public class DomainsController {
 	}
 
 	/**
-	 * @author Raghava
-	 * This method updates the Domain
+	 * @author Raghava This method updates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domain/{domainId}")
@@ -78,8 +76,7 @@ public class DomainsController {
 	}
 
 	/**
-	 * @author Raghava
-	 * This method retrieves all Domains
+	 * @author Raghava This method retrieves all Domains
 	 * 
 	 * @return
 	 */
@@ -97,8 +94,8 @@ public class DomainsController {
 
 	}
 
-	/**@author Raghava
-	 * This method retrieves a single Role
+	/**
+	 * @author Raghava This method retrieves a single Role
 	 * 
 	 * @return
 	 */
@@ -117,8 +114,8 @@ public class DomainsController {
 
 	}
 
-	/**@author Raghava
-	 * This method delete the role
+	/**
+	 * @author Raghava This method delete the role
 	 * 
 	 * @return
 	 */

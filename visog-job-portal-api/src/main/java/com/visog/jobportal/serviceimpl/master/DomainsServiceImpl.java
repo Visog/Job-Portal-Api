@@ -15,8 +15,7 @@ import com.visog.jobportal.res.master.DomainsRes;
 import com.visog.jobportal.service.master.DomainsService;
 import com.visog.jobportal.utils.DaoUtils;
 
-
-public class DomainsServiceImpl implements DomainsService{
+public class DomainsServiceImpl implements DomainsService {
 	private static final Logger logger = Logger.getLogger(RolesSeviceImpl.class);
 
 	@Inject
@@ -24,6 +23,7 @@ public class DomainsServiceImpl implements DomainsService{
 
 	/**
 	 * This method saves the Domain
+	 * 
 	 * @author Raghava
 	 */
 	public void saveDomain(DomainsReq req) {
@@ -32,7 +32,7 @@ public class DomainsServiceImpl implements DomainsService{
 		domain.setDescription(req.getDescription());
 
 		DaoUtils.setEntityCreateAuditColumns(domain);
-		
+
 		dao.save(domain);
 
 		logger.info("Domain created successfully : " + domain.getId());
@@ -40,6 +40,7 @@ public class DomainsServiceImpl implements DomainsService{
 
 	/**
 	 * This method updates the Domain
+	 * 
 	 * @author Raghava
 	 */
 	public void updateDomain(DomainsReq req, String domainId) {
@@ -52,6 +53,7 @@ public class DomainsServiceImpl implements DomainsService{
 
 	/**
 	 * This method returns all the Domains
+	 * 
 	 * @author Raghava
 	 */
 	public List<DomainsRes> getDomains() {
@@ -72,12 +74,12 @@ public class DomainsServiceImpl implements DomainsService{
 		return domainList;
 	}
 
-
 	/**
-	 * This method returns Domain Details for the given Domain id  
+	 * This method returns Domain Details for the given Domain id
+	 * 
 	 * @author Raghava
 	 */
-	
+
 	public DomainsRes getDomain(String id) {
 		Domains domains = (Domains) dao.getByKey(Roles.class, id);
 		DomainsRes domainRes = new DomainsRes();
@@ -85,18 +87,17 @@ public class DomainsServiceImpl implements DomainsService{
 		domainRes.setName(domains.getName());
 		domainRes.setDescription(domains.getDescription());
 		return domainRes;
-		
+
 	}
-
-
 
 	/**
 	 * This method deletes the given Domain id
+	 * 
 	 * @author Raghava
 	 */
 	public Boolean deleteDomain(String domainId) {
 
-		return  (dao.delete(Domains.class, domainId) != 0);
+		return (dao.delete(Domains.class, domainId) != 0);
 	}
 
 }

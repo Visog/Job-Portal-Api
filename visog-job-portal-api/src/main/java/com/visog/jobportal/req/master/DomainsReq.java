@@ -1,6 +1,5 @@
 package com.visog.jobportal.req.master;
 
-
 public class DomainsReq {
 
 	private String name;
