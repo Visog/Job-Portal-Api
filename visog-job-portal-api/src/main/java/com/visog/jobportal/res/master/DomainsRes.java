@@ -1,6 +1,6 @@
 package com.visog.jobportal.res.master;
 
-public class DomainRes {
+public class DomainsRes {
 
 	private String id;
 	private String name;

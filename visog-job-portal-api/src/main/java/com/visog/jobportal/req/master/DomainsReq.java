@@ -1,7 +1,7 @@
 package com.visog.jobportal.req.master;
 
 
-public class DomainReq {
+public class DomainsReq {
 
 	private String name;
 	private String description;

@@ -7,26 +7,26 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
-import com.visog.jobportal.dao.master.DomainDao;
+import com.visog.jobportal.dao.master.DomainsDao;
 import com.visog.jobportal.model.master.Domains;
 import com.visog.jobportal.model.master.Roles;
-import com.visog.jobportal.req.master.DomainReq;
-import com.visog.jobportal.res.master.DomainRes;
-import com.visog.jobportal.service.master.DomainService;
+import com.visog.jobportal.req.master.DomainsReq;
+import com.visog.jobportal.res.master.DomainsRes;
+import com.visog.jobportal.service.master.DomainsService;
 import com.visog.jobportal.utils.DaoUtils;
 
 
-public class DomainServiceImpl implements DomainService{
+public class DomainsServiceImpl implements DomainsService{
 	private static final Logger logger = Logger.getLogger(RolesSeviceImpl.class);
 
 	@Inject
-	DomainDao dao;
+	DomainsDao dao;
 
 	/**
 	 * This method saves the Domain
 	 * @author Raghava
 	 */
-	public void saveDomain(DomainReq req) {
+	public void saveDomain(DomainsReq req) {
 		Domains domain = new Domains();
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
@@ -42,7 +42,7 @@ public class DomainServiceImpl implements DomainService{
 	 * This method updates the Domain
 	 * @author Raghava
 	 */
-	public void updateDomain(DomainReq req, String domainId) {
+	public void updateDomain(DomainsReq req, String domainId) {
 		Domains domain = (Domains) dao.getByKey(Domains.class, domainId);
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
@@ -54,15 +54,15 @@ public class DomainServiceImpl implements DomainService{
 	 * This method returns all the Domains
 	 * @author Raghava
 	 */
-	public List<DomainRes> getDomains() {
+	public List<DomainsRes> getDomains() {
 
 		List<Domains> domains = dao.getDomains();
 
-		List<DomainRes> domainList = new ArrayList<>();
-		DomainRes domainRes = null;
+		List<DomainsRes> domainList = new ArrayList<>();
+		DomainsRes domainRes = null;
 
 		for (Domains domain : domains) {
-			domainRes = new DomainRes();
+			domainRes = new DomainsRes();
 			domainRes.setId(domain.getId());
 			domainRes.setName(domain.getName());
 			domainRes.setDescription(domain.getDescription());
@@ -78,9 +78,9 @@ public class DomainServiceImpl implements DomainService{
 	 * @author Raghava
 	 */
 	
-	public DomainRes getDomain(String id) {
+	public DomainsRes getDomain(String id) {
 		Domains domains = (Domains) dao.getByKey(Roles.class, id);
-		DomainRes domainRes = new DomainRes();
+		DomainsRes domainRes = new DomainsRes();
 		domainRes.setId(domains.getId());
 		domainRes.setName(domains.getName());
 		domainRes.setDescription(domains.getDescription());

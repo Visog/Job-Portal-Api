@@ -15,20 +15,20 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.master.DomainReq;
+import com.visog.jobportal.req.master.DomainsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.master.DomainService;
+import com.visog.jobportal.service.master.DomainsService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
 
-public class DomainController {
+public class DomainsController {
 	private static final Logger logger = Logger.getLogger(RolesController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private DomainService service;
+	private DomainsService service;
 
 	/**
 	 * @author Raghava
@@ -41,7 +41,7 @@ public class DomainController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domain")
-	public JobPortalResponse createDomain(DomainReq req) {
+	public JobPortalResponse createDomain(DomainsReq req) {
 		service.saveDomain(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -64,7 +64,7 @@ public class DomainController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domain/{domainId}")
-	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainReq req) {
+	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainsReq req) {
 
 		service.updateDomain(req, domainId);
 
