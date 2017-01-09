@@ -39,7 +39,7 @@ public class DomainsController {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domain")
+	@Path("/domains")
 	public JobPortalResponse createDomain(DomainsReq req) {
 		service.saveDomain(req);
 
@@ -61,7 +61,7 @@ public class DomainsController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domain/{domainId}")
+	@Path("/domains/{domainsId}")
 	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainsReq req) {
 
 		service.updateDomain(req, domainId);
@@ -81,7 +81,7 @@ public class DomainsController {
 	 * @return
 	 */
 	@GET
-	@Path("/domain")
+	@Path("/domains")
 	public JobPortalResponse getDomains() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -101,7 +101,7 @@ public class DomainsController {
 	 */
 
 	@GET
-	@Path("/domain/{domainId}")
+	@Path("/domains/{domainsId}")
 	public JobPortalResponse getRole(@PathParam("domainId") String domainId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -121,7 +121,7 @@ public class DomainsController {
 	 */
 
 	@DELETE
-	@Path("/domain/{domainId}")
+	@Path("/domains/{domainsId}")
 	public JobPortalResponse deleteDomain(@PathParam("domainId") String domainId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
