@@ -8,26 +8,25 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.AppConstants;
-import com.visog.jobportal.dao.transaction.RegistrationJobSeekerDao;
-import com.visog.jobportal.dao.transaction.UserDao;
+import com.visog.jobportal.dao.transaction.RegistrationAdminDao;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
 import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.UsersReq;
 import com.visog.jobportal.res.transaction.UsersRes;
-import com.visog.jobportal.service.transaction.RegistrationJobSeekerService;
+import com.visog.jobportal.service.transaction.RegistrationAdminService;
 import com.visog.jobportal.utils.DaoUtils;
 
 /**
  * @author Divya
  *
  */
-public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerService {
+public class RegistrationAdminServiceImpl implements RegistrationAdminService {
 
-	private static final Logger logger = Logger.getLogger(RegistrationJobSeekerServiceImpl.class);
+	private static final Logger logger = Logger.getLogger(RegistrationAdminServiceImpl.class);
 
 	@Inject
-	RegistrationJobSeekerDao dao;
+	RegistrationAdminDao dao;
 
 	/**
 	 * @author Divya
@@ -37,14 +36,14 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 	 * 
 	 */
 
-	public Boolean saveJobSeeker(UsersReq req) {
+	public Boolean saveAdmin(UsersReq req) {
 
 		Users user = new Users();
 		user.setFirstName(req.getFirstName());
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
 		Roles role = new Roles();
-		role.setId(AppConstants.jobSeekerRoleId);
+		role.setId(AppConstants.adminRoleId);
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
@@ -57,23 +56,22 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 		user.setLandline(req.getLandline());
 		DaoUtils.setEntityCreateAuditColumns(user);
 
-		if (dao.isJobSeekerExists(req.getEmail().toLowerCase().trim())) {
+		if (dao.isAdminExists(req.getEmail().toLowerCase().trim())) {
 
-			logger.info("JobSeeker Email already exists:" + user.getId());
+			logger.info("Admin Email already exists:" + user.getId());
 			return false;
 
-		} else if (dao.isJobSeekerPhoneExists(req.getPhone().trim())) {
+		} else if (dao.isAdminPhoneExists(req.getPhone().trim())) {
 
-			logger.info("JobSeeker phoneno already exists:" + user.getId());
+			logger.info("Admin phoneno already exists:" + user.getId());
 			return false;
-
 		}
 
 		else {
 
 			dao.save(user);
 
-			logger.info("JobSeeker created successfully : " + user.getId());
+			logger.info("Admin created successfully : " + user.getId());
 			return true;
 
 		}
@@ -84,18 +82,18 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 	 * This method updates the Users
 	 */
 
-	public Boolean updateJobSeeker(UsersReq req, String userId) {
+	public Boolean updateAdmin(UsersReq req, String adminId) {
 
-		Users user = (Users) dao.getByKey(Users.class, userId);
+		Users user = (Users) dao.getByKey(Users.class, adminId);
 
 		if (user.getEmail().toLowerCase().trim().equals(req.getEmail().toLowerCase().trim())
-				|| (!dao.isJobSeekerExists(req.getEmail()))) {
+				|| (!dao.isAdminExists(req.getEmail()))) {
 
 			user.setFirstName(req.getFirstName());
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
 			Roles role = new Roles();
-			role.setId(AppConstants.jobSeekerRoleId);
+			role.setId(AppConstants.adminRoleId);
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());
@@ -107,11 +105,11 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 			user.setPhone(req.getPhone());
 			user.setLandline(req.getLandline());
 			dao.update(user);
-			logger.info("JobSeeker updated successfully : " + user.getId());
+			logger.info("Admin updated successfully : " + user.getId());
 			return true;
 
 		} else {
-			logger.info("JobSeeker already exists : " + user.getId());
+			logger.info("Admin already exists : " + user.getId());
 			return false;
 
 		}
@@ -121,9 +119,9 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 	/**
 	 * This method returns all the Cities
 	 */
-	public List<UsersRes> getJobSeeker() {
+	public List<UsersRes> getAdmin() {
 
-		List<Users> users = dao.getJobSeeker();
+		List<Users> users = dao.getAdmin();
 
 		List<UsersRes> userList = new ArrayList<>();
 		UsersRes usersRes = null;
@@ -150,7 +148,7 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 
 	}
 
-	public UsersRes getJobSeeker(String id) {
+	public UsersRes getAdmin(String id) {
 
 		Users user = (Users) dao.getByKey(Users.class, id);
 
@@ -171,8 +169,8 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 		return usersRes;
 	}
 
-	public Boolean deleteJobSeeker(String userId) {
-		return (dao.delete(Users.class, userId) != 0);
+	public Boolean deleteAdmin(String adminId) {
+		return (dao.delete(Users.class, adminId) != 0);
 	}
 
 }

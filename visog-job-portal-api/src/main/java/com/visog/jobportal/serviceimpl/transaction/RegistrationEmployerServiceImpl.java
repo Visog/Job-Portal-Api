@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
+import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.dao.transaction.RegistrationEmployerDao;
 import com.visog.jobportal.dao.transaction.UserDao;
 import com.visog.jobportal.model.master.Gender;
@@ -21,7 +22,7 @@ import com.visog.jobportal.utils.DaoUtils;
  * @author Divya
  *
  */
-public class RegistrationEmployerServiceImpl implements RegistrationEmployerService{
+public class RegistrationEmployerServiceImpl implements RegistrationEmployerService {
 
 	private static final Logger logger = Logger.getLogger(RegistrationEmployerServiceImpl.class);
 
@@ -35,87 +36,51 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 	 * 
 	 * 
 	 */
-	/*public Boolean isUsersLoginExists(String password,String email) {
-		if(dao.isUsersLoginExists(password, email))
-		{
-			return true;
-		}else{
-			return false;
-		}
-		
-	}*/
-	
-	
-	
+
 	public Boolean saveEmployer(UsersReq req) {
 
-		Users user=new Users();
+		Users user = new Users();
 		user.setFirstName(req.getFirstName());
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
-		Roles role=new Roles();
-		role.setId("921366a2-7b19-4d72-ae8e-d17b6cfd1445");
+		Roles role = new Roles();
+		role.setId(AppConstants.employerRoleId);
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
-		Gender gender=new Gender();
+		Gender gender = new Gender();
 		gender.setId(req.getGender());
 		user.setGender(gender);
 		user.setDob(req.getDob());
 		user.setPassword(req.getPassword());
 		user.setPhone(req.getPhone());
 		user.setLandline(req.getLandline());
-         DaoUtils.setEntityCreateAuditColumns(user);
-		 
-	
+		DaoUtils.setEntityCreateAuditColumns(user);
+
 		if (dao.isEmployerExists(req.getEmail().toLowerCase().trim())) {
 
-			logger.info("user already exists:" + user.getId());
-			return false;
-
-		}else if (dao.isEmployerExists(req.getEmail().toLowerCase().trim())) {
-
-			logger.info("user already exists:" + user.getId());
+			logger.info("Employer Email already exists:" + user.getId());
 			return false;
 
 		}
-		
-		
+
+		else if (dao.isEmployerPhoneExists(req.getPhone().trim())) {
+
+			logger.info("Employer phoneno already exists:" + user.getId());
+			return false;
+
+		}
+
 		else {
 
 			dao.save(user);
 
-			logger.info("user created successfully : " + user.getId());
+			logger.info("Employer created successfully : " + user.getId());
 			return true;
 
 		}
-
 		
 		
-/*		
-		Users user = new Users();
-		user.setName(req.getEmail());
-		States states = new States();
-		states.setId(req.getState());
-		user.setState(states);
-		Country country = new Country();
-		country.setId(req.getCountry());
-		user.setCountry(country);
-		DaoUtils.setEntityCreateAuditColumns(user);
-		if (dao.isEmployerExists(req.getEmail())) {
-
-			logger.info("user already exists:" + user.getId());
-			return false;
-
-		} else {
-
-			dao.save(user);
-
-			logger.info("user created successfully : " + user.getId());
-			return true;
-
-		}*/
-
 	}
 
 	/**
@@ -126,21 +91,18 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 
 		Users user = (Users) dao.getByKey(Users.class, userId);
 
-		logger.info("user Exists:" + user.getEmail().toLowerCase().trim());
-		logger.info("Users new :" + req.getEmail().toLowerCase().trim());
-
 		if (user.getEmail().toLowerCase().trim().equals(req.getEmail().toLowerCase().trim())
 				|| (!dao.isEmployerExists(req.getEmail()))) {
 
 			user.setFirstName(req.getFirstName());
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
-			Roles role=new Roles();
-			role.setId("2556718a-37cc-40b4-9465-81ece73a6031");
+			Roles role = new Roles();
+			role.setId(AppConstants.employerRoleId);
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());
-			Gender gender=new Gender();
+			Gender gender = new Gender();
 			gender.setId(req.getGender());
 			user.setGender(gender);
 			user.setDob(req.getDob());
@@ -148,11 +110,11 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 			user.setPhone(req.getPhone());
 			user.setLandline(req.getLandline());
 			dao.update(user);
-			logger.info("user updated successfully : " + user.getId());
+			logger.info("Employer updated successfully : " + user.getId());
 			return true;
 
 		} else {
-			logger.info("user already exists : " + user.getId());
+			logger.info("Employer already exists : " + user.getId());
 			return false;
 
 		}
@@ -167,18 +129,17 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		List<Users> users = dao.getEmployer();
 
 		List<UsersRes> userList = new ArrayList<>();
-		UsersRes  usersRes =null;
-		
-		for(Users user :  users)
-		{
+		UsersRes usersRes = null;
+
+		for (Users user : users) {
 			usersRes = new UsersRes();
 			usersRes.setId(user.getId());
 			usersRes.setFirstName(user.getFirstName());
 			usersRes.setMiddleName(user.getMiddleName());
 			usersRes.setLastName(user.getLastName());
-		//	Roles role=new Roles();
-		//	role.setId(user.getRoleID());
-		    usersRes.setRole(user.getRole().getId());
+			// Roles role=new Roles();
+			// role.setId(user.getRoleID());
+			usersRes.setRole(user.getRole().getId());
 			usersRes.setEmail(user.getEmail());
 			usersRes.setAlternativeEmail(user.getAlternativeEmail());
 			usersRes.setGender(user.getGender().getId());
@@ -188,10 +149,8 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 			usersRes.setLandline(user.getLandline());
 			userList.add(usersRes);
 		}
-		
 
-		return userList;	
-		
+		return userList;
 
 	}
 
@@ -204,7 +163,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		usersRes.setFirstName(user.getFirstName());
 		usersRes.setMiddleName(user.getMiddleName());
 		usersRes.setLastName(user.getLastName());
-	    usersRes.setRole(user.getRole().getId());
+		usersRes.setRole(user.getRole().getId());
 		usersRes.setEmail(user.getEmail());
 		usersRes.setAlternativeEmail(user.getAlternativeEmail());
 		usersRes.setGender(user.getGender().getId());
@@ -219,10 +178,5 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 	public Boolean deleteEmployer(String userId) {
 		return (dao.delete(Users.class, userId) != 0);
 	}
-
-	
-	
-
-
 
 }

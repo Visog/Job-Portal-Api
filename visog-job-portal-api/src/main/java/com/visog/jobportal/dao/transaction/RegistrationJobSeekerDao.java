@@ -12,10 +12,8 @@ public interface RegistrationJobSeekerDao extends AbstractDaoI {
 	
 	public Boolean isJobSeekerExists(String email);
 	
-	public Boolean isJobSeekerPhoneExists(String email);
+	public Boolean isJobSeekerPhoneExists(String phone);
 
-	//public Boolean isUsersLoginExists(String password,String email);
 	
-	//public List<Users> getIds(String password,String email);
 	
 }

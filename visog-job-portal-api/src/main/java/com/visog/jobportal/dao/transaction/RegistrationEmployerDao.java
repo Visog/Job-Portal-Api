@@ -7,15 +7,11 @@ import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.dao.AbstractDaoI;
 
 public interface RegistrationEmployerDao extends AbstractDaoI {
-	
-	public List<Users> getEmployer();
-	
-	public Boolean isEmployerExists(String email);
-	
-	public Boolean isEmployerPhoneExists(String email);
 
-	//public Boolean isUsersLoginExists(String password,String email);
-	
-	//public List<Users> getIds(String password,String email);
-	
+	public List<Users> getEmployer();
+
+	public Boolean isEmployerExists(String email);
+
+	public Boolean isEmployerPhoneExists(String phone);
+
 }

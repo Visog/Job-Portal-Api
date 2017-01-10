@@ -13,13 +13,8 @@ public interface RegistrationJobSeekerService {
 
 	public List<UsersRes> getJobSeeker();
 
-	//public List<UsersRes> getIds(String password,String email);
-
-	
 	public UsersRes getJobSeeker(String id);
 
 	public Boolean deleteJobSeeker(String userId);
-	
-	//public Boolean isUsersLoginExists(String password,String email);
 
 }

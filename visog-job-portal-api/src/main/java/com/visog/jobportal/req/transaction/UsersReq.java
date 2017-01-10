@@ -2,30 +2,27 @@ package com.visog.jobportal.req.transaction;
 
 import java.util.Date;
 
-
 public class UsersReq {
 
 	private String firstName;
-	
+
 	private String middleName;
-	
+
 	private String lastName;
-	
+
 	private String email;
-	
+
 	private String alternativeEmail;
-	
+
 	private String gender;
-	
+
 	private Date dob;
-	
+
 	private String password;
-	
+
 	private String phone;
-	
+
 	private String landline;
-	
-	//private String role;
 
 	public String getGender() {
 		return gender;
@@ -34,14 +31,6 @@ public class UsersReq {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
-	/*public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}*/
 
 	public String getFirstName() {
 		return firstName;
@@ -82,8 +71,6 @@ public class UsersReq {
 	public void setAlternativeEmail(String alternativeEmail) {
 		this.alternativeEmail = alternativeEmail;
 	}
-
-
 
 	public Date getDob() {
 		return dob;

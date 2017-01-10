@@ -11,31 +11,29 @@ import javax.transaction.Transactional;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.AbstractDao;
-import com.visog.jobportal.dao.transaction.RegistrationEmployerDao;
+import com.visog.jobportal.dao.transaction.RegistrationAdminDao;
 import com.visog.jobportal.model.transaction.Users;
 
 @Singleton
 @Transactional
-public class RegistrationEmployerDaoImpl extends AbstractDao implements RegistrationEmployerDao{
-	
-	private static final Logger logger = Logger.getLogger(RegistrationEmployerDaoImpl.class);
+public class RegistrationAdminDaoImpl extends AbstractDao implements RegistrationAdminDao {
+
+	private static final Logger logger = Logger.getLogger(RegistrationAdminDaoImpl.class);
 
 	/**
 	 * This method returns the Industries data
 	 */
-	public List<Users> getEmployer() {
-		
+	public List<Users> getAdmin() {
+
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Users> q = cb.createQuery(Users.class);
 		Root<Users> c = q.from(Users.class);
-	//	q.where(cb.equal(c.get("role"), "2556718a-37cc-40b4-9465-81ece73a6031"));
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
-		
+
 	}
 
-	public Boolean isEmployerExists(String email) {
+	public Boolean isAdminExists(String email) {
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Long> q = cb.createQuery(Long.class);
@@ -44,7 +42,8 @@ public class RegistrationEmployerDaoImpl extends AbstractDao implements Registra
 		q.select(cb.count(c));
 		return (em.createQuery(q).getSingleResult() != 0L);
 	}
-	public Boolean isEmployerPhoneExists(String phone) {
+
+	public Boolean isAdminPhoneExists(String phone) {
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Long> q = cb.createQuery(Long.class);
@@ -55,10 +54,3 @@ public class RegistrationEmployerDaoImpl extends AbstractDao implements Registra
 	}
 
 }
-
-
-	
-	
-
-
-
