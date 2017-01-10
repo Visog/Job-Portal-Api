@@ -29,8 +29,8 @@ CREATE TABLE USERS
 /*
 1. Register Employer
 =====================================
-url : /employer/registration
-ex url :  /employer/registration
+url :/registration/employer
+ex url :  /registration/employer
 method : POST
 data : 
 
@@ -59,8 +59,8 @@ response :
 
 2 Edit Employer Profile
 =====================================
-url : /employer/registration/<EMPLOYER_ID>
-ex url : /employer/registration/1
+url : /registration/employer/<EMPLOYER_ID>
+ex url : /registration/employer/1
 
 method : PUT
 data : 
@@ -89,8 +89,8 @@ response :
 
 3. Get All Employer Profile
 =====================================
-url : /employer/registration
-ex url : /employer/registration
+url : /registration/employer
+ex url : /registration/employer
 
 method : GET
 data : 
@@ -119,8 +119,8 @@ response :
 
 4. Get Employer Profile
 =====================================
-url : /employer/registration/<EMPLOYER_ID>
-ex url : /employer/registration/2
+url : /registration/employer/<EMPLOYER_ID>
+ex url : /registration/employer/2
 
 method : GET
 data : 
@@ -151,8 +151,8 @@ response :
 
 5. Delete Employer Profile
 =====================================
-url : /employer/registration/<EMPLOYER_ID>
-ex url : /employer/registration/2
+url : /registration/employer/<EMPLOYER_ID>
+ex url : /registration/employer/2
 
 method : DELETE
 data : 
@@ -170,8 +170,8 @@ response :
   ---------------Job Seeker---------------------------
   1. Register Job Seeker
 =====================================
-url : /jobseeker/registration
-ex url :  /jobseeker/registration
+url : /registration/job_seeker
+ex url :  /registration/job_seeker
 method : POST
 data : 
 
@@ -199,8 +199,8 @@ response :
 
 2 Edit  JobSeeker Profile
 =====================================
-url : /jobseeker/registration/<JobSeeker_ID>
-ex url : /jobseeker/registration/1
+url : /registration/job_seeker/<JobSeeker_ID>
+ex url : /registration/job_seeker/1
 
 method : PUT
 data : 
@@ -229,8 +229,8 @@ response :
 
 3. Get All JobSeeker Profile
 =====================================
-url : /jobseeker/registration
-ex url : /jobseeker/registration
+url : /registration/job_seeker
+ex url : /registration/job_seeker
 
 method : GET
 data : 
@@ -259,8 +259,8 @@ response :
 
 4. Get JobSeeker Profile
 =====================================
-url : /jobseeker/registration/<JobSeeker_ID>
-ex url : /jobseeker/registration/2
+url : /registration/job_seeker/<JobSeeker_ID>
+ex url : /registration/job_seeker/2
 
 method : GET
 data : 
@@ -291,8 +291,8 @@ response :
 
 5. Delete JobSeeker Profile
 =====================================
-url : /jobseeker/registration/<JobSeeker_ID>
-ex url : /jobseeker/registration/2
+url : /registration/job_seeker/<JobSeeker_ID>
+ex url : /registration/job_seeker/2
 
 method : DELETE
 data : 
