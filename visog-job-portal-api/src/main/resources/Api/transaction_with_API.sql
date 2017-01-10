@@ -35,17 +35,16 @@ method : POST
 data : 
 
 {
-		  "FIRST_NAME" : "Divya",
-		  "MIDDLE_NAME" : "", 
-		  "LAST_NAME" : "SHARMA",
-		  "EMAIL" : "divyasharma@gmail.com",
-		  "ALTERNATIVE_EMAIL" : "divyasharma123@gmail.com",
-		  "GENDER" : "112",
-		  "DOB" : "17-08-2090",
-		  "ROLE_ID" : "112232",
-		  "PASSWORD" : "********",
-		  "PHONE_NO" :"12345",
-		  "LANDLINE" : "0401236444"
+      "firstName": "Divya",
+      "middleName": "",
+      "lastName": "SHARMA",
+      "email": "divyasharma11@gmail.com",
+      "alternativeEmail": "divyasharm3a123@gmail.com",
+      "gender": "0e247483-3b9b-4276-9336-3bca09b59f98",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "12345",
+      "landline": "04013236444" 
   }
 
 response : 
@@ -66,17 +65,17 @@ method : PUT
 data : 
 
 {
-		  "FIRST_NAME" : "Divya",
-		  "MIDDLE_NAME" : "", 
-		  "LAST_NAME" : "SHARMA",
-		  "EMAIL" : "divyasharma@gmail.com",
-		  "ALTERNATIVE_EMAIL" : "divyasharma123@gmail.com",
-		  "GENDER" : "112",
-		  "DOB" : "17-08-2090",
-		  "PASSWORD" : "********",
-		  "PHONE_NO" :"12345",
-		  "LANDLINE" : "0401236444"
-}
+      "firstName": "Divya",
+      "middleName": "",
+      "lastName": "SHARMA",
+      "email": "divyasharma11@gmail.com",
+      "alternativeEmail": "divyasharm3a123@gmail.com",
+      "gender": "0e247483-3b9b-4276-9336-3bca09b59f98",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "12345",
+      "landline": "04013236444" 
+  }
 
 response : 
 
@@ -102,18 +101,18 @@ response :
 	"statusDesc" : "Employer Profile Updated Successfully/Failed to update Employer Profile"
 	"data" : [
 		{
-		      "id" : 1,
-			  "FIRST_NAME" : "Divya",
-			  "MIDDLE_NAME" : "", 
-			  "LAST_NAME" : "SHARMA",
-			  "EMAIL" : "divyasharma@gmail.com",
-			  "ALTERNATIVE_EMAIL" : "divyasharma123@gmail.com",
-			  "GENDER" : "112",
-			  "DOB" : "17-08-2090",
-			  "PASSWORD" : "********",
-			  "PHONE_NO" :"12345",
-			  "LANDLINE" : "0401236444"
-		}, {},...
+	   "id" : 1,
+      "firstName": "Divya",
+      "middleName": "",
+      "lastName": "SHARMA",
+      "email": "divyasharma11@gmail.com",
+      "alternativeEmail": "divyasharm3a123@gmail.com",
+      "gender": "0e247483-3b9b-4276-9336-3bca09b59f98",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "12345",
+      "landline": "04013236444" 
+  }, {},...
 	]
 } 
 
@@ -176,18 +175,17 @@ method : POST
 data : 
 
 {
-		  "FIRST_NAME" : "Divya",
-		  "MIDDLE_NAME" : "", 
-		  "LAST_NAME" : "SHARMA",
-		  "EMAIL" : "divyasharma@gmail.com",
-		  "ALTERNATIVE_EMAIL" : "divyasharma123@gmail.com",
-		  "GENDER" : "112",
-		  "DOB" : "17-08-2090",
-		  "PASSWORD" : "********",
-		  "PHONE_NO" :"12345",
-		  "LANDLINE" : "0401236444"
+      "firstName": "Divya",
+      "middleName": "",
+      "lastName": "SHARMA",
+      "email": "divyasharma11@gmail.com",
+      "alternativeEmail": "divyasharm3a123@gmail.com",
+      "gender": "0e247483-3b9b-4276-9336-3bca09b59f98",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "12345",
+      "landline": "04013236444" 
   }
-
 response : 
 {
 	"statusCode" : 200/300 /500, 
@@ -206,17 +204,17 @@ method : PUT
 data : 
 
 {
-		  "FIRST_NAME" : "Divya",
-		  "MIDDLE_NAME" : "", 
-		  "LAST_NAME" : "SHARMA",
-		  "EMAIL" : "divyasharma@gmail.com",
-		  "ALTERNATIVE_EMAIL" : "divyasharma123@gmail.com",
-		  "GENDER" : "112",
-		  "DOB" : "17-08-2090",
-		  "PASSWORD" : "********",
-		  "PHONE_NO" :"12345",
-		  "LANDLINE" : "0401236444"
-}
+      "firstName": "Divya",
+      "middleName": "",
+      "lastName": "SHARMA",
+      "email": "divyasharma11@gmail.com",
+      "alternativeEmail": "divyasharm3a123@gmail.com",
+      "gender": "0e247483-3b9b-4276-9336-3bca09b59f98",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "12345",
+      "landline": "04013236444" 
+  }
 
 response : 
 
