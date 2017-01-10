@@ -53,7 +53,7 @@ public class UsersServiceImpl implements UserService {
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
 		Roles role=new Roles();
-		role.setId(req.getRole());
+		role.setId("921366a2-7b19-4d72-ae8e-d17b6cfd1445");
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
@@ -135,7 +135,7 @@ public class UsersServiceImpl implements UserService {
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
 			Roles role=new Roles();
-			role.setId(req.getRole());
+			role.setId("921366a2-7b19-4d72-ae8e-d17b6cfd1445");
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());

@@ -36,6 +36,7 @@ import com.visog.jobportal.rest.controller.transaction.LanguageKnownController;
 import com.visog.jobportal.rest.controller.transaction.PostJobController;
 import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
 import com.visog.jobportal.rest.controller.transaction.PostJobSeekerController;
+import com.visog.jobportal.rest.controller.transaction.RegistrationEmployerController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
 
 
@@ -70,6 +71,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(FileTypeController.class);
 		classes.add(EmploymentTypeController.class);
 		classes.add(RegistrationJobSeekerController.class);
+		classes.add(RegistrationEmployerController.class);
 		classes.add(PostJobController.class);
 		classes.add(PostJobDomainsController.class);
 		classes.add(EmployerJobseekerController.class);

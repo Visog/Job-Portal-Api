@@ -17,9 +17,9 @@ import org.apache.log4j.Logger;
 import com.visog.jobportal.constants.Status;
 import com.visog.jobportal.req.transaction.UsersReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.transaction.UserService;
+import com.visog.jobportal.service.transaction.RegistrationJobSeekerService;
 
-@Path("/transaction")
+@Path("/registration")
 @Produces(MediaType.APPLICATION_JSON)
 public class RegistrationJobSeekerController {
 
@@ -28,7 +28,7 @@ public class RegistrationJobSeekerController {
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private UserService service;
+	private RegistrationJobSeekerService service;
 
 	/**
 	 * This method creates the Users
@@ -44,7 +44,7 @@ public class RegistrationJobSeekerController {
 
 		// service.saveUsers(req);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.saveUsers(req)) {
+		if (service.saveJobSeeker(req)) {
 
 			jobPortalResponse.setMessage("Your data saved succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
@@ -76,7 +76,7 @@ public class RegistrationJobSeekerController {
 		// service.updateUsers(req, job_seekerId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.updateUsers(req, job_seekerId)) {
+		if (service.updateJobSeeker(req, job_seekerId)) {
 
 			jobPortalResponse.setMessage("Job Seeker updated succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
@@ -104,7 +104,7 @@ public class RegistrationJobSeekerController {
 	public JobPortalResponse getRoles() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers());
+		jobPortalResponse.setData(service.getJobSeeker());
 		jobPortalResponse.setMessage("JobSeeker  fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -124,7 +124,7 @@ public class RegistrationJobSeekerController {
 	public JobPortalResponse getState(@PathParam("job_seekerId") String job_seekerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getUsers(job_seekerId));
+		jobPortalResponse.setData(service.getJobSeeker(job_seekerId));
 		jobPortalResponse.setMessage("State fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -138,29 +138,7 @@ public class RegistrationJobSeekerController {
 	 * 
 	 * @return
 	 */
-	@GET
-	@Path("/job_seeker/{email}/{password}")
-	public JobPortalResponse getStateLogin(@PathParam("email") String email,@PathParam("password") String password) {
-
-		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.isUsersLoginExists(password, email)) {
-
-			jobPortalResponse.setMessage("Login done succcessfully !!");
-			jobPortalResponse.setData(service.getIds(password,email));
-			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		} else {
-
-			jobPortalResponse.setMessage("Not valid credentials !!");
-			jobPortalResponse.setStatus(Status.STATUS_FAIL);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
-
-		}
-
-		return jobPortalResponse;
-
-	}
+	
 	
 	
 	
@@ -170,7 +148,7 @@ public class RegistrationJobSeekerController {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if (service.deleteUsers(job_seekerId)) {
+		if (service.deleteJobSeeker(job_seekerId)) {
 			jobPortalResponse.setMessage("JobSeeker deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

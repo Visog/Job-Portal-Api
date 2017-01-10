@@ -25,7 +25,7 @@ public class UsersReq {
 	
 	private String landline;
 	
-	private String role;
+	//private String role;
 
 	public String getGender() {
 		return gender;
@@ -35,13 +35,13 @@ public class UsersReq {
 		this.gender = gender;
 	}
 
-	public String getRole() {
+	/*public String getRole() {
 		return role;
 	}
 
 	public void setRole(String role) {
 		this.role = role;
-	}
+	}*/
 
 	public String getFirstName() {
 		return firstName;

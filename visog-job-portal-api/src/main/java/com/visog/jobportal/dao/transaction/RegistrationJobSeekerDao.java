@@ -6,13 +6,13 @@ import com.visog.jobportal.model.transaction.Users;
 
 import com.visog.jobportal.dao.AbstractDaoI;
 
-public interface RegistrationEmployerDao extends AbstractDaoI {
+public interface RegistrationJobSeekerDao extends AbstractDaoI {
 	
-	public List<Users> getEmployer();
+	public List<Users> getJobSeeker();
 	
-	public Boolean isEmployerExists(String email);
+	public Boolean isJobSeekerExists(String email);
 	
-	public Boolean isEmployerPhoneExists(String email);
+	public Boolean isJobSeekerPhoneExists(String email);
 
 	//public Boolean isUsersLoginExists(String password,String email);
 	
