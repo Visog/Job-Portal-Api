@@ -13,7 +13,7 @@ import com.visog.jobportal.rest.controller.master.CityController;
 import com.visog.jobportal.rest.controller.master.CountryController;
 import com.visog.jobportal.rest.controller.master.CoursesController;
 import com.visog.jobportal.rest.controller.master.CurrencyController;
-import com.visog.jobportal.rest.controller.master.DomainController;
+import com.visog.jobportal.rest.controller.master.DomainsController;
 import com.visog.jobportal.rest.controller.master.EducationTypeController;
 import com.visog.jobportal.rest.controller.master.EmployerTypeController;
 import com.visog.jobportal.rest.controller.master.EmploymentTypeController;
@@ -57,7 +57,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(AddressTypeController.class);
 		classes.add(RolesController.class);
 		classes.add(JobRoleController.class);
-		classes.add(DomainController.class);
+		classes.add(DomainsController.class);
 		classes.add(StatusController.class);
 		classes.add(GenderController.class);
 		classes.add(EducationTypeController.class);

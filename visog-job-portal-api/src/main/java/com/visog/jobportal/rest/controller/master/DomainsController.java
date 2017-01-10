@@ -15,33 +15,32 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.master.DomainReq;
+import com.visog.jobportal.req.master.DomainsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.master.DomainService;
+import com.visog.jobportal.service.master.DomainsService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
 
-public class DomainController {
+public class DomainsController {
 	private static final Logger logger = Logger.getLogger(RolesController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private DomainService service;
+	private DomainsService service;
 
 	/**
-	 * @author Raghava
-	 * This method creates the Domain
+	 * @author Raghava This method creates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domain")
-	public JobPortalResponse createDomain(DomainReq req) {
+	@Path("/domains")
+	public JobPortalResponse createDomain(DomainsReq req) {
 		service.saveDomain(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -54,17 +53,16 @@ public class DomainController {
 	}
 
 	/**
-	 * @author Raghava
-	 * This method updates the Domain
+	 * @author Raghava This method updates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domain/{domainId}")
-	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainReq req) {
+	@Path("/domains/{domainsId}")
+	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainsReq req) {
 
 		service.updateDomain(req, domainId);
 
@@ -78,13 +76,12 @@ public class DomainController {
 	}
 
 	/**
-	 * @author Raghava
-	 * This method retrieves all Domains
+	 * @author Raghava This method retrieves all Domains
 	 * 
 	 * @return
 	 */
 	@GET
-	@Path("/domain")
+	@Path("/domains")
 	public JobPortalResponse getDomains() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -97,14 +94,14 @@ public class DomainController {
 
 	}
 
-	/**@author Raghava
-	 * This method retrieves a single Role
+	/**
+	 * @author Raghava This method retrieves a single Role
 	 * 
 	 * @return
 	 */
 
 	@GET
-	@Path("/domain/{domainId}")
+	@Path("/domains/{domainsId}")
 	public JobPortalResponse getRole(@PathParam("domainId") String domainId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -117,14 +114,14 @@ public class DomainController {
 
 	}
 
-	/**@author Raghava
-	 * This method delete the role
+	/**
+	 * @author Raghava This method delete the role
 	 * 
 	 * @return
 	 */
 
 	@DELETE
-	@Path("/domain/{domainId}")
+	@Path("/domains/{domainsId}")
 	public JobPortalResponse deleteDomain(@PathParam("domainId") String domainId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
