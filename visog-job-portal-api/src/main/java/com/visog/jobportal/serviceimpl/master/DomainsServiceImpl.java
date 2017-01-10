@@ -16,7 +16,7 @@ import com.visog.jobportal.service.master.DomainsService;
 import com.visog.jobportal.utils.DaoUtils;
 
 public class DomainsServiceImpl implements DomainsService {
-	private static final Logger logger = Logger.getLogger(RolesSeviceImpl.class);
+	private static final Logger logger = Logger.getLogger(DomainsServiceImpl.class);
 
 	@Inject
 	DomainsDao dao;
@@ -26,7 +26,7 @@ public class DomainsServiceImpl implements DomainsService {
 	 * 
 	 * @author Raghava
 	 */
-	public void saveDomain(DomainsReq req) {
+	public void saveDomains(DomainsReq req) {
 		Domains domain = new Domains();
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
@@ -36,6 +36,7 @@ public class DomainsServiceImpl implements DomainsService {
 		dao.save(domain);
 
 		logger.info("Domain created successfully : " + domain.getId());
+
 	}
 
 	/**
@@ -43,12 +44,13 @@ public class DomainsServiceImpl implements DomainsService {
 	 * 
 	 * @author Raghava
 	 */
-	public void updateDomain(DomainsReq req, String domainId) {
-		Domains domain = (Domains) dao.getByKey(Domains.class, domainId);
+	public void updateDomains(DomainsReq req, String domainsId) {
+		Domains domain = (Domains) dao.getByKey(Domains.class, domainsId);
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
 		dao.update(domain);
 		logger.info("Domain updated successfully : " + domain.getId());
+
 	}
 
 	/**
@@ -57,7 +59,6 @@ public class DomainsServiceImpl implements DomainsService {
 	 * @author Raghava
 	 */
 	public List<DomainsRes> getDomains() {
-
 		List<Domains> domains = dao.getDomains();
 
 		List<DomainsRes> domainList = new ArrayList<>();
@@ -79,15 +80,13 @@ public class DomainsServiceImpl implements DomainsService {
 	 * 
 	 * @author Raghava
 	 */
-
-	public DomainsRes getDomain(String id) {
+	public DomainsRes getDomains(String id) {
 		Domains domains = (Domains) dao.getByKey(Roles.class, id);
 		DomainsRes domainRes = new DomainsRes();
 		domainRes.setId(domains.getId());
 		domainRes.setName(domains.getName());
 		domainRes.setDescription(domains.getDescription());
 		return domainRes;
-
 	}
 
 	/**
@@ -95,9 +94,8 @@ public class DomainsServiceImpl implements DomainsService {
 	 * 
 	 * @author Raghava
 	 */
-	public Boolean deleteDomain(String domainId) {
-
-		return (dao.delete(Domains.class, domainId) != 0);
+	public Boolean deleteDomains(String domainsId) {
+		return (dao.delete(Domains.class, domainsId) != 0);
 	}
 
 }
