@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
+import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.dao.transaction.RegistrationEmployerDao;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
@@ -43,7 +44,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 
 		users.setDob(req.getDob());
 
-		roles.setId("2556718a-37cc-40b4-9465-81ece73a6031");
+		roles.setId(AppConstants.employerRoleId);
 		users.setRole(roles);
 
 		users.setPassword(req.getPassword());
