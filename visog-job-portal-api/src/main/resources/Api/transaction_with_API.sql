@@ -34,7 +34,7 @@ ex url :  /registration/employer
 method : POST
 data : 
 
-{
+{	
       "firstName": "Divya",
       "middleName": "",
       "lastName": "SHARMA",
