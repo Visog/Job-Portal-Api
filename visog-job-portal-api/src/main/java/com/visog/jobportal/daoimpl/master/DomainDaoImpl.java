@@ -12,18 +12,19 @@ import javax.transaction.Transactional;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.AbstractDao;
-import com.visog.jobportal.dao.master.DomainsDao;
+import com.visog.jobportal.dao.master.DomainDao;
 import com.visog.jobportal.model.master.Domains;
 
 @Singleton
 @Transactional
 
-public class DomainsDaoImpl extends AbstractDao implements DomainsDao {
+public class DomainDaoImpl extends AbstractDao implements DomainDao {
 
-	private static final Logger logger = Logger.getLogger(DomainsDaoImpl.class);
+	private static final Logger logger = Logger.getLogger(DomainDaoImpl.class);
 
 	/**
-	 * @author Raghava This method returns the Roles data
+	 * @author Raghava
+	 *  This method returns the Roles data
 	 */
 
 	public List<Domains> getDomains() {
@@ -37,7 +38,8 @@ public class DomainsDaoImpl extends AbstractDao implements DomainsDao {
 	}
 
 	/**
-	 * @author Raghava This method deletes the Domains data
+	 * @author Raghava 
+	 * This method deletes the Domains data
 	 */
 
 	public void delete(String id) {

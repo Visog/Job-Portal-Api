@@ -15,32 +15,34 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.master.DomainsReq;
+import com.visog.jobportal.req.master.DomainReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.master.DomainsService;
+import com.visog.jobportal.service.master.DomainService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
 
-public class DomainsController {
+public class DomainController {
 	private static final Logger logger = Logger.getLogger(RolesController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private DomainsService service;
+	private DomainService service;
 
 	/**
-	 * @author Raghava This method creates the Domain
+	 * @author Raghava
+	 * This method creates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domains")
-	public JobPortalResponse createDomains(DomainsReq req) {
-		service.saveDomains(req);
+	@Path("/domain")
+	public JobPortalResponse createDomain(DomainReq req) {
+		service.saveDomain(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("Domain saved succcessfully");
@@ -52,17 +54,19 @@ public class DomainsController {
 	}
 
 	/**
-	 * @author Raghava This method updates the Domain
+	 * @author Raghava
+	 * This method updates the Domain
 	 * 
 	 * @param req
 	 * @return
 	 */
+	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/domains/{domainsId}")
-	public JobPortalResponse updateDomains(@PathParam("domainsId") String domainsId, DomainsReq req) {
+	@Path("/domain/{domainId}")
+	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainReq req) {
 
-		service.updateDomains(req, domainsId);
+		service.updateDomain(req, domainId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("Domain updated succcessfully");
@@ -74,12 +78,13 @@ public class DomainsController {
 	}
 
 	/**
-	 * @author Raghava This method retrieves all Domains
+	 * @author Raghava
+	 * This method retrieves all Domains
 	 * 
 	 * @return
 	 */
 	@GET
-	@Path("/domains")
+	@Path("/domain")
 	public JobPortalResponse getDomains() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -92,20 +97,47 @@ public class DomainsController {
 
 	}
 
-	/**
-	 * @author Raghava This method retrieves a single Role
+	/**@author Raghava
+	 * This method retrieves a single Role
 	 * 
 	 * @return
 	 */
+
 	@GET
-	@Path("/domains/{domainsId}")
-	public JobPortalResponse getDomains(@PathParam("domainId") String domainsId) {
+	@Path("/domain/{domainId}")
+	public JobPortalResponse getRole(@PathParam("domainId") String domainId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getDomains(domainsId));
+		jobPortalResponse.setData(service.getDomain(domainId));
 		jobPortalResponse.setMessage("Domain fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return jobPortalResponse;
+
+	}
+
+	/**@author Raghava
+	 * This method delete the role
+	 * 
+	 * @return
+	 */
+
+	@DELETE
+	@Path("/domain/{domainId}")
+	public JobPortalResponse deleteDomain(@PathParam("domainId") String domainId) {
+
+		JobPortalResponse jobPortalResponse = new JobPortalResponse();
+
+		if (service.deleteDomain(domainId)) {
+			jobPortalResponse.setMessage("Domain deleted succcessfully");
+			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+		} else {
+			jobPortalResponse.setMessage("Failed to delete the Domain");
+			jobPortalResponse.setStatus(Status.STATUS_FAIL);
+			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
+		}
 
 		return jobPortalResponse;
 

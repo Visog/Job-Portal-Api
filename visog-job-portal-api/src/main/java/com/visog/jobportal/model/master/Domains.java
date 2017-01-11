@@ -14,7 +14,7 @@ import com.visog.jobportal.model.AbstractModel;
 @Table(name = "DOMAINS")
 @Entity
 public class Domains extends AbstractModel {
-
+	
 	@Id
 	@Column(name = "ID")
 	private String id;
