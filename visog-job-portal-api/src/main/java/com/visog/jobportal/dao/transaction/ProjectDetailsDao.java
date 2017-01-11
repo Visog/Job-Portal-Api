@@ -8,6 +8,6 @@ import com.visog.jobportal.model.transaction.Users;
 public interface ProjectDetailsDao extends AbstractDaoI{
 
 	public List<ProjectDetails> getProjectDetails();
-	
+		
 
 }
