@@ -7,14 +7,14 @@ import com.visog.jobportal.res.master.DomainsRes;
 
 public interface DomainsService {
 
-	public void saveDomain(DomainsReq req);
+	public void saveDomains(DomainsReq req);
 
-	public void updateDomain(DomainsReq req, String domainId);
+	public void updateDomains(DomainsReq req, String domainsId);
 
 	public List<DomainsRes> getDomains();
 
-	public DomainsRes getDomain(String id);
+	public DomainsRes getDomains(String id);
 
-	public Boolean deleteDomain(String domainId);	
+	public Boolean deleteDomains(String domainsId);	
 
 }

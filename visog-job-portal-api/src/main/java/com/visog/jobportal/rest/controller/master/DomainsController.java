@@ -36,12 +36,11 @@ public class DomainsController {
 	 * @param req
 	 * @return
 	 */
-
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domains")
-	public JobPortalResponse createDomain(DomainsReq req) {
-		service.saveDomain(req);
+	public JobPortalResponse createDomains(DomainsReq req) {
+		service.saveDomains(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("Domain saved succcessfully");
@@ -58,13 +57,12 @@ public class DomainsController {
 	 * @param req
 	 * @return
 	 */
-
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/domains/{domainsId}")
-	public JobPortalResponse updateDomain(@PathParam("domainId") String domainId, DomainsReq req) {
+	public JobPortalResponse updateDomains(@PathParam("domainsId") String domainsId, DomainsReq req) {
 
-		service.updateDomain(req, domainId);
+		service.updateDomains(req, domainsId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("Domain updated succcessfully");
@@ -99,42 +97,15 @@ public class DomainsController {
 	 * 
 	 * @return
 	 */
-
 	@GET
 	@Path("/domains/{domainsId}")
-	public JobPortalResponse getRole(@PathParam("domainId") String domainId) {
+	public JobPortalResponse getDomains(@PathParam("domainId") String domainsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getDomain(domainId));
+		jobPortalResponse.setData(service.getDomains(domainsId));
 		jobPortalResponse.setMessage("Domain fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return jobPortalResponse;
-
-	}
-
-	/**
-	 * @author Raghava This method delete the role
-	 * 
-	 * @return
-	 */
-
-	@DELETE
-	@Path("/domains/{domainsId}")
-	public JobPortalResponse deleteDomain(@PathParam("domainId") String domainId) {
-
-		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-
-		if (service.deleteDomain(domainId)) {
-			jobPortalResponse.setMessage("Domain deleted succcessfully");
-			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-		} else {
-			jobPortalResponse.setMessage("Failed to delete the Domain");
-			jobPortalResponse.setStatus(Status.STATUS_FAIL);
-			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
-		}
 
 		return jobPortalResponse;
 
