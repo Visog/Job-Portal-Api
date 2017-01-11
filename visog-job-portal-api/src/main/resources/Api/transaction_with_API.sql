@@ -646,16 +646,7 @@ ex url : /employer/details
 method : POST
 data : 
 
-{
-		"USER_ID" : "101",
-		"INDUSTRY" : "098",
-		"EMPLOYER_TYPE" : "099",
-		"PREMIUM_EMPLOYER"  : "1"
-		"COMPANY_NAME" : "visog global",
-		"REGISTERED_DATE" : "10-10-2016",
-		"REGISTRATION_NUMBER": "112244",
-		"CIN" : "0JGJ99",  
-}
+qas
 
 response : 
 

@@ -8,8 +8,8 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.AppConstants;
+import com.visog.jobportal.dao.transaction.AppRoleId;
 import com.visog.jobportal.dao.transaction.RegistrationJobSeekerDao;
-import com.visog.jobportal.dao.transaction.UserDao;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
 import com.visog.jobportal.model.transaction.Users;
@@ -28,6 +28,9 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 
 	@Inject
 	RegistrationJobSeekerDao dao;
+	
+	@Inject
+	AppRoleId dao1;
 
 	/**
 	 * @author Divya
@@ -38,6 +41,8 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 	 */
 
 	public Boolean saveJobSeeker(UsersReq req) {
+		//Roles rid = (Roles) dao1.getJobSeekerRoleId();
+		//logger.info("JobSeeker phoneno already exists:" + rid.getId());
 
 		Users user = new Users();
 		user.setFirstName(req.getFirstName());

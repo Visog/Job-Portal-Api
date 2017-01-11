@@ -1,0 +1,90 @@
+MASTER TABLE IDS:
+====================
+Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
+
+Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
+
+CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
+
+StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
+
+AddressTypeId:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+
+city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
+
+employerType Id:	e27c5520-138d-4917-92e0-dc5698319434
+
+IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
+
+
+
+TRANSACTION IDS:
+===============
+
+user Id:	17e18247-6976-40b2-8ad2-7fedff138047
+
+Registration form api calls for all:
+====================================
+
+ { 
+	  "firstName": "raghava",
+      "middleName": "jugfjhg",
+      "lastName": "tadikonda",
+      "email": "visogdevelope45s2@gmail.com",
+      "alternativeEmail": "visog2@gmail.com",
+      "gender": "7cd4a73e-2911-4a09-8f20-34461cd14ba3",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "82935643745",
+      "landline": "04013236444" 
+ }
+ 
+ 
+ 
+ 
+ PostJob api calls:
+ ================
+  { 
+ 	"user":"17e18247-6976-40b2-8ad2-7fedff138047",
+ 	"jobTitle":"Employer",
+ 	"jobDescription":"developer",
+ 	"annualPackageFrom":"10000",
+ 	"annualPackageTo":"150000",
+ 	"currency":"95b6c4eb-834d-4124-ac69-1fda6919b431",
+ 	"company":"Google",
+ 	"effectedDateFrom":"",
+ 	"effectedDateTo":"",
+ 	"status":"",
+ 	"minExperience":"",
+ 	"phoneNo":"",
+ 	"walkIn":""
+ }
+ 
+ Address Api:
+ ============
+ { 
+ 	
+ "addressLine1":"",
+ "addressLine2":"",
+ "country":"3605b052-6b79-4d8c-b907-977b1928fa2d",
+ "state":"30f59d17-f4cd-4522-8f09-5a926d68d02c",
+ "city":"b8ca1f37-cd39-4d0d-81eb-6bebe280b728",
+ "zipcode":"",
+ "asscoiatedType":"",
+ "associated":"",
+ "addressType":"1d355a67-4ce8-4d6b-880c-226c7afe5562"
+ 
+ }
+ 
+ employer Api:
+ =============
+ {
+		"user" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"industry" : "13b197fc-7227-4115-87ff-365b5c23f6c7",
+		"employerType" : "e27c5520-138d-4917-92e0-dc5698319434",
+		"premiumEmployer"  : "1",
+		"companyName" : "visogglobal",
+		"registeredDate" : "2016-10-10",
+		"registrationNumber": "112244",
+		"cin" : "0JGJ99"
+}

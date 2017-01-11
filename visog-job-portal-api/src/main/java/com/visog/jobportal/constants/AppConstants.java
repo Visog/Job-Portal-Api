@@ -6,4 +6,9 @@ public interface AppConstants {
 	String employerRoleId ="2556718a-37cc-40b4-9465-81ece73a6031";
 	String adminRoleId="2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac";
 
+	String jobSeekerName="job seeker";
+	String employerName="employer";
+	String adminName="admin";
+	
+	
 }
