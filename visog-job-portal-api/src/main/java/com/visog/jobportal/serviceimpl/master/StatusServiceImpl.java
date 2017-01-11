@@ -16,15 +16,16 @@ import com.visog.jobportal.utils.DaoUtils;
 
 public class StatusServiceImpl implements StatusService {
 
-	private static final Logger logger = Logger.getLogger(RolesSeviceImpl.class);
+	private static final Logger logger = Logger.getLogger(StatusServiceImpl.class);
 
 	@Inject
 	StatusDao dao;
 
 	public void saveStatus(StatusReq req) {
 		Status status = new Status();
-		status.setName(req.getName());
+
 		status.setCode(req.getCode());
+		status.setName(req.getName());
 		status.setDescription(req.getDescription());
 
 		DaoUtils.setEntityCreateAuditColumns(status);
@@ -39,13 +40,16 @@ public class StatusServiceImpl implements StatusService {
 	 * 
 	 * @author Raghava
 	 */
-	public void updateStatus(StatusReq req, String roleId) {
+	public void updateStatus(StatusReq req, String statusId) {
 
-		Status status = (Status) dao.getByKey(Status.class, roleId);
-		status.setName(req.getName());
+		Status status = (Status) dao.getByKey(Status.class, statusId);
+
 		status.setCode(req.getCode());
+		status.setName(req.getName());
 		status.setDescription(req.getDescription());
+
 		dao.update(status);
+
 		logger.info("Role updated successfully : " + status.getId());
 
 	}
@@ -65,10 +69,12 @@ public class StatusServiceImpl implements StatusService {
 
 		for (Status status : Status) {
 			statusRes = new StatusRes();
+
 			statusRes.setId(status.getId());
-			statusRes.setName(status.getName());
 			status.setCode(status.getCode());
+			statusRes.setName(status.getName());
 			statusRes.setDescription(status.getDescription());
+
 			statusList.add(statusRes);
 		}
 
@@ -85,10 +91,12 @@ public class StatusServiceImpl implements StatusService {
 	public StatusRes getStatus(String id) {
 		Status status = (Status) dao.getByKey(Status.class, id);
 		StatusRes statusRes = new StatusRes();
+
 		statusRes.setId(status.getId());
-		statusRes.setName(status.getName());
 		statusRes.setCode(status.getCode());
+		statusRes.setName(status.getName());
 		statusRes.setDescription(status.getDescription());
+
 		return statusRes;
 	}
 
@@ -98,8 +106,8 @@ public class StatusServiceImpl implements StatusService {
 	 * @author Raghava
 	 */
 
-	public Boolean deleteStatus(String roleId) {
-		return (dao.delete(Status.class, roleId) != 0);
+	public Boolean deleteStatus(String statusId) {
+		return (dao.delete(Status.class, statusId) != 0);
 
 	}
 

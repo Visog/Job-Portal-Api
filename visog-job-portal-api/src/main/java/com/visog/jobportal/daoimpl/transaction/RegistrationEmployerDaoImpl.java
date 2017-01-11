@@ -16,23 +16,23 @@ import com.visog.jobportal.model.transaction.Users;
 
 @Singleton
 @Transactional
-public class RegistrationEmployerDaoImpl extends AbstractDao implements RegistrationEmployerDao{
-	
+public class RegistrationEmployerDaoImpl extends AbstractDao implements RegistrationEmployerDao {
+
 	private static final Logger logger = Logger.getLogger(RegistrationEmployerDaoImpl.class);
 
 	/**
 	 * This method returns the Industries data
 	 */
 	public List<Users> getEmployer() {
-		
+
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Users> q = cb.createQuery(Users.class);
 		Root<Users> c = q.from(Users.class);
-	//	q.where(cb.equal(c.get("role"), "2556718a-37cc-40b4-9465-81ece73a6031"));
+		// q.where(cb.equal(c.get("role"),
+		// "2556718a-37cc-40b4-9465-81ece73a6031"));
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
-		
+
 	}
 
 	public Boolean isEmployerExists(String email) {
@@ -44,6 +44,7 @@ public class RegistrationEmployerDaoImpl extends AbstractDao implements Registra
 		q.select(cb.count(c));
 		return (em.createQuery(q).getSingleResult() != 0L);
 	}
+
 	public Boolean isEmployerPhoneExists(String phone) {
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -55,10 +56,3 @@ public class RegistrationEmployerDaoImpl extends AbstractDao implements Registra
 	}
 
 }
-
-
-	
-	
-
-
-

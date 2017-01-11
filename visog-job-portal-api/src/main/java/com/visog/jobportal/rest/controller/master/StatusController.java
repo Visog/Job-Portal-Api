@@ -23,20 +23,22 @@ import com.visog.jobportal.service.master.StatusService;
 @Produces(MediaType.APPLICATION_JSON)
 
 public class StatusController {
-	private static final Logger logger = Logger.getLogger(RolesController.class);
+
+	private static final Logger logger = Logger.getLogger(StatusController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
 	private StatusService service;
-	
+
 	/**
 	 * This method creates the Status
+	 * 
 	 * @author Raghava
 	 * @param req
 	 * @return
 	 */
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/status")
@@ -53,14 +55,14 @@ public class StatusController {
 
 	}
 
-	
 	/**
 	 * This method updates the Status
+	 * 
 	 * @author Raghava
 	 * @param req
 	 * @return
 	 */
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/status/{statusId}")
@@ -76,12 +78,14 @@ public class StatusController {
 		return jobPortalResponse;
 
 	}
+
 	/**
 	 * This method retrieves all Status
+	 * 
 	 * @author Raghava
 	 * @return
 	 */
-	
+
 	@GET
 	@Path("/status")
 	public JobPortalResponse getStatus() {
@@ -98,16 +102,17 @@ public class StatusController {
 
 	/**
 	 * This method retrieves a single status
+	 * 
 	 * @author Raghava
 	 * @return
 	 */
 
 	@GET
 	@Path("/status/{statusId}")
-	public JobPortalResponse getRole(@PathParam("roleId") String roleId) {
+	public JobPortalResponse getRole(@PathParam("statusId") String statusId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getStatus(roleId));
+		jobPortalResponse.setData(service.getStatus(statusId));
 		jobPortalResponse.setMessage("status fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -115,10 +120,10 @@ public class StatusController {
 		return jobPortalResponse;
 
 	}
-	
 
 	/**
 	 * This method delete the role
+	 * 
 	 * @author Raghava
 	 * @return
 	 */
@@ -143,9 +148,4 @@ public class StatusController {
 
 	}
 
-	
-	
-	
-	
-	
 }

@@ -812,21 +812,20 @@ method : POST
 data : 
 
 {
-		"USER" : "1213"
-		"JOB_TITLE" : "Looking for a Lead IT Recruiter - 6 plus Years",
-		"JOB_DESCRIPTION": "End to End IT recruitment,Team Handling ",
-		"ANNUAL_PACKAGE_FROM":"450000",
-		"ANNUAL_PACKAGE_TO":600000",
-		"CURRENCY":"INR",
-		"COMPANY" : "VISOG GLOBAL",
-		"EFFECTED_DATE_FROM":"01-01-16",
-		"EFFECTED_DATE_TO":"10-10-16",
-		"STATUS":"ACTIVE",
-		"MIN_EXPERIENCE":"5",
-		"PHONE_NO":"8142233888",
-		"WALKIN":"0",
-  
-}
+      "user": "17e18247-6976-40b2-8ad2-7fedff138047",
+      "jobTitle": "Employer",
+      "jobDescription": "developer",
+      "annualPackageFrom": 10000,
+      "annualPackageTo": 150000,
+      "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+      "company": "Google",
+      "effectedDateFrom": 1355270400000,
+      "effectedDateTo": 1418342400000,
+      "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+      "minExperience": 2,
+      "phoneNo": "54645464",
+      "walkIn": null
+    }
 
 response : 
 
@@ -845,22 +844,24 @@ ex url : /employer/post_job
 method : PUT
 data : 
 
-{
-		"USER" : "1213"
-		"JOB_TITLE" : "Looking for a Lead IT Recruiter - 6 plus Years",
-		"JOB_DESCRIPTION": "End to End IT recruitment,Team Handling ",
-		"ANNUAL_PACKAGE_FROM":"450000",
-		"ANNUAL_PACKAGE_TO":600000",
-		"CURRENCY":"INR",
-		"COMPANY" : "VISOG GLOBAL",
-		"EFFECTED_DATE":"01-01-16",
-		"EFFECTED_DATE_TO":"10-10-16",
-		"STATUS":"ACTIVE",
-		"MIN_EXPERIENCE":"5",
-		"PHONE_NO":"8142233888",
-		"WALKIN":"0"
-}
-
+	{
+     
+    
+		    "user": "17e18247-6976-40b2-8ad2-7fedff138047",
+		    "jobTitle": "Employer",
+		    "jobDescription": "developer",
+		    "annualPackageFrom": 10000,
+		    "annualPackageTo": 150000,
+		    "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+		    "company": "Google",
+		    "effectedDateFrom": 1355270400000,
+		    "effectedDateTo": 1418342400000,
+		    "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+		    "minExperience": 2,
+		    "phoneNo": "8297359059",
+		    "walkIn": null
+ 
+    }
 response : 
 
 {
@@ -886,22 +887,22 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "POST JOB Updated Successfully/ Failed to update POST JOB"
 	"data" : [
-			{ 
-			        "id" : 1,
-					"USER" : "1213"
-					"JOB_TITLE" : "Looking for a Lead IT Recruiter - 6 plus Years",
-					"JOB_DESCRIPTION": "End to End IT recruitment,Team Handling ",
-					"ANNUAL_PACKAGE_FROM":"450000",
-					"ANNUAL_PACKAGE_TO":600000",
-					"CURRENCY":"INR",
-					"COMPANY" : "VISOG GLOBAL",
-					"EFFECTED_DATE":"01-01-16",
-					"EFFECTED_DATE_TO":"10-10-16",
-					"STATUS":"ACTIVE",
-					"MIN_EXPERIENCE":"5",
-					"PHONE_NO":"8142233888",
-					"WALKIN":"0"
-           } 
+			{
+      				  "id": "59efd9ce-e18e-4976-b68c-93dac3af44de",
+     				  "user": "17e18247-6976-40b2-8ad2-7fedff138047",
+				      "jobTitle": "Employer",
+				      "jobDescription": "developer",
+				      "annualPackageFrom": 10000,
+				      "annualPackageTo": 150000,
+				      "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+				      "company": "Google",
+				      "effectedDateFrom": 1355270400000,
+				      "effectedDateTo": 1418342400000,
+				      "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+				      "minExperience": 2,
+				      "phoneNo": "54645464",
+				      "walkIn": null
+				    }
 
 4. Get POST_JOB
 =====================================
@@ -920,20 +921,22 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "POST JOB updated Successfully/ Failed to update POST JOB"
 	"data" : 
-	        "id" : 1,
-			"USER" : "1213"
-			"JOB_TITLE" : "Looking for a Lead IT Recruiter - 6 plus Years",
-			"JOB_DESCRIPTION": "End to End IT recruitment,Team Handling ",
-			"ANNUAL_PACKAGE_FROM":"450000",
-			"ANNUAL_PACKAGE_TO":600000",
-			"CURRENCY":"INR",
-			"COMPANY" : "VISOG GLOBAL",
-			"EFFECTED_DATE":"01-01-16",
-			"EFFECTED_DATE_TO":"10-10-16",
-			"STATUS":"ACTIVE",
-			"MIN_EXPERIENCE":"5",
-			"PHONE_NO":"8142233888",
-			"WALKIN":"0"
+	        {
+			      "id": "59efd9ce-e18e-4976-b68c-93dac3af44de",
+			      "user": "17e18247-6976-40b2-8ad2-7fedff138047",
+			      "jobTitle": "Employer",
+			      "jobDescription": "developer",
+			      "annualPackageFrom": 10000,
+			      "annualPackageTo": 150000,
+			      "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+			      "company": "Google",
+			      "effectedDateFrom": 1355270400000,
+			      "effectedDateTo": 1418342400000,
+			      "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+			      "minExperience": 2,
+			      "phoneNo": "54645464",
+			      "walkIn": null
+    }
 	
 } 
 

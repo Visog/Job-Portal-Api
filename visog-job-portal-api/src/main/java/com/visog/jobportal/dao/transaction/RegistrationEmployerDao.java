@@ -13,5 +13,8 @@ public interface RegistrationEmployerDao extends AbstractDaoI {
 	public Boolean isEmployerExists(String email);
 
 	public Boolean isEmployerPhoneExists(String phone);
+	
+	
+	
 
 }
