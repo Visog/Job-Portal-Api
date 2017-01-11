@@ -23,7 +23,7 @@ import com.visog.jobportal.service.master.DomainService;
 @Produces(MediaType.APPLICATION_JSON)
 
 public class DomainController {
-	private static final Logger logger = Logger.getLogger(RolesController.class);
+	private static final Logger logger = Logger.getLogger(DomainController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
