@@ -17,7 +17,7 @@ import com.visog.jobportal.service.transaction.FilesService;
 import com.visog.jobportal.utils.DaoUtils;
 
 public class FilesServiceImpl implements FilesService {
-	private static final Logger logger = Logger.getLogger(Files.class);
+	private static final Logger logger = Logger.getLogger(FilesServiceImpl.class);
 	
 	@Inject
 	FilesDao dao;
@@ -33,9 +33,9 @@ public class FilesServiceImpl implements FilesService {
 		files.setAssociated(req.getAssociated());
 		files.setAssociatedtype(req.getAssociatedtype());
 		
-		Users users=new Users();
-		users.setId(req.getFiletype());
-		files.setFiletype(users);
+		FileType fileType=new FileType();
+		fileType.setId(req.getFiletype());
+		files.setFiletype(fileType);
 		DaoUtils.setEntityCreateAuditColumns(files);
 		dao.save(files);
 		logger.info(" files saved Successfully:"+ files.getId());
@@ -51,9 +51,9 @@ public class FilesServiceImpl implements FilesService {
 		files.setAssociated(req.getAssociated());
 		files.setAssociatedtype(req.getAssociatedtype());
 		
-		Users users=new Users();
-		users.setId(req.getFiletype());
-		files.setFiletype(users);
+		FileType fileType=new FileType();
+		fileType.setId(req.getFiletype());
+		files.setFiletype(fileType);
 		
 		dao.update(files);
 		logger.info(" files updated Successfully"+files.getId());

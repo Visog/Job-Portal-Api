@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.jobportal.model.AbstractModel;
+import com.visog.jobportal.model.master.FileType;
 
 @Table(name = "FILES")
 @Entity
@@ -26,7 +27,7 @@ public class Files extends AbstractModel {
 
 	@ManyToOne
 	@JoinColumn(name = "FILE_TYPE_ID")
-	private Users filetype;
+	private FileType filetype;
 
 	@Column(name = "ASSOCIATED_TYPE")
 	private String associatedtype;
@@ -69,12 +70,12 @@ public class Files extends AbstractModel {
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
 	}
-
-	public Users getFiletype() {
+	
+	public FileType getFiletype() {
 		return filetype;
 	}
 
-	public void setFiletype(Users filetype) {
+	public void setFiletype(FileType filetype) {
 		this.filetype = filetype;
 	}
 
