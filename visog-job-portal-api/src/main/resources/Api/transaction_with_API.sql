@@ -674,6 +674,7 @@ ex url : /employer/details
 method : PUT
 data : 
 
+//Api calls
 {
 		"USER" : "101",
 		"INDUSTRY" : "098",
