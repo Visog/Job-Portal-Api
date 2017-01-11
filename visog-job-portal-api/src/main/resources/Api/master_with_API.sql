@@ -1825,11 +1825,12 @@ ex url : /master/status
 method : POST
 data : 
 
-{
-  "name" : "error", 
-  "description" : "master data description..", 
-}
-
+ { 
+ 	
+ 	"code":"A",
+ 	"name":"Active",
+ 	"description":"Active description"
+ }
 response : 
 
 {
@@ -1847,10 +1848,12 @@ ex url : /master/status/2
 method : PUT
 data : 
 
-{
-  "name" : "error", 
-  "description" : " master data description…..", 
-}
+ { 
+ 	
+ 	"code":"A",
+ 	"name":"Active",
+ 	"description":"Active description"
+ }
 
 response : 
 
