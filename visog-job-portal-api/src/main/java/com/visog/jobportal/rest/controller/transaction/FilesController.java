@@ -76,7 +76,7 @@ public class FilesController {
 	
 	@GET
 	@Path("/files/{filesId}")
-	public JobPortalResponse getPostJob(@PathParam("filesId") String filesId){
+	public JobPortalResponse getFiles(@PathParam("filesId") String filesId){
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getFiles(filesId));

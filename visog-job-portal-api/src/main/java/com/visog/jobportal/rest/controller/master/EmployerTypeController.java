@@ -1,4 +1,5 @@
 package com.visog.jobportal.rest.controller.master;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
@@ -22,16 +23,13 @@ import com.visog.jobportal.service.master.EmployerTypeService;
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
 
-
 /*
-*
-*  @author: Divya Sharma 
-*
-*/
-
+ *
+ * @author: Divya Sharma
+ *
+ */
 
 public class EmployerTypeController {
-	
 
 	private static final Logger logger = Logger.getLogger(EmployerTypeController.class);
 
@@ -41,15 +39,15 @@ public class EmployerTypeController {
 	private EmployerTypeService service;
 
 	/*
-	 *  @author: Divya Sharma 
-	 *  
+	 * @author: Divya Sharma
+	 * 
 	 * This method creates the Employer Type
 	 * 
 	 * @param req
+	 * 
 	 * @return
 	 */
-	
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/employerType")
@@ -67,14 +65,15 @@ public class EmployerTypeController {
 	}
 
 	/*
-	 *  @author: Divya Sharma 
-	 *  
+	 * @author: Divya Sharma
+	 * 
 	 * This method updates the EmployerType
 	 * 
 	 * @param req
+	 * 
 	 * @return
 	 */
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/employerType/{employer_Id}")
@@ -92,13 +91,13 @@ public class EmployerTypeController {
 	}
 
 	/*
-	 *  @author: Divya Sharma 
-	 *  
+	 * @author: Divya Sharma
+	 * 
 	 * This method retrieves all employer_type
 	 * 
 	 * @return
 	 */
-	
+
 	@GET
 	@Path("/employerType")
 	public JobPortalResponse getEmployerTypes() {
@@ -114,8 +113,8 @@ public class EmployerTypeController {
 	}
 
 	/*
-	 *  @author: Divya Sharma 
-	 *  
+	 * @author: Divya Sharma
+	 * 
 	 * This method retrieves a single Employer Type
 	 * 
 	 * @return
@@ -134,22 +133,22 @@ public class EmployerTypeController {
 		return jobPortalResponse;
 
 	}
-	
+
 	/*
-	 *  @author: Divya Sharma 
-	 *  
+	 * @author: Divya Sharma
+	 * 
 	 * This method delete the employer_type_id
 	 * 
 	 * @return
 	 */
-	
+
 	@DELETE
 	@Path("/employerType/{employer_Id}")
 	public JobPortalResponse deleteEmployerType(@PathParam("employer_Id") String employer_Id) {
-		
+
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		if(service.deleteEmployerType(employer_Id)) {
+		if (service.deleteEmployerType(employer_Id)) {
 			jobPortalResponse.setMessage("Employer Type deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -159,10 +158,8 @@ public class EmployerTypeController {
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
-
 		return jobPortalResponse;
-	
-	
+
 	}
 
 }

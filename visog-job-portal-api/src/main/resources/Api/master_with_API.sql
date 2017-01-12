@@ -856,7 +856,7 @@ data :
 {
   "name" : "computer science", 
    "description" : "master data description..", 
-   "course_id" : "445"
+   "course" : "445"
 }
 
 response : 
@@ -1217,8 +1217,9 @@ method : POST
 data : 
 
 {
-  "name" : "english", 
-  "description" : "master data description..", 
+  "code" : "12",
+  "name" : "english"
+   
 }
 
 response : 
@@ -2187,7 +2188,7 @@ method : POST
 data : 
 
 {
-  "Extension"  :  ".txt"
+  "extension"  :  ".txt"
   "description" : "master data description.." , 
 }
 
