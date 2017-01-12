@@ -71,7 +71,7 @@ public class CityController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/city/{cityId}")
-	public JobPortalResponse updateState(@PathParam("ciyId") String cityId, CityReq req) {
+	public JobPortalResponse updateState(@PathParam("cityId") String cityId, CityReq req) {
 
 		// service.updateCity(req, cityId);
 
