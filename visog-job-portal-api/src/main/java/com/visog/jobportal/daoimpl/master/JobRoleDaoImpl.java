@@ -2,10 +2,11 @@ package com.visog.jobportal.daoimpl.master;
 
 import java.util.List;
 
+import javax.inject.Singleton;
 import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
@@ -13,6 +14,8 @@ import com.visog.jobportal.dao.AbstractDao;
 import com.visog.jobportal.dao.master.JobRoleDao;
 import com.visog.jobportal.model.master.JobRole;
 
+@Singleton
+@Transactional
 public class JobRoleDaoImpl extends AbstractDao implements JobRoleDao {
 
 	private static final Logger logger = Logger.getLogger(JobRoleDaoImpl.class);
@@ -37,7 +40,7 @@ public class JobRoleDaoImpl extends AbstractDao implements JobRoleDao {
 	 * @author Raghava
 	 * This method deletes the JobRoles data
 	 */
-	
+	/*
 	public void delete(String id) {
 		
 		CriteriaBuilder criteriaBuilder  = em.getCriteriaBuilder();
@@ -47,5 +50,5 @@ public class JobRoleDaoImpl extends AbstractDao implements JobRoleDao {
 
 		em.createQuery(query).executeUpdate();
 		
-	}
+	}*/
 }
