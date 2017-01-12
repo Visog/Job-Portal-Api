@@ -40,7 +40,7 @@ public class JobRoleController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/jobRole")
-	public JobPortalResponse createRole(JobRoleReq req) {
+	public JobPortalResponse createJobRole(JobRoleReq req) {
 
 		service.saveJobRole(req);
 
@@ -59,11 +59,10 @@ public class JobRoleController {
 	 * @param req
 	 * @return
 	 */
-	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/jobRole/{jobRoleId}")
-	public JobPortalResponse updateRole(@PathParam("jobRoleId") String jobRoleId, JobRoleReq req) {
+	public JobPortalResponse updateJobRole(@PathParam("jobRoleId") String jobRoleId, JobRoleReq req) {
 
 		service.updateJobRole(req, jobRoleId);
 
@@ -81,10 +80,9 @@ public class JobRoleController {
 	 * @author Raghava
 	 * @return
 	 */
-	
 	@GET
 	@Path("/jobRole")
-	public JobPortalResponse getRoles() {
+	public JobPortalResponse getJobRoles() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getJobRoles());
@@ -104,7 +102,7 @@ public class JobRoleController {
 
 	@GET
 	@Path("/jobRole/{jobRoleId}")
-	public JobPortalResponse getRole(@PathParam("jobRoleId") String jobRoleId) {
+	public JobPortalResponse getJobRole(@PathParam("jobRoleId") String jobRoleId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getJobRole(jobRoleId));
@@ -124,7 +122,7 @@ public class JobRoleController {
 
 	@DELETE
 	@Path("/jobRole/{jobRoleId}")
-	public JobPortalResponse deleteRole(@PathParam("jobRoleId") String jobRoleId) {
+	public JobPortalResponse deleteJobRole(@PathParam("jobRoleId") String jobRoleId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
