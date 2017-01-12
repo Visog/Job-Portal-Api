@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
 import com.visog.jobportal.req.transaction.JobSeekerReq;
-import com.visog.jobportal.req.transaction.PostJobReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.JobSeekerService;
 

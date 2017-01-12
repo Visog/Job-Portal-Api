@@ -8,15 +8,35 @@ CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
 
 StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
 
-AddressTypeId:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
 
 city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
 
-employerType Id:	e27c5520-138d-4917-92e0-dc5698319434
-
 IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
 
+CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
 
+Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
+
+EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
+
+EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
+
+EmploymentType Id: 4da22d65-df02-4978-9db3-9e4ce977b749
+
+FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
+
+Gender Id: 5035c9e4-d429-489f-9528-0470d08675b7
+
+JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
+
+Languages Id: 1b0ade23-20b0-4051-a932-9fc873505e98 
+
+Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
+
+Specialization Id: ca26e62f-17e2-4d4c-a0b5-08486b2cd284
+
+University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
 
 TRANSACTION IDS:
 ===============
@@ -88,3 +108,7 @@ Registration form api calls for all:
 		"registrationNumber": "112244",
 		"cin" : "0JGJ99"
 }
+
+AddressType Api:
+================
+
