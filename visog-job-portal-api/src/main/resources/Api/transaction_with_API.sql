@@ -34,7 +34,7 @@ ex url :  /registration/employer
 method : POST
 data : 
 
-{
+{	
       "firstName": "Divya",
       "middleName": "",
       "lastName": "SHARMA",
@@ -1085,6 +1085,12 @@ CREATE TABLE FILES(
 	FILE_TYPE_ID VARCHAR(37) NOT NULL,
 	ASSOCIATED_TYPE VARCHAR(100), -- USERPROFILE/JOBPOST/
 	ASSOCIATED_ID VARCHAR(37) NOT NULL,-- USERID/JOBID
+	CREATED_SID   VARCHAR(37) NOT NULL,
+	CREATED_BY    VARCHAR(37) NOT NULL,
+	CREATED_ON    TIMESTAMP NOT NULL,
+	UPDATED_SID   VARCHAR(37),
+	UPDATED_BY    VARCHAR(37),
+	UPDATED_ON    TIMESTAMP,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (FILE_TYPE_ID) REFERENCES FILE_TYPE(ID)
 );
@@ -2018,18 +2024,16 @@ method : POST
 data : 
 
 {
-"JOB_SEEKER" : "101",
-"ID" : "121",
-"PROJECT_DETAILS" : "JOB PORTAL PROJECT",
-"PROJECT_TITLE" : "JOB PORTTAL",
-"EMPLOYMENT_TYPE" : "123",
-"CLIENT_NAME" :"RSMRBR",
-"EMPLOYER_NAME" : "ABC",
-"DURATION_FROM" : "01/01/2004",
-"DURATION_TO" : "01/01/2006",
-"PROJECT_LOCATION" : " SRI KRISHNA RESIDENDCY ,HYDERABAD",
-"JOB_PROFILE" : "TEAM LEADER",
-"TEAM_SIZE" : "4",
+"user" : "921366a2-7b19-4d72-ae8e-d17b6cfd1445",
+"jobResponsibilities" : "developer",
+"projectDetails" : "java developerL",
+"projecttitle" :"Developer",
+"employmentType" : "e60e04c6-7efd-4803-b045-558347fd773a",
+"clientName" :"RSMRBR",
+"durationfrom" : "2004-01-01",
+"durationTo" : "2006-12-12",
+"teamSize" : "4",
+"technologiesUsed" : "TEAM LEADER"
 }
 
 response : 
@@ -2050,19 +2054,16 @@ method : PUT
 data : 
 
 {
- "JOB_SEEKER" : "101",
-"ID" : "121",
-"PROJECT_DETAILS" : "JOB PORTAL PROJECT",
-"PROJECT_TITLE" : "JOB PORTTAL",
-"EMPLOYMENT_TYPE" : "123",
-"CLIENT_NAME" :"RSMRBR",
-"EMPLOYER_NAME" : "ABC",
-"DURATION_FROM" : "01/01/2004",
-"DURATION_TO" : "01/01/2006",
-"PROJECT_LOCATION" : " SRI KRISHNA RESIDENDCY ,HYDERABAD",
-"JOB_PROFILE" : "TEAM LEADER",
-"TEAM_SIZE" : "4",
-}
+"user" : "921366a2-7b19-4d72-ae8e-d17b6cfd1445",
+"jobResponsibilities" : "developer",
+"projectDetails" : "java developerL",
+"projecttitle" :"Developer",
+"employmentType" : "e60e04c6-7efd-4803-b045-558347fd773a",
+"clientName" :"RSMRBR",
+"durationfrom" : "2004-01-01",
+"durationTo" : "2006-12-12",
+"teamSize" : "4",
+"technologiesUsed" : "TEAM LEADER"
 
 response : 
 

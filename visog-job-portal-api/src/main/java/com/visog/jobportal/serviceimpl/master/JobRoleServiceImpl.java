@@ -28,15 +28,15 @@ public class JobRoleServiceImpl implements JobRoleService {
 	public void saveJobRole(JobRoleReq req) {
 
 		
-		JobRole roles = new JobRole();
-		roles.setName(req.getName());
-		roles.setDescription(req.getDescription());
+		JobRole jobRole = new JobRole();
+		jobRole.setName(req.getName());
+		jobRole.setDescription(req.getDescription());
 
-		DaoUtils.setEntityCreateAuditColumns(roles);
+		DaoUtils.setEntityCreateAuditColumns(jobRole);
 		
-		dao.save(roles);
+		dao.save(jobRole);
 
-		logger.info("JobRole created successfully : " + roles.getId());
+		logger.info("JobRole created successfully : " + jobRole.getId());
 	}
 
 	/**
@@ -45,29 +45,28 @@ public class JobRoleServiceImpl implements JobRoleService {
 	 */
 	public void updateJobRole(JobRoleReq req, String jobRoleId) {
 
-		JobRole roles = (JobRole) dao.getByKey(JobRole.class, jobRoleId);
-		roles.setName(req.getName());
-		roles.setDescription(req.getDescription());
-		dao.update(roles);
-		logger.info("JobRole updated successfully : " + roles.getId());
+		JobRole jobRole = (JobRole) dao.getByKey(JobRole.class, jobRoleId);
+		jobRole.setName(req.getName());
+		jobRole.setDescription(req.getDescription());
+		dao.update(jobRole);
+		logger.info("JobRole updated successfully : " + jobRole.getId());
 	}
 	
 	/**
 	 * This method returns all the Jobroles
 	 * @author Raghava
 	 */
-
 	public List<JobRoleRes> getJobRoles() {
-		List<JobRole> roles = dao.getJobRoles();
+		List<JobRole> jobRole = dao.getJobRoles();
 
 		List<JobRoleRes> jobRolesList = new ArrayList<>();
 		JobRoleRes rolesRes = null;
 
-		for (JobRole role : roles) {
+		for (JobRole jobRoles : jobRole) {
 			rolesRes = new JobRoleRes();
-			rolesRes.setId(role.getId());
-			rolesRes.setName(role.getName());
-			rolesRes.setDescription(role.getDescription());
+			rolesRes.setId(jobRoles.getId());
+			rolesRes.setName(jobRoles.getName());
+			rolesRes.setDescription(jobRoles.getDescription());
 			jobRolesList.add(rolesRes);
 		}
 
@@ -81,11 +80,11 @@ public class JobRoleServiceImpl implements JobRoleService {
 	 */
 	public JobRoleRes getJobRole(String id) {
 		
-		JobRole role = (JobRole) dao.getByKey(JobRole.class, id);
+		JobRole jobRole = (JobRole) dao.getByKey(JobRole.class, id);
 		JobRoleRes rolesRes = new JobRoleRes();
-		rolesRes.setId(role.getId());
-		rolesRes.setName(role.getName());
-		rolesRes.setDescription(role.getDescription());
+		rolesRes.setId(jobRole.getId());
+		rolesRes.setName(jobRole.getName());
+		rolesRes.setDescription(jobRole.getDescription());
 		return rolesRes;
 	}
 

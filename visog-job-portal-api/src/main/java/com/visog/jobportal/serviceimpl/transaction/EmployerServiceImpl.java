@@ -30,7 +30,6 @@ public class EmployerServiceImpl implements EmployerService {
 	/**
 	 * @author Raghava
 	 */
-
 	public void saveEmployer(EmployerReq req) {
 
 		Users users = new Users();
@@ -92,12 +91,6 @@ public class EmployerServiceImpl implements EmployerService {
 		List<EmployerRes> employerList = new ArrayList<>();
 
 		EmployerRes employerRes = null;
-
-		Users users = new Users();
-
-		Industry industry = new Industry();
-
-		EmployerType employerType = new EmployerType();
 
 		for (Employer employers : employer) {
 
