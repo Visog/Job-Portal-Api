@@ -68,7 +68,6 @@ public class FilesServiceImpl implements FilesService {
 		List<Files> files=dao.getFiles();
 		List<FilesRes> fileList=new ArrayList<>();
 		FilesRes filesRes=null;
-		//FileType fileType=new FileType();
 		for(Files file:files){
 			filesRes =new FilesRes();
 			filesRes.setId(file.getId());
