@@ -66,7 +66,7 @@ public class AddressController {
 	public JobPortalResponse getAddress() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getaddress());
+		jobPortalResponse.setData(service.getAddress());
 		jobPortalResponse.setMessage("address fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

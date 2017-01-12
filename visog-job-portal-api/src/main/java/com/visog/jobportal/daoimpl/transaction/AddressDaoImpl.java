@@ -21,6 +21,11 @@ import com.visog.jobportal.model.transaction.Address;
 public class AddressDaoImpl extends AbstractDao implements AddressDao{
 	private static final Logger logger = Logger.getLogger(AddressDaoImpl.class);
 	
+	/**
+	 * This method returns the Files data
+	 * 
+	 * @Author=shiva
+	 */
 	public List<Address> getAddress() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Address> q = cb.createQuery(Address.class);
