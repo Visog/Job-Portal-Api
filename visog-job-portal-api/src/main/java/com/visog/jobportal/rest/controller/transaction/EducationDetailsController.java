@@ -36,7 +36,7 @@ public class EducationDetailsController {
 
 	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {
 
-		service.saveEducationDetails(req);
+		service.saveEducationDetails(req);;
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("EducationDetails saved succcessfully");
@@ -51,7 +51,7 @@ public class EducationDetailsController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationdetails/{educationdetailsId}")
 
-	public JobPortalResponse updatePostJob(@PathParam("educationdetailsId") String educationdetailsId,
+	public JobPortalResponse updateEducationDetails(@PathParam("educationdetailsId") String educationdetailsId,
 			EducationDetailsReq req) {
 
 		service.updateEducationDetails(req, educationdetailsId);
@@ -67,7 +67,7 @@ public class EducationDetailsController {
 
 	@GET
 	@Path("/educationdetails")
-	public JobPortalResponse getJobSeekers() {
+	public JobPortalResponse getEducationDetails() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getEducationDetails());
@@ -81,7 +81,7 @@ public class EducationDetailsController {
 
 	@GET
 	@Path("/educationdetails/{educationdetailsId}")
-	public JobPortalResponse getPostJob(@PathParam("educationdetailsId") String educationdetailsId) {
+	public JobPortalResponse getEducationDetails(@PathParam("educationdetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getEducationDetail(educationdetailsId));
@@ -95,7 +95,7 @@ public class EducationDetailsController {
 
 	@DELETE
 	@Path("/educationdetails/{educationdetailsId}")
-	public JobPortalResponse deletePostJob(@PathParam("educationdetailsId") String educationdetailsId) {
+	public JobPortalResponse deleteEducationDetails(@PathParam("educationdetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		if (service.deleteEducationDetails(educationdetailsId)) {

@@ -38,14 +38,14 @@ public class SpecilizationController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/specilization")
+	@Path("/specialization")
 	public JobPortalResponse createSpecilization(SpecilizationReq req) {
 		
 		service.saveSpecilization(req);
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		
-		jobPortalResponse.setMessage("Specilization saved succcessfully");
+		jobPortalResponse.setMessage("Specialization saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -60,13 +60,13 @@ public class SpecilizationController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/specilization/{specilizationId}")
+	@Path("/specialization/{specilizationId}")
 	public JobPortalResponse updateSpecilization(@PathParam("specilizationId") String specilizationId, SpecilizationReq req) {
 		
 		service.updateSpecilization(req, specilizationId);
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("Specilization updated succcessfully");
+		jobPortalResponse.setMessage("Specialization updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		
@@ -80,12 +80,12 @@ public class SpecilizationController {
 	 * @return
 	 */
 	@GET
-	@Path("/specilization")
+	@Path("/specialization")
 	public JobPortalResponse getSpecilization() {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getSpecilization());
-		jobPortalResponse.setMessage("Specilization fetched succcessfully");
+		jobPortalResponse.setMessage("Specialization fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		return jobPortalResponse;
@@ -97,13 +97,13 @@ public class SpecilizationController {
 	 * @return
 	 */
 	@GET
-	@Path("/specilization/{specilizationId}")
+	@Path("/specialization/{specilizationId}")
 	public JobPortalResponse getSpecilization(@PathParam("specilizationId") String specilizationId) {
 		
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		
 		jobPortalResponse.setData(service.getSpecilization(specilizationId));
-		jobPortalResponse.setMessage("Role fetched succcessfully");
+		jobPortalResponse.setMessage("Specialization fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		return jobPortalResponse;
@@ -116,18 +116,18 @@ public class SpecilizationController {
 	 */
 	
 	@DELETE
-	@Path("/specilization/{specilizationId}")
+	@Path("/specialization/{specilizationId}")
 	public JobPortalResponse deleteSpecilization(@PathParam("specilizationId") String specilizationId) {
 		
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
 		if(service.deleteSpecilization(specilizationId)) {
-			jobPortalResponse.setMessage("specilization deleted succcessfully");
+			jobPortalResponse.setMessage("Specialization deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete he specilization");
+			jobPortalResponse.setMessage("Failed to delete the specialization");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}

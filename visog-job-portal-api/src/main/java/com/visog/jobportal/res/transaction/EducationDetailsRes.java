@@ -1,22 +1,24 @@
 package com.visog.jobportal.res.transaction;
 
+import java.util.Date;
+
 public class EducationDetailsRes {
-	
-private String id;
-	
+
+	private String id;
+
 	private String user;
-	
+
 	private String courses;
-	
-	private String educationtype;
-	
+
+	private String educationType;
+
 	private String specialization;
-	
+
 	private String university;
-	
-	private String durationfrom;
-	
-	private String durationto;
+
+	private Date durationFromDate;
+
+	private Date durationToDate;
 
 	public String getId() {
 		return id;
@@ -42,12 +44,12 @@ private String id;
 		this.courses = courses;
 	}
 
-	public String getEducationtype() {
-		return educationtype;
+	public String getEducationType() {
+		return educationType;
 	}
 
-	public void setEducationtype(String educationtype) {
-		this.educationtype = educationtype;
+	public void setEducationType(String educationType) {
+		this.educationType = educationType;
 	}
 
 	public String getSpecialization() {
@@ -66,23 +68,20 @@ private String id;
 		this.university = university;
 	}
 
-	public String getDurationfrom() {
-		return durationfrom;
+	public Date getDurationFromDate() {
+		return durationFromDate;
 	}
 
-	public void setDurationfrom(String durationfrom) {
-		this.durationfrom = durationfrom;
+	public void setDurationFromDate(Date durationFromDate) {
+		this.durationFromDate = durationFromDate;
 	}
 
-	public String getDurationto() {
-		return durationto;
+	public Date getDurationToDate() {
+		return durationToDate;
 	}
 
-	public void setDurationto(String durationto) {
-		this.durationto = durationto;
+	public void setDurationToDate(Date durationToDate) {
+		this.durationToDate = durationToDate;
 	}
-	
-	
-	
 
 }

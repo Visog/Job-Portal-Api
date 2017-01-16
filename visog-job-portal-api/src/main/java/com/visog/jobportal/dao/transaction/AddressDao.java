@@ -6,7 +6,6 @@ import com.visog.jobportal.model.transaction.Address;
 
 public interface AddressDao extends AbstractDaoI{
 	
-//	siva
 	public List<Address> getAddress();
 	
 	

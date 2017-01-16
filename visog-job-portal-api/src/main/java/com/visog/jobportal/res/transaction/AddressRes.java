@@ -4,7 +4,7 @@ public class AddressRes {
 
 	private String id;
 
-	private String addrtessLine1;
+	private String addressLine1;
 
 	private String addressLine2;
 
@@ -30,12 +30,12 @@ public class AddressRes {
 		this.id = id;
 	}
 
-	public String getAddrtessLine1() {
-		return addrtessLine1;
+	public String getAddressLine1() {
+		return addressLine1;
 	}
 
-	public void setAddrtessLine1(String addrtessLine1) {
-		this.addrtessLine1 = addrtessLine1;
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
 	}
 
 	public String getAddressLine2() {
@@ -102,4 +102,5 @@ public class AddressRes {
 		this.addressType = addressType;
 	}
 
+	
 }

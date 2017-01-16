@@ -1,20 +1,34 @@
 package com.visog.jobportal.req.transaction;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.visog.jobportal.model.master.Courses;
+import com.visog.jobportal.model.master.EducationType;
+import com.visog.jobportal.model.master.Specilization;
+import com.visog.jobportal.model.master.University;
+import com.visog.jobportal.model.transaction.Users;
+
 public class EducationDetailsReq {
 
-private String user;
-	
+	private String user;
+
 	private String courses;
-	
-	private String educationtype;
-	
+
+	private String educationType;
+
 	private String specialization;
-	
+
 	private String university;
-	
-	private String durationfrom;
-	
-	private String durationto;
+
+	private Date durationFromDate;
+
+	private Date durationToDate;
 
 	public String getUser() {
 		return user;
@@ -32,12 +46,12 @@ private String user;
 		this.courses = courses;
 	}
 
-	public String getEducationtype() {
-		return educationtype;
+	public String getEducationType() {
+		return educationType;
 	}
 
-	public void setEducationtype(String educationtype) {
-		this.educationtype = educationtype;
+	public void setEducationType(String educationType) {
+		this.educationType = educationType;
 	}
 
 	public String getSpecialization() {
@@ -56,23 +70,22 @@ private String user;
 		this.university = university;
 	}
 
-	public String getDurationfrom() {
-		return durationfrom;
+	public Date getDurationFromDate() {
+		return durationFromDate;
 	}
 
-	public void setDurationfrom(String durationfrom) {
-		this.durationfrom = durationfrom;
+	public void setDurationFromDate(Date durationFromDate) {
+		this.durationFromDate = durationFromDate;
 	}
 
-	public String getDurationto() {
-		return durationto;
+	public Date getDurationToDate() {
+		return durationToDate;
 	}
 
-	public void setDateto(String durationto) {
-		this.durationto = durationto;
+	public void setDurationToDate(Date durationToDate) {
+		this.durationToDate = durationToDate;
 	}
-	
-	
-	
-	
+			
+			
+
 }

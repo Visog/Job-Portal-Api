@@ -17,38 +17,38 @@ import com.visog.jobportal.model.master.AddrerssType;
 @Entity
 public class Address extends AbstractModel {
 	@Id
-	@Column(name="Id")
+	@Column(name = "Id")
 	private String id;
-	
-	@Column(name="ADDRESS_LINE1")
+
+	@Column(name = "ADDRESS_LINE1")
 	private String addressLine1;
-	
-	@Column(name="ADDRESS_LINE2")
+
+	@Column(name = "ADDRESS_LINE2")
 	private String addressline2;
-	
+
 	@ManyToOne
-	@JoinColumn(name="STATE_ID")
+	@JoinColumn(name = "STATE_ID")
 	private States state;
-	
+
 	@ManyToOne
-	@JoinColumn(name="COUNTRY_ID")
+	@JoinColumn(name = "COUNTRY_ID")
 	private Country country;
-	
+
 	@ManyToOne
-	@JoinColumn(name="CITY_ID")
+	@JoinColumn(name = "CITY_ID")
 	private City city;
-	
-	@Column(name="ZIPCODE")
+
+	@Column(name = "ZIPCODE")
 	private String zipcode;
-	
-	@Column(name="ASSOCIATED_TYPE")
+
+	@Column(name = "ASSOCIATED_TYPE")
 	private String associatedType;
-	
-	@Column(name="ASSOCIATED_ID")
+
+	@Column(name = "ASSOCIATED_ID")
 	private String associated;
-	
+
 	@ManyToOne
-	@JoinColumn(name="ADDRESS_TYPE_ID")
+	@JoinColumn(name = "ADDRESS_TYPE_ID")
 	private AddrerssType addressType;
 
 	public String getId() {
@@ -130,14 +130,5 @@ public class Address extends AbstractModel {
 	public void setAddressType(AddrerssType addressType) {
 		this.addressType = addressType;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

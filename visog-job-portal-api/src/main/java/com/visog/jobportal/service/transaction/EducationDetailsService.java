@@ -9,15 +9,12 @@ public interface EducationDetailsService {
 
 	public void saveEducationDetails(EducationDetailsReq req);
 
+	public void updateEducationDetails(EducationDetailsReq req, String educationdetailsId);
 
-	
-	public void updateEducationDetails(EducationDetailsReq req ,String educationdetailsId );
-	
 	public List<EducationDetailsRes> getEducationDetails();
 
 	public EducationDetailsRes getEducationDetail(String id);
 
 	public Boolean deleteEducationDetails(String educationdetailsId);
-
 
 }

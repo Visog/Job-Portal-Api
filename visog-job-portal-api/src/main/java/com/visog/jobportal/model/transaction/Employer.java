@@ -22,34 +22,54 @@ public class Employer extends AbstractModel {
 	@Id
 	@Column(name = "ID")
 	private String id;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "USER_ID")
 	private Users user;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "INDUSTRY_ID")
 	private Industry industry;
-	
+
 	@ManyToOne
-	@JoinColumn(name="EMPLOYER_TYPE_ID")
+	@JoinColumn(name = "EMPLOYER_TYPE_ID")
 	private EmployerType employerType;
-	
+
 	@Column(name = "PREMIUM_EMPLOYER")
 	private String premiumEmployer;
-	
-	@Column(name="COMPANY_NAME")
+
+	@Column(name = "COMPANY_NAME")
 	private String companyName;
-	
-	@Column(name="REGISTERED_DATE")
+
+	@Column(name = "REGISTERED_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date registeredDate;
-	
-	@Column(name="REGISTRATION_NUMBER")
+
+	@Column(name = "REGISTRATION_NUMBER")
 	private String registrationNumber;
-	
-	@Column(name="CIN")
+
+	@Column(name = "CIN")
 	private String cin;
+
+	@Column(name = "CREATED_SID")
+	private String createdSid;
+
+	@Column(name = "CREATED_BY")
+	private String createdBy;
+
+	@Column(name = "CREATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdOn;
+
+	@Column(name = "UPDATED_SID")
+	private String updatedSid;
+
+	@Column(name = "UPDATED_BY")
+	private String updatedBy;
+
+	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedOn;
 
 	public String getId() {
 		return id;
@@ -123,9 +143,52 @@ public class Employer extends AbstractModel {
 		this.cin = cin;
 	}
 
+	public String getCreatedSid() {
+		return createdSid;
+	}
 
-	
-	
-	
-	
+	public void setCreatedSid(String createdSid) {
+		this.createdSid = createdSid;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getUpdatedSid() {
+		return updatedSid;
+	}
+
+	public void setUpdatedSid(String updatedSid) {
+		this.updatedSid = updatedSid;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
 }

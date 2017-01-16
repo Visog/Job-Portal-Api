@@ -13,14 +13,14 @@ CREATE TABLE ROLES(
 /*
 1. Create ROLE
 =====================================
-url : /master/role
-ex url : /master/role
+url : /master/roles
+ex url : /master/roles
 method : POST
 data : 
 
 {
   "name" : "admin", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -34,15 +34,15 @@ response :
 
 2 Edit  role
 =====================================
-url : /master/role/<ROLE_ID>
-ex url : /master/role/2
+url : /master/roles/<ROLE_ID>
+ex url : /master/roles/2
 
 method : PUT
 data : 
 
 {
   "name" : "admin", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -56,8 +56,8 @@ response :
 
 3. Get All role
 =====================================
-url : /master/role
-ex url : /master/role
+url : /master/roles
+ex url : /master/roles
 
 method : GET
 data : 
@@ -70,14 +70,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "role updated sucessfully/ Failed to update role"
 	"data" : [
-		{"id" : 1, "name" : "admin", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "admin", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get role
 =====================================
-url : /master/role/<ROLE_ID>
-ex url : /master/role/2
+url : /master/roles/<ROLE_ID>
+ex url : /master/roles/2
 
 method : GET
 data : 
@@ -89,14 +89,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "role updated sucessfully/ Failed to update role"
-	"data" : {"id" : 2, "name" : "admin", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "admin", "description" : " master data description"}
 	
 } 
 
 5. Delete role
 =====================================
-url : /master/role/<ROLE_ID>
-ex url : /master/role/2
+url : /master/roles/<ROLE_ID>
+ex url : /master/roles/2
 
 method : DELETE
 data : 
@@ -138,7 +138,7 @@ data :
 {
   "name" : "male", 
   "code" : "M",
-  "description" : " master description…", 
+  "description" : " master description"
 }
 
 response : 
@@ -161,7 +161,7 @@ data :
 {
   "name" : "male", 
   "code" : "M",
-  "description" : "sdkjchsjk", 
+  "description" : "sdkjchsjk"
 }
 
 response : 
@@ -189,7 +189,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "gender updated sucessfully/ failed to update gender"
 	"data" : [
-		{"id" : 1, "name" : "male", "code" : "M",  "description" : "master description…"}, {},...
+		{"id" : 1, "name" : "male", "code" : "M",  "description" : "master description"}, {},...
 	]
 } 
 
@@ -208,7 +208,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "gender updated sucessfully/ failed to update gender"
-	"data" : {"id" : 2, "name" : "male",  "code" : "M", "description" : " master description…"}
+	"data" : {"id" : 2, "name" : "male",  "code" : "M", "description" : " master description"}
 	
 } 
 
@@ -256,8 +256,7 @@ data :
 
 {
   "name" : "india", 
-  "code" : "123", 
-  "orderNum" = "123",
+  "code" : "123"
 }
 
 response : 
@@ -278,9 +277,8 @@ method : PUT
 data : 
 
 {
-  "name" : "india", 
- "code" : "123", 
-  "orderNum" = "123",
+   "name" : "india", 
+    "code" : "123"
 }
 
 response : 
@@ -379,7 +377,7 @@ data :
 
 {
   "name" : "rajasthan", 
-  "country_id" :"123" , 
+  "country" :"123"  
 }
 
 response : 
@@ -400,8 +398,8 @@ method : PUT
 data : 
 
 {
-  "name" : "rajasthan",  
-  "country_id" :"123" , 
+  "name" : "rajasthan", 
+  "country" :"123" 
 }
 
 response : 
@@ -429,7 +427,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "state updated sucessfully/ failed to update state"
 	"data" : [
-		{"id" : 1, "name" : "rajasthan", "country_id" :"123" , "code" : "123","orderNum" = "123"}, {},...
+		{"id" : 1, "name" : "rajasthan", "country" :"123" , "code" : "123","orderNum" = "123"}, {},...
 	]
 } 
 
@@ -448,7 +446,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "state updated sucessfully/ failed to update state"
-	"data" : {"id" : 2, "name" : "rajasthan", "country_id" :"123" ,  "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "rajasthan", "country" :"123" ,  "description" : " master data description"}
 	
 } 
 
@@ -499,8 +497,8 @@ data :
 
 {
   "name" : "jaipur", 
-  "country_id" : "234", 
-  "state_id" : "123" ,
+  "country" : "234", 
+  "state" : "123" 
 }
 
 response : 
@@ -521,9 +519,9 @@ method : PUT
 data : 
 
 {
-  "name" : "jaipur", 
-  "country_id" : "234", 
-  "state_id" : "123" , 
+   "name" : "jaipur", 
+  "country" : "234", 
+  "state" : "123"  
 }
 
 response : 
@@ -612,14 +610,14 @@ CREATE TABLE ADDRESS_TYPE (
 /*
 1. Create ADDRESS_TYPE 
 =====================================
-url : /master/address_type
-ex url : /master/address_type
+url : /master/addressType
+ex url : /master/addressType
 method : POST
 data : 
 
 {
   "name" : "permanent", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -633,15 +631,15 @@ response :
 
 2 Edit  ADDRESS_TYPE
 =====================================
-url : /master/address_type/<ADDRESS_TYPE _ID>
-ex url : /master/address_type/2
+url : /master/addressType/<ADDRESS_TYPE _ID>
+ex url : /master/addressType/2
 
 method : PUT
 data : 
 
 {
   "name" : "permanent", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -655,8 +653,8 @@ response :
 
 3. Get All ADDRESS_TYPE
 =====================================
-url : /master/address_type
-ex url : /master/address_type
+url : /master/addressType
+ex url : /master/addressType
 
 method : GET
 data : 
@@ -669,14 +667,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "address type updated sucessfully/ Failed to update address type"
 	"data" : [
-		{"id" : 1, "name" : "permanent", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "permanent", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get ADDRESS_TYPE
 =====================================
-url : /master/address_type/<ADDRESS_TYPE _ID>
-ex url : /master/address_type/2
+url : /master/addressType/<ADDRESS_TYPE _ID>
+ex url : /master/addressType/2
 
 method : GET
 data : 
@@ -688,13 +686,13 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "address type updated sucessfully/ Failed to update address type"
-	"data" : {"id" : 2, "name" : "permanent", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "permanent", "description" : " master data description"}
 	
 } 
 
 5. Delete ADDRESS_TYPE =====================================
-url : /master/address_type/<ADDRESS_TYPE _ID>
-ex url : /master/address_type/2
+url : /master/addressType/<ADDRESS_TYPE _ID>
+ex url : /master/addressType/2
 
 method : DELETE
 data : 
@@ -757,7 +755,7 @@ data :
 
 {
   "name" : "BTECH", 
-  "description" : " master data description…..", 
+  "description" : " master data description..", 
 }
 
 response : 
@@ -785,7 +783,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "courses updated sucessfully/ failed to update courses"
 	"data" : [
-		{"id" : 1, "name" : "BTECH", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "BTECH", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -804,7 +802,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "courses updated sucessfully/ failed to update courses"
-	"data" : {"id" : 2, "name" : "BTECH", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "BTECH", "description" : " master data description"}
 	
 } 
 
@@ -848,8 +846,8 @@ CREATE TABLE SPECILIZATION(
 
 1. Create SPECILIZATION
 =====================================
-url : /master/specilization
-ex url : /master/specilization
+url : /master/specialization
+ex url : /master/specialization
 method : POST
 data : 
 
@@ -870,16 +868,16 @@ response :
 
 2 Edit  specilization
 =====================================
-url : /master/specilization/<SPECILIZATION_ID>
-ex url : /master/specilization/2
+url : /master/specialization/<SPECILIZATION_ID>
+ex url : /master/specialization/2
 
 method : PUT
 data : 
 
 {
     "name" : "computer science", 
-	"course_id" : "101",
-  "description" : " master data description…..", 
+   "description" : "master data description..", 
+   "course" : "445"
 }
 
 response : 
@@ -893,8 +891,8 @@ response :
 
 3. Get All specilization
 =====================================
-url : /master/specilization
-ex url : /master/specilization
+url : /master/specialization
+ex url : /master/specialization
 
 method : GET
 data : 
@@ -907,14 +905,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "specilization updated sucessfully/ failed to update specilization"
 	"data" : [
-		{ "name" : "computer science","course_id":"101", "description" : " master data description……"}, {},...
+		{ "name" : "computer science","course_id":"101", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get specilization
 =====================================
-url : /master/specilization/<SPECILIZATION_ID>
-ex url : /master/specilization/2
+url : /master/specialization/<SPECILIZATION_ID>
+ex url : /master/specialization/2
 
 method : GET
 data : 
@@ -926,14 +924,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "specilization updated sucessfully/ failed to update specilization"
-	"data" : {"name" : "computer science","course_id":"101", "description" : " master data description…"}
+	"data" : {"name" : "computer science","course_id":"101", "description" : " master data description"}
 	
 } 
 
 5. Delete specilization
 =====================================
-url : /master/specilization/<SPECILIZATION_ID>
-ex url : /master/specilization/2
+url : /master/specialization/<SPECILIZATION_ID>
+ex url : /master/specialization/2
 
 method : DELETE
 data : 
@@ -970,13 +968,13 @@ CREATE TABLE UNIVERSITY(
 
 1. Create UNIVERSITY
 =====================================
-url : /master/university
-ex url : /master/university
+url : /master/universities
+ex url : /master/universities
 method : POST
 data : 
 
 {
-  "name" : "delhi university", 
+  "name" : "delhi /universities", 
   "description" : "master data description..", 
 }
 
@@ -985,21 +983,21 @@ response :
 {
 	"statusCode" : 200/300 /500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "university created sucessfully/ failed to create university"
+	"statusDesc" : "/universities created sucessfully/ failed to create /universities"
 	"data" : null
 } 
 
 2 Edit  university
 =====================================
-url : /master/university/<UNIVERSITY_ID>
-ex url : /master/university/2
+url : /master/universities/<UNIVERSITY_ID>
+ex url : /master/universities/2
 
 method : PUT
 data : 
 
 {
   "name" : "delhi university", 
-  "description" : " master data description…..", 
+  "description" : " master data description..", 
 }
 
 response : 
@@ -1013,8 +1011,8 @@ response :
 
 3. Get All university
 =====================================
-url : /master/university
-ex url : /master/university
+url : /master/universities
+ex url : /master/universities
 
 method : GET
 data : 
@@ -1027,14 +1025,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "university updated sucessfully/ failed to update university"
 	"data" : [
-		{"id" : 1, "name" : "delhi university", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "delhi university", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get university
 =====================================
-url : /master/university/<UNIVERSITY_ID>
-ex url : /master/university/2
+url : /master/universities/<UNIVERSITY_ID>
+ex url : /master/universities/2
 
 method : GET
 data : 
@@ -1046,14 +1044,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "university updated sucessfully/ failed to update university"
-	"data" : {"id" : 2, "name" : "delhi university", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "delhi university", "description" : " master data description"}
 	
 } 
 
 5. Delete university
 =====================================
-url : /master/university/<UNIVERSITY_ID>
-ex url : /master/university/2
+url : /master/universities/<UNIVERSITY_ID>
+ex url : /master/universities/2
 
 method : DELETE
 data : 
@@ -1090,14 +1088,14 @@ CREATE TABLE  EDUCATION_TYPE(
 
 1. Create EDUCATION_TYPE
 =====================================
-url : /master/education_type
-ex url : /master/education_type
+url : /master/educationtype
+ex url : /master/educationtype
 method : POST
 data : 
 
 {
   "name" : "full time", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -1111,15 +1109,15 @@ response :
 
 2 Edit  education_type
 =====================================
-url : /master/education_type/<EDUCATION_TYPE_ID>
-ex url : /master/education_type/2
+url : /master/educationtype/<EDUCATION_TYPE_ID>
+ex url : /master/educationtype/2
 
 method : PUT
 data : 
 
 {
   "name" : "full time", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -1133,8 +1131,8 @@ response :
 
 3. Get All education_type
 =====================================
-url : /master/education_type
-ex url : /master/education_type
+url : /master/educationtype
+ex url : /master/educationtype
 
 method : GET
 data : 
@@ -1147,14 +1145,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "education type updated sucessfully/ failed to update education type"
 	"data" : [
-		{"name" : "full time", "description" : " master data description……"}, {},...
+		{"name" : "full time", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get education_type
 =====================================
-url : /master/education_type/<EDUCATION_TYPE_ID>
-ex url : /master/education_type/2
+url : /master/educationtype/<EDUCATION_TYPE_ID>
+ex url : /master/educationtype/2
 
 method : GET
 data : 
@@ -1166,14 +1164,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "education type updated sucessfully/ failed to update education type"
-	"data" : {"id" : 2, "name" : "full time", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "full time", "description" : " master data description"}
 	
 } 
 
 5. Delete education_type
 =====================================
-url : /master/education_type/<EDUCATION_TYPE_ID>
-ex url : /master/education_type/2
+url : /master/educationtype/<EDUCATION_TYPE_ID>
+ex url : /master/educationtype/2
 
 method : DELETE
 data : 
@@ -1211,8 +1209,8 @@ CREATE TABLE LANGUAGES(
 
 1. Create LANGUAGE
 =====================================
-url : /master/language
-ex url : /master/language
+url : /master/languages
+ex url : /master/languages
 method : POST
 data : 
 
@@ -1233,15 +1231,15 @@ response :
 
 2 Edit  LANGUAGE
 =====================================
-url : /master/language/<LANGUAGE_ID>
-ex url : /master/language/2
+url : /master/languages/<LANGUAGE_ID>
+ex url : /master/languages/2
 
 method : PUT
 data : 
 
 {
   "name" : "english", 
-  "description" : " master data description…..", 
+  "description" : " master data description..", 
 }
 
 response : 
@@ -1255,8 +1253,8 @@ response :
 
 3. Get All LANGUAGE
 =====================================
-url : /master/language
-ex url : /master/language
+url : /master/languages
+ex url : /master/languages
 
 method : GET
 data : 
@@ -1269,14 +1267,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "language updated sucessfully/ failed to update language"
 	"data" : [
-		{"id" : 1, "name" : "english", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "english", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get LANGUAGE
 =====================================
-url : /master/language/<LANGUAGE_ID>
-ex url : /master/language/2
+url : /master/languages/<LANGUAGE_ID>
+ex url : /master/languages/2
 
 method : GET
 data : 
@@ -1288,14 +1286,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "language updated sucessfully/ failed to update language"
-	"data" : {"id" : 2, "name" : "english", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "english", "description" : " master data description"}
 	
 } 
 
 5. Delete LANGUAGE
 =====================================
-url : /master/language/<LANGUAGE_ID>
-ex url : /master/language/2
+url : /master/languages/<LANGUAGE_ID>
+ex url : /master/languages/2
 
 method : DELETE
 data : 
@@ -1341,7 +1339,7 @@ data :
 {
   "name" : " indian rupees ", 
   "description" : "master data description..", 	
-  "currency_code" :  " INR"
+  "symbol" :  " INR"
 }
 
 response : 
@@ -1362,9 +1360,9 @@ method : PUT
 data : 
 
 {
-  "name" : "indian rupees", 
-  "description" : " master data description…..", 
-"currency_code" :  " INR",
+   "name" : " indian rupees ", 
+  "description" : "master data description..", 	
+  "symbol" :  " INR"
 }
 
 response : 
@@ -1392,7 +1390,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "currency updated sucessfully/ failed to update currency"
 	"data" : [
-		{"id" : 1, "name" : " indian rupees ", "description" : " master data description……","currency_code" :  " INR"}, {},...
+		{"id" : 1, "name" : " indian rupees ", "description" : " master data description","currency_code" :  " INR"}, {},...
 	]
 } 
 
@@ -1411,7 +1409,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "currency updated sucessfully/ failed to update currency"
-	"data" : {"id" : 2, "name" : " indian rupees ", "description" : " master data description…","currency_code" :  " INR"}
+	"data" : {"id" : 2, "name" : " indian rupees ", "description" : " master data description","currency_code" :  " INR"}
 	
 } 
 
@@ -1462,7 +1460,7 @@ data :
 
 {
   "name" : "IT Software/Software Services", 
-  "description" : "master data description..", 
+  "description" : "master data description.." 
 }
 
 response : 
@@ -1484,7 +1482,7 @@ data :
 
 {
   "name" : "IT Software/Software Services", 
-  "description" : " master data description…..", 
+  "description" : " master data description..", 
 }
 
 response : 
@@ -1512,7 +1510,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "industry updated sucessfully/ failed to update industry"
 	"data" : [
-		{"id" : 1, "name" : "IT Software/Software Services", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "IT Software/Software Services", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -1531,7 +1529,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "industry updated sucessfully/ failed to update industry"
-	"data" : {"id" : 2, "name" : "IT Software/Software Services", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "IT Software/Software Services", "description" : " master data description"}
 	
 } 
 
@@ -1601,7 +1599,7 @@ data :
 
 {
   "name" : "ITSoftware-Tester ", 
-  "description" : " master data description…..", 
+  "description" : " master data description..", 
 }
 
 response : 
@@ -1629,7 +1627,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "domain updated sucessfully/ failed to update domain"
 	"data" : [
-		{"id" : 1, "name" : "ITSoftware-Tester ", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "ITSoftware-Tester ", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -1648,7 +1646,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "domain updated sucessfully/ failed to update domain"
-	"data" : {"id" : 2, "name" : "ITSoftware-Tester ", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "ITSoftware-Tester ", "description" : " master data description"}
 	
 } 
 
@@ -1666,7 +1664,7 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "domain deleted sucessfully/ failed to update gender"
+	"statusDesc" : "domain deleted sucessfully/ failed to delete Domain"
 	"data" : NULL
 	
 } 
@@ -1695,14 +1693,14 @@ CREATE TABLE JOB_ROLE(
 
 1. Create JOB_ROLE
 =====================================
-url : /master/job_role
-ex url : /master/job_role
+url : /master/jobRole
+ex url : /master/jobRole
 method : POST
 data : 
 
 {
   "name" : "team leader", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -1716,15 +1714,15 @@ response :
 
 2 Edit  job_role
 =====================================
-url : /master/job_role/<JOB_ROLE_ID>
-ex url : /master/job_role/2
+url : /master/jobRole/<JOB_ROLE_ID>
+ex url : /master/jobRole/2
 
 method : PUT
 data : 
 
 {
   "name" : "team leader", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -1738,8 +1736,8 @@ response :
 
 3. Get All job_role
 =====================================
-url : /master/job_role
-ex url : /master/job_role
+url : /master/jobRole
+ex url : /master/jobRole
 
 method : GET
 data : 
@@ -1752,14 +1750,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "job role updated sucessfully/ failed to update job role"
 	"data" : [
-		{"id" : 1, "name" : "team leader", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "team leader", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get job_role
 =====================================
-url : /master/job_role/<JOB_ROLE_ID>
-ex url : /master/job_role/2
+url : /master/jobRole/<JOB_ROLE_ID>
+ex url : /master/jobRole/2
 
 method : GET
 data : 
@@ -1771,14 +1769,14 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "job role updated sucessfully/ failed to update job role"
-	"data" : {"id" : 2, "name" : "team leader", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "team leader", "description" : " master data description"}
 	
 } 
 
 5. Delete job_role
 =====================================
-url : /master/job_role/<JOB_ROLE_ID>
-ex url : /master/job_role/2
+url : /master/jobRole/<JOB_ROLE_ID>
+ex url : /master/jobRole/2
 
 method : DELETE
 data : 
@@ -1881,7 +1879,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "status updated sucessfully/ failed to update status"
 	"data" : [
-		{"id" : 1, "name" : "error", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "error", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -1900,7 +1898,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "status updated sucessfully/ failed to update status"
-	"data" : {"id" : 2, "name" : "error", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "error", "description" : " master data description"}
 	
 } 
 
@@ -1941,7 +1939,7 @@ CREATE TABLE EMPLOYMENT_TYPE  (
 	PRIMARY KEY (ID)
 );
 /*
-1. Create EMPLOYMENY
+1. Create EMPLOYMENTTYPE
 =====================================
 url : /master/employmentType/
 ex url : /master/employmentType
@@ -1950,7 +1948,7 @@ data :
 
 {
   "name" : "full time", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -1972,7 +1970,7 @@ data :
 
 {
   "name" : "full time", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -2000,7 +1998,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "employment type updated sucessfully/ Failed to update employment type"
 	"data" : [
-		{"id" : 1, "name" : "full time", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "full time", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -2019,7 +2017,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "employment type updated sucessfully/ Failed to update employment type"
-	"data" : {"id" : 2, "name" : "full time", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "full time", "description" : " master data description"}
 	
 } 
 
@@ -2070,7 +2068,7 @@ data :
 
 {
   "name" : "consultant", 
-  "description" : "master data description..", 
+  "description" : "master data description.."
 }
 
 response : 
@@ -2092,7 +2090,7 @@ data :
 
 {
   "name" : "consultant", 
-  "description" : " master data description…..", 
+  "description" : " master data description.."
 }
 
 response : 
@@ -2120,14 +2118,14 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "employer type updated sucessfully/ failed to update employer type"
 	"data" : [
-		{"id" : 1, "name" : "consultant", "description" : " master data description……"}, {},...
+		{"id" : 1, "name" : "consultant", "description" : " master data description"}, {},...
 	]
 } 
 
 4. Get employer_type
 =====================================
-url : /master/employer_type/<EMPLOYER_TYPE_ID>
-ex url : /master/employer_type/2
+url : /master/employerType/<EMPLOYER_TYPE_ID>
+ex url : /master/employerType/2
 
 method : GET
 data : 
@@ -2139,7 +2137,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "employer type updated sucessfully/ failed to update employer type"
-	"data" : {"id" : 2, "name" : "consultant", "description" : " master data description…"}
+	"data" : {"id" : 2, "name" : "consultant", "description" : " master data description"}
 	
 } 
 
@@ -2239,7 +2237,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "file type updated sucessfully/ failed to update file type"
 	"data" : [
-		{"id" : 1, "extension" : ".txt", "description" : " master data description……"}, {},...
+		{"id" : 1, "extension" : ".txt", "description" : " master data description"}, {},...
 	]
 } 
 
@@ -2258,7 +2256,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "file type updated sucessfully/ failed to update file type"
-	"data" : {"id" : 2, "extension" : ".txt", "description" : " master data description…"}
+	"data" : {"id" : 2, "extension" : ".txt", "description" : " master data description"}
 	
 } 
 

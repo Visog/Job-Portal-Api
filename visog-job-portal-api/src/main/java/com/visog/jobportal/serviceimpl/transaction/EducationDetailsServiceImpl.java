@@ -44,11 +44,11 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		courses.setId(req.getCourses());
 
 		specialization.setId(req.getSpecialization());
-		educationType.setId(req.getEducationtype());
+		educationType.setId(req.getEducationType());
 		university.setId(req.getUniversity());
 
-		educationdetails.setDurationFrom(req.getDurationfrom());
-		educationdetails.setDurationTo(req.getDurationto());
+		educationdetails.setDurationFromDate(req.getDurationFromDate());
+		educationdetails.setDurationToDate(req.getDurationToDate());
 		educationdetails.setUser(users);
 		educationdetails.setCourses(courses);
 		educationdetails.setSpecialization(specialization);
@@ -77,17 +77,17 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		courses.setId(req.getCourses());
 
 		specialization.setId(req.getSpecialization());
-		educationType.setId(req.getEducationtype());
+		educationType.setId(req.getEducationType());
 		university.setId(req.getUniversity());
 
-		educationdetails.setDurationFrom(req.getDurationfrom());
-		educationdetails.setDurationTo(req.getDurationto());
+		educationdetails.setDurationFromDate(req.getDurationFromDate());
+		educationdetails.setDurationToDate(req.getDurationToDate());
 		educationdetails.setUser(users);
 		educationdetails.setCourses(courses);
 		educationdetails.setSpecialization(specialization);
 		educationdetails.setEducationType(educationType);
 		educationdetails.setUniversity(university);
-		
+
 		dao.update(educationdetails);
 	}
 
@@ -97,12 +97,6 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		List<EducationDetailsRes> educationDetailsList = new ArrayList<>();
 
 		EducationDetailsRes educationDetailsRes = null;
-
-		Users users = new Users();
-		Courses courses = new Courses();
-		Specilization specialization = new Specilization();
-		EducationType educationType = new EducationType();
-		University university = new University();
 
 		for (EducationDetails educationdetail : educationdetails) {
 
@@ -116,12 +110,12 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 			educationDetailsRes.setUser(educationdetail.getUser().getId());
 
-			educationDetailsRes.setEducationtype(educationdetail.getEducationType().getId());
+			educationDetailsRes.setEducationType(educationdetail.getEducationType().getId());
 
 			educationDetailsRes.setUniversity(educationdetail.getUniversity().getId());
 
-			educationDetailsRes.setDurationfrom(educationdetail.getDurationFrom());
-			educationDetailsRes.setDurationto(educationdetail.getDurationTo());
+			educationDetailsRes.setDurationFromDate(educationdetail.getDurationFromDate());
+			educationDetailsRes.setDurationToDate(educationdetail.getDurationToDate());
 
 			educationDetailsList.add(educationDetailsRes);
 		}
@@ -142,14 +136,14 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 		educationDetailsRes.setUser(educationdetail.getUser().getId());
 
-		educationDetailsRes.setEducationtype(educationdetail.getEducationType().getId());
+		educationDetailsRes.setEducationType(educationdetail.getEducationType().getId());
 
 		educationDetailsRes.setUniversity(educationdetail.getUniversity().getId());
 
-		educationDetailsRes.setDurationfrom(educationdetail.getDurationFrom());
-		educationDetailsRes.setDurationto(educationdetail.getDurationTo());
+		educationDetailsRes.setDurationFromDate(educationdetail.getDurationFromDate());
+		educationDetailsRes.setDurationToDate(educationdetail.getDurationToDate());
 
-		return educationDetailsRes;  
+		return educationDetailsRes;
 	}
 
 	public Boolean deleteEducationDetails(String educationdetailsId) {
