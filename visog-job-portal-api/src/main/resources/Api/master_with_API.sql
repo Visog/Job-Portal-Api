@@ -237,7 +237,6 @@ CREATE TABLE COUNTRY(
 	ID VARCHAR(37) NOT NULL,
 	CODE VARCHAR(9) NOT NULL,
 	NAME VARCHAR(200) NOT NULL,
-	ORDER_NUM INT,
 	CREATED_SID   VARCHAR(37) NOT NULL,
 	CREATED_BY    VARCHAR(37) NOT NULL,
 	CREATED_ON    TIMESTAMP NOT NULL,
@@ -1087,9 +1086,15 @@ CREATE TABLE  EDUCATION_TYPE(
 /*
 
 1. Create EDUCATION_TYPE
+<<<<<<< HEAD
 =====================================
 url : /master/educationtype
 ex url : /master/educationtype
+=======
+==========================
+url : /master/education_type
+ex url : /master/education_type
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 method : POST
 data : 
 
@@ -1815,8 +1820,6 @@ CREATE TABLE STATUS (
 	PRIMARY KEY (ID)
 );
 /*
-
-
 1. Create STATUS
 =====================================
 url : /master/status

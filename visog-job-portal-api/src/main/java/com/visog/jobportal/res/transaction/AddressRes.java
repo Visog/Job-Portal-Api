@@ -16,9 +16,9 @@ public class AddressRes {
 
 	private String zipcode;
 
-	private String associatedtype;
+	private String associatedType;
 
-	private String associated;
+	private String associatedId;
 
 	private String addressType;
 
@@ -78,20 +78,20 @@ public class AddressRes {
 		this.zipcode = zipcode;
 	}
 
-	public String getAssociatedtype() {
-		return associatedtype;
+	public String getAssociatedType() {
+		return associatedType;
 	}
 
-	public void setAssociatedtype(String associatedtype) {
-		this.associatedtype = associatedtype;
+	public void setAssociatedType(String associatedType) {
+		this.associatedType = associatedType;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
 
 	public String getAddressType() {

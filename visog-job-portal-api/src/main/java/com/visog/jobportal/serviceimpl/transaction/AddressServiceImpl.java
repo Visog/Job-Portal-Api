@@ -30,7 +30,7 @@ public class AddressServiceImpl implements AddressService {
 	private static final Logger logger = Logger.getLogger(AddressServiceImpl.class);
 
 	@Inject
-	private AddressDao dao;
+	AddressDao dao;
 
 	/****
 	 * This method saves the Address
@@ -50,14 +50,64 @@ public class AddressServiceImpl implements AddressService {
 
 		AddrerssType addressType = new AddrerssType();
 		addressType.setId(req.getAddressType());
+		Address address = new Address();
 
 		address.setAddressLine1(req.getAddressLine1());
-		address.setAddressline2(req.getAddressLine2());
-		address.setZipcode(req.getZipcode());
-		address.setAssociated(req.getAssociated());
-		address.setState(states);
+		address.setAddressLine2(req.getAddressLine2());
+
+		Country country = new Country();
+		country.setId(req.getCountry());
 		address.setCountry(country);
+
+		States states = new States();
+		states.setId(req.getState());
+		address.setState(states);
+
+		City city = new City();
+		city.setId(req.getCity());
 		address.setCity(city);
+
+		address.setZipcode(req.getZipcode());
+		address.setAssociatedType(req.getAssociatedType());
+		address.setAssociatedId(req.getAssociatedId());
+
+		AddrerssType addressType = new AddrerssType();
+		addressType.setId(req.getAddressType());
+		address.setAddressType(addressType);
+
+		DaoUtils.setEntityCreateAuditColumns(address);
+		dao.save(address);
+		logger.info("address created successfully : " + address.getId());
+
+	}
+
+	/***
+	 * This updates the address
+	 */
+	public void updateAddress(AddressReq req, String addressId) {
+		Address address = (Address) dao.getByKey(AddressReq.class, addressId);
+
+		address.setAddressLine1(req.getAddressLine1());
+		address.setAddressLine2(req.getAddressLine2());
+
+		Country country = new Country();
+		country.setId(req.getCountry());
+		address.setCountry(country);
+
+		States states = new States();
+		states.setId(req.getState());
+		address.setState(states);
+
+		City city = new City();
+		city.setId(req.getCity());
+		address.setCity(city);
+
+		address.setZipcode(req.getZipcode());
+		address.setAssociatedType(req.getAssociatedType());
+		address.setAssociatedId(req.getAssociatedId());
+
+		AddrerssType addressType = new AddrerssType();
+		addressType.setId(req.getAddressType());
 		address.setAddressType(addressType);
 
 		DaoUtils.setEntityCreateAuditColumns(address);
@@ -99,8 +149,7 @@ public class AddressServiceImpl implements AddressService {
 	/****
 	 * this gives the Address List
 	 */
-	public List<AddressRes> getaddress() {
-
+	public List<AddressRes> getAddress() {
 		List<Address> address = dao.getAddress();
 
 		List<AddressRes> addressList = new ArrayList<>();
@@ -110,16 +159,20 @@ public class AddressServiceImpl implements AddressService {
 		for (Address add : address) {
 
 			addressRes = new AddressRes();
-
 			addressRes.setId(add.getId());
 			addressRes.setAddressLine1(add.getAddressLine1());
 			addressRes.setAddressLine2(add.getAddressline2());
 			addressRes.setCity(add.getCity().getId());
+			addressRes.setAddressLine2(add.getAddressLine2());
+
 			addressRes.setCountry(add.getCountry().getId());
 			addressRes.setState(add.getState().getId());
-			addressRes.setAddressType(add.getAddressType().getId());
-			addressRes.setAssociated(add.getAssociated());
+			addressRes.setCity(add.getCity().getId());
 			addressRes.setZipcode(add.getZipcode());
+			addressRes.setAssociatedType(add.getAssociatedType());
+			addressRes.setAssociatedId(add.getAssociatedId());
+
+			addressRes.setAddressType(add.getAddressType().getId());
 
 			addressList.add(addressRes);
 		}
@@ -138,11 +191,14 @@ public class AddressServiceImpl implements AddressService {
 		addressRes.setAddressLine1(address.getAddressLine1());
 		addressRes.setAddressLine2(address.getAddressline2());
 		addressRes.setCity(address.getCity().getId());
+		addressRes.setAddressLine2(address.getAddressLine2());
 		addressRes.setCountry(address.getCountry().getId());
 		addressRes.setState(address.getState().getId());
-		addressRes.setAddressType(address.getAddressType().getId());
-		addressRes.setAssociated(address.getAssociated());
+		addressRes.setCity(address.getCity().getId());
 		addressRes.setZipcode(address.getZipcode());
+		addressRes.setAssociatedType(address.getAssociatedType());
+		addressRes.setAssociatedId(address.getAssociatedId());
+		addressRes.setAddressType(address.getAddressType().getId());
 
 		return addressRes;
 	}
@@ -153,7 +209,6 @@ public class AddressServiceImpl implements AddressService {
 	public Boolean deleteAddress(String addressId) {
 
 		return (dao.delete(Address.class, addressId) != 0);
-
 	}
 
 }

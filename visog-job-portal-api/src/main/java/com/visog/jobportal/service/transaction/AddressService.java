@@ -11,7 +11,7 @@ public interface AddressService {
 
 	public void updateAddress(AddressReq req, String addressId);
 
-	public List<AddressRes> getaddress();
+	public List<AddressRes> getAddress();
 
 	public AddressRes getAddress(String id);
 

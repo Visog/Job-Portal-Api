@@ -6,7 +6,7 @@ public class CountryReq {
 
 	private String name;
 
-	private Integer orderNum;
+	//private Integer orderNum;
 
 	public String getCode() {
 		return code;
@@ -24,12 +24,12 @@ public class CountryReq {
 		this.name = name;
 	}
 
-	public Integer getOrderNum() {
+	/*public Integer getOrderNum() {
 		return orderNum;
 	}
 
 	public void setOrderNum(Integer orderNum) {
 		this.orderNum = orderNum;
-	}
+	}*/
 
 }

@@ -21,12 +21,6 @@ import com.visog.jobportal.service.master.FileTypeService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-
-/*
- *  @author Divya Sharma
- * 
-*/
-
 public class FileTypeController {
 	
 

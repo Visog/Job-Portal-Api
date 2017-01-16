@@ -21,7 +21,6 @@ import com.visog.jobportal.service.master.StatusService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-
 public class StatusController {
 
 	private static final Logger logger = Logger.getLogger(StatusController.class);

@@ -20,13 +20,6 @@ import com.visog.jobportal.service.master.EmploymentTypeService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-
-/*
- * 
- * @author Divya Sharma
- * 
- * */
-
 public class EmploymentTypeController {
 	
 

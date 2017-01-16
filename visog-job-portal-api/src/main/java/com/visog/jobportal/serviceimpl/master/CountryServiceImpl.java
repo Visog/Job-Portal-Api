@@ -30,7 +30,7 @@ public class CountryServiceImpl implements CountryService {
 		Country country = new Country();
 		country.setCode(req.getCode());
 		country.setName(req.getName());
-		country.setOrderNum(req.getOrderNum());
+		//country.setOrderNum(req.getOrderNum());
 		DaoUtils.setEntityCreateAuditColumns(country);
 
 		if (dao.isCountryExists(req.getName())) {
@@ -63,7 +63,7 @@ public class CountryServiceImpl implements CountryService {
 				||(!dao.isCountryExists(req.getName()))) {
 			country.setCode(req.getCode());
 			country.setName(req.getName());
-			country.setOrderNum(req.getOrderNum());
+			//country.setOrderNum(req.getOrderNum());
 			dao.update(country);
 
 			logger.info("Countries Updated Successfully" + country.getId());
@@ -95,7 +95,7 @@ public class CountryServiceImpl implements CountryService {
 			countryRes.setId(country.getId());
 			countryRes.setCode(country.getCode());
 			countryRes.setName(country.getName());
-			countryRes.setOrderNum(country.getOrderNum());
+			//countryRes.setOrderNum(country.getOrderNum());
 			countryList.add(countryRes);
 
 		}
@@ -114,7 +114,7 @@ public class CountryServiceImpl implements CountryService {
 		countryRes.setId(country.getId());
 		countryRes.setCode(country.getCode());
 		countryRes.setName(country.getName());
-		countryRes.setOrderNum(country.getOrderNum());
+	//countryRes.setOrderNum(country.getOrderNum());
 		return countryRes;
 	}
 
