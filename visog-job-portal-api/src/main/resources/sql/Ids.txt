@@ -67,6 +67,12 @@ ProjectDetails Id:
 
 Users Id: 17e18247-6976-40b2-8ad2-7fedff138047
 
+Registration JobSeeker Id:17e18247-6976-40b2-8ad2-7fedff138047
+
+Registration Employer Id:4573a1f4-e476-4814-a45b-e786dac0fce0
+
+Registration Admin Id:4c62e480-bcdb-4fd5-8ff6-9771a55bc7df
+
 
 
                            API CALLS
