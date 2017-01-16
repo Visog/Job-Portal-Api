@@ -1,0 +1,176 @@
+MASTER TABLE IDS:
+====================
+Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
+
+Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
+
+CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
+
+StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
+
+AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+
+city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
+
+IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
+
+CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
+
+Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
+
+EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
+
+EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
+
+EmploymentType Id: 4da22d65-df02-4978-9db3-9e4ce977b749
+
+FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
+
+Gender Id: 5035c9e4-d429-489f-9528-0470d08675b7
+
+JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
+
+Languages Id: 1b0ade23-20b0-4051-a932-9fc873505e98 
+
+Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
+
+Specialization Id: ca26e62f-17e2-4d4c-a0b5-08486b2cd284
+
+University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
+
+TRANSACTION IDS:
+===============
+
+Address Id: 
+
+EducationDetails Id:
+
+Employer Id:58d9a6b0-1317-4d11-84b1-363131540208
+
+EmployerJobseeker Id:
+
+ExperienceDetails Id: 
+
+Files Id: 
+
+JobSeeker Id:477be02b-50e5-4a7b-aed0-db127fc5feeb
+
+LanguageKnown Id:
+
+PostJob Id:59efd9ce-e18e-4976-b68c-93dac3af44de
+
+PostJobDomains Id:36d563d7-a08a-46da-ac56-e9614a3de17b
+
+PostJobSeeker Id:a8c355eb-6e55-4d0a-a6ef-d28e26ace38d
+
+ProjectDetails Id:
+
+Users Id: 17e18247-6976-40b2-8ad2-7fedff138047
+
+
+
+                           API CALLS
+                          ===========
+
+
+Registration form api calls for all:
+====================================
+
+ { 
+	  "firstName": "raghava",
+      "middleName": "jugfjhg",
+      "lastName": "tadikonda",
+      "email": "visogdevelope45s2@gmail.com",
+      "alternativeEmail": "visog2@gmail.com",
+      "gender": "7cd4a73e-2911-4a09-8f20-34461cd14ba3",
+      "dob": "1980-08-17",
+      "password": "vghghgh",
+      "phone": "82935643745",
+      "landline": "04013236444" 
+ }
+ 
+ 
+ 
+ 
+ PostJob api calls:
+ ================
+  { 
+ 	"user":"17e18247-6976-40b2-8ad2-7fedff138047",
+ 	"jobTitle":"Employer",
+ 	"jobDescription":"developer",
+ 	"annualPackageFrom":"10000",
+ 	"annualPackageTo":"150000",
+ 	"currency":"95b6c4eb-834d-4124-ac69-1fda6919b431",
+ 	"company":"Google",
+ 	"effectedDateFrom":"",
+ 	"effectedDateTo":"",
+ 	"status":"",
+ 	"minExperience":"",
+ 	"phoneNo":"",
+ 	"walkIn":""
+ }
+ 
+ Address Api:
+ ============
+ { 
+ 	
+ "addressLine1":"",
+ "addressLine2":"",
+ "country":"3605b052-6b79-4d8c-b907-977b1928fa2d",
+ "state":"30f59d17-f4cd-4522-8f09-5a926d68d02c",
+ "city":"b8ca1f37-cd39-4d0d-81eb-6bebe280b728",
+ "zipcode":"",
+ "asscoiatedType":"",
+ "associated":"",
+ "addressType":"1d355a67-4ce8-4d6b-880c-226c7afe5562"
+ 
+ }
+ 
+ Employer Api:
+ =============
+ {
+		"user" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"industry" : "13b197fc-7227-4115-87ff-365b5c23f6c7",
+		"employerType" : "e27c5520-138d-4917-92e0-dc5698319434",
+		"premiumEmployer"  : "1",
+		"companyName" : "visogglobal",
+		"registeredDate" : "2016-10-10",
+		"registrationNumber": "112244",
+		"cin" : "0JGJ99"
+}
+
+AddressType Api:
+================
+
+JobSeeker Api CALLS:
+=====================
+
+	{
+
+      
+	"resumeHeadline":"Java Developer with 6+ Years of Experience",
+ 	"domain":"cde5b090-6cae-45b7-92d3-570e2e305e83",
+ 	"companyName":"Visog Global It Solutions",
+ 	"user":"17e18247-6976-40b2-8ad2-7fedff138047",
+ 	"keySkills":"SpringsSSSS",
+ 	"workExperienceYears":"03",
+ 	"workExperienceMonths":"02",
+ 	"hobbiesAndInterest":"CodingS",
+ 	"jobRole":"b27efddc-c0ee-4d70-b768-303e833eb127",
+ 	"otherJobRole":"FrontEnd",
+ 	"industry":"13b197fc-7227-4115-87ff-365b5c23f6c7",
+ 	"profileSummary":"jipakChapak",
+ 	"employmentType":"4da22d65-df02-4978-9db3-9e4ce977b749"
+     
+
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
