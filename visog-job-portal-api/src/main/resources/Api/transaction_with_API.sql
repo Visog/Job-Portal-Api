@@ -481,15 +481,15 @@ ex url : /jobseeker/address
 method : POST
 data : 
 
-{
-		"ADDRESS_LINE1" : "FLAT 301,SAI RESIDENCY " ,
-		"ADDRESS_LINE2" : "NEAR WORLD ONE SCHOOL",
-		"COUNTRY ":"101" ,
-		"STATE " :"102" ,
-		"CITY " :"103" ,
-		"ZIPCODE" : "10001",
-		"ASSOCIATED_TYPE" : "INTERVIEW LOCATION",
-		"ADDRESS_TYPE "  : "001"
+{  		"addressLine1" : "POLICE BATALEON " ,
+		"addressLine2" : "KONDAPUR",
+		"country":"101" ,
+		"state" :"102" ,
+		"city" :"103" ,
+		"zipcode" : "10001",
+		"associatedType" : "INTERVIEW LOCATION",
+		"associatedId":"004",
+		"addressType"  : "010"
 
 }
 
@@ -511,14 +511,16 @@ method : PUT
 data : 
 
 {
-		"ADDRESS_LINE1" : "FLAT 301,SAI RESIDENCY " ,
-		"ADDRESS_LINE2" : "NEAR WORLD ONE SCHOOL",
-		"COUNTRY ":"101" ,
-		"STATE " :"102" ,
-		"CITY " :"103" ,
-		"ZIPCODE" : "10001",
-		"ASSOCIATED_TYPE" : "INTERVIEW LOCATION",
-		"ADDRESS_TYPE "  : "001"
+		  "addressLine1" : "POLICE BATALEON " ,
+		"addressLine2" : "KONDAPUR",
+		"country":"101" ,
+		"state" :"102" ,
+		"city" :"103" ,
+		"zipcode" : "10001",
+		"associatedType" : "INTERVIEW LOCATION",
+		"associatedId":"004",
+		"addressType"  : "010"
+
 }
 
 response : 
@@ -548,15 +550,16 @@ response :
 	"data" : [
 		{
 		        "id" : 1,
-				"ADDRESS_LINE1" : "FLAT 301,SAI RESIDENCY " ,
-				"ADDRESS_LINE2" : "NEAR WORLD ONE SCHOOL",
-				"COUNTRY ":"101" ,
-				"STATE " :"102" ,
-				"CITY " :"103" ,
-				"ZIPCODE" : "10001",
-				"ASSOCIATED " : "2"  ,
-				"ASSOCIATED_TYPE" : "INTERVIEW LOCATION",
-				"ADDRESS_TYPE "  : "001"
+				  "addressLine1" : "POLICE BATALEON " ,
+		"addressLine2" : "KONDAPUR",
+		"country":"101" ,
+		"state" :"102" ,
+		"city" :"103" ,
+		"zipcode" : "10001",
+		"associatedType" : "INTERVIEW LOCATION",
+		"associatedId":"004",
+		"addressType"  : "010"
+
 }, {},...
 	]
 } 
@@ -578,15 +581,16 @@ response :
 	"statusDesc" : "user address updated Successfully/ failed to update user address"
 	"data" : {
 	            "id" : 1,
-				"ADDRESS_LINE1" : "FLAT 301,SAI RESIDENCY " ,
-				"ADDRESS_LINE2" : "NEAR WORLD ONE SCHOOL",
-				"COUNTRY ":"101" ,
-				"STATE " :"102" ,
-				"CITY " :"103" ,
-				"ZIPCODE" : "10001",
-				"ASSOCIATED " : "2"  ,
-				"ASSOCIATED_TYPE" : "INTERVIEW LOCATION",
-				"ADDRESS_TYPE "  : "001"
+				  "addressLine1" : "POLICE BATALEON " ,
+		"addressLine2" : "KONDAPUR",
+		"country":"101" ,
+		"state" :"102" ,
+		"city" :"103" ,
+		"zipcode" : "10001",
+		"associatedType" : "INTERVIEW LOCATION",
+		"associatedId":"004",
+		"addressType"  : "010"
+
 	}
 	
 } 

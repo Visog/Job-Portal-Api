@@ -138,19 +138,19 @@ public class JobSeeker extends AbstractModel {
 		this.keySkills = keySkills;
 	}
 
-	public int getWorkExperienceYears() {
+	public Integer getWorkExperienceYears() {
 		return workExperienceYears;
 	}
 
-	public void setWorkExperienceYears(int workExperienceYears) {
+	public void setWorkExperienceYears(Integer workExperienceYears) {
 		this.workExperienceYears = workExperienceYears;
 	}
 
-	public int getWorkExperienceMonths() {
+	public Integer getWorkExperienceMonths() {
 		return workExperienceMonths;
 	}
 
-	public void setWorkExperienceMonths(int workExperienceMonths) {
+	public void setWorkExperienceMonths(Integer workExperienceMonths) {
 		this.workExperienceMonths = workExperienceMonths;
 	}
 
@@ -202,4 +202,53 @@ public class JobSeeker extends AbstractModel {
 		this.employmentType = employmentType;
 	}
 
+	public String getCreatedSid() {
+		return createdSid;
+	}
+
+	public void setCreatedSid(String createdSid) {
+		this.createdSid = createdSid;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getUpdatedSid() {
+		return updatedSid;
+	}
+
+	public void setUpdatedSid(String updatedSid) {
+		this.updatedSid = updatedSid;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
+	
 }

@@ -2,9 +2,11 @@ package com.visog.jobportal.daoimpl.transaction;
 
 import java.util.List;
 
+import javax.inject.Singleton;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
@@ -12,10 +14,11 @@ import com.visog.jobportal.dao.AbstractDao;
 import com.visog.jobportal.dao.transaction.EmployerDao;
 import com.visog.jobportal.model.transaction.Employer;
 
+@Singleton
+@Transactional
 public class EmployerDaoImpl extends AbstractDao implements EmployerDao {
 
 	private static final Logger logger = Logger.getLogger(EmployerDaoImpl.class);
-	
 
 	/**
 	 * @author Raghava
@@ -28,7 +31,7 @@ public class EmployerDaoImpl extends AbstractDao implements EmployerDao {
 		Root<Employer> c = q.from(Employer.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
+
 	}
 
 }

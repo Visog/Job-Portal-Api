@@ -9,14 +9,11 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.transaction.EmployerDao;
 import com.visog.jobportal.model.master.EmployerType;
-import com.visog.jobportal.model.master.EmploymentType;
 import com.visog.jobportal.model.master.Industry;
 import com.visog.jobportal.model.transaction.Employer;
-import com.visog.jobportal.model.transaction.JobSeeker;
 import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.EmployerReq;
 import com.visog.jobportal.res.transaction.EmployerRes;
-import com.visog.jobportal.res.transaction.JobSeekerRes;
 import com.visog.jobportal.service.transaction.EmployerService;
 import com.visog.jobportal.utils.DaoUtils;
 
@@ -32,20 +29,20 @@ public class EmployerServiceImpl implements EmployerService {
 	 */
 	public void saveEmployer(EmployerReq req) {
 
+		Employer employer = new Employer();
+
 		Users users = new Users();
 		users.setId(req.getUser());
+		employer.setUser(users);
 
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
+		employer.setIndustry(industry);
 
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
-
-		Employer employer = new Employer();
-
-		employer.setUser(users);
-		employer.setIndustry(industry);
 		employer.setEmployerType(employerType);
+
 		employer.setPremiumEmployer(req.getPremiumEmployer());
 		employer.setCompanyName(req.getCompanyName());
 		employer.setRegisteredDate(req.getRegisteredDate());
@@ -59,26 +56,29 @@ public class EmployerServiceImpl implements EmployerService {
 
 	}
 
-	public void updateEmployer(EmployerReq req, String EmployerId) {
+	public void updateEmployer(EmployerReq req, String employerId) {
 
-		Employer employer = (Employer) dao.getByKey(Employer.class, EmployerId);
+		Employer employer = (Employer) dao.getByKey(Employer.class, employerId);
+
 
 		Users users = new Users();
 		users.setId(req.getUser());
+		employer.setUser(users);
 
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
+		employer.setIndustry(industry);
 
 		EmployerType employerType = new EmployerType();
 		employerType.setId(req.getEmployerType());
-		employer.setUser(users);
-		employer.setIndustry(industry);
 		employer.setEmployerType(employerType);
+
 		employer.setPremiumEmployer(req.getPremiumEmployer());
 		employer.setCompanyName(req.getCompanyName());
 		employer.setRegisteredDate(req.getRegisteredDate());
 		employer.setCin(req.getCin());
 		employer.setRegistrationNumber(req.getRegistrationNumber());
+
 
 		dao.update(employer);
 		logger.info("PostJob updated Successfully" + employer.getId());
@@ -130,9 +130,9 @@ public class EmployerServiceImpl implements EmployerService {
 		return employerRes;
 	}
 
-	public Boolean deleteEmployer(String EmployerId) {
+	public Boolean deleteEmployer(String employerId) {
 
-		return (dao.delete(Employer.class, EmployerId) != 0);
+		return (dao.delete(Employer.class, employerId) != 0);
 	}
 
 }

@@ -9,13 +9,13 @@ public interface EmployerService {
 
 	public void saveEmployer(EmployerReq req);
 
-	public void updateEmployer(EmployerReq req, String EmployerId);
+	public void updateEmployer(EmployerReq req, String employerId);
 
 	public List<EmployerRes> getEmployers();
 
 	public EmployerRes getEmployer(String id);
 
-	public Boolean deleteEmployer(String EmployerId);
+	public Boolean deleteEmployer(String employerId);
 	
 	
 }

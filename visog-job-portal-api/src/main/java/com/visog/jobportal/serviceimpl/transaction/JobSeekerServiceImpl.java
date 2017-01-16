@@ -31,23 +31,27 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 	 */
 
 	public void saveJObSeeker(JobSeekerReq req) {
+		JobSeeker jobseeker = new JobSeeker();
 
 		Users users = new Users();
 		users.setId(req.getUser());
+		jobseeker.setUser(users);
 
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
+		jobseeker.setDomain(domain);
 
 		JobRole jobrole = new JobRole();
 		jobrole.setId(req.getJobRole());
+		jobseeker.setJobRole(jobrole);
 
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
+		jobseeker.setIndustry(industry);
 
 		EmploymentType employment = new EmploymentType();
 		employment.setId(req.getEmploymentType());
-
-		JobSeeker jobseeker = new JobSeeker();
+		jobseeker.setEmploymentType(employment);
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
@@ -62,11 +66,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		jobseeker.setKeySkills(req.getKeySkills());
 
 		jobseeker.setOtherJobRole(req.getJobRole());
-		jobseeker.setUser(users);
-		jobseeker.setDomain(domain);
-		jobseeker.setEmploymentType(employment);
-		jobseeker.setIndustry(industry);
-		jobseeker.setJobRole(jobrole);
 
 		jobseeker.setJobRole(jobrole);
 
@@ -82,36 +81,44 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
 		Users users = new Users();
 		users.setId(req.getUser());
+		jobseeker.setUser(users);
 
 		Domains domain = new Domains();
 		domain.setId(req.getDomain());
+		jobseeker.setDomain(domain);
 
 		JobRole jobrole = new JobRole();
 		jobrole.setId(req.getJobRole());
+		jobseeker.setJobRole(jobrole);
 
 		Industry industry = new Industry();
 		industry.setId(req.getIndustry());
+		jobseeker.setIndustry(industry);
 
 		EmploymentType employment = new EmploymentType();
 		employment.setId(req.getEmploymentType());
+		jobseeker.setEmploymentType(employment);
 
 		jobseeker.setResumeHeadline(req.getResumeHeadline());
 		jobseeker.setCompanyName(req.getCompanyName());
+
 		jobseeker.setUser(users);
 		jobseeker.setEmploymentType(employment);
-		jobseeker.setJobRole(jobrole);
+		jobseeker.setIndustry(industry);
 		jobseeker.setHobbiesAndInterest(req.getHobbiesAndInterest());
 		jobseeker.setProfileSummary(req.getProfileSummary());
 		jobseeker.setWorkExperienceMonths(req.getWorkExperienceMonths());
 		jobseeker.setWorkExperienceYears(req.getWorkExperienceYears());
 		jobseeker.setKeySkills(req.getKeySkills());
-		jobseeker.setIndustry(industry);
+
 		jobseeker.setOtherJobRole(req.getJobRole());
-		jobseeker.setDomain(domain);
+
+		jobseeker.setJobRole(jobrole);
 
 		dao.update(jobseeker);
+
 		logger.info("Job Seeker updated Successfully" + jobseeker.getId());
-		
+
 	}
 
 	public List<JobSeekerRes> getJobSeekers() {
@@ -120,16 +127,6 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		List<JobSeekerRes> jobSeekerList = new ArrayList<>();
 
 		JobSeekerRes jobSeekerRes = null;
-
-		Users users = new Users();
-
-		Domains domain = new Domains();
-
-		JobRole jobrole = new JobRole();
-
-		Industry industry = new Industry();
-
-		EmploymentType employment = new EmploymentType();
 
 		for (JobSeeker jobSeekers : jobSeeker) {
 			jobSeekerRes = new JobSeekerRes();
