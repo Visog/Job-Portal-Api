@@ -1,23 +1,26 @@
 package com.visog.jobportal.req.transaction;
 
+
+
 public class AddressReq {
 
+	
 	private String addressLine1;
-	
+
 	private String addressLine2;
-	
+
 	private String country;
-	
+
 	private String state;
-	
+
 	private String city;
-	
+
 	private String zipcode;
-	
-	private String asscoiatedType;
-	
-	private String associated;
-	
+
+	private String associatedType;
+
+	private String associatedId;
+
 	private String addressType;
 
 	public String getAddressLine1() {
@@ -68,20 +71,20 @@ public class AddressReq {
 		this.zipcode = zipcode;
 	}
 
-	public String getAsscoiatedType() {
-		return asscoiatedType;
+	public String getAssociatedType() {
+		return associatedType;
 	}
 
-	public void setAsscoiatedType(String asscoiatedType) {
-		this.asscoiatedType = asscoiatedType;
+	public void setAssociatedType(String associatedType) {
+		this.associatedType = associatedType;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
 
 	public String getAddressType() {
@@ -91,4 +94,6 @@ public class AddressReq {
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
 	}
+	
+	
 }

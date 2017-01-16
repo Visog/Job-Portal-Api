@@ -1,4 +1,4 @@
-package com.visog.jobportal.req.master;
+ package com.visog.jobportal.req.master;
 
 public class EducationTypeReq {
 

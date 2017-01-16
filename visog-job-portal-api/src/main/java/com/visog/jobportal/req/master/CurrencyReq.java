@@ -6,6 +6,7 @@ public class CurrencyReq {
 	private String code;
 	private String name;
 	private String symbol;
+	
 	public String getSymbol() {
 		return symbol;
 	}

@@ -17,7 +17,6 @@ import com.visog.jobportal.model.master.Domains;
 
 @Singleton
 @Transactional
-
 public class DomainDaoImpl extends AbstractDao implements DomainDao {
 
 	private static final Logger logger = Logger.getLogger(DomainDaoImpl.class);
@@ -37,19 +36,6 @@ public class DomainDaoImpl extends AbstractDao implements DomainDao {
 
 	}
 
-	/**
-	 * @author Raghava 
-	 * This method deletes the Domains data
-	 */
-
-	public void delete(String id) {
-		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
-		CriteriaDelete<Domains> query = criteriaBuilder.createCriteriaDelete(Domains.class);
-		Root<Domains> root = query.from(Domains.class);
-		query.where(root.get("id").in(id));
-
-		em.createQuery(query).executeUpdate();
-
-	}
+	
 
 }

@@ -38,28 +38,29 @@ public class AddressServiceImpl implements AddressService {
 	 */
 	public void saveAddress(AddressReq req) {
 		Address address = new Address();
-		States states = new States();
-		states.setId(req.getState());
+
+		address.setAddressLine1(req.getAddressLine1());
+		address.setAddressLine2(req.getAddressLine2());
 
 		Country country = new Country();
 		country.setId(req.getCountry());
+		address.setCountry(country);
+
+		States states = new States();
+		states.setId(req.getState());
+		address.setState(states);
 
 		City city = new City();
 		city.setId(req.getCity());
+		address.setCity(city);
+
+		address.setZipcode(req.getZipcode());
+		address.setAssociatedType(req.getAssociatedType());
+		address.setAssociatedId(req.getAssociatedId());
 
 		AddrerssType addressType = new AddrerssType();
 		addressType.setId(req.getAddressType());
-
-		address.setAddressLine1(req.getAddressLine1());
-		address.setAddressline2(req.getAddressLine2());
-		address.setCountry(country);
-		address.setState(states);
-		address.setCity(city);
-		address.setZipcode(req.getZipcode());
 		address.setAddressType(addressType);
-		address.setAssociated(req.getAssociated());
-		address.setAssociatedType(req.getAsscoiatedType());
-		
 
 		DaoUtils.setEntityCreateAuditColumns(address);
 		dao.save(address);
@@ -73,22 +74,27 @@ public class AddressServiceImpl implements AddressService {
 	public void updateAddress(AddressReq req, String addressId) {
 		Address address = (Address) dao.getByKey(AddressReq.class, addressId);
 
-		States states = new States();
-		states.setId(req.getState());
+		address.setAddressLine1(req.getAddressLine1());
+		address.setAddressLine2(req.getAddressLine2());
+
 		Country country = new Country();
 		country.setId(req.getCountry());
+		address.setCountry(country);
+
+		States states = new States();
+		states.setId(req.getState());
+		address.setState(states);
+
 		City city = new City();
 		city.setId(req.getCity());
+		address.setCity(city);
+
+		address.setZipcode(req.getZipcode());
+		address.setAssociatedType(req.getAssociatedType());
+		address.setAssociatedId(req.getAssociatedId());
+
 		AddrerssType addressType = new AddrerssType();
 		addressType.setId(req.getAddressType());
-
-		address.setAddressLine1(req.getAddressLine1());
-		address.setAddressline2(req.getAddressLine2());
-		address.setZipcode(req.getZipcode());
-		address.setAssociated(req.getAssociated());
-		address.setState(states);
-		address.setCountry(country);
-		address.setCity(city);
 		address.setAddressType(addressType);
 
 		dao.update(address);
@@ -109,16 +115,18 @@ public class AddressServiceImpl implements AddressService {
 		for (Address add : address) {
 
 			addressRes = new AddressRes();
-
 			addressRes.setId(add.getId());
 			addressRes.setAddressLine1(add.getAddressLine1());
-			addressRes.setAddressLine2(add.getAddressline2());
-			addressRes.setCity(add.getCity().getId());
+			addressRes.setAddressLine2(add.getAddressLine2());
+
 			addressRes.setCountry(add.getCountry().getId());
 			addressRes.setState(add.getState().getId());
-			addressRes.setAddressType(add.getAddressType().getId());
-			addressRes.setAssociated(add.getAssociated());
+			addressRes.setCity(add.getCity().getId());
 			addressRes.setZipcode(add.getZipcode());
+			addressRes.setAssociatedType(add.getAssociatedType());
+			addressRes.setAssociatedId(add.getAssociatedId());
+
+			addressRes.setAddressType(add.getAddressType().getId());
 
 			addressList.add(addressRes);
 		}
@@ -134,13 +142,14 @@ public class AddressServiceImpl implements AddressService {
 		AddressRes addressRes = new AddressRes();
 		addressRes.setId(address.getId());
 		addressRes.setAddressLine1(address.getAddressLine1());
-		addressRes.setAddressLine2(address.getAddressline2());
-		addressRes.setCity(address.getCity().getId());
+		addressRes.setAddressLine2(address.getAddressLine2());
 		addressRes.setCountry(address.getCountry().getId());
 		addressRes.setState(address.getState().getId());
-		addressRes.setAddressType(address.getAddressType().getId());
-		addressRes.setAssociated(address.getAssociated());
+		addressRes.setCity(address.getCity().getId());
 		addressRes.setZipcode(address.getZipcode());
+		addressRes.setAssociatedType(address.getAssociatedType());
+		addressRes.setAssociatedId(address.getAssociatedId());
+		addressRes.setAddressType(address.getAddressType().getId());
 
 		return addressRes;
 	}

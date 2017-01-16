@@ -40,7 +40,6 @@ public class EducationTypeController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationtype")
-
 	public JobPortalResponse createEducationType(EducationTypeReq req) {
 
 		service.saveEducationType(req);

@@ -35,17 +35,4 @@ public class StatusDaoImpl extends AbstractDao implements StatusDao {
 
 	}
 
-	/**
-	 * @author Raghava This method deletes the Status data
-	 */
-
-	public void delete(String id) {
-		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
-		CriteriaDelete<Status> query = criteriaBuilder.createCriteriaDelete(Status.class);
-		Root<Status> root = query.from(Status.class);
-		query.where(root.get("id").in(id));
-		em.createQuery(query).executeUpdate();
-
-	}
-
 }

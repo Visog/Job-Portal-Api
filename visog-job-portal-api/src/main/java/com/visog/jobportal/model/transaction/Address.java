@@ -12,31 +12,32 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.jobportal.model.AbstractModel;
+import com.visog.jobportal.model.master.AddrerssType;
 import com.visog.jobportal.model.master.City;
 import com.visog.jobportal.model.master.Country;
 import com.visog.jobportal.model.master.States;
-import com.visog.jobportal.model.master.AddrerssType;
 
-@Table(name = "ADDRESS")
 @Entity
+@Table(name = "ADDRESS")
 public class Address extends AbstractModel {
+
 	@Id
-	@Column(name = "Id")
+	@Column(name = "ID")
 	private String id;
 
 	@Column(name = "ADDRESS_LINE1")
 	private String addressLine1;
 
 	@Column(name = "ADDRESS_LINE2")
-	private String addressline2;
-
-	@ManyToOne
-	@JoinColumn(name = "STATE_ID")
-	private States state;
+	private String addressLine2;
 
 	@ManyToOne
 	@JoinColumn(name = "COUNTRY_ID")
 	private Country country;
+
+	@ManyToOne
+	@JoinColumn(name = "STATE_ID")
+	private States state;
 
 	@ManyToOne
 	@JoinColumn(name = "CITY_ID")
@@ -49,7 +50,7 @@ public class Address extends AbstractModel {
 	private String associatedType;
 
 	@Column(name = "ASSOCIATED_ID")
-	private String associated;
+	private String associatedId;
 
 	@ManyToOne
 	@JoinColumn(name = "ADDRESS_TYPE_ID")
@@ -91,20 +92,12 @@ public class Address extends AbstractModel {
 		this.addressLine1 = addressLine1;
 	}
 
-	public String getAddressline2() {
-		return addressline2;
+	public String getAddressLine2() {
+		return addressLine2;
 	}
 
-	public void setAddressline2(String addressline2) {
-		this.addressline2 = addressline2;
-	}
-
-	public States getState() {
-		return state;
-	}
-
-	public void setState(States state) {
-		this.state = state;
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
 	}
 
 	public Country getCountry() {
@@ -113,6 +106,14 @@ public class Address extends AbstractModel {
 
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+
+	public States getState() {
+		return state;
+	}
+
+	public void setState(States state) {
+		this.state = state;
 	}
 
 	public City getCity() {
@@ -139,12 +140,12 @@ public class Address extends AbstractModel {
 		this.associatedType = associatedType;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
 
 	public AddrerssType getAddressType() {

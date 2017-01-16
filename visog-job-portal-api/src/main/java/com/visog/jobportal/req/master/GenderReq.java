@@ -5,6 +5,7 @@ public class GenderReq {
 	private String name;
     private String code;
 	private String description;
+	
 	public String getName() {
 		return name;
 	}

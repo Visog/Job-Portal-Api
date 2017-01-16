@@ -47,7 +47,7 @@ public class AddressController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/address/<USER_ADDRESS_ID>")
+	@Path("/address/addressId")
 	public JobPortalResponse updateAddress(@PathParam("addressId") String addressId, AddressReq req) {
 
 		service.updateAddress(req, addressId);
@@ -76,7 +76,7 @@ public class AddressController {
 	}
 
 	@GET
-	@Path("/address/<USER_ADDRESS_ID>")
+	@Path("/address/addressId")
 	public JobPortalResponse getAddress(@PathParam("addressId") String addressId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -90,7 +90,7 @@ public class AddressController {
 	}
 
 	@DELETE
-	@Path("/address/<USER_ADDRESS_ID>")
+	@Path("/address/addressId")
 	public JobPortalResponse deleteAddress(@PathParam("addressId") String addressId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();

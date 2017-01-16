@@ -17,7 +17,6 @@ import com.visog.jobportal.model.transaction.Address;
 
 @Singleton
 @Transactional
-
 public class AddressDaoImpl extends AbstractDao implements AddressDao{
 	private static final Logger logger = Logger.getLogger(AddressDaoImpl.class);
 	

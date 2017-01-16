@@ -8,7 +8,7 @@ public class CountryRes {
 
 	private String name;
 
-	private Integer orderNum;
+	//private Integer orderNum;
 
 	public String getId() {
 		return id;
@@ -34,12 +34,12 @@ public class CountryRes {
 		this.name = name;
 	}
 
-	public Integer getOrderNum() {
+	/*public Integer getOrderNum() {
 		return orderNum;
 	}
 
 	public void setOrderNum(Integer orderNum) {
 		this.orderNum = orderNum;
 	}
-
+*/
 }

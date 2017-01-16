@@ -25,8 +25,8 @@ public class Country extends AbstractModel {
 	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "ORDER_NUM")
-	private Integer orderNum;
+	/*@Column(name = "ORDER_NUM")
+	private Integer orderNum;*/
 
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -72,13 +72,13 @@ public class Country extends AbstractModel {
 		this.name = name;
 	}
 
-	public Integer getOrderNum() {
+	/*public Integer getOrderNum() {
 		return orderNum;
 	}
 
 	public void setOrderNum(Integer orderNum) {
 		this.orderNum = orderNum;
-	}
+	}*/
 
 	public String getCreatedSid() {
 		return createdSid;

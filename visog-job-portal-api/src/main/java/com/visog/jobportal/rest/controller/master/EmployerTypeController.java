@@ -22,13 +22,6 @@ import com.visog.jobportal.service.master.EmployerTypeService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-
-/*
- *
- * @author: Divya Sharma
- *
- */
-
 public class EmployerTypeController {
 
 	private static final Logger logger = Logger.getLogger(EmployerTypeController.class);

@@ -15,24 +15,25 @@ import com.visog.jobportal.res.master.DomainRes;
 import com.visog.jobportal.service.master.DomainService;
 import com.visog.jobportal.utils.DaoUtils;
 
-
-public class DomainServiceImpl implements DomainService{
-	private static final Logger logger = Logger.getLogger(RolesSeviceImpl.class);
+public class DomainServiceImpl implements DomainService {
+	private static final Logger logger = Logger.getLogger(DomainServiceImpl.class);
 
 	@Inject
 	DomainDao dao;
 
 	/**
 	 * This method saves the Domain
+	 * 
 	 * @author Raghava
 	 */
 	public void saveDomain(DomainReq req) {
+
 		Domains domain = new Domains();
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
 
 		DaoUtils.setEntityCreateAuditColumns(domain);
-		
+
 		dao.save(domain);
 
 		logger.info("Domain created successfully : " + domain.getId());
@@ -40,9 +41,11 @@ public class DomainServiceImpl implements DomainService{
 
 	/**
 	 * This method updates the Domain
+	 * 
 	 * @author Raghava
 	 */
 	public void updateDomain(DomainReq req, String domainId) {
+		
 		Domains domain = (Domains) dao.getByKey(Domains.class, domainId);
 		domain.setName(req.getName());
 		domain.setDescription(req.getDescription());
@@ -52,6 +55,7 @@ public class DomainServiceImpl implements DomainService{
 
 	/**
 	 * This method returns all the Domains
+	 * 
 	 * @author Raghava
 	 */
 	public List<DomainRes> getDomains() {
@@ -72,31 +76,30 @@ public class DomainServiceImpl implements DomainService{
 		return domainList;
 	}
 
-
 	/**
-	 * This method returns Domain Details for the given Domain id  
+	 * This method returns Domain Details for the given Domain id
+	 * 
 	 * @author Raghava
 	 */
-	
+
 	public DomainRes getDomain(String id) {
-		Domains domains = (Domains) dao.getByKey(Roles.class, id);
+		Domains domains = (Domains) dao.getByKey(Domains.class, id);
 		DomainRes domainRes = new DomainRes();
 		domainRes.setId(domains.getId());
 		domainRes.setName(domains.getName());
 		domainRes.setDescription(domains.getDescription());
 		return domainRes;
-		
+
 	}
-
-
 
 	/**
 	 * This method deletes the given Domain id
+	 * 
 	 * @author Raghava
 	 */
 	public Boolean deleteDomain(String domainId) {
 
-		return  (dao.delete(Domains.class, domainId) != 0);
+		return (dao.delete(Domains.class, domainId) != 0);
 	}
 
 }
