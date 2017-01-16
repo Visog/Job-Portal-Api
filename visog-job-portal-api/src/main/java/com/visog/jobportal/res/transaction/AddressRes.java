@@ -18,7 +18,7 @@ public class AddressRes {
 
 	private String associatedType;
 
-	private String associatedId;
+	private String associated;
 
 	private String addressType;
 
@@ -86,12 +86,12 @@ public class AddressRes {
 		this.associatedType = associatedType;
 	}
 
-	public String getAssociatedId() {
-		return associatedId;
+	public String getAssociated() {
+		return associated;
 	}
 
-	public void setAssociatedId(String associatedId) {
-		this.associatedId = associatedId;
+	public void setAssociated(String associated) {
+		this.associated = associated;
 	}
 
 	public String getAddressType() {
@@ -102,5 +102,4 @@ public class AddressRes {
 		this.addressType = addressType;
 	}
 
-	
 }

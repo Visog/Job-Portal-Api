@@ -51,7 +51,7 @@ public class Address extends AbstractModel {
 	private String associatedType;
 
 	@Column(name = "ASSOCIATED_ID")
-	private String associatedId;
+	private String associated;
 
 	@ManyToOne
 	@JoinColumn(name = "ADDRESS_TYPE_ID")
@@ -141,12 +141,12 @@ public class Address extends AbstractModel {
 		this.associatedType = associatedType;
 	}
 
-	public String getAssociatedId() {
-		return associatedId;
+	public String getAssociated() {
+		return associated;
 	}
 
-	public void setAssociatedId(String associatedId) {
-		this.associatedId = associatedId;
+	public void setAssociated(String associated) {
+		this.associated = associated;
 	}
 
 	public AddrerssType getAddressType() {
