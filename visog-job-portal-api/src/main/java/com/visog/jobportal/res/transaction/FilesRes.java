@@ -1,15 +1,15 @@
 package com.visog.jobportal.res.transaction;
 
 public class FilesRes {
-	
+
 	private String id;
 
 	private String filepath;
-	
+
 	private String associatedtype;
-	
+
 	private String associated;
-	
+
 	private String filetype;
 
 	public String getId() {
@@ -51,6 +51,5 @@ public class FilesRes {
 	public void setFiletype(String filetype) {
 		this.filetype = filetype;
 	}
-	
-	
+
 }

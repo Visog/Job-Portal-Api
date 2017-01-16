@@ -53,7 +53,7 @@ public class LanguageKnownController {
 	
 	
 	/**
-	 * This method updates the employerjobseeker
+	 * This method updates the LanguageKnown
 	 * 
 	 * @param req
 	 * @return
@@ -65,7 +65,7 @@ public class LanguageKnownController {
 		
 		service.updateLanguageKnown(req, languageKnownId);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("languageKnownId updated succcessfully");
+		jobPortalResponse.setMessage("languageKnown updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		

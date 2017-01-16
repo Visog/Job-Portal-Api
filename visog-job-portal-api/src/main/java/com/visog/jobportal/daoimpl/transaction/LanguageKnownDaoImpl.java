@@ -18,24 +18,22 @@ import com.visog.jobportal.model.transaction.LanguageKnown;
 
 @Singleton
 @Transactional
-public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDao{
-	 private static final Logger logger=Logger.getLogger(LanguageKnownDaoImpl.class);
-		
+public class LanguageKnownDaoImpl extends AbstractDao implements LanguageKnownDao {
+	private static final Logger logger = Logger.getLogger(LanguageKnownDaoImpl.class);
+
 	/**
-	 * This method returns the Files data
-	 *@Author=ravi
+	 * This method returns the languageknown data
+	 * 
+	 * @Author=ravi
 	 */
 	public List<LanguageKnown> getLanguagesKnown() {
-		
+
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<LanguageKnown> q=cb.createQuery(LanguageKnown.class);
-		Root<LanguageKnown> c=q.from(LanguageKnown.class);
+		CriteriaQuery<LanguageKnown> q = cb.createQuery(LanguageKnown.class);
+		Root<LanguageKnown> c = q.from(LanguageKnown.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
+
 	}
-	
-	
 
 }
-

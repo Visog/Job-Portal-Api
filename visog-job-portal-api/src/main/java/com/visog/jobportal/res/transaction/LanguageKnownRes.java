@@ -3,15 +3,15 @@ package com.visog.jobportal.res.transaction;
 public class LanguageKnownRes {
 
 	private String id;
-	
+
 	private String user;
-	
+
 	private String language;
-	
+
 	private String read;
-	
+
 	private String write;
-	
+
 	private String speak;
 
 	private String proficencylevel;
@@ -71,5 +71,5 @@ public class LanguageKnownRes {
 	public void setProficencylevel(String proficencylevel) {
 		this.proficencylevel = proficencylevel;
 	}
-	
+
 }

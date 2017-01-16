@@ -70,7 +70,7 @@ public class Files extends AbstractModel {
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
 	}
-	
+
 	public FileType getFiletype() {
 		return filetype;
 	}

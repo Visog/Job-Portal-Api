@@ -3,11 +3,11 @@ package com.visog.jobportal.req.transaction;
 public class FilesReq {
 
 	private String filepath;
-	
+
 	private String filetype;
-	
+
 	private String associatedtype;
-	
+
 	private String associated;
 
 	public String getFilepath() {
@@ -41,6 +41,5 @@ public class FilesReq {
 	public void setAssociated(String associated) {
 		this.associated = associated;
 	}
-	
-	
+
 }
