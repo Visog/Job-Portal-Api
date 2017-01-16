@@ -11,17 +11,9 @@ import com.visog.jobportal.dao.transaction.AddressDao;
 import com.visog.jobportal.model.master.AddrerssType;
 import com.visog.jobportal.model.master.City;
 import com.visog.jobportal.model.master.Country;
-import com.visog.jobportal.model.master.Currency;
 import com.visog.jobportal.model.master.States;
-import com.visog.jobportal.model.master.Status;
 import com.visog.jobportal.model.transaction.Address;
-import com.visog.jobportal.model.transaction.LanguageKnown;
-import com.visog.jobportal.model.transaction.PostJob;
-import com.visog.jobportal.model.transaction.Address;
-import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.AddressReq;
-import com.visog.jobportal.res.transaction.AddressRes;
-import com.visog.jobportal.res.transaction.LanguageKnownRes;
 import com.visog.jobportal.res.transaction.AddressRes;
 import com.visog.jobportal.service.transaction.AddressService;
 import com.visog.jobportal.utils.DaoUtils;
@@ -50,20 +42,16 @@ public class AddressServiceImpl implements AddressService {
 
 		AddrerssType addressType = new AddrerssType();
 		addressType.setId(req.getAddressType());
-		Address address = new Address();
 
 		address.setAddressLine1(req.getAddressLine1());
 		address.setAddressLine2(req.getAddressLine2());
 
-		Country country = new Country();
 		country.setId(req.getCountry());
 		address.setCountry(country);
 
-		States states = new States();
 		states.setId(req.getState());
 		address.setState(states);
 
-		City city = new City();
 		city.setId(req.getCity());
 		address.setCity(city);
 
@@ -71,7 +59,6 @@ public class AddressServiceImpl implements AddressService {
 		address.setAssociatedType(req.getAssociatedType());
 		address.setAssociatedId(req.getAssociatedId());
 
-		AddrerssType addressType = new AddrerssType();
 		addressType.setId(req.getAddressType());
 		address.setAddressType(addressType);
 
@@ -119,7 +106,7 @@ public class AddressServiceImpl implements AddressService {
 	/***
 	 * This updates the address
 	 */
-	public void updateAddress(AddressReq req, String addressId) {
+	/*public void updateAddress(AddressReq req, String addressId) {
 
 		Address address = (Address) dao.getByKey(AddressReq.class, addressId);
 
@@ -144,7 +131,7 @@ public class AddressServiceImpl implements AddressService {
 		dao.update(address);
 		logger.info(" address updated Successfully" + address.getId());
 
-	}
+	}*/
 
 	/****
 	 * this gives the Address List
@@ -161,7 +148,7 @@ public class AddressServiceImpl implements AddressService {
 			addressRes = new AddressRes();
 			addressRes.setId(add.getId());
 			addressRes.setAddressLine1(add.getAddressLine1());
-			addressRes.setAddressLine2(add.getAddressline2());
+			addressRes.setAddressLine2(add.getAddressLine2());
 			addressRes.setCity(add.getCity().getId());
 			addressRes.setAddressLine2(add.getAddressLine2());
 
@@ -189,7 +176,7 @@ public class AddressServiceImpl implements AddressService {
 		AddressRes addressRes = new AddressRes();
 		addressRes.setId(address.getId());
 		addressRes.setAddressLine1(address.getAddressLine1());
-		addressRes.setAddressLine2(address.getAddressline2());
+		addressRes.setAddressLine2(address.getAddressLine2());
 		addressRes.setCity(address.getCity().getId());
 		addressRes.setAddressLine2(address.getAddressLine2());
 		addressRes.setCountry(address.getCountry().getId());
