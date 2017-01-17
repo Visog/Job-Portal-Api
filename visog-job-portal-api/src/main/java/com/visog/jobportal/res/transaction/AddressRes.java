@@ -22,6 +22,14 @@ public class AddressRes {
 
 	private String addressType;
 
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -30,13 +38,7 @@ public class AddressRes {
 		this.id = id;
 	}
 
-	public String getAddressLine1() {
-		return addressLine1;
-	}
-
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
-	}
+	
 
 	public String getAddressLine2() {
 		return addressLine2;

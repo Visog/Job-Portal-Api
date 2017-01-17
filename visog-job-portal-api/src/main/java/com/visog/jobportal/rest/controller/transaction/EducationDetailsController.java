@@ -49,9 +49,9 @@ public class EducationDetailsController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/educationdetails/{educationdetailsId}")
+	@Path("/educationDetails/{educationDetailsId}")
 
-	public JobPortalResponse updateEducationDetails(@PathParam("educationdetailsId") String educationdetailsId,
+	public JobPortalResponse updateEducationDetails(@PathParam("educationDetailsId") String educationdetailsId,
 			EducationDetailsReq req) {
 
 		service.updateEducationDetails(req, educationdetailsId);
@@ -66,7 +66,7 @@ public class EducationDetailsController {
 	}
 
 	@GET
-	@Path("/educationdetails")
+	@Path("/educationDetails")
 	public JobPortalResponse getEducationDetails() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
@@ -80,8 +80,8 @@ public class EducationDetailsController {
 	}
 
 	@GET
-	@Path("/educationdetails/{educationdetailsId}")
-	public JobPortalResponse getEducationDetails(@PathParam("educationdetailsId") String educationdetailsId) {
+	@Path("/educationDetails/{educationDetailsId}")
+	public JobPortalResponse getEducationDetails(@PathParam("educationDetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getEducationDetail(educationdetailsId));
@@ -94,8 +94,8 @@ public class EducationDetailsController {
 	}
 
 	@DELETE
-	@Path("/educationdetails/{educationdetailsId}")
-	public JobPortalResponse deleteEducationDetails(@PathParam("educationdetailsId") String educationdetailsId) {
+	@Path("/educationDetails/{educationDetailsId}")
+	public JobPortalResponse deleteEducationDetails(@PathParam("educationDetailsId") String educationdetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		if (service.deleteEducationDetails(educationdetailsId)) {

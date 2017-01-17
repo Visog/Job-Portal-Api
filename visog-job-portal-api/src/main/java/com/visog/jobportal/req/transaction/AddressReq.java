@@ -23,6 +23,8 @@ public class AddressReq {
 
 	private String addressType;
 
+	
+
 	public String getAddressLine1() {
 		return addressLine1;
 	}

@@ -29,7 +29,7 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 
 
 	/**
-	 * This method saves the Specialization
+	 * This method saves the EmployerJobseeker
 	 * author Ravi 
 	 */
 	public void saveEmployerJobseeker(EmployerJobseekerReq req) {
