@@ -14,12 +14,11 @@ import com.visog.jobportal.dao.AbstractDao;
 import com.visog.jobportal.dao.transaction.AddressDao;
 import com.visog.jobportal.model.transaction.Address;
 
-
 @Singleton
 @Transactional
-public class AddressDaoImpl extends AbstractDao implements AddressDao{
+public class AddressDaoImpl extends AbstractDao implements AddressDao {
 	private static final Logger logger = Logger.getLogger(AddressDaoImpl.class);
-	
+
 	/**
 	 * This method returns the Files data
 	 * 
@@ -31,11 +30,7 @@ public class AddressDaoImpl extends AbstractDao implements AddressDao{
 		Root<Address> c = q.from(Address.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
-		
-		
+
 	}
-	
-	
 
 }
