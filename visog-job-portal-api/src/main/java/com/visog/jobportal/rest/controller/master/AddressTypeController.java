@@ -23,7 +23,7 @@ import com.visog.jobportal.service.master.AddressTypeService;
 @Produces(MediaType.APPLICATION_JSON)
 public class AddressTypeController {
 
-	private static final Logger logger = Logger.getLogger(RolesController.class);
+	private static final Logger logger = Logger.getLogger(AddressTypeController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
