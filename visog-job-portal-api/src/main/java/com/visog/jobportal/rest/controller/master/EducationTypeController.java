@@ -87,7 +87,7 @@ public class EducationTypeController {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getEducationTypes());
-		jobPortalResponse.setMessage("Roles fetched succcessfully");
+		jobPortalResponse.setMessage("EducationTYpe fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
