@@ -3,7 +3,7 @@ package com.visog.jobportal.req.transaction;
 import java.util.Date;
 
 public class ProjectDetailsReq {
-	
+
 	private String user;
 
 	private String jobResponsibilities;
@@ -104,6 +104,4 @@ public class ProjectDetailsReq {
 		this.technologiesUsed = technologiesUsed;
 	}
 
-	
-	
 }

@@ -27,32 +27,34 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 	private static final Logger logger = Logger.getLogger(ProjectDetailsServiceImpl.class);
 
 	@Inject
-	ProjectDetailsDao dao;
+	 private ProjectDetailsDao dao;
 
 	public void saveProjectDetails(ProjectDetailsReq req) {
 
 		ProjectDetails projectDetails = new ProjectDetails();
 
 		Users users = new Users();
+		EmploymentType employmentType = new EmploymentType();
+
 		users.setId(req.getUser());
 		projectDetails.setUser(users);
 
-		EmploymentType employmentType = new EmploymentType();
 		employmentType.setId(req.getEmploymentType());
 		projectDetails.setEmploymentType(employmentType);
 
 		projectDetails.setJobResponsibilities(req.getJobResponsibilities());
 		projectDetails.setProjectDetails(req.getProjectDetails());
-		projectDetails.setProjectTitle(req.getProjectDetails());
-		projectDetails.setClientName(req.getClientName());
+		projectDetails.setProjectTitle(req.getProjectTitle());
 		projectDetails.setDurationFrom(req.getDurationFrom());
 		projectDetails.setDurationTo(req.getDurationTo());
 		projectDetails.setTeamSize(req.getTeamSize());
 		projectDetails.setTechnologiesUsed(req.getTechnologiesUsed());
+		projectDetails.setClientName(req.getClientName());
 
 		DaoUtils.setEntityCreateAuditColumns(projectDetails);
+
 		dao.save(projectDetails);
-		logger.info("projectDetails created successfully : " + projectDetails.getId());
+		logger.info("Project Details Created Successfully" + projectDetails.getId());
 
 	}
 
@@ -61,16 +63,17 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 		ProjectDetails projectDetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectDetailsId);
 
 		Users users = new Users();
+		EmploymentType employmentType = new EmploymentType();
+
 		users.setId(req.getUser());
 		projectDetails.setUser(users);
-
-		EmploymentType employmentType = new EmploymentType();
+		
 		employmentType.setId(req.getEmploymentType());
 		projectDetails.setEmploymentType(employmentType);
 
 		projectDetails.setJobResponsibilities(req.getJobResponsibilities());
 		projectDetails.setProjectDetails(req.getProjectDetails());
-		projectDetails.setProjectTitle(req.getProjectDetails());
+		projectDetails.setProjectTitle(req.getProjectTitle());
 		projectDetails.setClientName(req.getClientName());
 		projectDetails.setDurationFrom(req.getDurationFrom());
 		projectDetails.setDurationTo(req.getDurationTo());
@@ -86,6 +89,7 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 		List<ProjectDetails> projectDetails = dao.getProjectDetails();
 
 		List<ProjectDetailsRes> projectDetailsList = new ArrayList<>();
+		
 		ProjectDetailsRes projectDetailsRes = null;
 
 		for (ProjectDetails projectDetail : projectDetails) {
@@ -104,7 +108,7 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 			projectDetailsRes.setTeamSize(projectDetail.getTeamSize());
 			projectDetailsRes.setTechnologiesUsed(projectDetail.getTechnologiesUsed());
 			projectDetailsList.add(projectDetailsRes);
-			
+
 		}
 
 		return projectDetailsList;
@@ -114,8 +118,9 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 	 * this gives details of given ID
 	 */
 	public ProjectDetailsRes getProjectDetails(String id) {
-		
+
 		ProjectDetails projectDetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, id);
+		
 		ProjectDetailsRes projectDetailRes = new ProjectDetailsRes();
 
 		projectDetailRes.setId(projectDetails.getId());
@@ -133,9 +138,8 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 		return projectDetailRes;
 	}
 
-	
-	public Boolean deleteProjectDetails(String id) {
-		return (dao.delete(ProjectDetails.class, id) != 0);
+	public Boolean deleteProjectDetails(String projectDetailsId) {
+		return (dao.delete(ProjectDetails.class, projectDetailsId) != 0);
 	}
 
 }

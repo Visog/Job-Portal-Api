@@ -5,6 +5,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -30,8 +31,10 @@ public class EducationDetailsController {
 	private EducationDetailsService service;
 
 	/*
-	 * Bala
+	 * Rahul
 	 */
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/educationDetails")
 
 	public JobPortalResponse createEducationDetails(EducationDetailsReq req) {

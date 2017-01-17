@@ -36,13 +36,13 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 
 
 		EmployerJobseeker employerJobseekers=new EmployerJobseeker();
-		employerJobseekers.setActiondone(req.getActiondone());
+		employerJobseekers.setActionDone(req.getActionDone());
 		 
 		 Users users=new Users();
 		 users.setId(req.getEmployer());
-		 users.setId(req.getJobseeker());
+		 users.setId(req.getJobSeeker());
 		 employerJobseekers.setEmployer(users);
-		 employerJobseekers.setJobseeker(users);
+		 employerJobseekers.setJobSeeker(users);
 		
 		 Status  status=new Status();
 		 status.setId(req.getStatus());
@@ -61,13 +61,13 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 	public void updateEmployerJobseeker(EmployerJobseekerReq req, String employerjobseekerId) {
 
 		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, employerjobseekerId);
-		employerJobseekers.setActiondone(req.getActiondone());
+		employerJobseekers.setActionDone(req.getActionDone());
 		 
 		Users users=new Users();
 		 users.setId(req.getEmployer());
-		 users.setId(req.getJobseeker());
+		 users.setId(req.getJobSeeker());
 		 employerJobseekers.setEmployer(users);
-		 employerJobseekers.setJobseeker(users);
+		 employerJobseekers.setJobSeeker(users);
 		
 		 Status  status=new Status();
 		 status.setId(req.getStatus());
@@ -89,9 +89,9 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 			
 			employerJobseekerRes=new EmployerJobseekerRes();
 			employerJobseekerRes.setId(employerJobseeker.getId());
-			employerJobseekerRes.setActiondone(employerJobseeker.getActiondone());
+			employerJobseekerRes.setActionDone(employerJobseeker.getActionDone());
 			employerJobseekerRes.setStatus(employerJobseeker.getStatus().getId());
-			employerJobseekerRes.setJobseeker(employerJobseeker.getJobseeker().getId());
+			employerJobseekerRes.setJobSeeker(employerJobseeker.getJobSeeker().getId());
 			employerJobseekerRes.setEmployer(employerJobseeker.getEmployer().getId());
 			
 			employerJobseekerList.add(employerJobseekerRes);
@@ -109,10 +109,10 @@ public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
 		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, id);
 		EmployerJobseekerRes employerJobseekerRes=new EmployerJobseekerRes();
 		employerJobseekerRes.setId(employerJobseekers.getId());
-		employerJobseekerRes.setActiondone(employerJobseekers.getActiondone());
+		employerJobseekerRes.setActionDone(employerJobseekers.getActionDone());
 		employerJobseekerRes.setStatus(employerJobseekers.getStatus().getId());
 		employerJobseekerRes.setEmployer(employerJobseekers.getEmployer().getId());
-		employerJobseekerRes.setJobseeker(employerJobseekers.getJobseeker().getId());
+		employerJobseekerRes.setJobSeeker(employerJobseekers.getJobSeeker().getId());
 		
 		return employerJobseekerRes;
 	}

@@ -25,7 +25,7 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 	private static final Logger logger = Logger.getLogger(EducationDetailsServiceImpl.class);
 
 	@Inject
-	EducationDetailsDao dao;
+	private EducationDetailsDao dao;
 
 	/**
 	 * @author Raghava
@@ -33,6 +33,7 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 	public void saveEducationDetails(EducationDetailsReq req) {
 		EducationDetails educationdetails = new EducationDetails();
+		
 		Users users = new Users();
 		Courses courses = new Courses();
 		Specilization specialization = new Specilization();
@@ -89,11 +90,13 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 		educationdetails.setUniversity(university);
 
 		dao.update(educationdetails);
+		logger.info("Educationdetails updated Successfully" + educationdetails.getId());
 	}
 
 	public List<EducationDetailsRes> getEducationDetails() {
 
 		List<EducationDetails> educationdetails = dao.getEducationDetails();
+		
 		List<EducationDetailsRes> educationDetailsList = new ArrayList<>();
 
 		EducationDetailsRes educationDetailsRes = null;
@@ -125,30 +128,30 @@ public class EducationDetailsServiceImpl implements EducationDetailsService {
 
 	public EducationDetailsRes getEducationDetail(String id) {
 
-		EducationDetails educationdetail = (EducationDetails) dao.getByKey(EducationDetails.class, id);
+		EducationDetails educationdetails = (EducationDetails) dao.getByKey(EducationDetails.class, id);
 
 		EducationDetailsRes educationDetailsRes = new EducationDetailsRes();
 
-		educationDetailsRes.setId(educationdetail.getId());
-		educationDetailsRes.setCourses(educationdetail.getCourses().getId());
+		educationDetailsRes.setId(educationdetails.getId());
+		educationDetailsRes.setCourses(educationdetails.getCourses().getId());
 
-		educationDetailsRes.setSpecialization(educationdetail.getSpecialization().getId());
+		educationDetailsRes.setSpecialization(educationdetails.getSpecialization().getId());
 
-		educationDetailsRes.setUser(educationdetail.getUser().getId());
+		educationDetailsRes.setUser(educationdetails.getUser().getId());
 
-		educationDetailsRes.setEducationType(educationdetail.getEducationType().getId());
+		educationDetailsRes.setEducationType(educationdetails.getEducationType().getId());
 
-		educationDetailsRes.setUniversity(educationdetail.getUniversity().getId());
+		educationDetailsRes.setUniversity(educationdetails.getUniversity().getId());
 
-		educationDetailsRes.setDurationFromDate(educationdetail.getDurationFromDate());
-		educationDetailsRes.setDurationToDate(educationdetail.getDurationToDate());
+		educationDetailsRes.setDurationFromDate(educationdetails.getDurationFromDate());
+		educationDetailsRes.setDurationToDate(educationdetails.getDurationToDate());
 
 		return educationDetailsRes;
 	}
 
 	public Boolean deleteEducationDetails(String educationdetailsId) {
 
-		return (dao.delete(PostJob.class, educationdetailsId) != 0);
+		return (dao.delete(EducationDetails.class, educationdetailsId) != 0);
 	}
 
 }

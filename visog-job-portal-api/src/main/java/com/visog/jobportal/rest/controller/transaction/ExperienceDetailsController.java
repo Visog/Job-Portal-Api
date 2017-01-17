@@ -21,33 +21,24 @@ import com.visog.jobportal.service.transaction.ExperienceDetailsService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-
 public class ExperienceDetailsController {
-	
-	private static final Logger logger = Logger.getLogger(ExperienceDetailsController .class);
+
+	private static final Logger logger = Logger.getLogger(ExperienceDetailsController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
 	private ExperienceDetailsService service;
 
-	/**
-	 * This method creates the Experiencedetails
-	 * 
-	 * @param req
-	 * @return
-	 */
-	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/experienceDetails")
-
 	public JobPortalResponse createExperienceDetails(ExperienceDetailsReq req) {
 
 		service.saveExperienceDetails(req);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("ExperienceDetails saved succcessfully");
+		jobPortalResponse.setMessage("experienceDetails saved succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -55,21 +46,16 @@ public class ExperienceDetailsController {
 
 	}
 
-	/**
-	 * This method updates the Experience Details
-	 * 
-	 * @param req
-	 * @return
-	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/experienceDetails/{experienceDetailsId}")
-	public JobPortalResponse updateExperienceDetails(@PathParam("experienceDetailsId") String experienceDetailsId, ExperienceDetailsReq req) {
+	public JobPortalResponse updateExperienceDetails(@PathParam("experienceDetailsId") String experienceDetailsId,
+			ExperienceDetailsReq req) {
 
 		service.updateExperienceDetails(req, experienceDetailsId);
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setMessage("ExperienceDetails updated succcessfully");
+		jobPortalResponse.setMessage("experienceDetails updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -77,30 +63,19 @@ public class ExperienceDetailsController {
 
 	}
 
-	/**
-	 * This method retrieves all experiencedetails
-	 * 
-	 * @return
-	 */
 	@GET
 	@Path("/experienceDetails")
 	public JobPortalResponse getExperienceDetails() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getExperienceDetails());
-		jobPortalResponse.setMessage("ExperienceDetails fetched succcessfully");
+		jobPortalResponse.setMessage("experienceDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
 
 	}
-
-	/**
-	 * This method retrieves a single experience detail
-	 * 
-	 * @return
-	 */
 
 	@GET
 	@Path("/experienceDetails/{experienceDetailsId}")
@@ -108,19 +83,13 @@ public class ExperienceDetailsController {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getexperienceDetails(experienceDetailsId));
-		jobPortalResponse.setMessage("ExperienceDetails fetched succcessfully");
+		jobPortalResponse.setMessage("experienceDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return jobPortalResponse;
 
 	}
-
-	/**
-	 * This method delete the experience detail
-	 * 
-	 * @return
-	 */
 
 	@DELETE
 	@Path("/experienceDetails/{experienceDetailsId}")
@@ -129,23 +98,16 @@ public class ExperienceDetailsController {
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
 		if (service.deleteExperienceDetails(experienceDetailsId)) {
-			jobPortalResponse.setMessage("ExperienceDetails deleted succcessfully");
+			jobPortalResponse.setMessage("experienceDetails deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			jobPortalResponse.setMessage("Failed to delete the ExperienceDetailsId");
+			jobPortalResponse.setMessage("Failed to delete the experienceDetails");
 			jobPortalResponse.setStatus(Status.STATUS_FAIL);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
 		return jobPortalResponse;
-
 	}
+
 }
-
-	
-	
-	
-	
-
-

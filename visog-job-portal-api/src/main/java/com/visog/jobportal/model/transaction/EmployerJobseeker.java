@@ -27,14 +27,14 @@ public class EmployerJobseeker extends AbstractModel {
 
 	@ManyToOne
 	@JoinColumn(name = "JOB_SEEKER_ID")
-	private Users jobseeker;
+	private Users jobSeeker;
 
 	@ManyToOne
 	@JoinColumn(name = "STATUS_ID")
 	private Users status;
 
 	@Column(name = "ACTION_DONE_BY")
-	private String actiondone;
+	private String actionDone;
 
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -65,13 +65,6 @@ public class EmployerJobseeker extends AbstractModel {
 		this.employer = employer;
 	}
 
-	public Users getJobseeker() {
-		return jobseeker;
-	}
-
-	public void setJobseeker(Users jobseeker) {
-		this.jobseeker = jobseeker;
-	}
 
 	public Users getStatus() {
 		return status;
@@ -81,12 +74,21 @@ public class EmployerJobseeker extends AbstractModel {
 		this.status = status;
 	}
 
-	public String getActiondone() {
-		return actiondone;
+
+	public Users getJobSeeker() {
+		return jobSeeker;
 	}
 
-	public void setActiondone(String actiondone) {
-		this.actiondone = actiondone;
+	public void setJobSeeker(Users jobSeeker) {
+		this.jobSeeker = jobSeeker;
+	}
+
+	public String getActionDone() {
+		return actionDone;
+	}
+
+	public void setActionDone(String actionDone) {
+		this.actionDone = actionDone;
 	}
 
 	public String getCreatedSid() {

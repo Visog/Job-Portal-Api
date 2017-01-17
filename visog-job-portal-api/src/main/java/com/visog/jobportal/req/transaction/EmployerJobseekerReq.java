@@ -4,11 +4,11 @@ public class EmployerJobseekerReq {
 	
 	private String employer;
 	
-	private String jobseeker;
+	private String jobSeeker;
 	
 	private String status;
 	
-	private String actiondone;
+	private String actionDone;
 
 	public String getEmployer() {
 		return employer;
@@ -18,12 +18,14 @@ public class EmployerJobseekerReq {
 		this.employer = employer;
 	}
 
-	public String getJobseeker() {
-		return jobseeker;
+	
+
+	public String getJobSeeker() {
+		return jobSeeker;
 	}
 
-	public void setJobseeker(String jobseeker) {
-		this.jobseeker = jobseeker;
+	public void setJobSeeker(String jobSeeker) {
+		this.jobSeeker = jobSeeker;
 	}
 
 	public String getStatus() {
@@ -34,13 +36,15 @@ public class EmployerJobseekerReq {
 		this.status = status;
 	}
 
-	public String getActiondone() {
-		return actiondone;
+	public String getActionDone() {
+		return actionDone;
 	}
 
-	public void setActiondone(String actiondone) {
-		this.actiondone = actiondone;
+	public void setActionDone(String actionDone) {
+		this.actionDone = actionDone;
 	}
+
+	
 	
 	
 

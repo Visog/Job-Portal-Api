@@ -44,13 +44,13 @@ public class EducationDetails extends AbstractModel {
 	@ManyToOne
 	@JoinColumn(name = "UNIVERSITY_ID")
 	private University university;
-
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DURATION_FROM_DATE")
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date durationFromDate;
-
-	@Column(name = "DURATION_TO_DATE")
+	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DURATION_TO_DATE")
 	private Date durationToDate;
 
 	@Column(name = "CREATED_SID")
@@ -58,9 +58,9 @@ public class EducationDetails extends AbstractModel {
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
-
-	@Column(name = "CREATED_ON")
+	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "CREATED_ON")
 	private Date createdOn;
 
 	@Column(name = "UPDATED_SID")
@@ -68,9 +68,9 @@ public class EducationDetails extends AbstractModel {
 
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
-
-	@Column(name = "UPDATED_ON")
+	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "UPDATED_ON")
 	private Date updatedOn;
 
 	public String getId() {

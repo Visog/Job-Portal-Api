@@ -16,9 +16,11 @@ public class ExperienceDetailsRes {
 	
 	private Date durationTo;
 	
-	private String Designation;
+	private String designation;
 	
 	private String jobProfile;
+
+	
 
 	public String getId() {
 		return id;
@@ -27,6 +29,8 @@ public class ExperienceDetailsRes {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+
 
 	public String getUser() {
 		return user;
@@ -69,13 +73,7 @@ public class ExperienceDetailsRes {
 		this.durationTo = durationTo;
 	}
 
-	public String getDesignation() {
-		return Designation;
-	}
-
-	public void setDesignation(String designation) {
-		Designation = designation;
-	}
+	
 
 	public String getJobProfile() {
 		return jobProfile;
@@ -84,6 +82,13 @@ public class ExperienceDetailsRes {
 	public void setJobProfile(String jobProfile) {
 		this.jobProfile = jobProfile;
 	}
-	
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
 
 }

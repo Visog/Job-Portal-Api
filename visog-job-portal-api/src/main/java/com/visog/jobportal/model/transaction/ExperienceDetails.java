@@ -21,14 +21,14 @@ public class ExperienceDetails extends AbstractModel {
 	private String id;
 	
 	@ManyToOne
-	@JoinColumn(name="USERS")
+	@JoinColumn(name="USER_ID")
 	private Users user;
 	
 	@Column(name="COMPANY_NAME")
 	private String companyName;
 	
 	@ManyToOne
-	@JoinColumn(name="EMPLOYMENT_TYPE")
+	@JoinColumn(name="EMPLOYMENT_TYPE_ID")
 	private EmploymentType employmentType;
 	
 	@Temporal(TemporalType.TIMESTAMP)

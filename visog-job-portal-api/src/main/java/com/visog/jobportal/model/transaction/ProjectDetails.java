@@ -2,6 +2,7 @@ package com.visog.jobportal.model.transaction;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,15 +15,15 @@ import javax.persistence.TemporalType;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.EmploymentType;
 
-@Table(name = "PROJECT_DETAILS")
 @Entity
+@Table(name = "PROJECT_DETAILS")
 public class ProjectDetails extends AbstractModel {
 
 	@Id
 	@Column(name = "ID")
 	private String id;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "USER_ID")
 	private Users user;
 
@@ -42,19 +43,19 @@ public class ProjectDetails extends AbstractModel {
 	@Column(name = "CLIENT_NAME")
 	private String clientName;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DURATION_FROM ")
-	private Date durationFrom;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DURATION_TO ")
-	private Date durationTo;
-
-	@Column(name = "TEAM_SIZE ")
+	@Column(name = "TEAM_SIZE")
 	private String teamSize;
 
 	@Column(name = "TECHNOLOGIES_USED")
 	private String technologiesUsed;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DURATION_FROM")
+	private Date durationFrom;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DURATION_TO")
+	private Date durationTo;
 
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -132,22 +133,6 @@ public class ProjectDetails extends AbstractModel {
 		this.clientName = clientName;
 	}
 
-	public Date getDurationFrom() {
-		return durationFrom;
-	}
-
-	public void setDurationFrom(Date durationFrom) {
-		this.durationFrom = durationFrom;
-	}
-
-	public Date getDurationTo() {
-		return durationTo;
-	}
-
-	public void setDurationTo(Date durationTo) {
-		this.durationTo = durationTo;
-	}
-
 	public String getTeamSize() {
 		return teamSize;
 	}
@@ -162,6 +147,22 @@ public class ProjectDetails extends AbstractModel {
 
 	public void setTechnologiesUsed(String technologiesUsed) {
 		this.technologiesUsed = technologiesUsed;
+	}
+
+	public Date getDurationFrom() {
+		return durationFrom;
+	}
+
+	public void setDurationFrom(Date durationFrom) {
+		this.durationFrom = durationFrom;
+	}
+
+	public Date getDurationTo() {
+		return durationTo;
+	}
+
+	public void setDurationTo(Date durationTo) {
+		this.durationTo = durationTo;
 	}
 
 	public String getCreatedSid() {
@@ -211,6 +212,4 @@ public class ProjectDetails extends AbstractModel {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-
-	
 }

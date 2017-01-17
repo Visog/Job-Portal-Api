@@ -15,16 +15,20 @@ import com.visog.jobportal.dao.transaction.ProjectDetailsDao;
 import com.visog.jobportal.model.transaction.ProjectDetails;
 import com.visog.jobportal.model.transaction.Users;
 
+/**
+ * @author ShivaPrasad
+ */
 @Singleton
 @Transactional
 public class ProjectDetailsDaoImpl extends AbstractDao implements ProjectDetailsDao {
+
 	private static final Logger logger = Logger.getLogger(ProjectDetailsDaoImpl.class);
 
-	/**
-	 * @author ShivaPrasad
+	/* 
 	 */
 
 	public List<ProjectDetails> getProjectDetails() {
+
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<ProjectDetails> q = cb.createQuery(ProjectDetails.class);
 		Root<ProjectDetails> c = q.from(ProjectDetails.class);

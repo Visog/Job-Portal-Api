@@ -9,11 +9,11 @@ public interface ExperienceDetailsService {
 
 	public void saveExperienceDetails(ExperienceDetailsReq req);
 
-	public ExperienceDetailsRes getexperienceDetails(String experienceDetailsId);
+	public ExperienceDetailsRes getexperienceDetails(String Id);
 
 	public void updateExperienceDetails(ExperienceDetailsReq req, String experienceDetailsId);
 
-	public Boolean deleteExperienceDetails(String id);
+	public Boolean deleteExperienceDetails(String experienceDetailsId);
 
 	public List<ExperienceDetailsRes> getExperienceDetails();
 

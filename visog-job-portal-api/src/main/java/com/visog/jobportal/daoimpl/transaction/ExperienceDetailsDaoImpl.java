@@ -20,6 +20,10 @@ import com.visog.jobportal.model.transaction.ExperienceDetails;
 public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceDetailsDao {
 
 	private static final Logger logger = Logger.getLogger(ExperienceDetailsDaoImpl.class);
+
+	/**
+	 * @author ShivaPrasad
+	 */
 	
 	public List<ExperienceDetails> getExperienceDetails() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -27,7 +31,7 @@ public class ExperienceDetailsDaoImpl extends AbstractDao implements ExperienceD
 		Root<ExperienceDetails> c = q.from(ExperienceDetails.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
-		
+
 	}
 
 }
