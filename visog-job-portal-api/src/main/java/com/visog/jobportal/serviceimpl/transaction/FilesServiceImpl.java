@@ -10,13 +10,13 @@ import org.jboss.resteasy.logging.Logger;
 import com.visog.jobportal.dao.transaction.FilesDao;
 import com.visog.jobportal.model.master.FileType;
 import com.visog.jobportal.model.transaction.Files;
-import com.visog.jobportal.model.transaction.Users;
 import com.visog.jobportal.req.transaction.FilesReq;
 import com.visog.jobportal.res.transaction.FilesRes;
 import com.visog.jobportal.service.transaction.FilesService;
 import com.visog.jobportal.utils.DaoUtils;
 
 public class FilesServiceImpl implements FilesService {
+
 	private static final Logger logger = Logger.getLogger(FilesServiceImpl.class);
 
 	@Inject
@@ -30,7 +30,7 @@ public class FilesServiceImpl implements FilesService {
 		Files files = new Files();
 
 		files.setFilepath(req.getFilepath());
-		files.setAssociated(req.getAssociated());
+		files.setAssociatedId(req.getAssociatedId());
 		files.setAssociatedtype(req.getAssociatedtype());
 
 		FileType fileType = new FileType();
@@ -49,7 +49,7 @@ public class FilesServiceImpl implements FilesService {
 
 		Files files = (Files) dao.getByKey(Files.class, filesId);
 		files.setFilepath(req.getFilepath());
-		files.setAssociated(req.getAssociated());
+		files.setAssociatedId(req.getAssociatedId());
 		files.setAssociatedtype(req.getAssociatedtype());
 
 		FileType fileType = new FileType();
@@ -73,7 +73,7 @@ public class FilesServiceImpl implements FilesService {
 			filesRes = new FilesRes();
 			filesRes.setId(file.getId());
 			filesRes.setFilepath(file.getFilepath());
-			filesRes.setAssociated(file.getAssociated());
+			filesRes.setAssociatedId(file.getAssociatedId());
 			filesRes.setAssociatedtype(file.getAssociatedtype());
 			filesRes.setFiletype(file.getFiletype().getId());
 
@@ -92,7 +92,7 @@ public class FilesServiceImpl implements FilesService {
 		Files files = (Files) dao.getByKey(Files.class, Id);
 		FilesRes filesRes = new FilesRes();
 		filesRes.setId(files.getId());
-		filesRes.setAssociated(files.getAssociated());
+		filesRes.setAssociatedId(files.getAssociatedId());
 		filesRes.setAssociatedtype(files.getAssociatedtype());
 		filesRes.setFilepath(files.getFilepath());
 		filesRes.setFiletype(files.getFiletype().getId());

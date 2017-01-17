@@ -14,8 +14,8 @@ import javax.persistence.TemporalType;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.FileType;
 
-@Table(name = "FILES")
 @Entity
+@Table(name = "FILES")
 public class Files extends AbstractModel {
 
 	@Id
@@ -33,7 +33,7 @@ public class Files extends AbstractModel {
 	private String associatedtype;
 
 	@Column(name = "ASSOCIATED_ID")
-	private String associated;
+	private String associatedId;
 
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -87,12 +87,12 @@ public class Files extends AbstractModel {
 		this.associatedtype = associatedtype;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
 
 	public String getCreatedSid() {
@@ -142,5 +142,6 @@ public class Files extends AbstractModel {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-
+	
+	
 }

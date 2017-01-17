@@ -5,23 +5,23 @@ import java.util.Date;
 public class ProjectDetailsReq {
 	
 	private String user;
-	
+
 	private String jobResponsibilities;
-	
+
 	private String projectDetails;
-	
-	private String projecttitle;
-	
+
+	private String projectTitle;
+
 	private String employmentType;
-	
+
 	private String clientName;
-	
-	private Date durationfrom;
-	
+
+	private Date durationFrom;
+
 	private Date durationTo;
-	
+
 	private String teamSize;
-	
+
 	private String technologiesUsed;
 
 	public String getUser() {
@@ -48,12 +48,12 @@ public class ProjectDetailsReq {
 		this.projectDetails = projectDetails;
 	}
 
-	public String getProjecttitle() {
-		return projecttitle;
+	public String getProjectTitle() {
+		return projectTitle;
 	}
 
-	public void setProjecttitle(String projecttitle) {
-		this.projecttitle = projecttitle;
+	public void setProjectTitle(String projectTitle) {
+		this.projectTitle = projectTitle;
 	}
 
 	public String getEmploymentType() {
@@ -72,12 +72,12 @@ public class ProjectDetailsReq {
 		this.clientName = clientName;
 	}
 
-	public Date getDurationfrom() {
-		return durationfrom;
+	public Date getDurationFrom() {
+		return durationFrom;
 	}
 
-	public void setDurationfrom(Date durationfrom) {
-		this.durationfrom = durationfrom;
+	public void setDurationFrom(Date durationFrom) {
+		this.durationFrom = durationFrom;
 	}
 
 	public Date getDurationTo() {
@@ -103,6 +103,7 @@ public class ProjectDetailsReq {
 	public void setTechnologiesUsed(String technologiesUsed) {
 		this.technologiesUsed = technologiesUsed;
 	}
+
 	
 	
 }

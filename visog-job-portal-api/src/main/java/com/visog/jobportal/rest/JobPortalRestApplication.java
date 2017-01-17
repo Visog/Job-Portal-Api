@@ -29,14 +29,17 @@ import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
 import com.visog.jobportal.rest.controller.transaction.AddressController;
+import com.visog.jobportal.rest.controller.transaction.EducationDetailsController;
 import com.visog.jobportal.rest.controller.transaction.EmployerController;
 import com.visog.jobportal.rest.controller.transaction.EmployerJobseekerController;
+import com.visog.jobportal.rest.controller.transaction.ExperienceDetailsController;
 import com.visog.jobportal.rest.controller.transaction.FilesController;
 import com.visog.jobportal.rest.controller.transaction.JobSeekerController;
 import com.visog.jobportal.rest.controller.transaction.LanguageKnownController;
 import com.visog.jobportal.rest.controller.transaction.PostJobController;
 import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
 import com.visog.jobportal.rest.controller.transaction.PostJobSeekerController;
+import com.visog.jobportal.rest.controller.transaction.ProjectDetailsController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationAdminController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationEmployerController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
@@ -78,15 +81,15 @@ public class JobPortalRestApplication extends Application {
 		classes.add(PostJobDomainsController.class);
 		classes.add(EmployerJobseekerController.class);
 		classes.add(FilesController.class);
-		classes.add(ProjectDetails.class);
-		classes.add(ExperienceDetails.class);
+		classes.add(ProjectDetailsController.class);
+		classes.add(ExperienceDetailsController.class);
 		classes.add(LanguageKnownController.class);
 		classes.add(PostJobSeekerController.class);
 		classes.add(AddressController.class);
 		classes.add(EmployerController.class);
 		classes.add(JobSeekerController.class);
 		classes.add(RegistrationAdminController.class);
-		classes.add(EducationDetails.class);
+		classes.add(EducationDetailsController.class);
 	}
 
 	public Set<Object> getSingletons() {

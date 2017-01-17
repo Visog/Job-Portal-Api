@@ -8,7 +8,7 @@ public class FilesReq {
 
 	private String associatedtype;
 
-	private String associated;
+	private String associatedId;
 
 	public String getFilepath() {
 		return filepath;
@@ -34,12 +34,14 @@ public class FilesReq {
 		this.associatedtype = associatedtype;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
+
+	
 
 }

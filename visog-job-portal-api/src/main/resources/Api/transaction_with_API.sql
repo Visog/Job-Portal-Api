@@ -1075,7 +1075,8 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : " deltails created sucessfully/ failed to create details"
+	"statusDesc" : " deltails created sucess
+	fully/ failed to create details"
 	"data" : NULL
 	
 } 

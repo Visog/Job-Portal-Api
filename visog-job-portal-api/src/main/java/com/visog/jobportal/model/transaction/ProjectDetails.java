@@ -23,38 +23,38 @@ public class ProjectDetails extends AbstractModel {
 	private String id;
 
 	@ManyToOne
-	@JoinColumn(name = "USERS")
+	@JoinColumn(name = "USER_ID")
 	private Users user;
 
 	@Column(name = "JOB_RESPONSIBILITIES")
-	private String jobresponsibilities;
+	private String jobResponsibilities;
 
 	@Column(name = "PROJECT_DETAILS")
-	private String projectdetails;
+	private String projectDetails;
 
 	@Column(name = "PROJECT_TITLE")
-	private String projecttitle;
+	private String projectTitle;
 
 	@ManyToOne
-	@JoinColumn(name = "EMPLOYMENT_TYPE ")
-	private EmploymentType employmenttype;
+	@JoinColumn(name = "EMPLOYMENT_TYPE_ID")
+	private EmploymentType employmentType;
 
-	@Column(name = "CLIENT_NAME ")
-	private String clientname;
+	@Column(name = "CLIENT_NAME")
+	private String clientName;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DURATION_FROM ")
-	private Date durationfrom;
+	private Date durationFrom;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DURATION_TO ")
-	private Date durationto;
+	private Date durationTo;
 
 	@Column(name = "TEAM_SIZE ")
-	private String teamsize;
+	private String teamSize;
 
 	@Column(name = "TECHNOLOGIES_USED")
-	private String technologiesused;
+	private String technologiesUsed;
 
 	@Column(name = "CREATED_SID")
 	private String createdSid;
@@ -92,76 +92,76 @@ public class ProjectDetails extends AbstractModel {
 		this.user = user;
 	}
 
-	public String getJobresponsibilities() {
-		return jobresponsibilities;
+	public String getJobResponsibilities() {
+		return jobResponsibilities;
 	}
 
-	public void setJobresponsibilities(String jobresponsibilities) {
-		this.jobresponsibilities = jobresponsibilities;
+	public void setJobResponsibilities(String jobResponsibilities) {
+		this.jobResponsibilities = jobResponsibilities;
 	}
 
-	public String getProjectdetails() {
-		return projectdetails;
+	public String getProjectDetails() {
+		return projectDetails;
 	}
 
-	public void setProjectdetails(String projectdetails) {
-		this.projectdetails = projectdetails;
+	public void setProjectDetails(String projectDetails) {
+		this.projectDetails = projectDetails;
 	}
 
-	public String getProjecttitle() {
-		return projecttitle;
+	public String getProjectTitle() {
+		return projectTitle;
 	}
 
-	public void setProjecttitle(String projecttitle) {
-		this.projecttitle = projecttitle;
+	public void setProjectTitle(String projectTitle) {
+		this.projectTitle = projectTitle;
 	}
 
-	public EmploymentType getEmploymenttype() {
-		return employmenttype;
+	public EmploymentType getEmploymentType() {
+		return employmentType;
 	}
 
-	public void setEmploymenttype(EmploymentType employmenttype) {
-		this.employmenttype = employmenttype;
+	public void setEmploymentType(EmploymentType employmentType) {
+		this.employmentType = employmentType;
 	}
 
-	public String getClientname() {
-		return clientname;
+	public String getClientName() {
+		return clientName;
 	}
 
-	public void setClientname(String clientname) {
-		this.clientname = clientname;
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
 	}
 
-	public Date getDurationfrom() {
-		return durationfrom;
+	public Date getDurationFrom() {
+		return durationFrom;
 	}
 
-	public void setDurationfrom(Date durationfrom) {
-		this.durationfrom = durationfrom;
+	public void setDurationFrom(Date durationFrom) {
+		this.durationFrom = durationFrom;
 	}
 
-	public Date getDurationto() {
-		return durationto;
+	public Date getDurationTo() {
+		return durationTo;
 	}
 
-	public void setDurationto(Date durationto) {
-		this.durationto = durationto;
+	public void setDurationTo(Date durationTo) {
+		this.durationTo = durationTo;
 	}
 
-	public String getTeamsize() {
-		return teamsize;
+	public String getTeamSize() {
+		return teamSize;
 	}
 
-	public void setTeamsize(String teamsize) {
-		this.teamsize = teamsize;
+	public void setTeamSize(String teamSize) {
+		this.teamSize = teamSize;
 	}
 
-	public String getTechnologiesused() {
-		return technologiesused;
+	public String getTechnologiesUsed() {
+		return technologiesUsed;
 	}
 
-	public void setTechnologiesused(String technologiesused) {
-		this.technologiesused = technologiesused;
+	public void setTechnologiesUsed(String technologiesUsed) {
+		this.technologiesUsed = technologiesUsed;
 	}
 
 	public String getCreatedSid() {
@@ -213,4 +213,4 @@ public class ProjectDetails extends AbstractModel {
 	}
 
 	
-	}
+}

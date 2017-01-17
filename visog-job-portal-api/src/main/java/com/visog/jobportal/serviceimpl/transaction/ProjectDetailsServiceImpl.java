@@ -32,23 +32,23 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 	public void saveProjectDetails(ProjectDetailsReq req) {
 
 		ProjectDetails projectDetails = new ProjectDetails();
-		Users users = new Users();
-		EmploymentType employmentType = new EmploymentType();
 
+		Users users = new Users();
 		users.setId(req.getUser());
 		projectDetails.setUser(users);
 
+		EmploymentType employmentType = new EmploymentType();
 		employmentType.setId(req.getEmploymentType());
-		projectDetails.setEmploymenttype(employmentType);
+		projectDetails.setEmploymentType(employmentType);
 
-		projectDetails.setJobresponsibilities(req.getJobResponsibilities());
-		projectDetails.setProjectdetails(req.getProjectDetails());
-		projectDetails.setProjecttitle(req.getProjecttitle());
-		projectDetails.setClientname(req.getClientName());
-		projectDetails.setDurationfrom(req.getDurationfrom());
-		projectDetails.setDurationto(req.getDurationTo());
-		projectDetails.setTeamsize(req.getTeamSize());
-		projectDetails.setTechnologiesused(req.getTechnologiesUsed());
+		projectDetails.setJobResponsibilities(req.getJobResponsibilities());
+		projectDetails.setProjectDetails(req.getProjectDetails());
+		projectDetails.setProjectTitle(req.getProjectDetails());
+		projectDetails.setClientName(req.getClientName());
+		projectDetails.setDurationFrom(req.getDurationFrom());
+		projectDetails.setDurationTo(req.getDurationTo());
+		projectDetails.setTeamSize(req.getTeamSize());
+		projectDetails.setTechnologiesUsed(req.getTechnologiesUsed());
 
 		DaoUtils.setEntityCreateAuditColumns(projectDetails);
 		dao.save(projectDetails);
@@ -56,90 +56,86 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 
 	}
 
-	public List<ProjectDetailsRes> getProjectDetails() {
-
-		List<ProjectDetails> projectDetails = dao.getProjectDetails();
-
-		List<ProjectDetailsRes>  projectDetailsList = new ArrayList<>();
-		ProjectDetailsRes projectDetailsRes = null;
-
-		EmploymentType employmentType = new EmploymentType();
-		Users users = new Users();
-		for (ProjectDetails projectDetail :  projectDetails) {
-
-			projectDetailsRes = new ProjectDetailsRes();
-
-			projectDetailsRes.setId(projectDetail.getId());
-			projectDetailsRes.setUser(projectDetail.getUser().getId());
-			projectDetailsRes.setJobResponsibilities(projectDetail.getJobresponsibilities());
-			projectDetailsRes.setProjectDetails(projectDetail.getProjectdetails());
-			projectDetailsRes.setProjecttitle(projectDetail.getProjecttitle());
-			projectDetailsRes.setClientName(projectDetail.getClientname());
-			projectDetailsRes.setEmploymentType(projectDetail.getEmploymenttype().getId());
-			projectDetailsRes.setDurationfrom(projectDetail.getDurationfrom());
-			projectDetailsRes.setDurationTo(projectDetail.getDurationto());
-			projectDetailsRes.setTeamSize(projectDetail.getTeamsize());
-			projectDetailsRes.setTechnologiesUsed(projectDetail.getTechnologiesused());
-		}
-
-		return projectDetailsList;
-	}
-
-	public Boolean deleteProjectDetails(String id) {
-		return (dao.delete(ProjectDetails.class, id) != 0);
-	}
-
 	public void updateProjectDetails(ProjectDetailsReq req, String projectDetailsId) {
 
-		ProjectDetails projectDetails  = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectDetailsId);
-
-		EmploymentType employmenttype = new EmploymentType();
-		employmenttype.setId(req.getEmploymentType());
+		ProjectDetails projectDetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, projectDetailsId);
 
 		Users users = new Users();
 		users.setId(req.getUser());
-
 		projectDetails.setUser(users);
-		projectDetails.setEmploymenttype(employmenttype);
-		projectDetails.setJobresponsibilities(req.getJobResponsibilities());
-		projectDetails.setProjectdetails(req.getProjectDetails());
-		projectDetails.setProjecttitle(req.getProjecttitle());
-		projectDetails.setClientname(req.getClientName());
-		projectDetails.setDurationfrom(req.getDurationfrom());
-		projectDetails.setDurationto(req.getDurationTo());projectDetails.setTeamsize(req.getTeamSize());
-		projectDetails.setTechnologiesused(req.getTechnologiesUsed());
+
+		EmploymentType employmentType = new EmploymentType();
+		employmentType.setId(req.getEmploymentType());
+		projectDetails.setEmploymentType(employmentType);
+
+		projectDetails.setJobResponsibilities(req.getJobResponsibilities());
+		projectDetails.setProjectDetails(req.getProjectDetails());
+		projectDetails.setProjectTitle(req.getProjectDetails());
+		projectDetails.setClientName(req.getClientName());
+		projectDetails.setDurationFrom(req.getDurationFrom());
+		projectDetails.setDurationTo(req.getDurationTo());
+		projectDetails.setTeamSize(req.getTeamSize());
+		projectDetails.setTechnologiesUsed(req.getTechnologiesUsed());
 
 		dao.update(projectDetails);
 		logger.info("projectdetails updated successfully : " + projectDetails.getId());
 	}
 
+	public List<ProjectDetailsRes> getProjectDetails() {
+
+		List<ProjectDetails> projectDetails = dao.getProjectDetails();
+
+		List<ProjectDetailsRes> projectDetailsList = new ArrayList<>();
+		ProjectDetailsRes projectDetailsRes = null;
+
+		for (ProjectDetails projectDetail : projectDetails) {
+
+			projectDetailsRes = new ProjectDetailsRes();
+
+			projectDetailsRes.setId(projectDetail.getId());
+			projectDetailsRes.setUser(projectDetail.getUser().getId());
+			projectDetailsRes.setJobResponsibilities(projectDetail.getJobResponsibilities());
+			projectDetailsRes.setProjectDetails(projectDetail.getProjectDetails());
+			projectDetailsRes.setProjectTitle(projectDetail.getProjectTitle());
+			projectDetailsRes.setClientName(projectDetail.getClientName());
+			projectDetailsRes.setEmploymentType(projectDetail.getEmploymentType().getId());
+			projectDetailsRes.setDurationFrom(projectDetail.getDurationFrom());
+			projectDetailsRes.setDurationTo(projectDetail.getDurationTo());
+			projectDetailsRes.setTeamSize(projectDetail.getTeamSize());
+			projectDetailsRes.setTechnologiesUsed(projectDetail.getTechnologiesUsed());
+			projectDetailsList.add(projectDetailsRes);
+			
+		}
+
+		return projectDetailsList;
+	}
+
 	/***
 	 * this gives details of given ID
 	 */
-	public ProjectDetailsRes getprojectDetails(String id) {
+	public ProjectDetailsRes getProjectDetails(String id) {
+		
 		ProjectDetails projectDetails = (ProjectDetails) dao.getByKey(ProjectDetails.class, id);
-
 		ProjectDetailsRes projectDetailRes = new ProjectDetailsRes();
 
 		projectDetailRes.setId(projectDetails.getId());
 		projectDetailRes.setUser(projectDetails.getUser().getId());
-		projectDetailRes.setJobResponsibilities(projectDetails.getJobresponsibilities());
-		projectDetailRes.setClientName(projectDetails.getClientname());
-		projectDetailRes.setProjectDetails(projectDetails.getProjectdetails());
-
-		projectDetailRes.setProjecttitle(projectDetails.getProjecttitle());
-
-		projectDetailRes.setEmploymentType(projectDetails.getEmploymenttype().getId());
-
-		projectDetailRes.setDurationfrom(projectDetails.getDurationfrom());
-
-		projectDetailRes.setDurationTo(projectDetails.getDurationto());
-
-		projectDetailRes.setTeamSize(projectDetails.getTeamsize());
-
-		projectDetailRes.setTechnologiesUsed(projectDetails.getTechnologiesused());
+		projectDetailRes.setJobResponsibilities(projectDetails.getJobResponsibilities());
+		projectDetailRes.setClientName(projectDetails.getClientName());
+		projectDetailRes.setProjectDetails(projectDetails.getProjectDetails());
+		projectDetailRes.setProjectTitle(projectDetails.getProjectTitle());
+		projectDetailRes.setEmploymentType(projectDetails.getEmploymentType().getId());
+		projectDetailRes.setDurationFrom(projectDetails.getDurationFrom());
+		projectDetailRes.setDurationTo(projectDetails.getDurationTo());
+		projectDetailRes.setTeamSize(projectDetails.getTeamSize());
+		projectDetailRes.setTechnologiesUsed(projectDetails.getTechnologiesUsed());
 
 		return projectDetailRes;
+	}
+
+	
+	public Boolean deleteProjectDetails(String id) {
+		return (dao.delete(ProjectDetails.class, id) != 0);
 	}
 
 }

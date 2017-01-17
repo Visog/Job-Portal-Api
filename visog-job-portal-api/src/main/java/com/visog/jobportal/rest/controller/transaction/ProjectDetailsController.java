@@ -110,7 +110,7 @@ public class ProjectDetailsController {
 	public JobPortalResponse getProjectDetails(@PathParam("projectDetailsId") String projectDetailsId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getprojectDetails(projectDetailsId));
+		jobPortalResponse.setData(service.getProjectDetails(projectDetailsId));
 		jobPortalResponse.setMessage("ProjectDetails fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

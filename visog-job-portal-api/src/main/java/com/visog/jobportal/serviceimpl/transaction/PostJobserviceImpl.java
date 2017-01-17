@@ -93,12 +93,6 @@ public class PostJobserviceImpl implements PostJobService {
 
 		PostJobRes postJobRes = null;
 
-		Users users = new Users();
-
-		Currency currency = new Currency();
-
-		Status status = new Status();
-
 		for (PostJob postJob : postJobs) {
 
 			postJobRes = new PostJobRes();

@@ -8,7 +8,7 @@ public class FilesRes {
 
 	private String associatedtype;
 
-	private String associated;
+	private String associatedId;
 
 	private String filetype;
 
@@ -36,12 +36,12 @@ public class FilesRes {
 		this.associatedtype = associatedtype;
 	}
 
-	public String getAssociated() {
-		return associated;
+	public String getAssociatedId() {
+		return associatedId;
 	}
 
-	public void setAssociated(String associated) {
-		this.associated = associated;
+	public void setAssociatedId(String associatedId) {
+		this.associatedId = associatedId;
 	}
 
 	public String getFiletype() {
@@ -52,4 +52,5 @@ public class FilesRes {
 		this.filetype = filetype;
 	}
 
+	
 }
