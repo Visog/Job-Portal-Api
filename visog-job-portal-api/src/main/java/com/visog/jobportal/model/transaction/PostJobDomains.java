@@ -14,22 +14,22 @@ import javax.persistence.TemporalType;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.Domains;
 
-@Table(name = "POST_JOB_DOMAINS")
 @Entity
+@Table(name ="POST_JOB_DOMAINS")
 public class PostJobDomains extends AbstractModel {
-
+	
 	@Id
-	@Column(name = "ID")
+	@Column(name ="ID")
 	private String id;
-
+	
 	@ManyToOne
-	@JoinColumn(name = "POST_JOB_ID")
+	@JoinColumn(name ="POST_JOB_ID")
 	private PostJob postJob;
-
+	
 	@ManyToOne
-	@JoinColumn(name = "DOMAIN_ID")
+	@JoinColumn(name ="DOMAIN_ID")
 	private Domains domain;
-
+	
 	@Column(name = "CREATED_SID")
 	private String createdSid;
 
@@ -121,5 +121,7 @@ public class PostJobDomains extends AbstractModel {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-
+	
+	
+	
 }

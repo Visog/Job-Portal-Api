@@ -1,13 +1,13 @@
 package com.visog.jobportal.req.transaction;
 
 public class EmployerJobseekerReq {
-	
+
 	private String employer;
-	
+
 	private String jobSeeker;
-	
+
 	private String status;
-	
+
 	private String actionDone;
 
 	public String getEmployer() {
@@ -17,8 +17,6 @@ public class EmployerJobseekerReq {
 	public void setEmployer(String employer) {
 		this.employer = employer;
 	}
-
-	
 
 	public String getJobSeeker() {
 		return jobSeeker;
@@ -43,9 +41,5 @@ public class EmployerJobseekerReq {
 	public void setActionDone(String actionDone) {
 		this.actionDone = actionDone;
 	}
-
-	
-	
-	
 
 }

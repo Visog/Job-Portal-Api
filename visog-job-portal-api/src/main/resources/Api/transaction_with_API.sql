@@ -1854,9 +1854,9 @@ CREATE TABLE LANGUAGE_KNOWN (
 	ID  VARCHAR(37) NOT NULL,
 	USER_ID VARCHAR(37) NOT NULL,
 	LANGUAGE_ID VARCHAR(37) NOT NULL,
-	READ_ID CHAR(1), -- here 0 for no and 1 for yes
-	WRITE_ID CHAR(1), -- here 0 for no and 1 for yes
-	SPEAK CHAR(1), -- here 0 for no and 1 for yes
+	READ_ID TEXT, -- here 0 for no and 1 for yes
+	WRITE_ID TEXT, -- here 0 for no and 1 for yes
+	SPEAK TEXT, -- here 0 for no and 1 for yes
 	PROFICIENCY_LEVEL  INT(2),
 	CREATED_SID   VARCHAR(37) NOT NULL,
 	CREATED_BY    VARCHAR(37) NOT NULL,

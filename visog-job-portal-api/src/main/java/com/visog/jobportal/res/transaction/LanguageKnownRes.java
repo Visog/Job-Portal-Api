@@ -8,11 +8,11 @@ public class LanguageKnownRes {
 
 	private String language;
 
-	private String read;
+	private Boolean read;
 
-	private String write;
+	private Boolean write;
 
-	private String speak;
+	private Boolean speak;
 
 	private String proficencylevel;
 
@@ -40,27 +40,27 @@ public class LanguageKnownRes {
 		this.language = language;
 	}
 
-	public String getRead() {
+	public Boolean getRead() {
 		return read;
 	}
 
-	public void setRead(String read) {
+	public void setRead(Boolean read) {
 		this.read = read;
 	}
 
-	public String getWrite() {
+	public Boolean getWrite() {
 		return write;
 	}
 
-	public void setWrite(String write) {
+	public void setWrite(Boolean write) {
 		this.write = write;
 	}
 
-	public String getSpeak() {
+	public Boolean getSpeak() {
 		return speak;
 	}
 
-	public void setSpeak(String speak) {
+	public void setSpeak(Boolean speak) {
 		this.speak = speak;
 	}
 

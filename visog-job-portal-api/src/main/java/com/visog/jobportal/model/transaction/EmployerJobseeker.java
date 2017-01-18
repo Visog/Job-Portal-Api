@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.jobportal.model.AbstractModel;
+import com.visog.jobportal.model.master.Status;
 
 @Table(name = "EMPLOYER_JOBSEEKER")
 @Entity
@@ -31,7 +32,7 @@ public class EmployerJobseeker extends AbstractModel {
 
 	@ManyToOne
 	@JoinColumn(name = "STATUS_ID")
-	private Users status;
+	private Status status;
 
 	@Column(name = "ACTION_DONE_BY")
 	private String actionDone;
@@ -65,22 +66,20 @@ public class EmployerJobseeker extends AbstractModel {
 		this.employer = employer;
 	}
 
-
-	public Users getStatus() {
-		return status;
-	}
-
-	public void setStatus(Users status) {
-		this.status = status;
-	}
-
-
 	public Users getJobSeeker() {
 		return jobSeeker;
 	}
 
 	public void setJobSeeker(Users jobSeeker) {
 		this.jobSeeker = jobSeeker;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	public String getActionDone() {
@@ -122,29 +121,6 @@ public class EmployerJobseeker extends AbstractModel {
 	public void setUpdatedSid(String updatedSid) {
 		this.updatedSid = updatedSid;
 	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
-
-	public Date getUpdatedOn() {
-		return updatedOn;
-	}
-
-	public void setUpdatedOn(Date updatedOn) {
-		this.updatedOn = updatedOn;
-	}
-
-	@Column(name = "UPDATED_BY")
-	private String updatedBy;
-
-	@Column(name = "UPDATED_ON")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updatedOn;
 
 	
 

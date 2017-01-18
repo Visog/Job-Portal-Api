@@ -20,111 +20,113 @@ import com.visog.jobportal.utils.DaoUtils;
  * @author Ravi
  *
  */
-public class EmployerJobseekerServiceImpl implements EmployerJobseekerService{
-	private static final Logger logger = Logger.getLogger(EmployerJobseeker.class);
-			
+public class EmployerJobseekerServiceImpl implements EmployerJobseekerService {
+
+	private static final Logger logger = Logger.getLogger(EmployerJobseekerServiceImpl.class);
 
 	@Inject
 	EmployerJobseekerDao dao;
 
-
 	/**
-	 * This method saves the EmployerJobseeker
-	 * author Ravi 
+	 * This method saves the EmployerJobseeker author Ravi
 	 */
 	public void saveEmployerJobseeker(EmployerJobseekerReq req) {
 
+		EmployerJobseeker employerJobseeker = new EmployerJobseeker();
 
-		EmployerJobseeker employerJobseekers=new EmployerJobseeker();
-		employerJobseekers.setActionDone(req.getActionDone());
-		 
-		 Users users=new Users();
-		 users.setId(req.getEmployer());
-		 users.setId(req.getJobSeeker());
-		 employerJobseekers.setEmployer(users);
-		 employerJobseekers.setJobSeeker(users);
-		
-		 Status  status=new Status();
-		 status.setId(req.getStatus());
-		 employerJobseekers.setStatus(users);
+		Users users = new Users();
+		users.setId(req.getEmployer());
+		employerJobseeker.setEmployer(users);
 
-		 DaoUtils.setEntityCreateAuditColumns(employerJobseekers);
-		 dao.save(employerJobseekers);
-		 logger.info("EmployerJobseeker created successfully : " + employerJobseekers.getId());
-		
+		users.setId(req.getJobSeeker());
+		employerJobseeker.setJobSeeker(users);
+
+		Status status = new Status();
+		status.setId(req.getStatus());
+		employerJobseeker.setStatus(status);
+
+		employerJobseeker.setActionDone(req.getActionDone());
+
+		dao.save(employerJobseeker);
+
+		DaoUtils.setEntityCreateAuditColumns(employerJobseeker);
+
+		logger.info("Employer JobSeeker Created Successfully" + employerJobseeker.getId());
+
 	}
-	
 
 	/**
 	 * This method updates the EmployerJobseeker
 	 */
 	public void updateEmployerJobseeker(EmployerJobseekerReq req, String employerjobseekerId) {
 
-		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, employerjobseekerId);
-		employerJobseekers.setActionDone(req.getActionDone());
-		 
-		Users users=new Users();
-		 users.setId(req.getEmployer());
-		 users.setId(req.getJobSeeker());
-		 employerJobseekers.setEmployer(users);
-		 employerJobseekers.setJobSeeker(users);
-		
-		 Status  status=new Status();
-		 status.setId(req.getStatus());
-		 employerJobseekers.setStatus(users);
-		 dao.update(employerJobseekers);
-		logger.info("EmployerJobseeker updated successfully : " + employerJobseekers.getId());
-	}
+		EmployerJobseeker employerJobseeker = (EmployerJobseeker) dao.getByKey(EmployerJobseeker.class,
+				employerjobseekerId);
+		Users users = new Users();
+		users.setId(req.getEmployer());
+		employerJobseeker.setEmployer(users);
 
+		users.setId(req.getJobSeeker());
+		employerJobseeker.setJobSeeker(users);
+
+		Status status = new Status();
+		status.setId(req.getStatus());
+		employerJobseeker.setStatus(status);
+
+		employerJobseeker.setActionDone(req.getActionDone());
+
+		dao.update(employerJobseeker);
+
+		logger.info("EmployerJobseeker updated successfully : " + employerJobseeker.getId());
+	}
 
 	/**
 	 * This method returns all the EmployerJobseekers
 	 */
 	public List<EmployerJobseekerRes> getEmployerJobseeker() {
-		
-		List<EmployerJobseeker> employerJobseekers=dao.getEmployerjobseekers();
-		List<EmployerJobseekerRes> employerJobseekerList=new ArrayList<>();
-		EmployerJobseekerRes employerJobseekerRes=null;
-		for(EmployerJobseeker employerJobseeker:employerJobseekers){
-			
-			employerJobseekerRes=new EmployerJobseekerRes();
+
+		List<EmployerJobseeker> employerJobseekers = dao.getEmployerjobseekers();
+		List<EmployerJobseekerRes> employerJobseekerList = new ArrayList<>();
+		EmployerJobseekerRes employerJobseekerRes = null;
+
+		for (EmployerJobseeker employerJobseeker : employerJobseekers) {
+
+			employerJobseekerRes = new EmployerJobseekerRes();
 			employerJobseekerRes.setId(employerJobseeker.getId());
-			employerJobseekerRes.setActionDone(employerJobseeker.getActionDone());
-			employerJobseekerRes.setStatus(employerJobseeker.getStatus().getId());
-			employerJobseekerRes.setJobSeeker(employerJobseeker.getJobSeeker().getId());
 			employerJobseekerRes.setEmployer(employerJobseeker.getEmployer().getId());
-			
+			employerJobseekerRes.setJobSeeker(employerJobseeker.getJobSeeker().getId());
+			employerJobseekerRes.setStatus(employerJobseeker.getStatus().getId());
+			employerJobseekerRes.setActionDone(employerJobseeker.getActionDone());
+
 			employerJobseekerList.add(employerJobseekerRes);
 		}
 		return employerJobseekerList;
-	
+
 	}
 
-
 	/**
-	 * This method returns  EmployerJobseeker by given id
+	 * This method returns EmployerJobseeker by given id
 	 */
 	public EmployerJobseekerRes getEmployerJobseeker(String id) {
-		
-		EmployerJobseeker employerJobseekers=(EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, id);
-		EmployerJobseekerRes employerJobseekerRes=new EmployerJobseekerRes();
+
+		EmployerJobseeker employerJobseekers = (EmployerJobseeker) dao.getByKey(EmployerJobseeker.class, id);
+		EmployerJobseekerRes employerJobseekerRes = new EmployerJobseekerRes();
+
 		employerJobseekerRes.setId(employerJobseekers.getId());
-		employerJobseekerRes.setActionDone(employerJobseekers.getActionDone());
-		employerJobseekerRes.setStatus(employerJobseekers.getStatus().getId());
 		employerJobseekerRes.setEmployer(employerJobseekers.getEmployer().getId());
 		employerJobseekerRes.setJobSeeker(employerJobseekers.getJobSeeker().getId());
-		
+		employerJobseekerRes.setStatus(employerJobseekers.getStatus().getId());
+		employerJobseekerRes.setActionDone(employerJobseekers.getActionDone());
+
 		return employerJobseekerRes;
 	}
 
-
 	/**
-	 * This method deletes the given EmployerJobseeker  
+	 * This method deletes the given EmployerJobseeker
 	 */
 	public Boolean deleteEmployerJobseeker(String employerjobseekerId) {
-		return (dao.delete(EmployerJobseeker.class, employerjobseekerId)!=0);
+		return (dao.delete(EmployerJobseeker.class, employerjobseekerId) != 0);
 
 	}
-	
 
 }

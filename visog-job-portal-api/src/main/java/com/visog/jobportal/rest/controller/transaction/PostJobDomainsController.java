@@ -19,7 +19,7 @@ import com.visog.jobportal.req.transaction.PostJobDomainsReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.transaction.PostJobDomainsService;
 
-@Path("/employer")
+@Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
 public class PostJobDomainsController {
 

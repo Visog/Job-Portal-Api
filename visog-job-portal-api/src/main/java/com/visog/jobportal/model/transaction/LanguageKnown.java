@@ -31,15 +31,15 @@ public class LanguageKnown extends AbstractModel {
 	private Languages language;
 
 	@Column(name = "READ_ID")
-	private String read;
+	private Boolean read;
 
 	@Column(name = "WRITE_ID")
-	private String write;
+	private Boolean write;
 
 	@Column(name = "SPEAK")
-	private String speak;
+	private Boolean speak;
 
-	@Column(name = "PROFICENCY_LEVEL")
+	@Column(name = "PROFICIENCY_LEVEL")
 	private String proficencylevel;
 
 	@Column(name = "CREATED_SID")
@@ -86,27 +86,27 @@ public class LanguageKnown extends AbstractModel {
 		this.language = language;
 	}
 
-	public String getRead() {
+	public Boolean getRead() {
 		return read;
 	}
 
-	public void setRead(String read) {
+	public void setRead(Boolean read) {
 		this.read = read;
 	}
 
-	public String getWrite() {
+	public Boolean getWrite() {
 		return write;
 	}
 
-	public void setWrite(String write) {
+	public void setWrite(Boolean write) {
 		this.write = write;
 	}
 
-	public String getSpeak() {
+	public Boolean getSpeak() {
 		return speak;
 	}
 
-	public void setSpeak(String speak) {
+	public void setSpeak(Boolean speak) {
 		this.speak = speak;
 	}
 
