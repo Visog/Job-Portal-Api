@@ -38,7 +38,7 @@ public class EducationDetails extends AbstractModel {
 	private EducationType educationType;
 
 	@ManyToOne
-	@JoinColumn(name = "SPECIALIZATION_ID")
+	@JoinColumn(name = "SPECILIZATION_ID")
 	private Specilization specialization;
 
 	@ManyToOne
@@ -46,7 +46,7 @@ public class EducationDetails extends AbstractModel {
 	private University university;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DURATION_FROM_DATE")
+	@Column(name = "DURATION_FROM")
 	private Date durationFromDate;
 	
 	@Temporal(TemporalType.TIMESTAMP)
