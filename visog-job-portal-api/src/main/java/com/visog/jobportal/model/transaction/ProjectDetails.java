@@ -2,7 +2,6 @@ package com.visog.jobportal.model.transaction;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,67 +14,48 @@ import javax.persistence.TemporalType;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.EmploymentType;
 
+
 @Entity
-@Table(name = "PROJECT_DETAILS")
-public class ProjectDetails extends AbstractModel {
-
+@Table(name ="PROJECT_DETAILS")
+public class ProjectDetails extends AbstractModel{
+	
 	@Id
-	@Column(name = "ID")
+	@Column(name ="ID")
 	private String id;
-
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "USER_ID")
-	private Users user;
-
-	@Column(name = "JOB_RESPONSIBILITIES")
-	private String jobResponsibilities;
-
-	@Column(name = "PROJECT_DETAILS")
-	private String projectDetails;
-
-	@Column(name = "PROJECT_TITLE")
-	private String projectTitle;
-
+	
 	@ManyToOne
-	@JoinColumn(name = "EMPLOYMENT_TYPE_ID")
+	@JoinColumn(name ="USER_ID")
+	private Users user;
+	
+	@Column(name ="JOB_RESPONSIBILITIES")
+	private String jobResponsibilities;
+	
+	@Column(name ="PROJECT_DETAILS")
+	private String projectDetails;
+	
+	@Column(name ="PROJECT_TITLE")
+	private String projectTitle;
+	
+	@ManyToOne
+	@JoinColumn(name ="EMPLOYMENT_TYPE_ID")
 	private EmploymentType employmentType;
-
-	@Column(name = "CLIENT_NAME")
+	
+	@Column(name ="CLIENT_NAME")
 	private String clientName;
-
-	@Column(name = "TEAM_SIZE")
-	private String teamSize;
-
-	@Column(name = "TECHNOLOGIES_USED")
-	private String technologiesUsed;
-
+	
+	@Column(name ="DURATION_FROM")
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DURATION_FROM")
 	private Date durationFrom;
-
+	
+	@Column(name ="DURATION_TO")
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DURATION_TO")
 	private Date durationTo;
-
-	@Column(name = "CREATED_SID")
-	private String createdSid;
-
-	@Column(name = "CREATED_BY")
-	private String createdBy;
-
-	@Column(name = "CREATED_ON")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createdOn;
-
-	@Column(name = "UPDATED_SID")
-	private String updatedSid;
-
-	@Column(name = "UPDATED_BY")
-	private String updatedBy;
-
-	@Column(name = "UPDATED_ON")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updatedOn;
+	
+	@Column(name ="TEAM_SIZE")
+	private String teamSize;
+	
+	@Column(name ="TECHNOLOGIES_USED")
+	private String technologiesUsed;
 
 	public String getId() {
 		return id;
@@ -133,22 +113,6 @@ public class ProjectDetails extends AbstractModel {
 		this.clientName = clientName;
 	}
 
-	public String getTeamSize() {
-		return teamSize;
-	}
-
-	public void setTeamSize(String teamSize) {
-		this.teamSize = teamSize;
-	}
-
-	public String getTechnologiesUsed() {
-		return technologiesUsed;
-	}
-
-	public void setTechnologiesUsed(String technologiesUsed) {
-		this.technologiesUsed = technologiesUsed;
-	}
-
 	public Date getDurationFrom() {
 		return durationFrom;
 	}
@@ -165,51 +129,23 @@ public class ProjectDetails extends AbstractModel {
 		this.durationTo = durationTo;
 	}
 
-	public String getCreatedSid() {
-		return createdSid;
+	public String getTeamSize() {
+		return teamSize;
 	}
 
-	public void setCreatedSid(String createdSid) {
-		this.createdSid = createdSid;
+	public void setTeamSize(String teamSize) {
+		this.teamSize = teamSize;
 	}
 
-	public String getCreatedBy() {
-		return createdBy;
+	public String getTechnologiesUsed() {
+		return technologiesUsed;
 	}
 
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
+	public void setTechnologiesUsed(String technologiesUsed) {
+		this.technologiesUsed = technologiesUsed;
 	}
+	
+	
 
-	public Date getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(Date createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	public String getUpdatedSid() {
-		return updatedSid;
-	}
-
-	public void setUpdatedSid(String updatedSid) {
-		this.updatedSid = updatedSid;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
-
-	public Date getUpdatedOn() {
-		return updatedOn;
-	}
-
-	public void setUpdatedOn(Date updatedOn) {
-		this.updatedOn = updatedOn;
-	}
+	
 }

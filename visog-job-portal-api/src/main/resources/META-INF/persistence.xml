@@ -32,7 +32,6 @@
 		<class>com.visog.jobportal.model.transaction.EmployerJobseeker</class>
 		<class>com.visog.jobportal.model.transaction.LanguageKnown</class>
 		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
-		<class>com.visog.jobportal.model.transaction.ProjectDetails</class>
 		<class>com.visog.jobportal.model.transaction.ExperienceDetails</class>
 		<class>com.visog.jobportal.model.transaction.JobSeeker</class>
 		<class>com.visog.jobportal.model.transaction.Employer</class>

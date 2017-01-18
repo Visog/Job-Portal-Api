@@ -2,7 +2,6 @@ package com.visog.jobportal.res.transaction;
 
 import java.util.Date;
 
-
 public class ProjectDetailsRes {
 
 	private String id;

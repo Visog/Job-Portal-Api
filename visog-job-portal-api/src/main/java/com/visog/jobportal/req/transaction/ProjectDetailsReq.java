@@ -103,5 +103,7 @@ public class ProjectDetailsReq {
 	public void setTechnologiesUsed(String technologiesUsed) {
 		this.technologiesUsed = technologiesUsed;
 	}
+	
+	
 
 }
