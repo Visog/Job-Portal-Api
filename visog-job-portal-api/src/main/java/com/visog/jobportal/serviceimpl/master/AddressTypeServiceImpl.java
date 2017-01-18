@@ -38,7 +38,7 @@ public class AddressTypeServiceImpl implements AddressTypeService {
 		
 		dao.save(addressType);
 		
-		logger.info("Role created successfully : " + addressType.getId());
+		logger.info("AddressType created successfully : " + addressType.getId());
 		
 	}
 
@@ -51,7 +51,7 @@ public class AddressTypeServiceImpl implements AddressTypeService {
 		addressType.setName(req.getName());
 		addressType.setDescription(req.getDescription());
 		dao.update(addressType);
-		logger.info("Role updated successfully : " + addressType.getId());
+		logger.info("AddressType updated successfully : " + addressType.getId());
 		
 	}
 
