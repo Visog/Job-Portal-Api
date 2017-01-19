@@ -1,0 +1,25 @@
+mysql> GRANT ALL ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.07 sec)
+
+
+mysql>CREATE USER 'james'@'localhost' IDENTIFIED BY 'password';
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>GRANT ALL ON *.* TO 'james'@'localhost' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'system';
+Query OK, 0 rows affected (0.07 sec)
+
+
+
+Remote Access:
+==============
+
+1)Windows Firewall turn off

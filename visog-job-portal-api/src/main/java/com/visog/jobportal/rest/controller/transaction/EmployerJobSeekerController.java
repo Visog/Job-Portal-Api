@@ -15,19 +15,20 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.transaction.EmployerJobseekerReq;
+import com.visog.jobportal.req.transaction.EmployerJobSeekerReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
-import com.visog.jobportal.service.transaction.EmployerJobseekerService;
+import com.visog.jobportal.service.transaction.EmployerJobSeekerService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-public class EmployerJobseekerController {
+public class EmployerJobSeekerController {
 
-	private static final Logger logger = Logger.getLogger(EmployerJobseekerController.class);
+	private static final Logger logger = Logger.getLogger(EmployerJobSeekerController.class);
+	
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private EmployerJobseekerService service;
+	private EmployerJobSeekerService service;
 
 	/**
 	 * This method creates the employerjobseeker
@@ -37,10 +38,10 @@ public class EmployerJobseekerController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/employerjobseeker")
-	public JobPortalResponse createEmployerJobseeker(EmployerJobseekerReq req) {
+	@Path("/employerJobSeeker")
+	public JobPortalResponse createEmployerJobSeeker(EmployerJobSeekerReq req) {
 
-		service.saveEmployerJobseeker(req);
+		service.saveEmployerJobSeeker(req);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
 		jobPortalResponse.setMessage("employerjobseeker saved succcessfully");
@@ -58,11 +59,11 @@ public class EmployerJobseekerController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/employerjobseeker/{employerjobseekerId}")
-	public JobPortalResponse updateEmployerJobseeker(@PathParam("employerjobseekerId") String employerjobseekerId,
-			EmployerJobseekerReq req) {
+	@Path("/employerJobSeeker/{employerJobSeekerId}")
+	public JobPortalResponse updateEmployerJobseeker(@PathParam("employerJobSeekerId") String employerJobSeekerId,
+			EmployerJobSeekerReq req) {
 
-		service.updateEmployerJobseeker(req, employerjobseekerId);
+		service.updateEmployerJobSeeker(req, employerJobSeekerId);
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setMessage("employerjobseeker updated succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
@@ -78,11 +79,11 @@ public class EmployerJobseekerController {
 	 * @return
 	 */
 	@GET
-	@Path("/employerjobseeker")
-	public JobPortalResponse getemployerjobseeker() {
+	@Path("/employerJobSeeker")
+	public JobPortalResponse getemployerJobSeeker() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		jobPortalResponse.setData(service.getEmployerJobseeker());
+		jobPortalResponse.setData(service.getEmployerJobSeeker());
 		jobPortalResponse.setMessage("employerjobseeker fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -96,12 +97,12 @@ public class EmployerJobseekerController {
 	 * @return
 	 */
 	@GET
-	@Path("/employerjobseeker/{employerjobseekerId}")
-	public JobPortalResponse getEmployerJobseeker(@PathParam("employerjobseekerId") String employerjobseekerId) {
+	@Path("/employerJobSeeker/{employerJobSeekerId}")
+	public JobPortalResponse getEmployerJobseeker(@PathParam("employerJobSeekerId") String employerJobSeekerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 
-		jobPortalResponse.setData(service.getEmployerJobseeker(employerjobseekerId));
+		jobPortalResponse.setData(service.getEmployerJobSeeker(employerJobSeekerId));
 		jobPortalResponse.setMessage("employerjobseeker fetched succcessfully");
 		jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 		jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -114,11 +115,11 @@ public class EmployerJobseekerController {
 	 * @return
 	 */
 	@DELETE
-	@Path("/employerjobseeker/{employerjobseekerId}")
-	public JobPortalResponse deleteEmployerJobseeker(@PathParam("employerjobseekerId") String employerjobseekerId) {
+	@Path("/employerJobSeeker/{employerJobSeekerId}")
+	public JobPortalResponse deleteEmployerJobSeeker(@PathParam("employerJobSeekerId") String employerJobSeekerId) {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
-		if (service.deleteEmployerJobseeker(employerjobseekerId)) {
+		if (service.deleteEmployerJobSeeker(employerJobSeekerId)) {
 			jobPortalResponse.setMessage("employerjobseeker deleted succcessfully");
 			jobPortalResponse.setStatus(Status.STATUS_SUCCESS);
 			jobPortalResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

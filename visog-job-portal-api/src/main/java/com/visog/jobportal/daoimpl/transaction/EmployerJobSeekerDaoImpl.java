@@ -3,9 +3,7 @@ package com.visog.jobportal.daoimpl.transaction;
 import java.util.List;
 
 import javax.inject.Singleton;
-import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
@@ -13,14 +11,14 @@ import javax.transaction.Transactional;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.dao.AbstractDao;
-import com.visog.jobportal.dao.transaction.EmployerJobseekerDao;
-import com.visog.jobportal.model.transaction.EmployerJobseeker;
+import com.visog.jobportal.dao.transaction.EmployerJobSeekerDao;
+import com.visog.jobportal.model.transaction.EmployerJobSeeker;
 
 @Singleton
 @Transactional
-public class EmployerJobseekerDaoImpl extends AbstractDao implements EmployerJobseekerDao {
+public class EmployerJobSeekerDaoImpl extends AbstractDao implements EmployerJobSeekerDao {
 
-	private static final Logger logger = Logger.getLogger(EmployerJobseekerDaoImpl.class);
+	private static final Logger logger = Logger.getLogger(EmployerJobSeekerDaoImpl.class);
 
 	/**
 	 * This method returns the EmployerJobseeker data
@@ -28,11 +26,12 @@ public class EmployerJobseekerDaoImpl extends AbstractDao implements EmployerJob
 	 * @Author=ravi
 	 */
 
-	public List<EmployerJobseeker> getEmployerjobseekers() {
-
+	
+	
+	public List<EmployerJobSeeker> getEmployerJobSeeker() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<EmployerJobseeker> q = cb.createQuery(EmployerJobseeker.class);
-		Root<EmployerJobseeker> c = q.from(EmployerJobseeker.class);
+		CriteriaQuery<EmployerJobSeeker> q = cb.createQuery(EmployerJobSeeker.class);
+		Root<EmployerJobSeeker> c = q.from(EmployerJobSeeker.class);
 		q.select(c);
 
 		return em.createQuery(q).getResultList();

@@ -29,7 +29,7 @@
 		<class>com.visog.jobportal.model.transaction.Users</class>
 		<class>com.visog.jobportal.model.transaction.PostJob</class>
 		<class>com.visog.jobportal.model.transaction.Files</class>
-		<class>com.visog.jobportal.model.transaction.EmployerJobseeker</class>
+		<class>com.visog.jobportal.model.transaction.EmployerJobSeeker</class>
 		<class>com.visog.jobportal.model.transaction.LanguageKnown</class>
 		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
 		<class>com.visog.jobportal.model.transaction.ExperienceDetails</class>

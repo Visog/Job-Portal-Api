@@ -1,6 +1,6 @@
 package com.visog.jobportal.req.transaction;
 
-public class EmployerJobseekerReq {
+public class EmployerJobSeekerReq {
 
 	private String employer;
 

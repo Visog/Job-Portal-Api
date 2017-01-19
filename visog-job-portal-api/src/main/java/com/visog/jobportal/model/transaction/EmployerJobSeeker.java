@@ -16,7 +16,7 @@ import com.visog.jobportal.model.master.Status;
 
 @Table(name = "EMPLOYER_JOBSEEKER")
 @Entity
-public class EmployerJobseeker extends AbstractModel {
+public class EmployerJobSeeker extends AbstractModel {
 
 	@Id
 	@Column(name = "ID")
@@ -49,7 +49,16 @@ public class EmployerJobseeker extends AbstractModel {
 
 	@Column(name = "UPDATED_SID")
 	private String updatedSid;
+	
 
+	@Column(name = "UPDATED_BY")
+	private String updatedBy;
+
+	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedOn;
+
+	
 	public String getId() {
 		return id;
 	}
@@ -120,6 +129,21 @@ public class EmployerJobseeker extends AbstractModel {
 
 	public void setUpdatedSid(String updatedSid) {
 		this.updatedSid = updatedSid;
+	}
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
 	}
 
 	

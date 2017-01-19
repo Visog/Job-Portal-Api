@@ -1,6 +1,6 @@
 package com.visog.jobportal.res.transaction;
 
-public class EmployerJobseekerRes {
+public class EmployerJobSeekerRes {
 
 	private String id;
 	

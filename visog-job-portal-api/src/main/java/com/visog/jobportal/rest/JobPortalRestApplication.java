@@ -28,7 +28,7 @@ import com.visog.jobportal.rest.controller.master.UniversityController;
 import com.visog.jobportal.rest.controller.transaction.AddressController;
 import com.visog.jobportal.rest.controller.transaction.EducationDetailsController;
 import com.visog.jobportal.rest.controller.transaction.EmployerController;
-import com.visog.jobportal.rest.controller.transaction.EmployerJobseekerController;
+import com.visog.jobportal.rest.controller.transaction.EmployerJobSeekerController;
 import com.visog.jobportal.rest.controller.transaction.ExperienceDetailsController;
 import com.visog.jobportal.rest.controller.transaction.FilesController;
 import com.visog.jobportal.rest.controller.transaction.JobSeekerController;
@@ -41,18 +41,14 @@ import com.visog.jobportal.rest.controller.transaction.RegistrationAdminControll
 import com.visog.jobportal.rest.controller.transaction.RegistrationEmployerController;
 import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
 
-
-
-
-
 public class JobPortalRestApplication extends Application {
-	
+
 	private Set<Object> singletons = new HashSet<>();
 	private Set<Class<?>> classes = new HashSet<>();
 
 	public JobPortalRestApplication() {
 		classes.add(AdminController.class);
-	/*	classes.add(SuperAdminController.class);*/
+		/* classes.add(SuperAdminController.class); */
 		classes.add(RolesController.class);
 		classes.add(CountryController.class);
 		classes.add(StateController.class);
@@ -77,7 +73,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(RegistrationEmployerController.class);
 		classes.add(PostJobController.class);
 		classes.add(PostJobDomainsController.class);
-		classes.add(EmployerJobseekerController.class);
+		classes.add(EmployerJobSeekerController.class);
 		classes.add(FilesController.class);
 		classes.add(ProjectDetailsController.class);
 		classes.add(ExperienceDetailsController.class);
