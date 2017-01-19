@@ -34,22 +34,23 @@ public class ProjectDetailsServiceImpl implements ProjectDetailsService {
 		ProjectDetails projectDetails = new ProjectDetails();
 
 		Users users = new Users();
-		EmploymentType employmentType = new EmploymentType();
-
 		users.setId(req.getUser());
-		projectDetails.setUser(users);
-
+		
+		EmploymentType employmentType = new EmploymentType();
 		employmentType.setId(req.getEmploymentType());
-		projectDetails.setEmploymentType(employmentType);
-
+	
+		
+		projectDetails.setUser(users);		
 		projectDetails.setJobResponsibilities(req.getJobResponsibilities());
 		projectDetails.setProjectDetails(req.getProjectDetails());
 		projectDetails.setProjectTitle(req.getProjectTitle());
+		projectDetails.setEmploymentType(employmentType);
+		projectDetails.setClientName(req.getClientName());
 		projectDetails.setDurationFrom(req.getDurationFrom());
 		projectDetails.setDurationTo(req.getDurationTo());
 		projectDetails.setTeamSize(req.getTeamSize());
 		projectDetails.setTechnologiesUsed(req.getTechnologiesUsed());
-		projectDetails.setClientName(req.getClientName());
+		
 
 		DaoUtils.setEntityCreateAuditColumns(projectDetails);
 

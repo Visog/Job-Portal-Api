@@ -23,7 +23,7 @@ public class ProjectDetails extends AbstractModel {
 	@Column(name = "ID")
 	private String id;
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	@JoinColumn(name = "USER_ID")
 	private Users user;
 
@@ -172,6 +172,8 @@ public class ProjectDetails extends AbstractModel {
 	public void setCreatedSid(String createdSid) {
 		this.createdSid = createdSid;
 	}
+
+	
 
 	public String getCreatedBy() {
 		return createdBy;

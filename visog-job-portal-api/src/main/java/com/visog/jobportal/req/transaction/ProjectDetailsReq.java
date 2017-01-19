@@ -104,4 +104,5 @@ public class ProjectDetailsReq {
 		this.technologiesUsed = technologiesUsed;
 	}
 
+	
 }
