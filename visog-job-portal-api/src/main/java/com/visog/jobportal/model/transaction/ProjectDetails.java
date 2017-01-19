@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.master.EmploymentType;
 
-@Entity
+@Entity  
 @Table(name = "PROJECT_DETAILS")
 public class ProjectDetails extends AbstractModel {
 
