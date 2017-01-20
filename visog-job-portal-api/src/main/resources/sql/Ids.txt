@@ -7,8 +7,7 @@ Employer ID:  2556718a-37cc-40b4-9465-81ece73a6031
 
 JobSeeker Id: 921366a2-7b19-4d72-ae8e-d17b6cfd1445 
 
-Gender MaleId:   7bfbc802-4d54-4557-ac52-0da63a15c085
-Gender FemaleId: c9117d34-57fc-415b-b7ec-cd50d22bcc64
+	Gender MaleId:   7bfbc802-4d54-4557-ac52-0da63a15c085
 
 	Country Id:	e8ec3af2-916d-4886-bf4e-da9fea4c8da0
 
@@ -22,40 +21,33 @@ Gender FemaleId: c9117d34-57fc-415b-b7ec-cd50d22bcc64
 	
 	Specialization Id: 13631fe0-1935-455f-bd88-ff2d6f96c3c6
 	
+	University Id: 690904e5-23da-4f9f-b2a8-be8b47c86c20
+	
 	EducationType Id: 6c61d72c-86cb-4f13-ad61-29f1e9bb1222
 	
 	Languages Id:  9bcaccc1-b145-4880-b953-0b1957d2d327
 	
+	Currency ID:	63313972-eafb-42c4-8e2d-93c61fc1249f
 	
+	Industry Id:	c587c129-8ee7-47ad-9739-02d28a93b4c1
 	
+	Domains Id: fb20d2e3-7bf4-4944-bb8b-5ddcc0330f38
 	
+	JobRole Id: 7f70a00a-fc29-4d31-969d-140da114a3bf
+	
+	Status ID:	dd61af32-d6d6-453c-a27a-5d390b325553
+	
+	EmploymentType Id: 9b6df0ef-3717-4415-9c83-9c0d020e2e11
+	
+	EmployerType Id: 95685024-65a4-4412-a40b-053264a80270
 
-	Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
-
-3.  Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
-
-4.  IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
-
-8.  Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
+	FileType Id: 584d5f8d-1826-4659-98f8-f076c6477e11
 
 
-11. EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
 
-12. EmploymentType Id: 4da22d65-df02-4978-9db3-9e4ce977b749
 
-13. FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
 
-14. 
-
-15. JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
-
-16. Languages Id: 1b0ade23-20b0-4051-a932-9fc873505e98 
-
-17. Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
-
-18. 
-
-19. University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
+19.
 
 TRANSACTION IDS:
 ===============
