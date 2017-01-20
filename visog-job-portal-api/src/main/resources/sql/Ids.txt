@@ -1,16 +1,29 @@
 MASTER TABLE IDS:
 ====================
-1. Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
+Admin Id :    2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
+
+Employer ID:  2556718a-37cc-40b4-9465-81ece73a6031
+
+JobSeeker Id: 921366a2-7b19-4d72-ae8e-d17b6cfd1445 
+
+Gender MaleId:   7bfbc802-4d54-4557-ac52-0da63a15c085
+Gender FemaleId: c9117d34-57fc-415b-b7ec-cd50d22bcc64
+
+	Country Id:	e8ec3af2-916d-4886-bf4e-da9fea4c8da0
+
+	State Id:	ba48ce35-5796-40e2-843b-5b7003931add
+	
+	City Id:	289639ff-5c19-4e51-b22e-e1df0c1b6d14
 
 2. Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
 
-3. CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
+3.  Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
 
-4. StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
+4. 
 
 5. AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
 
-6. city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
+6. 
 
 7. IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
 
@@ -26,7 +39,7 @@ MASTER TABLE IDS:
 
 13. FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
 
-14. Gender Id: 5035c9e4-d429-489f-9528-0470d08675b7
+14. 
 
 15. JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
 
