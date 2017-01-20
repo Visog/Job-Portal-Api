@@ -32,6 +32,7 @@ public class EmployerJobSeekerServiceImpl implements EmployerJobSeekerService {
 	
 	
 		EmployerJobSeeker employerJobSeeker=new EmployerJobSeeker();
+		
 		Users users=new Users();
 		users.setId(req.getEmployer());
 		employerJobSeeker.setEmployer(users);
@@ -101,21 +102,23 @@ public class EmployerJobSeekerServiceImpl implements EmployerJobSeekerService {
 		
 		List<EmployerJobSeeker> employerJobSeekers = dao.getEmployerJobSeeker();
 
-		List<EmployerJobSeekerRes> employerJobseekerList = new ArrayList<>();
+		List<EmployerJobSeekerRes> employerJobSeekerList = new ArrayList<>();
 
 		EmployerJobSeekerRes employerJobseekerRes = null;
 
 		for (EmployerJobSeeker employerJobSeeker:employerJobSeekers) {
 			
 			employerJobseekerRes = new EmployerJobSeekerRes();
+			employerJobseekerRes.setId(employerJobSeeker.getId());
 			employerJobseekerRes.setEmployer(employerJobSeeker.getEmployer().getId());
 			employerJobseekerRes.setJobSeeker(employerJobSeeker.getJobSeeker().getId());
 			employerJobseekerRes.setStatus(employerJobSeeker.getStatus().getId());
 			employerJobseekerRes.setActionDone(employerJobSeeker.getActionDone());
+			employerJobSeekerList.add(employerJobseekerRes);
 			
 
 		}
-		return employerJobseekerList;
+		return employerJobSeekerList;
 	}
 
 

@@ -80,7 +80,7 @@ public class EmployerJobSeekerController {
 	 */
 	@GET
 	@Path("/employerJobSeeker")
-	public JobPortalResponse getemployerJobSeeker() {
+	public JobPortalResponse getEmployerJobSeeker() {
 
 		JobPortalResponse jobPortalResponse = new JobPortalResponse();
 		jobPortalResponse.setData(service.getEmployerJobSeeker());
