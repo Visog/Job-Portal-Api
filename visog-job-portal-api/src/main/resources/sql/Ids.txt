@@ -45,10 +45,6 @@ JobSeeker Id: 921366a2-7b19-4d72-ae8e-d17b6cfd1445
 
 
 
-
-
-19.
-
 TRANSACTION IDS:
 ===============
 
