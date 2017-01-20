@@ -2,7 +2,7 @@ MASTER TABLE IDS:
 ====================
 1. Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
 
-2. Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
+2. Status ID:	dd61af32-d6d6-453c-a27a-5d390b325553 //shiva
 
 3. CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
 
@@ -12,7 +12,7 @@ MASTER TABLE IDS:
 
 6. city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
 
-7. IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
+7. IndustryId:	c587c129-8ee7-47ad-9739-02d28a93b4c1 //shiva
 
 8. CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
 
@@ -20,13 +20,13 @@ MASTER TABLE IDS:
 
 10. EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
 
-11. EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
+11. EmployerType Id:95685024-65a4-4412-a40b-053264a80270 //Shiva
 
-12. EmploymentType Id: 4da22d65-df02-4978-9db3-9e4ce977b749
+12. EmploymentType Id: c538b9c6-f83e-460c-94f6-504cdce249c5 //Shiva
 
 13. FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
 
-14. Gender Id: 5035c9e4-d429-489f-9528-0470d08675b7
+14. Gender Id: 7bfbc802-4d54-4557-ac52-0da63a15c085 //shiva
 
 15. JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
 
@@ -63,9 +63,9 @@ TRANSACTION IDS:
 
 11. PostJobSeeker Id:a8c355eb-6e55-4d0a-a6ef-d28e26ace38d
 
-12. ProjectDetails Id: 
+12. ProjectDetails Id: 9b10e880-9773-418e-a678-c0fd4b9b9f5b //Shiva
 
-13. Users Id: 17e18247-6976-40b2-8ad2-7fedff138047
+13. Users Id: 59845867-9e72-4102-84f8-ad2c14aa05f7 //Shiva
 
                            API CALLS
                           ===========
