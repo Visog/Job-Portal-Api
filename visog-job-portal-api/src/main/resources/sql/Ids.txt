@@ -15,24 +15,29 @@ Gender FemaleId: c9117d34-57fc-415b-b7ec-cd50d22bcc64
 	State Id:	ba48ce35-5796-40e2-843b-5b7003931add
 	
 	City Id:	289639ff-5c19-4e51-b22e-e1df0c1b6d14
+	
+	AddressType Id:	49751b51-9f7f-4f0a-afb9-8aed7534d73d
+	
+	Courses Id: fa7714f8-6709-4df2-8b0b-807d2d72147e
+	
+	Specialization Id: 13631fe0-1935-455f-bd88-ff2d6f96c3c6
+	
+	EducationType Id: 6c61d72c-86cb-4f13-ad61-29f1e9bb1222
+	
+	Languages Id:  9bcaccc1-b145-4880-b953-0b1957d2d327
+	
+	
+	
+	
 
-2. Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
+	Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
 
 3.  Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
 
-4. 
+4.  IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
 
-5. AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+8.  Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
 
-6. 
-
-7. IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
-
-8. CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
-
-9. Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
-
-10. EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
 
 11. EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
 
@@ -48,7 +53,7 @@ Gender FemaleId: c9117d34-57fc-415b-b7ec-cd50d22bcc64
 
 17. Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
 
-18. Specialization Id: ca26e62f-17e2-4d4c-a0b5-08486b2cd284
+18. 
 
 19. University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
 
