@@ -30,7 +30,8 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 	RegistrationJobSeekerDao dao;
 	
 	@Inject
-	AppRoleId dao1;
+	AppRoleId appRoleIdDao;
+	
 
 	/**
 	 * @author Divya
@@ -49,7 +50,7 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
 		Roles role = new Roles();
-		role.setId(AppConstants.jobSeekerRoleId);
+		role.setId(appRoleIdDao.getJobSeekerRoleId().getId());
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
@@ -100,7 +101,7 @@ public class RegistrationJobSeekerServiceImpl implements RegistrationJobSeekerSe
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
 			Roles role = new Roles();
-			role.setId(AppConstants.jobSeekerRoleId);
+			role.setId(appRoleIdDao.getJobSeekerRoleId().getId());
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());

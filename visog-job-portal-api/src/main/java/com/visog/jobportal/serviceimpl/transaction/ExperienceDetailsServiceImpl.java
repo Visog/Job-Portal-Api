@@ -21,6 +21,7 @@ import com.visog.jobportal.utils.DaoUtils;
  *
  */
 public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
+	
 	private static final Logger logger = Logger.getLogger(ExperienceDetailsServiceImpl.class);
 
 	@Inject
@@ -59,6 +60,7 @@ public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
 	 */
 
 	public ExperienceDetailsRes getexperienceDetails(String id) {
+		
 		ExperienceDetails experienceDetails = (ExperienceDetails) dao.getByKey(ExperienceDetails.class, id);
 
 		ExperienceDetailsRes experienceDetailsRes = new ExperienceDetailsRes();
@@ -71,7 +73,6 @@ public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
 		experienceDetailsRes.setDurationTo(experienceDetails.getDurationTo());
 		experienceDetailsRes.setJobProfile(experienceDetails.getJobProfile());
 		experienceDetailsRes.setDesignation(experienceDetails.getDesignation());
-		
 		
 		return experienceDetailsRes;
 	}
@@ -132,9 +133,12 @@ public class ExperienceDetailsServiceImpl implements ExperienceDetailsService {
 			experienceDetailsRes.setDurationTo(experienceDetail.getDurationTo());
 			experienceDetailsRes.setJobProfile(experienceDetail.getJobProfile());
 			experienceDetailsRes.setDesignation(experienceDetail.getDesignation());
-			experienceDetailsList.add(experienceDetailsRes);
-			
+			experienceDetailsList
+			.add(experienceDetailsRes);
+			logger.info("experienceDetails get data : " + experienceDetail.getId());
 		}
+	
+
 		return experienceDetailsList;
 	}
 

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.AppConstants;
+import com.visog.jobportal.dao.transaction.AppRoleId;
 import com.visog.jobportal.dao.transaction.RegistrationAdminDao;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
@@ -28,6 +29,8 @@ public class RegistrationAdminServiceImpl implements RegistrationAdminService {
 	@Inject
 	RegistrationAdminDao dao;
 
+	@Inject
+	AppRoleId appRoleIdDao;
 	/**
 	 * @author Divya
 	 * 
@@ -43,7 +46,8 @@ public class RegistrationAdminServiceImpl implements RegistrationAdminService {
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
 		Roles role = new Roles();
-		role.setId(AppConstants.adminRoleId);
+		role.setId(appRoleIdDao.getAdminRoleId().getId());
+		logger.info("AdminRoleName IDS Successfull :" + appRoleIdDao.getAdminRoleId().getId());
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
@@ -93,7 +97,8 @@ public class RegistrationAdminServiceImpl implements RegistrationAdminService {
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
 			Roles role = new Roles();
-			role.setId(AppConstants.adminRoleId);
+			role.setId(appRoleIdDao.getAdminRoleId().getId());
+			logger.info("AdminRoleName IDS Successfull :" + appRoleIdDao.getAdminRoleId().getId());
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());
