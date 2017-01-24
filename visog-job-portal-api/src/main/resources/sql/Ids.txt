@@ -1,42 +1,49 @@
+
 MASTER TABLE IDS:
 ====================
-1. Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
+Admin Id :    2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
 
-2. Status ID:	ccd87f97-d148-4ca8-a42d-fb2a14b66b66
+Employer ID:  2556718a-37cc-40b4-9465-81ece73a6031
 
-3. CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
+JobSeeker Id: 921366a2-7b19-4d72-ae8e-d17b6cfd1445 
 
-4. StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
+	Gender MaleId:   7bfbc802-4d54-4557-ac52-0da63a15c085
 
-5. AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+	Country Id:	e8ec3af2-916d-4886-bf4e-da9fea4c8da0
 
-6. city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
+	State Id:	ba48ce35-5796-40e2-843b-5b7003931add
+	
+	City Id:	289639ff-5c19-4e51-b22e-e1df0c1b6d14
+	
+	AddressType Id:	49751b51-9f7f-4f0a-afb9-8aed7534d73d
+	
+	Courses Id: fa7714f8-6709-4df2-8b0b-807d2d72147e
+	
+	Specialization Id: 13631fe0-1935-455f-bd88-ff2d6f96c3c6
+	
+	University Id: 690904e5-23da-4f9f-b2a8-be8b47c86c20
+	
+	EducationType Id: 6c61d72c-86cb-4f13-ad61-29f1e9bb1222
+	
+	Languages Id:  9bcaccc1-b145-4880-b953-0b1957d2d327
+	
+	Currency ID:	63313972-eafb-42c4-8e2d-93c61fc1249f
+	
+	Industry Id:	c587c129-8ee7-47ad-9739-02d28a93b4c1
+	
+	Domains Id: fb20d2e3-7bf4-4944-bb8b-5ddcc0330f38
+	
+	JobRole Id: 7f70a00a-fc29-4d31-969d-140da114a3bf
+	
+	Status ID:	dd61af32-d6d6-453c-a27a-5d390b325553
+	
+	EmploymentType Id: 9b6df0ef-3717-4415-9c83-9c0d020e2e11
+	
+	EmployerType Id: 95685024-65a4-4412-a40b-053264a80270
 
-7. IndustryId:	13b197fc-7227-4115-87ff-365b5c23f6c7
+	FileType Id: 584d5f8d-1826-4659-98f8-f076c6477e11
 
-8. CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
 
-9. Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
-
-10. EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
-
-11. EmployerType Id: e27c5520-138d-4917-92e0-dc5698319434
-
-12. EmploymentType Id: 4da22d65-df02-4978-9db3-9e4ce977b749
-
-13. FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
-
-14. Gender Id: 5035c9e4-d429-489f-9528-0470d08675b7
-
-15. JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
-
-16. Languages Id: 1b0ade23-20b0-4051-a932-9fc873505e98 
-
-17. Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
-
-18. Specialization Id: ca26e62f-17e2-4d4c-a0b5-08486b2cd284
-
-19. University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
 
 TRANSACTION IDS:
 ===============
@@ -237,3 +244,244 @@ TRANSACTION IDS:
 	
 	
 
+=======
+MASTER TABLE IDS:
+====================  
+1. Currency ID:	95b6c4eb-834d-4124-ac69-1fda6919b431
+
+2. Status ID:	dd61af32-d6d6-453c-a27a-5d390b325553 //shiva
+
+3. CountryId:	3605b052-6b79-4d8c-b907-977b1928fa2d
+
+4. StateId:	30f59d17-f4cd-4522-8f09-5a926d68d02c
+
+5. AddressType Id:	1d355a67-4ce8-4d6b-880c-226c7afe5562
+
+6. city Id:	b8ca1f37-cd39-4d0d-81eb-6bebe280b728
+
+7. IndustryId:	c587c129-8ee7-47ad-9739-02d28a93b4c1 //shiva
+
+8. CoursesId: ee9b3898-8845-4baf-92ff-99dab724cc6f
+
+9. Domains Id: cde5b090-6cae-45b7-92d3-570e2e305e83
+
+10. EducationType Id: 7d20e205-e8d7-4d61-ae4e-55a53db84d61
+
+11. EmployerType Id:95685024-65a4-4412-a40b-053264a80270 //Shiva
+
+12. EmploymentType Id: c538b9c6-f83e-460c-94f6-504cdce249c5 //Shiva
+
+13. FileType Id: d9bb1b3d-eee6-4548-8c04-238c75050438
+
+14. Gender Id: 7bfbc802-4d54-4557-ac52-0da63a15c085 //shiva
+
+15. JobRole Id: b27efddc-c0ee-4d70-b768-303e833eb127
+
+16. Languages Id: 1b0ade23-20b0-4051-a932-9fc873505e98 
+
+17. Roles Id: 2282c3f0-ad28-49d5-a6d0-6e06e80ce8ac
+
+18. Specialization Id: ca26e62f-17e2-4d4c-a0b5-08486b2cd284
+
+19. University Id: cb3ed7d5-8e65-4cec-9bef-310dbd97c61a
+
+TRANSACTION IDS:
+===============
+
+1. Address Id: 1e839079-a6db-448b-8ba8-07c6fce5e3ff
+
+2. EducationDetails Id:655023cb-29b8-4d84-953e-90c444ceb578
+
+3. Employer Id:	58d9a6b0-1317-4d11-84b1-363131540208
+
+4. EmployerJobseeker Id:
+
+5. ExperienceDetails Id: 0a722ea2-e6ae-4661-a3fa-73a9cbf18585
+
+6. Files Id: 0841a808-6643-4834-b77b-6c4f8ac347ee
+
+7. JobSeeker Id:477be02b-50e5-4a7b-aed0-db127fc5feeb
+
+8. LanguageKnown Id:e0a7fb64-5e64-4c12-b89e-12f51ef463f7
+
+9. PostJob Id:59efd9ce-e18e-4976-b68c-93dac3af44de
+
+10. PostJobDomains Id:36d563d7-a08a-46da-ac56-e9614a3de17b
+
+11. PostJobSeeker Id:a8c355eb-6e55-4d0a-a6ef-d28e26ace38d
+
+12. ProjectDetails Id: 9b10e880-9773-418e-a678-c0fd4b9b9f5b //Shiva
+
+13. Users Id: 59845867-9e72-4102-84f8-ad2c14aa05f7 //Shiva
+
+                           API CALLS
+                          ===========
+ 1. Address Api CALLS:
+ =================== 
+ { 
+		"addressLine1":"",
+		"addressLine2":"",
+		"country":"3605b052-6b79-4d8c-b907-977b1928fa2d",
+		"state":"30f59d17-f4cd-4522-8f09-5a926d68d02c",
+		"city":"b8ca1f37-cd39-4d0d-81eb-6bebe280b728",
+		"zipcode":"",
+		"asscoiatedType":"",
+		"associated":"",
+		"addressType":"1d355a67-4ce8-4d6b-880c-226c7afe5562"
+ }
+
+ 2. EducationDetails Api CALLS:
+ ============================
+ {
+		"user" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"courses" : "ee9b3898-8845-4baf-92ff-99dab724cc6f",
+		"educationType" : "7d20e205-e8d7-4d61-ae4e-55a53db84d61",
+		"specialization" : "ca26e62f-17e2-4d4c-a0b5-08486b2cd284",
+		"university" : "cb3ed7d5-8e65-4cec-9bef-310dbd97c61a",
+		"durationFromDate" : "2001-06-30",
+		"durationToDate" : "2005-08-10"
+}
+ 3. Employer API CALLS:
+ =======================
+ {
+		"user" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"industry" : "13b197fc-7227-4115-87ff-365b5c23f6c7",
+		"employerType" : "e27c5520-138d-4917-92e0-dc5698319434",
+		"premiumEmployer"  : "1",
+		"companyName" : "visogglobal",
+		"registeredDate" : "2016-10-10",
+		"registrationNumber": "112244",
+		"cin" : "0JGJ99"
+}
+ 4.EmployerJobseeker API CALLS:
+ ==============================
+{  
+		"employer" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"jobSeeker" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"status" : "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+		"actionDone" : "employer"
+}
+ 5.ExperienceDetails:
+ ======================
+{
+	"user": "17e18247-6976-40b2-8ad2-7fedff138047",
+    "companyName": "developerHHHHHmvnbmvnbm",
+    "employmentType": "4da22d65-df02-4978-9db3-9e4ce977b749",
+    "durationFrom": 1486060200000,
+    "durationTo": 1486578600000,
+    "designation": "HHHHHpickalifmmn mnme",
+    "jobProfile": "tlnmgfgnm"
+ 
+}
+ 
+6. Files API CALLS
+================
+{
+		"filepath" :"c/folderA/",
+	    "filetype":"111",
+	    "associatedtype":"JOBPOST",
+	    "associatedId":"1112"
+}
+ 
+ 7.JobSeeker Api CALLS:
+=====================
+{
+  
+		"resumeHeadline":"Java Developer with 6+ Years of Experience",
+		"domain":"cde5b090-6cae-45b7-92d3-570e2e305e83",
+		"companyName":"Visog Global It Solutions",
+		"user":"17e18247-6976-40b2-8ad2-7fedff138047",
+		"keySkills":"SpringsSSSS",
+		"workExperienceYears":"03",
+		"workExperienceMonths":"02",
+		"hobbiesAndInterest":"CodingS",
+		"jobRole":"b27efddc-c0ee-4d70-b768-303e833eb127",
+		"otherJobRole":"FrontEnd",
+		"industry":"13b197fc-7227-4115-87ff-365b5c23f6c7",
+		"profileSummary":"jipakChapak",
+		"employmentType":"4da22d65-df02-4978-9db3-9e4ce977b749"
+     
+}
+
+8.LanguageKnown API:
+=================
+{  
+		"user" : "17e18247-6976-40b2-8ad2-7fedff138047",
+		"language" : "1b0ade23-20b0-4051-a932-9fc873505e98 ",
+		"read" : "true",
+		"write" : "true",
+		"speak" : "true",
+		"proficencylevel" : "5"
+}
+
+9.PostJob api calls:
+ ================
+{ 	
+		"user": "17e18247-6976-40b2-8ad2-7fedff138047",
+		"jobTitle": "Employer",
+		"jobDescription": "developer",
+		"annualPackageFrom": 10000,
+		"annualPackageTo": 150000,
+		"currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+		"company": "Google",
+		"effectedDateFrom": 1484111756000,
+		"effectedDateTo": 1418342400000,
+		"status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+		"minExperience": 2,
+		"phoneNo": "8297359059",
+		"walkIn": null				
+}
+ 
+ 10. PostJobDomains API CALLS:
+ ===============================
+ { 
+		"postJob": "59efd9ce-e18e-4976-b68c-93dac3af44de",
+		"domain": "cde5b090-6cae-45b7-92d3-570e2e305e83"
+ }
+ 11. PostJobSeeker API CALLS:
+ ===============================
+ {
+ 		"jobSeeker": "17e18247-6976-40b2-8ad2-7fedff138047",
+		"employer": "17e18247-6976-40b2-8ad2-7fedff138047",
+		"postJob": "59efd9ce-e18e-4976-b68c-93dac3af44de",
+		"status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66"
+ }
+ 
+ 12.ProjectDetails Api CALLS
+==========================
+
+{
+		"user":" 17e18247-6976-40b2-8ad2-7fedff138047",
+		"jobResponsibilities":"developer",
+		"projectDetails":"Springs",
+		"projectTitle":"Jobportal",
+		"employmentType":"4da22d65-df02-4978-9db3-9e4ce977b749",
+		"clientName":"pickalife",
+		"durationFrom":"2004-01-01",
+		"durationTo":"2006-12-12",
+		"teamSize":"4",
+		"technologiesUsed":"TEAM LEADER"
+
+}	
+ 
+13.Registration form api calls for all:
+=======================================
+ { 
+		"firstName": "raghava",
+		"middleName": "jugfjhg",
+		"lastName": "tadikonda",
+		"email": "visogdevelope45s2@gmail.com",
+		"alternativeEmail": "visog2@gmail.com",
+		"gender": "7cd4a73e-2911-4a09-8f20-34461cd14ba3",
+		"dob": "1980-08-17",
+		"password": "vghghgh",
+		"phone": "82935643745",
+		"landline": "04013236444" 
+ }
+ 
+ 
+ 
+	
+	
+
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
