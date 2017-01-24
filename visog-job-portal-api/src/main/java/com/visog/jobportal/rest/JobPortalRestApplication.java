@@ -6,6 +6,22 @@ import java.util.Set;
 import javax.ws.rs.core.Application;
 
 import com.visog.jobportal.rest.controller.AdminController;
+import com.visog.jobportal.rest.controller.admin.RegistrationAdminController;
+import com.visog.jobportal.rest.controller.common.AddressController;
+import com.visog.jobportal.rest.controller.common.EmployerJobSeekerController;
+import com.visog.jobportal.rest.controller.common.FilesController;
+import com.visog.jobportal.rest.controller.common.LoginController;
+import com.visog.jobportal.rest.controller.employer.EmployerController;
+import com.visog.jobportal.rest.controller.employer.PostJobController;
+import com.visog.jobportal.rest.controller.employer.PostJobDomainsController;
+import com.visog.jobportal.rest.controller.employer.RegistrationEmployerController;
+import com.visog.jobportal.rest.controller.jobseeker.EducationDetailsController;
+import com.visog.jobportal.rest.controller.jobseeker.ExperienceDetailsController;
+import com.visog.jobportal.rest.controller.jobseeker.JobSeekerController;
+import com.visog.jobportal.rest.controller.jobseeker.LanguageKnownController;
+import com.visog.jobportal.rest.controller.jobseeker.PostJobSeekerController;
+import com.visog.jobportal.rest.controller.jobseeker.ProjectDetailsController;
+import com.visog.jobportal.rest.controller.jobseeker.RegistrationJobSeekerController;
 import com.visog.jobportal.rest.controller.master.AddressTypeController;
 import com.visog.jobportal.rest.controller.master.CityController;
 import com.visog.jobportal.rest.controller.master.CountryController;
@@ -25,22 +41,6 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
-import com.visog.jobportal.rest.controller.transaction.AddressController;
-import com.visog.jobportal.rest.controller.transaction.EducationDetailsController;
-import com.visog.jobportal.rest.controller.transaction.EmployerController;
-import com.visog.jobportal.rest.controller.transaction.EmployerJobSeekerController;
-import com.visog.jobportal.rest.controller.transaction.ExperienceDetailsController;
-import com.visog.jobportal.rest.controller.transaction.FilesController;
-import com.visog.jobportal.rest.controller.transaction.JobSeekerController;
-import com.visog.jobportal.rest.controller.transaction.LanguageKnownController;
-import com.visog.jobportal.rest.controller.transaction.PostJobController;
-import com.visog.jobportal.rest.controller.transaction.PostJobDomainsController;
-import com.visog.jobportal.rest.controller.transaction.PostJobSeekerController;
-import com.visog.jobportal.rest.controller.transaction.ProjectDetailsController;
-import com.visog.jobportal.rest.controller.transaction.RegistrationAdminController;
-import com.visog.jobportal.rest.controller.transaction.RegistrationEmployerController;
-import com.visog.jobportal.rest.controller.transaction.RegistrationJobSeekerController;
-
 public class JobPortalRestApplication extends Application {
 
 	private Set<Object> singletons = new HashSet<>();
@@ -84,6 +84,7 @@ public class JobPortalRestApplication extends Application {
 		classes.add(JobSeekerController.class);
 		classes.add(RegistrationAdminController.class);
 		classes.add(EducationDetailsController.class);
+		classes.add(LoginController.class);
 	}
 
 	public Set<Object> getSingletons() {

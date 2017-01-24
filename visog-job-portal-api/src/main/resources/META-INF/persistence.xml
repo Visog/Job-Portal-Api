@@ -26,19 +26,11 @@
 		<class>com.visog.jobportal.model.master.EmploymentType</class>
 		<class>com.visog.jobportal.model.master.FileType</class>
 		<class>com.visog.jobportal.model.master.EmployerType</class>
-		<class>com.visog.jobportal.model.transaction.Users</class>
-		<class>com.visog.jobportal.model.transaction.PostJob</class>
-		<class>com.visog.jobportal.model.transaction.Files</class>
-		<class>com.visog.jobportal.model.transaction.EmployerJobSeeker</class>
-		<class>com.visog.jobportal.model.transaction.LanguageKnown</class>
-		<class>com.visog.jobportal.model.transaction.PostJobDomains</class>
-		<class>com.visog.jobportal.model.transaction.ProjectDetails</class>
-		<class>com.visog.jobportal.model.transaction.ExperienceDetails</class>
-		<class>com.visog.jobportal.model.transaction.JobSeeker</class>
-		<class>com.visog.jobportal.model.transaction.Employer</class>
-		<class>com.visog.jobportal.model.transaction.EducationDetails</class>
-		<class>com.visog.jobportal.model.transaction.PostJobSeeker</class>
-		 <class>com.visog.jobportal.model.transaction.Address</class> 
+		<class>com.visog.jobportal.model.common.Users</class>
+		<class>com.visog.jobportal.model.common.Files</class>
+		<class>com.visog.jobportal.model.common.EmployerJobSeeker</class>
+		<class>com.visog.jobportal.model.common.PostJobSeeker</class>
+		 <class>com.visog.jobportal.model.common.Address</class> 
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 
 		<exclude-unlisted-classes />
