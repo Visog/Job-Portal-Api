@@ -55,29 +55,31 @@ Reg Employer Id:  9a0f6449-d0c4-4c21-8817-c6307ea3b93e
 
 1. Address Id: c47e14a3-d96f-4866-bea1-f4773b403dbe
 
-2. EducationDetails Id:655023cb-29b8-4d84-953e-90c444ceb578
+   Employer Id:	ed1bc128-b166-476d-aac5-7894ea11e17c
+   
+   PostJob Id:  eafb14c5-f085-4692-a402-e69a0088f2bb
+   
+   PostJobDomains Id:36d563d7-a08a-46da-ac56-e9614a3de17b
+   
+   Files Id: 0841a808-6643-4834-b77b-6c4f8ac347ee
+   
+   EmployerJobseeker Id:  
+   
+   PostJobSeeker Id:a8c355eb-6e55-4d0a-a6ef-d28e26ace38d
+   
+   JobSeeker Id:477be02b-50e5-4a7b-aed0-db127fc5feeb
+   
+   EducationDetails Id:655023cb-29b8-4d84-953e-90c444ceb578
 
-3. Employer Id:	58d9a6b0-1317-4d11-84b1-363131540208
+   LanguageKnown Id:e0a7fb64-5e64-4c12-b89e-12f51ef463f7
 
-4. EmployerJobseeker Id:
+   ProjectDetails Id: 
 
-5. ExperienceDetails Id: 0a722ea2-e6ae-4661-a3fa-73a9cbf18585
+   ExperienceDetails Id: 0a722ea2-e6ae-4661-a3fa-73a9cbf18585
 
-6. Files Id: 0841a808-6643-4834-b77b-6c4f8ac347ee
 
-7. JobSeeker Id:477be02b-50e5-4a7b-aed0-db127fc5feeb
 
-8. LanguageKnown Id:e0a7fb64-5e64-4c12-b89e-12f51ef463f7
-
-9. PostJob Id:59efd9ce-e18e-4976-b68c-93dac3af44de
-
-10. PostJobDomains Id:36d563d7-a08a-46da-ac56-e9614a3de17b
-
-11. PostJobSeeker Id:a8c355eb-6e55-4d0a-a6ef-d28e26ace38d
-
-12. ProjectDetails Id: 
-
-13. Users Id: 17e18247-6976-40b2-8ad2-7fedff138047
+ Users Id: 17e18247-6976-40b2-8ad2-7fedff138047
 
                            API CALLS
                           ===========

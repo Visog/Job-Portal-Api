@@ -581,14 +581,14 @@ ex url : /employer/details
 method : POST
 data : 
 
-		"USER" : "101",
-		"INDUSTRY" : "098",
-		"EMPLOYER_TYPE" : "099",
-		"PREMIUM_EMPLOYER"  : "1"
-		"COMPANY_NAME" : "visog global",
-		"REGISTERED_DATE" : "10-10-2016",
-		"REGISTRATION_NUMBER": "112244",
-		"CIN" : "0JGJ99"
+		"user" : "9a0f6449-d0c4-4c21-8817-c6307ea3b93e",
+		"industry" : "c587c129-8ee7-47ad-9739-02d28a93b4c1",
+		"employerType" : "95685024-65a4-4412-a40b-053264a80270",
+		"premiumEmployer"  : "1",
+		"companyName" : "visog global",
+		"registeredDate" : "2016-10-10",
+		"registrationNumber": "112244",
+		"cin" : "0JGJ99"
 
 response : 
 
@@ -704,15 +704,9 @@ response :
 	
 } 
 
- 
-
-*/
 
 
 
-
-
-/*
 1. Create POST_JOB
 =====================================
 url : /employer/post_job
@@ -867,10 +861,8 @@ response :
 	
 	} 
 
-*/
 
-
-/*
+	
 1. Create POST_JOB_DOMAINS
 =====================================
 url : /employer/post_job_domains
@@ -879,8 +871,8 @@ method : POST
 data : 
 
 {
-		  "POST_JOB" : "1212", 
-		  "DOMAIN" : "1212", 
+	      "postJob" : "eafb14c5-f085-4692-a402-e69a0088f2bb", 
+		  "domain" : "fb20d2e3-7bf4-4944-bb8b-5ddcc0330f38" 
 }
 
 response : 
@@ -981,11 +973,9 @@ response :
 	
 } 
 
-*/
 
 
 
-/*
 
 1. Create FILES
 =====================================
@@ -1106,10 +1096,8 @@ response :
 } 
 
 
-*/
 
 
-/*
 1. Create EMPLOYER_JOBSEEKER
 =====================================
 url : /transaction/employer_jobseeker
@@ -1118,10 +1106,10 @@ method : POST
 data : 
 
 		{
-					"EMPLOYER" : "141",
-					"JOB_SEEKER" : "101",
-					"STATUS" : "ACTIVE"
-					"ACTION_DONE_BY" : "employer"
+					"employer" : "ed1bc128-b166-476d-aac5-7894ea11e17c",
+					"jobSeeker" : "921366a2-7b19-4d72-ae8e-d17b6cfd1445 ",
+					"status" : "ACTIVE",
+					"actionDone" : "employer"
 		}
 
 response : 
