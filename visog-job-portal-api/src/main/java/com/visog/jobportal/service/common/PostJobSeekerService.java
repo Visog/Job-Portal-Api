@@ -3,8 +3,8 @@ package com.visog.jobportal.service.common;
 import java.util.List;
 
 import com.visog.jobportal.req.common.PostJobSeekerReq;
-import com.visog.jobportal.res.transaction.JobSeekerRes;
-import com.visog.jobportal.res.transaction.PostJobSeekerRes;
+import com.visog.jobportal.res.common.JobSeekerRes;
+import com.visog.jobportal.res.common.PostJobSeekerRes;
 
 public interface PostJobSeekerService {
 

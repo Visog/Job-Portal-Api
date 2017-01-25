@@ -3,7 +3,7 @@ package com.visog.jobportal.service.employer;
 import java.util.List;
 
 import com.visog.jobportal.req.common.UsersReq;
-import com.visog.jobportal.res.transaction.UsersRes;
+import com.visog.jobportal.res.common.UsersRes;
 
 public interface RegistrationEmployerService {
 

@@ -1,4 +1,4 @@
-package com.visog.jobportal.res.transaction;
+package com.visog.jobportal.res.employer;
 
 public class PostJobDomainsRes {
 

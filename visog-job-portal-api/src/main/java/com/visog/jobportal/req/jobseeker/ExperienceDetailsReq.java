@@ -1,4 +1,4 @@
-package com.visog.jobportal.req.common;
+package com.visog.jobportal.req.jobseeker;
 
 import java.util.Date;
 

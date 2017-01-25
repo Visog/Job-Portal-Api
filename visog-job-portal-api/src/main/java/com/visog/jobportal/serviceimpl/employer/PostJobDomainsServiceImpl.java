@@ -11,8 +11,8 @@ import com.visog.jobportal.dao.employer.PostJobDomainsDao;
 import com.visog.jobportal.model.employer.PostJob;
 import com.visog.jobportal.model.employer.PostJobDomains;
 import com.visog.jobportal.model.master.Domains;
-import com.visog.jobportal.req.common.PostJobDomainsReq;
-import com.visog.jobportal.res.transaction.PostJobDomainsRes;
+import com.visog.jobportal.req.employer.PostJobDomainsReq;
+import com.visog.jobportal.res.employer.PostJobDomainsRes;
 import com.visog.jobportal.service.employer.PostJobDomainsService;
 import com.visog.jobportal.utils.DaoUtils;
 

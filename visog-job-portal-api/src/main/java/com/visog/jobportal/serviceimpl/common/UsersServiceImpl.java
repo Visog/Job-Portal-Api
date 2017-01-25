@@ -12,7 +12,7 @@ import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
 import com.visog.jobportal.req.common.UsersReq;
-import com.visog.jobportal.res.transaction.UsersRes;
+import com.visog.jobportal.res.common.UsersRes;
 import com.visog.jobportal.service.common.UserService;
 import com.visog.jobportal.utils.DaoUtils;
 

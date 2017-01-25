@@ -13,7 +13,7 @@ import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.employer.PostJob;
 import com.visog.jobportal.model.master.Status;
 import com.visog.jobportal.req.common.PostJobSeekerReq;
-import com.visog.jobportal.res.transaction.PostJobSeekerRes;
+import com.visog.jobportal.res.common.PostJobSeekerRes;
 import com.visog.jobportal.service.common.PostJobSeekerService;
 import com.visog.jobportal.utils.DaoUtils;
 

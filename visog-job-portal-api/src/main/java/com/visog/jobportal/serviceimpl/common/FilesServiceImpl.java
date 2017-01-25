@@ -11,7 +11,7 @@ import com.visog.jobportal.dao.common.FilesDao;
 import com.visog.jobportal.model.common.Files;
 import com.visog.jobportal.model.master.FileType;
 import com.visog.jobportal.req.common.FilesReq;
-import com.visog.jobportal.res.transaction.FilesRes;
+import com.visog.jobportal.res.common.FilesRes;
 import com.visog.jobportal.service.common.FilesService;
 import com.visog.jobportal.utils.DaoUtils;
 

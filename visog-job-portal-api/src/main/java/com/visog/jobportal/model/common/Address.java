@@ -20,7 +20,7 @@ import com.visog.jobportal.model.master.States;
 
 @Entity
 @Table(name = "ADDRESS")
-public class Address extends AbstractModel {
+public class Address extends AbstractModel{
 
 	@Id
 	@Column(name = "ID")

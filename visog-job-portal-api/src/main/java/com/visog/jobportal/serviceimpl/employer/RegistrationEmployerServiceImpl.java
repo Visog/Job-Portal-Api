@@ -7,13 +7,14 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
+import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.dao.common.AppRoleId;
 import com.visog.jobportal.dao.employer.RegistrationEmployerDao;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
 import com.visog.jobportal.req.common.UsersReq;
-import com.visog.jobportal.res.transaction.UsersRes;
+import com.visog.jobportal.res.common.UsersRes;
 import com.visog.jobportal.service.employer.RegistrationEmployerService;
 import com.visog.jobportal.utils.DaoUtils;
 
@@ -45,7 +46,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 		user.setMiddleName(req.getMiddleName());
 		user.setLastName(req.getLastName());
 		Roles role = new Roles();
-		role.setId(appRoleIdDao.getEmployerRoleId().getId());
+		role.setId(appRoleIdDao.getRoleId(AppConstants.EMPLOYER_NAME).getId());
 		user.setRole(role);
 		user.setEmail(req.getEmail());
 		user.setAlternativeEmail(req.getAlternativeEmail());
@@ -99,7 +100,7 @@ public class RegistrationEmployerServiceImpl implements RegistrationEmployerServ
 			user.setMiddleName(req.getMiddleName());
 			user.setLastName(req.getLastName());
 			Roles role = new Roles();
-			role.setId(appRoleIdDao.getEmployerRoleId().getId());
+			role.setId(appRoleIdDao.getRoleId(AppConstants.EMPLOYER_NAME).getId());
 			user.setRole(role);
 			user.setEmail(req.getEmail());
 			user.setAlternativeEmail(req.getAlternativeEmail());

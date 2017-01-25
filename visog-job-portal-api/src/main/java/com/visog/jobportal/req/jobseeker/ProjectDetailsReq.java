@@ -1,11 +1,8 @@
-package com.visog.jobportal.res.transaction;
+package com.visog.jobportal.req.jobseeker;
 
 import java.util.Date;
 
-
-public class ProjectDetailsRes {
-
-	private String id;
+public class ProjectDetailsReq {
 
 	private String user;
 
@@ -26,14 +23,6 @@ public class ProjectDetailsRes {
 	private String teamSize;
 
 	private String technologiesUsed;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getUser() {
 		return user;
@@ -115,4 +104,5 @@ public class ProjectDetailsRes {
 		this.technologiesUsed = technologiesUsed;
 	}
 
+	
 }

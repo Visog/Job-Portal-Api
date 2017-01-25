@@ -11,8 +11,8 @@ import com.visog.jobportal.dao.jobseeker.ExperienceDetailsDao;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.jobseeker.ExperienceDetails;
 import com.visog.jobportal.model.master.EmploymentType;
-import com.visog.jobportal.req.common.ExperienceDetailsReq;
-import com.visog.jobportal.res.transaction.ExperienceDetailsRes;
+import com.visog.jobportal.req.jobseeker.ExperienceDetailsReq;
+import com.visog.jobportal.res.jobseeker.ExperienceDetailsRes;
 import com.visog.jobportal.service.jobseeeker.ExperienceDetailsService;
 import com.visog.jobportal.utils.DaoUtils;
 /**

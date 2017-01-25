@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.Status;
-import com.visog.jobportal.req.common.EmployerJobSeekerReq;
+import com.visog.jobportal.req.employer.EmployerJobSeekerReq;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.service.common.EmployerJobSeekerService;
 

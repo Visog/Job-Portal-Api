@@ -1,6 +1,6 @@
 package com.visog.jobportal.service.common;
 
-import com.visog.jobportal.res.transaction.UsersRes;
+import com.visog.jobportal.res.common.UsersRes;
 
 public interface LoginService {
 	

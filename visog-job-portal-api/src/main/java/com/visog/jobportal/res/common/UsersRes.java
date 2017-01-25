@@ -1,4 +1,4 @@
-package com.visog.jobportal.res.transaction;
+package com.visog.jobportal.res.common;
 
 import java.util.Date;
 

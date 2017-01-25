@@ -2,8 +2,9 @@ package com.visog.jobportal.service.jobseeeker;
 
 import java.util.List;
 
-import com.visog.jobportal.req.common.JobSeekerReq;
-import com.visog.jobportal.res.transaction.JobSeekerRes;
+import com.visog.jobportal.req.jobseeker.JobSeekerReq;
+import com.visog.jobportal.res.common.JobSeekerRes;
+
 
 
 

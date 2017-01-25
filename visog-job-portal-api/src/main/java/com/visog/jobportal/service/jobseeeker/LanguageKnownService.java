@@ -2,8 +2,9 @@ package com.visog.jobportal.service.jobseeeker;
 
 import java.util.List;
 
-import com.visog.jobportal.req.common.LanguageKnownReq;
-import com.visog.jobportal.res.transaction.LanguageKnownRes;
+import com.visog.jobportal.req.jobseeker.LanguageKnownReq;
+import com.visog.jobportal.res.jobseeker.LanguageKnownRes;
+
 
 public interface LanguageKnownService {
 	

@@ -11,8 +11,8 @@ import com.visog.jobportal.dao.jobseeker.ProjectDetailsDao;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.jobseeker.ProjectDetails;
 import com.visog.jobportal.model.master.EmploymentType;
-import com.visog.jobportal.req.common.ProjectDetailsReq;
-import com.visog.jobportal.res.transaction.ProjectDetailsRes;
+import com.visog.jobportal.req.jobseeker.ProjectDetailsReq;
+import com.visog.jobportal.res.common.ProjectDetailsRes;
 import com.visog.jobportal.service.jobseeeker.ProjectDetailsService;
 import com.visog.jobportal.utils.DaoUtils;
 

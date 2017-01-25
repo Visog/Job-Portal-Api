@@ -14,7 +14,7 @@ import com.visog.jobportal.model.master.City;
 import com.visog.jobportal.model.master.Country;
 import com.visog.jobportal.model.master.States;
 import com.visog.jobportal.req.common.AddressReq;
-import com.visog.jobportal.res.transaction.AddressRes;
+import com.visog.jobportal.res.common.AddressRes;
 import com.visog.jobportal.service.common.AddressService;
 import com.visog.jobportal.utils.DaoUtils;
 

@@ -14,8 +14,8 @@ import com.visog.jobportal.model.master.Courses;
 import com.visog.jobportal.model.master.EducationType;
 import com.visog.jobportal.model.master.Specilization;
 import com.visog.jobportal.model.master.University;
-import com.visog.jobportal.req.common.EducationDetailsReq;
-import com.visog.jobportal.res.transaction.EducationDetailsRes;
+import com.visog.jobportal.req.jobseeker.EducationDetailsReq;
+import com.visog.jobportal.res.jobseeker.EducationDetailsRes;
 import com.visog.jobportal.service.jobseeeker.EducationDetailsService;
 import com.visog.jobportal.utils.DaoUtils;
 

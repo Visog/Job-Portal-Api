@@ -1,4 +1,4 @@
-package com.visog.jobportal.res.transaction;
+package com.visog.jobportal.res.common;
 
 public class FilesRes {
 

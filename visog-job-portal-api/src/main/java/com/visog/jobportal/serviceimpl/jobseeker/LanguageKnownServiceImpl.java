@@ -11,8 +11,8 @@ import com.visog.jobportal.dao.jobseeker.LanguageKnownDao;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.jobseeker.LanguageKnown;
 import com.visog.jobportal.model.master.Languages;
-import com.visog.jobportal.req.common.LanguageKnownReq;
-import com.visog.jobportal.res.transaction.LanguageKnownRes;
+import com.visog.jobportal.req.jobseeker.LanguageKnownReq;
+import com.visog.jobportal.res.jobseeker.LanguageKnownRes;
 import com.visog.jobportal.service.jobseeeker.LanguageKnownService;
 import com.visog.jobportal.utils.DaoUtils;
 

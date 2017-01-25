@@ -1,10 +1,20 @@
-package com.visog.jobportal.res.transaction;
+package com.visog.jobportal.req.jobseeker;
 
 import java.util.Date;
 
-public class EducationDetailsRes {
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-	private String id;
+import com.visog.jobportal.model.common.Users;
+import com.visog.jobportal.model.master.Courses;
+import com.visog.jobportal.model.master.EducationType;
+import com.visog.jobportal.model.master.Specilization;
+import com.visog.jobportal.model.master.University;
+
+public class EducationDetailsReq {
 
 	private String user;
 
@@ -19,14 +29,6 @@ public class EducationDetailsRes {
 	private Date durationFromDate;
 
 	private Date durationToDate;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getUser() {
 		return user;
@@ -83,5 +85,7 @@ public class EducationDetailsRes {
 	public void setDurationToDate(Date durationToDate) {
 		this.durationToDate = durationToDate;
 	}
+			
+			
 
 }

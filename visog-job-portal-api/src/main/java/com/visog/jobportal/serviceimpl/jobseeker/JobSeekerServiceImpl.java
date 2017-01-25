@@ -14,8 +14,8 @@ import com.visog.jobportal.model.master.Domains;
 import com.visog.jobportal.model.master.EmploymentType;
 import com.visog.jobportal.model.master.Industry;
 import com.visog.jobportal.model.master.JobRole;
-import com.visog.jobportal.req.common.JobSeekerReq;
-import com.visog.jobportal.res.transaction.JobSeekerRes;
+import com.visog.jobportal.req.jobseeker.JobSeekerReq;
+import com.visog.jobportal.res.common.JobSeekerRes;
 import com.visog.jobportal.service.jobseeeker.JobSeekerService;
 import com.visog.jobportal.utils.DaoUtils;
 

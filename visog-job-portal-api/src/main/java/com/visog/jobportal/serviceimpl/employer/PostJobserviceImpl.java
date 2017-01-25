@@ -12,8 +12,8 @@ import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.employer.PostJob;
 import com.visog.jobportal.model.master.Currency;
 import com.visog.jobportal.model.master.Status;
-import com.visog.jobportal.req.common.PostJobReq;
-import com.visog.jobportal.res.transaction.PostJobRes;
+import com.visog.jobportal.req.employer.PostJobReq;
+import com.visog.jobportal.res.employer.PostJobRes;
 import com.visog.jobportal.service.employer.PostJobService;
 import com.visog.jobportal.utils.DaoUtils;
 

@@ -2,8 +2,10 @@ package com.visog.jobportal.service.employer;
 
 import java.util.List;
 
-import com.visog.jobportal.req.common.EmployerReq;
-import com.visog.jobportal.res.transaction.EmployerRes;
+import com.visog.jobportal.req.employer.EmployerReq;
+import com.visog.jobportal.res.employer.EmployerRes;
+
+
 
 public interface EmployerService {
 
