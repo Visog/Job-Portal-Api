@@ -27,15 +27,17 @@ import com.visog.jobportal.utils.PropertyUtil;
 @Provider
 public class RestInterceptor implements ContainerRequestFilter, ContainerResponseFilter, ExceptionMapper<Throwable> {
 
-	private static final Logger logger 					= Logger.getLogger(RestInterceptor.class);
+	private static final Logger logger = Logger.getLogger(RestInterceptor.class);
 
 	/**
 	 * This will execute before every call and it just logs the request details
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 		
+		
 		// Get the Request URL
 		String url = context.getUriInfo().getPath();
+	
 
 		// Get the Request body
 		String json = IOUtils.toString(context.getEntityStream());
@@ -52,6 +54,7 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * This will execute after the call response and it just logs the response details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
+		
 		
 	}
 

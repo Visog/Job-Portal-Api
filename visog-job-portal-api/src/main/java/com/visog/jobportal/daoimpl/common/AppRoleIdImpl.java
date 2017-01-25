@@ -36,34 +36,5 @@ public class AppRoleIdImpl extends AbstractDao implements AppRoleId {
 		}
 	}
 
-	/*public Roles getJobSeekerRoleId() {
-		
-		try {
-			CriteriaBuilder cb = em.getCriteriaBuilder();
-			CriteriaQuery<Roles> q = cb.createQuery(Roles.class);
-			Root<Roles> c = q.from(Roles.class);
-			q.where(cb.equal(c.get("name"), AppConstants.JOB_SEEKER_NAME));
-			q.select(c);
-			return em.createQuery(q).getSingleResult();
-			
-		} catch (NoResultException | NonUniqueResultException e) {
-			return null;
-		}
-		
-	}
-
-	public Roles getEmployerRoleId() {
-		try {
-			CriteriaBuilder criteriaBuilder=em.getCriteriaBuilder();
-			CriteriaQuery<Roles> q =criteriaBuilder.createQuery(Roles.class);
-			Root<Roles> c=q.from(Roles.class);
-			q.where(criteriaBuilder.equal(c.get("name"), AppConstants.EMPLOYER_NAME));
-			q.select(c);
-			return em.createQuery(q).getSingleResult();
-		} catch (Exception e) {
-			return null;
-		}
-
-	}*/
-
+	
 }
