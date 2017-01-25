@@ -103,7 +103,7 @@ response :
 */
 
 
-/*
+
 1. Create GENDER
 =====================================
 url : /master/gender
@@ -210,7 +210,7 @@ response :
 */
 
 
-/*
+
 1. Create COUNTRY
 =====================================
 url : /master/country
@@ -319,7 +319,7 @@ response :
 
 
 
-/*
+
 1. Create STATE
 =====================================
 url : /master/state
@@ -425,7 +425,7 @@ response :
 
 
 
-/*
+
 1. Create CITY
 =====================================
 url : /master/city
@@ -534,7 +534,7 @@ response :
 
  
 
-/*
+
 1. Create ADDRESS_TYPE 
 =====================================
 url : /master/addressType
@@ -639,7 +639,7 @@ response :
 
 
 
-/*
+
 1. Create COURSES
 =====================================
 url : /master/courses
@@ -745,7 +745,7 @@ response :
 
 
 
-/*
+
 
 1. Create SPECILIZATION
 =====================================
