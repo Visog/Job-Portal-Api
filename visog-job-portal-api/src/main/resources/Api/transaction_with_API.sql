@@ -425,7 +425,7 @@ response :
 */
 
 
-/*
+
 
 1. Job Seeker ADDRESS
 =====================================
@@ -436,13 +436,13 @@ data :
 
 {  		"addressLine1" : "POLICE BATALEON " ,
 		"addressLine2" : "KONDAPUR",
-		"country":"101" ,
-		"state" :"102" ,
-		"city" :"103" ,
-		"zipcode" : "10001",
+		"country":"e8ec3af2-916d-4886-bf4e-da9fea4c8da0" ,
+		"state" :"ba48ce35-5796-40e2-843b-5b7003931add" ,
+		"city" :"289639ff-5c19-4e51-b22e-e1df0c1b6d14" ,
+		"zipcode" : "50001",
 		"associatedType" : "INTERVIEW LOCATION",
-		"associatedId":"004",
-		"addressType"  : "010"
+		"associated":"004",
+		"addressType"  : "49751b51-9f7f-4f0a-afb9-8aed7534d73d"
 
 }
 
@@ -570,10 +570,10 @@ response :
 
 
 
-*/
 
 
-/*
+
+
 1. Create EMPLOYER
 =====================================
 url : /employer/details
@@ -581,7 +581,14 @@ ex url : /employer/details
 method : POST
 data : 
 
-qas
+		"USER" : "101",
+		"INDUSTRY" : "098",
+		"EMPLOYER_TYPE" : "099",
+		"PREMIUM_EMPLOYER"  : "1"
+		"COMPANY_NAME" : "visog global",
+		"REGISTERED_DATE" : "10-10-2016",
+		"REGISTRATION_NUMBER": "112244",
+		"CIN" : "0JGJ99"
 
 response : 
 
