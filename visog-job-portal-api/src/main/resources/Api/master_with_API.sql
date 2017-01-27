@@ -856,7 +856,6 @@ response :
 
 
 
-/*
 
 1. Create UNIVERSITY
 =====================================
@@ -964,19 +963,11 @@ response :
 
 
 
-/*
+
 
 1. Create EDUCATION_TYPE
-<<<<<<< HEAD
-=====================================
-url : /master/educationtype
-ex url : /master/educationtype
-=======
-==========================
-url : /master/education_type
-ex url : /master/education_type
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
-method : POST
+
+
 data : 
 
 {
@@ -1080,7 +1071,7 @@ response :
 
 
 
-/*
+
 
 1. Create LANGUAGE
 =====================================
@@ -1190,7 +1181,7 @@ response :
 
 
 
-/*
+
 
 1. Create CURRENCY
 =====================================
@@ -1301,7 +1292,7 @@ response :
 
 
 
-/*
+
 
 1. Create INDUSTRY
 =====================================
@@ -1408,7 +1399,7 @@ response :
 */
 
 
-/*
+
 1. Create DOMAINS
 =====================================
 url : /master/domain
@@ -1518,7 +1509,7 @@ response :
 
 
 
-/*
+
 
 
 1. Create JOB_ROLE
@@ -1630,7 +1621,7 @@ response :
 
 
 
-/*
+
 1. Create STATUS
 =====================================
 url : /master/status
@@ -1741,7 +1732,7 @@ response :
 */
 
 
-/*
+
 1. Create EMPLOYMENTTYPE
 =====================================
 url : /master/employmentType/
