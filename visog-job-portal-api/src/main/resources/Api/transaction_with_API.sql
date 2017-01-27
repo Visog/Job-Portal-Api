@@ -1215,7 +1215,7 @@ response :
 
 */
 
-/*
+
 1. Create POSTJOB_SEEKER
 =====================================
 url : /transaction/postjob_seeker
@@ -1224,10 +1224,7 @@ method : POST
 data : 
 
 {
-	 "JOB_SEEKER " : "1234", 
-	 "EMPLOYER " : "134", 
-	 "POST_JOB " : "121DF", 
-	 "STATUS  " : "2323"
+	 
 }
 
 response : 
@@ -1248,10 +1245,10 @@ method : PUT
 data : 
 
 {
-		 "JOB_SEEKER " : "1234", 
-		 "EMPLOYER " : "134", 
-		 "POST_JOB " : "121DF", 
-		 "STATUS  " : "2323"
+	"jobSeeker " : "921366a2-7b19-4d72-ae8e-d17b6cfd1445", 
+	 "employer " : "9a0f6449-d0c4-4c21-8817-c6307ea3b93e", 
+	 "postJob " : "eafb14c5-f085-4692-a402-e69a0088f2bb", 
+	 "status  " : "ba48ce35-5796-40e2-843b-5b7003931add"
 }
 
 response : 
@@ -1333,10 +1330,7 @@ response :
 	
 } 
 
-*/
 
-
-/*
 
 1. Create JOB_SEEKER
 =====================================
@@ -1347,20 +1341,20 @@ data :
 
 { 
 
-		"USER": "1",
-		"RESUME_HEADLINE": "JAVA DEVELOPER RESUME",
-		"DOMAINS": "001",
-		"COMPANY_NAME": "visog global", 
-		"USER": "102",  
-		"KEY_SKILLS": "JSP,SERVLET", 
-		"WORK_EXPERIENCE_YEARS": "01", 
-		"WORK_EXPERIENCE_MONTHS": "08",
-		"HOBBIES_AND_INTEREST": "PLAYING CARROM,", 
-		"JOB_ROLE": "101", 
-		"OTHER_JOB_ROLE": " testing ,documentation", 
-		"INDUSTRY": "101", 
-		"PROFILE_SUMMARY": "JAVA DEVELOPER HAVIBG 2 YEAR OF EXPERIENCE", 
-		"EMPLOYMENT_TYPE": "121", 
+			"resumeHeadline": "JAVA DEVELOPER RESUME",
+		"domain": "fb20d2e3-7bf4-4944-bb8b-5ddcc0330f38",
+		"companyName": "visog global", 
+		"user": "102",  
+		"keySkills": "JSP,SERVLET", 
+		"workExperienceYears": "01", 
+		"workExperienceMonths": "08",
+		"hobbiesAndInterest": "PLAYING CARROM,", 
+		"jobRole": "7f70a00a-fc29-4d31-969d-140da114a3bf", 
+		"otherJobRole": " testing ,documentation", 
+		"industry": "c587c129-8ee7-47ad-9739-02d28a93b4c1", 
+		"profileSummary": "JAVA DEVELOPER HAVIBG 2 YEAR OF EXPERIENCE", 
+		"employmentType": "9b6df0ef-3717-4415-9c83-9c0d020e2e11"
+		
 }
 
 response : 
