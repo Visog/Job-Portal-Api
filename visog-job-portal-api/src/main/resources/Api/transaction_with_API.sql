@@ -1317,7 +1317,7 @@ url : /transaction/postjob_seeker/<POSTJOB_SEEKER_ID>
 ex url : /transaction/postjob_seeker/2
 
 method : DELETE
-data : 
+data : 	
 	
 
 response : 
