@@ -715,19 +715,25 @@ method : POST
 data : 
 
 {
-      "user": "17e18247-6976-40b2-8ad2-7fedff138047",
-      "jobTitle": "Employer",
-      "jobDescription": "developer",
+        "user": "08d344ed-61c6-4b04-8638-76f5eaa111d",
+      "jobTitle": "Employ",
+      "jobDescription": "developer 123 dd",
       "annualPackageFrom": 10000,
       "annualPackageTo": 150000,
-      "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
+      "currency": "9e97fe4d-96b3-434b-9e40-6cd0829b923b",
       "company": "Google",
       "effectedDateFrom": 1355270400000,
       "effectedDateTo": 1418342400000,
-      "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
+      "status": "36de0377-d31af-4d04-98aa-7c21367051df",
       "minExperience": 2,
       "phoneNo": "54645464",
-      "walkIn": null
+      "walkIn": null,
+        "addressLine1": "dfdf1",
+      "addressLine2": "dff2",
+      "country": "a09f00a3-83b1-4452-97f5-a8b1e7fcde46",
+      "state": "9e4a9938-f2eb-4642-994d-46ad00d18d2f",
+      "city": "500f0b24-3e17-4bf3-bed4-fab0687afd01",
+      "zipcode": ""
     }
 
 response : 
@@ -749,20 +755,25 @@ data :
 
 	{
      
-    
-		    "user": "17e18247-6976-40b2-8ad2-7fedff138047",
-		    "jobTitle": "Employer",
-		    "jobDescription": "developer",
-		    "annualPackageFrom": 10000,
-		    "annualPackageTo": 150000,
-		    "currency": "95b6c4eb-834d-4124-ac69-1fda6919b431",
-		    "company": "Google",
-		    "effectedDateFrom": 1355270400000,
-		    "effectedDateTo": 1418342400000,
-		    "status": "ccd87f97-d148-4ca8-a42d-fb2a14b66b66",
-		    "minExperience": 2,
-		    "phoneNo": "8297359059",
-		    "walkIn": null
+       "user": "08d344ed-61c6-4b04-8638-76f5eaa111d",
+      "jobTitle": "Employ",
+      "jobDescription": "developer 123 dd",
+      "annualPackageFrom": 10000,
+      "annualPackageTo": 150000,
+      "currency": "9e97fe4d-96b3-434b-9e40-6cd0829b923b",
+      "company": "Google",
+      "effectedDateFrom": 1355270400000,
+      "effectedDateTo": 1418342400000,
+      "status": "36de0377-d31af-4d04-98aa-7c21367051df",
+      "minExperience": 2,
+      "phoneNo": "54645464",
+      "walkIn": null,
+        "addressLine1": "dfdf1",
+      "addressLine2": "dff2",
+      "country": "a09f00a3-83b1-4452-97f5-a8b1e7fcde46",
+      "state": "9e4a9938-f2eb-4642-994d-46ad00d18d2f",
+      "city": "500f0b24-3e17-4bf3-bed4-fab0687afd01",
+      "zipcode": ""
  
     }
 response : 
