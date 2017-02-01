@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.dao.admin.RegistrationAdminDao;
-import com.visog.jobportal.dao.common.AppRoleId;
+import com.visog.jobportal.dao.common.AppCommons;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.model.master.Gender;
 import com.visog.jobportal.model.master.Roles;
@@ -30,7 +30,7 @@ public class RegistrationAdminServiceImpl implements RegistrationAdminService {
 	RegistrationAdminDao dao;
 
 	@Inject
-	AppRoleId appRoleIdDao;
+	AppCommons appRoleIdDao;
 
 	/**
 	 * @author Divya
