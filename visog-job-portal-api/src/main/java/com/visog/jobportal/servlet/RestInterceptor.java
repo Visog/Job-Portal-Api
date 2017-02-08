@@ -38,18 +38,14 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 		
-<<<<<<< HEAD
 		String path = context.getUriInfo().getPath();
 	String userId=context.getHeaderString("userid");
 	String ContentType=context.getHeaderString("Content-Type");
 		//logger.info( "divya:::"+userId);
 	//	String userId = context.getHeaderString("userId");
-=======
 
 		// Get the Request URL
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		String url = context.getUriInfo().getPath();
-<<<<<<< HEAD
 		logger.info( "userId:::"+userId);
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
@@ -84,15 +80,7 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		context.setEntityStream(IOUtils.toInputStream(json));*/
 	
 
-=======
 
-		logger.info("Request method >>> " + context.getMethod() + "; Requset URI >>> " + url + "; Request Body >>> "
-				+ json + "\n");
-
-		// Re-assign the request body again to the request as we have detached
-		// for logging
-		context.setEntityStream(IOUtils.toInputStream(json));
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 	}
 
 	/**
@@ -100,7 +88,6 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
-<<<<<<< HEAD
 	
 		 logger.info( "Filtering REST Response......................." );
 	//	 String userId = reqContext.getHeaderString("userId");
@@ -115,7 +102,6 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		
 
 	
-=======
 
 		logger.info("Filter Rest Response");
 
@@ -125,7 +111,6 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		resContext.getHeaders().add("Access-Control-Allow-Headers",
 				AppConstants.SERVICE_KEY + ", " + AppConstants.AUTH_TOKEN);
 
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 	}
 
 	/**
