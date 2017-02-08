@@ -14,6 +14,7 @@ import javax.ws.rs.ext.Provider;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.jboss.resteasy.annotations.interception.ServerInterceptor;
 
 import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.constants.Status;
@@ -28,6 +29,7 @@ import com.visog.jobportal.utils.PropertyUtil;
  *
  */
 @Provider
+//@ServerInterceptor
 public class RestInterceptor implements ContainerRequestFilter, ContainerResponseFilter, ExceptionMapper<Throwable> {
 
 	private static final Logger logger = Logger.getLogger(RestInterceptor.class);
@@ -36,10 +38,15 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * This will execute before every call and it just logs the request details
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
+		
+		String path = context.getUriInfo().getPath();
+	String userId=context.getHeaderString("userid");
+	String ContentType=context.getHeaderString("Content-Type");
+		//logger.info( "divya:::"+userId);
+	//	String userId = context.getHeaderString("userId");
 
 		ResponseBuilder responseBuilder = null;
 		Response response = null;
-		String userId =context.getHeaderString("userId");
 		
 		System.out.println("filter() on ServerAuthenticationRequestFilter");
 		
@@ -58,22 +65,28 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		String url = context.getUriInfo().getPath();
 
 		if (context.getRequest().getMethod().equals("OPTIONS")) {
-			context.abortWith(Response.status(Response.Status.OK).build());
-			return;
-
+		logger.info( "userId:::"+userId);
+		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
+		logger.info( "Header:::"+context.getHeaders());
+		logger.info( "url:::"+url );
 		}
-
-		logger.info("Filter Request Path" + url);
-
-		// Get the Request body
+		/*	
 		String json = IOUtils.toString(context.getEntityStream());
 
-		logger.info("Request method >>> " + context.getMethod() + "; Requset URI >>> " + url + "; Request Body >>> "
-				+ json + "\n");
+		logger.info("Request method >>> " + context.getMethod() + 
+				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
+		 
+	
 
-		// Re-assign the request body again to the request as we have detached
-		// for logging
-		context.setEntityStream(IOUtils.toInputStream(json));
+		logger.info("Request method >>> " + context.getMethod() + 
+				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
+		
+		
+		// Re-assign the request body again to the request as we have detached for logging 
+		context.setEntityStream(IOUtils.toInputStream(json));*/
+	
+
+
 	}
 
 	/**
@@ -81,6 +94,20 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
+	
+		 logger.info( "Filtering REST Response......................." );
+	//	 String userId = reqContext.getHeaderString("userId");
+		/* resContext.getHeaders().add( "Access-Control-Allow-Origin", "*" );    // You may further limit certain client IPs with Access-Control-Allow-Origin instead of '*'
+		 resContext.getHeaders().add( "Access-Control-Allow-Credentials", "true" );
+		 resContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
+		 resContext.getHeaders().add( "Access-Control-Allow-Headers",AppConstants.SERVICE_KEY+","+AppConstants.AUTH_TOKEN);
+		 */
+//	String authCredentials = reqContext.getHeaderString(arg0);
+
+		
+		
+
+	
 
 		logger.info("Filter Rest Response");
 

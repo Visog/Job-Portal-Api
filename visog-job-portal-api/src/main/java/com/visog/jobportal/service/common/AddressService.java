@@ -10,6 +10,8 @@ public interface AddressService {
 	public void saveAddress(AddressReq req);
 
 	public void updateAddress(AddressReq req, String addressId);
+	
+	//public void updateByAssociatedAddress(AddressReq req,String addressAssociatedId);
 
 	public List<AddressRes> getAddress();
 
