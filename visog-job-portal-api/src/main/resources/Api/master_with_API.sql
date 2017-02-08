@@ -1617,11 +1617,6 @@ response :
 */
 
 
-
-
-
-
-
 1. Create STATUS
 =====================================
 url : /master/status

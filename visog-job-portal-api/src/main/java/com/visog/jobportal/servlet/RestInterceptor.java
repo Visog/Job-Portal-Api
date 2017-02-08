@@ -8,6 +8,7 @@ import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
@@ -35,18 +36,34 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * This will execute before every call and it just logs the request details
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
-		
 
+		ResponseBuilder responseBuilder = null;
+		Response response = null;
+		String userId =context.getHeaderString("userId");
+		
+		System.out.println("filter() on ServerAuthenticationRequestFilter");
+		
+		userId=context.getUriInfo().getQueryParameters().getFirst("userId");
+		
+		
+		/*if(userId==null || "".equals(userId)){
+			System.out.println("Authencation Filter Failed");
+			responseBuilder =Response.serverError();
+			response =responseBuilder.status(Status.BAD_REQUEST).build();
+			context.abortWith(response);
+		}else {
+			System.out.println("Authentication Filter Passed; UserId is " +userId);
+		}*/
 		// Get the Request URL
 		String url = context.getUriInfo().getPath();
-		
-		if(context.getRequest().getMethod().equals("OPTIONS")){
+
+		if (context.getRequest().getMethod().equals("OPTIONS")) {
 			context.abortWith(Response.status(Response.Status.OK).build());
 			return;
-			
+
 		}
-		
-		logger.info("Filter Request Path"+url);
+
+		logger.info("Filter Request Path" + url);
 
 		// Get the Request body
 		String json = IOUtils.toString(context.getEntityStream());
