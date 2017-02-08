@@ -10,6 +10,7 @@ import com.visog.jobportal.rest.controller.admin.RegistrationAdminController;
 import com.visog.jobportal.rest.controller.common.AddressController;
 import com.visog.jobportal.rest.controller.common.EmployerJobSeekerController;
 import com.visog.jobportal.rest.controller.common.FilesController;
+import com.visog.jobportal.rest.controller.common.ForInterceptorController;
 import com.visog.jobportal.rest.controller.common.LoginController;
 import com.visog.jobportal.rest.controller.employer.EmployerController;
 import com.visog.jobportal.rest.controller.employer.PostJobController;
@@ -41,6 +42,7 @@ import com.visog.jobportal.rest.controller.master.SpecilizationController;
 import com.visog.jobportal.rest.controller.master.StateController;
 import com.visog.jobportal.rest.controller.master.StatusController;
 import com.visog.jobportal.rest.controller.master.UniversityController;
+import com.visog.jobportal.servlet.RestInterceptor;
 public class JobPortalRestApplication extends Application {
 
 	private Set<Object> singletons = new HashSet<>();
@@ -85,6 +87,8 @@ public class JobPortalRestApplication extends Application {
 		classes.add(RegistrationAdminController.class);
 		classes.add(EducationDetailsController.class);
 		classes.add(LoginController.class);
+		classes.add(ForInterceptorController.class);
+		classes.add(RestInterceptor.class);
 	}
 
 	public Set<Object> getSingletons() {

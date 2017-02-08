@@ -13,7 +13,9 @@ import javax.ws.rs.ext.Provider;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.jboss.resteasy.annotations.interception.ServerInterceptor;
 
+import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.constants.Status;
 import com.visog.jobportal.exceptions.JobPortalException;
 import com.visog.jobportal.res.master.JobPortalResponse;
@@ -25,6 +27,7 @@ import com.visog.jobportal.utils.PropertyUtil;
  *
  */
 @Provider
+//@ServerInterceptor
 public class RestInterceptor implements ContainerRequestFilter, ContainerResponseFilter, ExceptionMapper<Throwable> {
 
 	private static final Logger logger = Logger.getLogger(RestInterceptor.class);
@@ -34,9 +37,22 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 		
-		
-		// Get the Request URL
+		String path = context.getUriInfo().getPath();
+	String userId=context.getHeaderString("userid");
+	String ContentType=context.getHeaderString("Content-Type");
+		//logger.info( "divya:::"+userId);
+	//	String userId = context.getHeaderString("userId");
 		String url = context.getUriInfo().getPath();
+		logger.info( "userId:::"+userId);
+		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
+		logger.info( "Header:::"+context.getHeaders());
+		logger.info( "url:::"+url );
+		/*	
+		String json = IOUtils.toString(context.getEntityStream());
+
+		logger.info("Request method >>> " + context.getMethod() + 
+				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
+		 
 	
 
 		// Get the Request body
@@ -47,15 +63,29 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		
 		
 		// Re-assign the request body again to the request as we have detached for logging 
-		context.setEntityStream(IOUtils.toInputStream(json));
+		context.setEntityStream(IOUtils.toInputStream(json));*/
+	
+
 	}
 
 	/**
 	 * This will execute after the call response and it just logs the response details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
+	
+		 logger.info( "Filtering REST Response......................." );
+	//	 String userId = reqContext.getHeaderString("userId");
+		/* resContext.getHeaders().add( "Access-Control-Allow-Origin", "*" );    // You may further limit certain client IPs with Access-Control-Allow-Origin instead of '*'
+		 resContext.getHeaders().add( "Access-Control-Allow-Credentials", "true" );
+		 resContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
+		 resContext.getHeaders().add( "Access-Control-Allow-Headers",AppConstants.SERVICE_KEY+","+AppConstants.AUTH_TOKEN);
+		 */
+//	String authCredentials = reqContext.getHeaderString(arg0);
+
 		
 		
+
+	
 	}
 
 	/**
