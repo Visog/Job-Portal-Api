@@ -23,6 +23,7 @@ import com.visog.jobportal.utils.PropertyUtil;
 
 /**
  * This is the rest interceptor which executes around every API call
+ * 
  * @author sguggilla
  *
  */
@@ -37,12 +38,18 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 		
+<<<<<<< HEAD
 		String path = context.getUriInfo().getPath();
 	String userId=context.getHeaderString("userid");
 	String ContentType=context.getHeaderString("Content-Type");
 		//logger.info( "divya:::"+userId);
 	//	String userId = context.getHeaderString("userId");
+=======
+
+		// Get the Request URL
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 		String url = context.getUriInfo().getPath();
+<<<<<<< HEAD
 		logger.info( "userId:::"+userId);
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
@@ -54,9 +61,20 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
 		 
 	
+=======
+		
+		if(context.getRequest().getMethod().equals("OPTIONS")){
+			context.abortWith(Response.status(Response.Status.OK).build());
+			return;
+			
+		}
+		
+		logger.info("Filter Request Path"+url);
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 
 		// Get the Request body
 		String json = IOUtils.toString(context.getEntityStream());
+<<<<<<< HEAD
 		
 		logger.info("Request method >>> " + context.getMethod() + 
 				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
@@ -66,12 +84,23 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		context.setEntityStream(IOUtils.toInputStream(json));*/
 	
 
+=======
+
+		logger.info("Request method >>> " + context.getMethod() + "; Requset URI >>> " + url + "; Request Body >>> "
+				+ json + "\n");
+
+		// Re-assign the request body again to the request as we have detached
+		// for logging
+		context.setEntityStream(IOUtils.toInputStream(json));
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 	}
 
 	/**
-	 * This will execute after the call response and it just logs the response details
+	 * This will execute after the call response and it just logs the response
+	 * details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
+<<<<<<< HEAD
 	
 		 logger.info( "Filtering REST Response......................." );
 	//	 String userId = reqContext.getHeaderString("userId");
@@ -86,16 +115,28 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		
 
 	
+=======
+
+		logger.info("Filter Rest Response");
+
+		resContext.getHeaders().add("Access-control-Allow-Origin", "*");
+		resContext.getHeaders().add("Access-control-Allow-Credentials", "true");
+		resContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+		resContext.getHeaders().add("Access-Control-Allow-Headers",
+				AppConstants.SERVICE_KEY + ", " + AppConstants.AUTH_TOKEN);
+
+>>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 	}
 
 	/**
-	 * This will execute is exception occurred for any request processing then it will be logged  
+	 * This will execute is exception occurred for any request processing then
+	 * it will be logged
 	 */
 	public Response toResponse(Throwable t) {
 		JobPortalResponse response = new JobPortalResponse();
-		
+
 		JobPortalException u = null;
-		if(t.getCause() instanceof JobPortalException) {
+		if (t.getCause() instanceof JobPortalException) {
 			logger.error("Cause is JobPortalException>>>>>>>>>>>>");
 			u = (JobPortalException) t.getCause();
 		} else if (t instanceof JobPortalException) {
@@ -104,38 +145,39 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		} else {
 			logger.error("Exception is DirectException>>>>>>>>>>>>");
 		}
-		
-		if(u != null) {
-			
-			if(u.getE() != null) {
-				
+
+		if (u != null) {
+
+			if (u.getE() != null) {
+
 				logger.error("UserMgmt Exception cause Exception occured in the call", u.getE());
-				
+
 			} else {
-				
+
 				logger.error("UserMgmt Exception occured in the call", u);
-				
+
 			}
 		} else {
-			
+
 			logger.error("Exception occured in the call", t);
 
 		}
-		
+
 		// If the user defined exception occurred
-		if(u != null) {
+		if (u != null) {
 			response.setStatusCode(Status.STATUSCODE_FAIL);
 			response.setMessage(u.getErroMsg());
 			response.setStatus(Status.STATUS_FAIL);
 			return Response.serverError().entity(response).build();
 		}
-		
+
 		// If Unknown and un-handled exception occurred
 		response.setStatusCode(Status.STATUSCODE_ERROR);
 		response.setMessage(PropertyUtil.getProperty("UNKNOWN_ERROR_MSG"));
 		response.setStatus(Status.STATUS_ERROR);
 		logger.info("In error reponse ending>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-		return Response.serverError().status(Response.Status.UNAUTHORIZED).entity(response).type(MediaType.APPLICATION_JSON).build();
+		return Response.serverError().status(Response.Status.UNAUTHORIZED).entity(response)
+				.type(MediaType.APPLICATION_JSON).build();
 
 	}
 
