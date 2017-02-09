@@ -10,10 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
-
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
-import org.jboss.resteasy.annotations.interception.ServerInterceptor;
 
 import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.constants.Status;
@@ -39,7 +36,8 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	public void filter(ContainerRequestContext context) throws IOException {
 		
 		String path = context.getUriInfo().getPath();
-	String userId=context.getHeaderString("userid");
+		
+	String userId=context.getHeaderString("x-user-id");
 	String ContentType=context.getHeaderString("Content-Type");
 		//logger.info( "divya:::"+userId);
 	//	String userId = context.getHeaderString("userId");
