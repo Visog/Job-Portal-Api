@@ -42,6 +42,7 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	String ContentType=context.getHeaderString("Content-Type");
 		//logger.info( "divya:::"+userId);
 	//	String userId = context.getHeaderString("userId");
+	//
 
 		ResponseBuilder responseBuilder = null;
 		Response response = null;
