@@ -8,6 +8,7 @@ import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 import org.apache.log4j.Logger;
@@ -42,12 +43,31 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		//logger.info( "divya:::"+userId);
 	//	String userId = context.getHeaderString("userId");
 
+		ResponseBuilder responseBuilder = null;
+		Response response = null;
+		
+		System.out.println("filter() on ServerAuthenticationRequestFilter");
+		
+		userId=context.getUriInfo().getQueryParameters().getFirst("userId");
+		
+		
+		/*if(userId==null || "".equals(userId)){
+			System.out.println("Authencation Filter Failed");
+			responseBuilder =Response.serverError();
+			response =responseBuilder.status(Status.BAD_REQUEST).build();
+			context.abortWith(response);
+		}else {
+			System.out.println("Authentication Filter Passed; UserId is " +userId);
+		}*/
 		// Get the Request URL
 		String url = context.getUriInfo().getPath();
+
+		if (context.getRequest().getMethod().equals("OPTIONS")) {
 		logger.info( "userId:::"+userId);
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
 		logger.info( "url:::"+url );
+		}
 		/*	
 		String json = IOUtils.toString(context.getEntityStream());
 
@@ -55,21 +75,7 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
 		 
 	
-=======
-		
-		if(context.getRequest().getMethod().equals("OPTIONS")){
-			context.abortWith(Response.status(Response.Status.OK).build());
-			return;
-			
-		}
-		
-		logger.info("Filter Request Path"+url);
->>>>>>> branch 'master' of https://github.com/Visog/Job-Portal-Api.git
 
-		// Get the Request body
-		String json = IOUtils.toString(context.getEntityStream());
-<<<<<<< HEAD
-		
 		logger.info("Request method >>> " + context.getMethod() + 
 				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
 		

@@ -27,8 +27,6 @@ public class StatusServiceImpl implements StatusService {
 
 		status.setCode(req.getCode());
 		status.setName(req.getName());
-		status.setCateogroy(req.getCategory());
-		status.setOrdernum(req.getOrdernum());
 		status.setDescription(req.getDescription());
 
 		DaoUtils.setEntityCreateAuditColumns(status);
@@ -49,13 +47,12 @@ public class StatusServiceImpl implements StatusService {
 
 		status.setCode(req.getCode());
 		status.setName(req.getName());
-		status.setCateogroy(req.getCategory());
-		status.setOrdernum(req.getOrdernum());
+
 		status.setDescription(req.getDescription());
 
 		dao.update(status);
 
-		logger.info("Role updated successfully : " + status.getId());
+		logger.info("Status updated successfully : " + status.getId());
 
 	}
 
@@ -78,8 +75,6 @@ public class StatusServiceImpl implements StatusService {
 			statusRes.setId(status.getId());
 			status.setCode(status.getCode());
 			statusRes.setName(status.getName());
-			statusRes.setCategory(status.getCategory());
-			statusRes.setOrdernum(status.getOrdernum());
 			statusRes.setDescription(status.getDescription());
 
 			statusList.add(statusRes);
@@ -102,8 +97,7 @@ public class StatusServiceImpl implements StatusService {
 		statusRes.setId(status.getId());
 		statusRes.setCode(status.getCode());
 		statusRes.setName(status.getName());
-		statusRes.setCategory(status.getCategory());
-		statusRes.setOrdernum(status.getOrdernum());
+
 		statusRes.setDescription(status.getDescription());
 
 		return statusRes;
