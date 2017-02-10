@@ -40,35 +40,20 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		
 	String userId=context.getHeaderString("x-user-id");
 	String ContentType=context.getHeaderString("Content-Type");
-		//logger.info( "divya:::"+userId);
-	//	String userId = context.getHeaderString("userId");
+	String url = context.getUriInfo().getPath();
 	
-
-		ResponseBuilder responseBuilder = null;
-		Response response = null;
-		
-		System.out.println("filter() on ServerAuthenticationRequestFilter");
-		
-		userId=context.getUriInfo().getQueryParameters().getFirst("userId");
-		
-		
-		/*if(userId==null || "".equals(userId)){
-			System.out.println("Authencation Filter Failed");
-			responseBuilder =Response.serverError();
-			response =responseBuilder.status(Status.BAD_REQUEST).build();
-			context.abortWith(response);
-		}else {
-			System.out.println("Authentication Filter Passed; UserId is " +userId);
-		}*/
-		// Get the Request URL
-		String url = context.getUriInfo().getPath();
-
-		if (context.getRequest().getMethod().equals("OPTIONS")) {
+	
+		logger.info("filter() on ServerAuthenticationRequestFilter");
 		logger.info( "userId:::"+userId);
+	
+		
+
+		
+		
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
 		logger.info( "url:::"+url );
-		}
+		
 		/*	
 		String json = IOUtils.toString(context.getEntityStream());
 
