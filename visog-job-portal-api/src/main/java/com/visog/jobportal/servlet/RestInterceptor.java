@@ -2,6 +2,7 @@ package com.visog.jobportal.servlet;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ContainerResponseContext;
@@ -15,7 +16,9 @@ import org.apache.log4j.Logger;
 
 import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.constants.Status;
+import com.visog.jobportal.dao.common.UserDao;
 import com.visog.jobportal.exceptions.JobPortalException;
+import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.utils.PropertyUtil;
 
@@ -31,29 +34,40 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 
 	private static final Logger logger = Logger.getLogger(RestInterceptor.class);
 
+	@Inject
+	UserDao dao;
 	/**
 	 * This will execute before every call and it just logs the request details
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 		
+		logger.info("filter() on ServerAuthenticationRequestFilter");
 		String path = context.getUriInfo().getPath();
 		
 	String userId=context.getHeaderString("x-user-id");
 	String ContentType=context.getHeaderString("Content-Type");
 	String url = context.getUriInfo().getPath();
-	
+
 	
 		logger.info("filter() on ServerAuthenticationRequestFilter");
-		logger.info( "userId:::"+userId);
-	
-		
-
-		
+		logger.info( "userId:::"+userId);		
 		
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
 		logger.info( "url:::"+url );
 		
+		
+		
+		
+		
+		logger.info("11111111111");
+		
+		UserContext userContext = UserContextHolder.getUserContext();
+		logger.info("222222222");
+		Users user = (Users) dao.getByKey(Users.class, userId);
+		logger.info("3"+user.getFirstName());
+		UserContextHolder.setUserContextData(user, userContext);
+		logger.info("4");
 		/*	
 		String json = IOUtils.toString(context.getEntityStream());
 
