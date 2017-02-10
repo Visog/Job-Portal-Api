@@ -49,7 +49,7 @@ public class PostJobserviceImpl implements PostJobService {
 		
 		logger.info("Status::"+appCommonsDao.getStatusId("active").getId());
 		logger.info("Address::"+appCommonsDao.getAddressId("postjob").getId());
-		logger.info("UserContextHolder::"+UserContextHolder.getUserContext().getEmail());
+		logger.info("Address::"+UserContextHolder.getUserContext().getEmail());
 		Currency currency = new Currency();
 		Status status = new Status();
 		PostJob postJob = new PostJob();
@@ -120,7 +120,7 @@ AddressReq address = new AddressReq();
 		Status status = new Status();
 		Users users = new Users();
 
-		users.setId(AppConstants.userId);
+		users.setId(UserContextHolder.getUserContext().getId());
 		postJob.setUser(users);
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());
