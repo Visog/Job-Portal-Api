@@ -55,19 +55,9 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
 		logger.info( "Header:::"+context.getHeaders());
 		logger.info( "url:::"+url );
-		
-		
-		
-		
-		
-		logger.info("11111111111");
-		
 		UserContext userContext = UserContextHolder.getUserContext();
-		logger.info("222222222");
 		Users user = (Users) dao.getByKey(Users.class, userId);
-		logger.info("3"+user.getFirstName());
 		UserContextHolder.setUserContextData(user, userContext);
-		logger.info("4");
 		/*	
 		String json = IOUtils.toString(context.getEntityStream());
 
