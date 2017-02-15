@@ -47,7 +47,7 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	String userId=context.getHeaderString("x-user-id");
 	String ContentType=context.getHeaderString("Content-Type");
 	String url = context.getUriInfo().getPath();
-
+  
 	
 		logger.info("filter() on ServerAuthenticationRequestFilter");
 		logger.info( "userId:::"+userId);		
