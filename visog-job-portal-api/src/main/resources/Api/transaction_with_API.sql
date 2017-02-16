@@ -2057,6 +2057,74 @@ response :
 	"data" : NULL
 	
 } 
+============================================================================
+
+
+1. Create session
+=====================================
+url : /session/details
+ex url : /session/details
+method : POST
+data : 
+
+{
+  "name" : "admin", 
+  "description" : "master data description.."
+}
+
+response : 
+
+{
+	"statusCode" : 200/300 /500, 
+	"status" : "SUCCESS/FAILURE/ERROR", 
+	"statusDesc" : "role Created sucessfully/ Failed to create role"
+	"data" : null
+} 
+
+
+
+3. Get All role
+=====================================
+url : /session/details
+ex url : /session/details
+
+method : GET
+data : 
+
+
+response : 
+
+{
+	"statusCode" : 200/300/500, 
+	"status" : "SUCCESS/FAILURE/ERROR", 
+	"statusDesc" : "role updated sucessfully/ Failed to update role"
+	"data" : [
+		{"id" : 1, "name" : "admin", "description" : " master data description"}, {},...
+	]
+} 
+
+4. Get role
+=====================================
+url : /session/details/<ROLE_ID>
+ex url : /session/details/2
+
+method : GET
+data : 
+
+
+response : 
+
+{
+	"statusCode" : 200/300/500, 
+	"status" : "SUCCESS/FAILURE/ERROR", 
+	"statusDesc" : "role updated sucessfully/ Failed to update role"
+	"data" : {"id" : 2, "name" : "admin", "description" : " master data description"}
+	
+} 
+
+
+*/
+
 
 
 */

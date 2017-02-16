@@ -54,7 +54,7 @@ public class PostJobserviceImpl implements PostJobService {
 		Status status = new Status();
 		PostJob postJob = new PostJob();
 		Users users = new Users();
-		users.setId(UserContextHolder.getUserContext().getId());
+		users.setId(UserContextHolder.getUserContext().getUserId());
 		postJob.setUser(users);
 
 		postJob.setJobTitle(req.getJobTitle());
@@ -120,7 +120,7 @@ AddressReq address = new AddressReq();
 		Status status = new Status();
 		Users users = new Users();
 
-		users.setId(UserContextHolder.getUserContext().getId());
+		users.setId(UserContextHolder.getUserContext().getUserId());
 		postJob.setUser(users);
 		postJob.setJobTitle(req.getJobTitle());
 		postJob.setJobDescription(req.getJobDescription());

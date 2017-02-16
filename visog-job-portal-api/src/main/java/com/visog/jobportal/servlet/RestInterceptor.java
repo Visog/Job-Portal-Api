@@ -29,51 +29,51 @@ import com.visog.jobportal.utils.PropertyUtil;
  *
  */
 @Provider
-//@ServerInterceptor
+// @ServerInterceptor
 public class RestInterceptor implements ContainerRequestFilter, ContainerResponseFilter, ExceptionMapper<Throwable> {
 
 	private static final Logger logger = Logger.getLogger(RestInterceptor.class);
 
 	@Inject
 	UserDao dao;
+
 	/**
 	 * This will execute before every call and it just logs the request details
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
-		
+
 		logger.info("filter() on ServerAuthenticationRequestFilter");
 		String path = context.getUriInfo().getPath();
-		
-	String userId=context.getHeaderString("x-user-id");
-	String ContentType=context.getHeaderString("Content-Type");
-	String url = context.getUriInfo().getPath();
-  
-	
+
+		String userId = context.getHeaderString("x-user-id");
+		String contentType = context.getHeaderString("Content-Type");
+		String url = context.getUriInfo().getPath();
+
 		logger.info("filter() on ServerAuthenticationRequestFilter");
-		logger.info( "userId:::"+userId);		
-		
-		logger.info( "ContentType :::"+ContentType +"::context::"+context.getHeaders());
-		logger.info( "Header:::"+context.getHeaders());
-		logger.info( "url:::"+url );
+		logger.info("userId:::" + userId);
+
+		logger.info("ContentType :::" + contentType + "::context::" + context.getHeaders());
+		logger.info("Header:::" + context.getHeaders());
+		logger.info("url:::" + url);
 		UserContext userContext = UserContextHolder.getUserContext();
 		Users user = (Users) dao.getByKey(Users.class, userId);
 		UserContextHolder.setUserContextData(user, userContext);
-		/*	
-		String json = IOUtils.toString(context.getEntityStream());
-
-		logger.info("Request method >>> " + context.getMethod() + 
-				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
-		 
-	
-
-		logger.info("Request method >>> " + context.getMethod() + 
-				"; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
-		
-		
-		// Re-assign the request body again to the request as we have detached for logging 
-		context.setEntityStream(IOUtils.toInputStream(json));*/
-	
-
+		/*
+		 * String json = IOUtils.toString(context.getEntityStream());
+		 * 
+		 * logger.info("Request method >>> " + context.getMethod() +
+		 * "; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
+		 * 
+		 * 
+		 * 
+		 * logger.info("Request method >>> " + context.getMethod() +
+		 * "; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
+		 * 
+		 * 
+		 * // Re-assign the request body again to the request as we have
+		 * detached for logging
+		 * context.setEntityStream(IOUtils.toInputStream(json));
+		 */
 
 	}
 
@@ -82,20 +82,21 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 * details
 	 */
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
-	
-		 logger.info( "Filtering REST Response......................." );
-	//	 String userId = reqContext.getHeaderString("userId");
-		/* resContext.getHeaders().add( "Access-Control-Allow-Origin", "*" );    // You may further limit certain client IPs with Access-Control-Allow-Origin instead of '*'
-		 resContext.getHeaders().add( "Access-Control-Allow-Credentials", "true" );
-		 resContext.getHeaders().add( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
-		 resContext.getHeaders().add( "Access-Control-Allow-Headers",AppConstants.SERVICE_KEY+","+AppConstants.AUTH_TOKEN);
+
+		logger.info("Filtering REST Response.......................");
+		// String userId = reqContext.getHeaderString("userId");
+		/*
+		 * resContext.getHeaders().add( "Access-Control-Allow-Origin", "*" ); //
+		 * You may further limit certain client IPs with
+		 * Access-Control-Allow-Origin instead of '*'
+		 * resContext.getHeaders().add( "Access-Control-Allow-Credentials",
+		 * "true" ); resContext.getHeaders().add(
+		 * "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
+		 * resContext.getHeaders().add(
+		 * "Access-Control-Allow-Headers",AppConstants.SERVICE_KEY+","+
+		 * AppConstants.AUTH_TOKEN);
 		 */
-//	String authCredentials = reqContext.getHeaderString(arg0);
-
-		
-		
-
-	
+		// String authCredentials = reqContext.getHeaderString(arg0);
 
 		logger.info("Filter Rest Response");
 

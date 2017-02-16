@@ -1,10 +1,13 @@
 
 package com.visog.jobportal.servlet;
+
 import java.util.Date;
 
 public class UserContext {
 
-	private String id;
+	private String userId;
+
+	private String sessionId;
 
 	private String firstName;
 
@@ -15,10 +18,8 @@ public class UserContext {
 	private String email;
 
 	private String alternativeEmail;
-	
-	private Date dob;
 
-	private String password;
+	private Date dob;
 
 	private String phone;
 
@@ -42,14 +43,6 @@ public class UserContext {
 
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -100,14 +93,6 @@ public class UserContext {
 		this.dob = dob;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -122,6 +107,22 @@ public class UserContext {
 
 	public void setLandline(String landline) {
 		this.landline = landline;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 
 }

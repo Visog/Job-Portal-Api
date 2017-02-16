@@ -1,5 +1,6 @@
 package com.visog.jobportal.servlet;
 
+import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.model.common.Users;
 
 public class UserContextHolder {
@@ -17,7 +18,8 @@ public class UserContextHolder {
 
 	public static void setUserContextData(Users user, UserContext userContext) {
 
-		userContext.setId(user.getId());
+		userContext.setUserId(user.getId());
+		userContext.setSessionId(user.getId());
 		userContext.setFirstName(user.getFirstName());
 		userContext.setMiddleName(user.getMiddleName());
 		userContext.setLastName(user.getLastName());
@@ -26,9 +28,15 @@ public class UserContextHolder {
 		userContext.setAlternativeEmail(user.getAlternativeEmail());
 		userContext.setGender(user.getGender().getId());
 		userContext.setDob(user.getDob());
-		userContext.setPassword(user.getPassword());
 		userContext.setPhone(user.getPhone());
 		userContext.setLandline(user.getLandline());
+
+	}
+
+	public static void setUserContextData(UserContext userContext) {
+
+		userContext.setUserId(AppConstants.NO_USER_ID);
+		userContext.setSessionId(AppConstants.NO_SESSION_ID);
 
 	}
 

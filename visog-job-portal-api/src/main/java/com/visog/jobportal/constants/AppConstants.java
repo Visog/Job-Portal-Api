@@ -8,6 +8,9 @@ public interface AppConstants {
 
 	String SERVICE_KEY = "service_key";
 	String AUTH_TOKEN = "auth_token";
+	
+	String NO_USER_ID = "5646535132123132";
+	String NO_SESSION_ID = "5646535132123132";
 
 
 }

@@ -11,16 +11,16 @@ public class DaoUtils {
 	public static void setEntityCreateAuditColumns(AbstractModel model) {
 		
 		model.setId(getUUID());
-		model.setCreatedBy(UserContextHolder.getUserContext().getId());
+		model.setCreatedBy(UserContextHolder.getUserContext().getUserId());
 		model.setCreatedOn(new Date());
-		model.setCreatedSid(UserContextHolder.getUserContext().getId());
+		model.setCreatedSid(UserContextHolder.getUserContext().getSessionId());
 	}
 
 	public static void setEntityUpdateAuditColumns(AbstractModel model) {
 		
-		model.setUpdatedBy(UserContextHolder.getUserContext().getId());
+		model.setUpdatedBy(UserContextHolder.getUserContext().getUserId());
 		model.setUpdatedOn(new Date());
-		model.setUpdatedSid(UserContextHolder.getUserContext().getId());
+		model.setUpdatedSid(UserContextHolder.getUserContext().getSessionId());
 	}
 	
 	private static String getUUID() {
