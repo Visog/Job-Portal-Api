@@ -1,4 +1,4 @@
-package com.visog.jobportal.daoimpl.common;
+package com.visog.jobportal.model.common;
 
 import java.util.Date;
 
@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.visog.jobportal.model.AbstractModel;
 import com.visog.jobportal.model.common.Users;
 
 @Entity
