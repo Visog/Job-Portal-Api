@@ -18,6 +18,8 @@ import com.visog.jobportal.constants.AppConstants;
 import com.visog.jobportal.constants.Status;
 import com.visog.jobportal.dao.common.UserDao;
 import com.visog.jobportal.exceptions.JobPortalException;
+import com.visog.jobportal.model.common.AppSession;
+import com.visog.jobportal.model.common.Files;
 import com.visog.jobportal.model.common.Users;
 import com.visog.jobportal.res.master.JobPortalResponse;
 import com.visog.jobportal.utils.PropertyUtil;
@@ -42,38 +44,35 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	 */
 	public void filter(ContainerRequestContext context) throws IOException {
 
-		logger.info("filter() on ServerAuthenticationRequestFilter");
-		String path = context.getUriInfo().getPath();
-
-		String userId = context.getHeaderString("x-user-id");
-		String contentType = context.getHeaderString("Content-Type");
+		logger.info("Start filter(ContainerRequestContext context)");
 		String url = context.getUriInfo().getPath();
-
-		logger.info("filter() on ServerAuthenticationRequestFilter");
-		logger.info("userId:::" + userId);
-
-		logger.info("ContentType :::" + contentType + "::context::" + context.getHeaders());
-		logger.info("Header:::" + context.getHeaders());
-		logger.info("url:::" + url);
 		UserContext userContext = UserContextHolder.getUserContext();
-		Users user = (Users) dao.getByKey(Users.class, userId);
-		UserContextHolder.setUserContextData(user, userContext);
-		/*
-		 * String json = IOUtils.toString(context.getEntityStream());
-		 * 
-		 * logger.info("Request method >>> " + context.getMethod() +
-		 * "; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
-		 * 
-		 * 
-		 * 
-		 * logger.info("Request method >>> " + context.getMethod() +
-		 * "; Requset URI >>> " + url + "; Request Body >>> " + json + "\n");
-		 * 
-		 * 
-		 * // Re-assign the request body again to the request as we have
-		 * detached for logging
-		 * context.setEntityStream(IOUtils.toInputStream(json));
-		 */
+
+		logger.info("url:::" + context.getUriInfo().getPath());
+
+		if (!url.equals("/login/details") && !url.equals("/registration/job_seeker")
+				&& !url.equals("/registration/employer") && !url.equals("/registration/admin")) {
+
+			String sessionId = context.getHeaderString("x-session-id");
+
+			logger.info("Start Header:::" + context.getHeaders());
+			logger.info("Session:::" + context.getHeaderString("x-session-id"));
+			logger.info("ContentType :::" + context.getHeaderString("Content-Type"));
+
+			AppSession appSession = (AppSession) dao.getByKey(AppSession.class, sessionId);
+			Users user = (Users) dao.getByKey(Users.class, appSession.getUser().getId());
+			UserContextHolder.setUserContextData(user, userContext);
+
+			logger.info("userId:::" + appSession.getUser().getId());
+			logger.info("sessionId:::" + sessionId);
+
+		} else {
+			logger.info("Without session :::");
+			UserContextHolder.setUserContextData(userContext);
+
+		}
+
+		logger.info("End Header:::" + context.getHeaders());
 
 	}
 
@@ -84,21 +83,6 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 	public void filter(ContainerRequestContext reqContext, ContainerResponseContext resContext) throws IOException {
 
 		logger.info("Filtering REST Response.......................");
-		// String userId = reqContext.getHeaderString("userId");
-		/*
-		 * resContext.getHeaders().add( "Access-Control-Allow-Origin", "*" ); //
-		 * You may further limit certain client IPs with
-		 * Access-Control-Allow-Origin instead of '*'
-		 * resContext.getHeaders().add( "Access-Control-Allow-Credentials",
-		 * "true" ); resContext.getHeaders().add(
-		 * "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
-		 * resContext.getHeaders().add(
-		 * "Access-Control-Allow-Headers",AppConstants.SERVICE_KEY+","+
-		 * AppConstants.AUTH_TOKEN);
-		 */
-		// String authCredentials = reqContext.getHeaderString(arg0);
-
-		logger.info("Filter Rest Response");
 
 		resContext.getHeaders().add("Access-control-Allow-Origin", "*");
 		resContext.getHeaders().add("Access-control-Allow-Credentials", "true");
