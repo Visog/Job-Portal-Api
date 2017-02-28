@@ -60,11 +60,13 @@ public class RestInterceptor implements ContainerRequestFilter, ContainerRespons
 			logger.info("ContentType :::" + context.getHeaderString("Content-Type"));
 
 			AppSession appSession = (AppSession) dao.getByKey(AppSession.class, sessionId);
+			logger.info("userId:::" + appSession.getUser().getId());
+		
 			Users user = (Users) dao.getByKey(Users.class, appSession.getUser().getId());
+			logger.info("sessionId:::" + sessionId);
 			UserContextHolder.setUserContextData(user, userContext);
 
-			logger.info("userId:::" + appSession.getUser().getId());
-			logger.info("sessionId:::" + sessionId);
+			
 
 		} else {
 			logger.info("Without session :::");
