@@ -8,5 +8,5 @@ import com.visog.jobportal.model.master.AddrerssType;
 public interface AddressTypeDao extends AbstractDaoI {
 
 	public List<AddrerssType> getAddressTypes();
-
+	
 }
